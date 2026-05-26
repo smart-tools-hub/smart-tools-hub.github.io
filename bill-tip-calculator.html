@@ -1,0 +1,100 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Bill Tip Calculator - Split Bill & Tip Amount Instantly</title>
+<meta name="description" content="Enter bill amount and get tip & total instantly. Best bill tip calculator for restaurants, cafes, and bars in the USA. Free to use.">
+<meta name="keywords" content="bill tip calculator, split bill calculator, tip splitter">
+<meta name="robots" content="index, follow">
+<meta name="canonical" content="https://smart-tools-hub.github.io/bill-tip-calculator.html">
+<style>
+body{font-family:Arial,sans-serif;background:#f5f7fa;margin:0;padding:20px;color:#333}
+.container{max-width:600px;margin:0 auto;background:#fff;padding:30px;border-radius:12px;box-shadow:0 4px 12px rgba(0,0,0,0.1)}
+h1{color:#2c3e50;text-align:center;font-size:28px;margin-bottom:10px}
+.subtitle{text-align:center;color:#7f8c8d;margin-bottom:25px}
+input,select{width:100%;padding:12px;margin:10px 0;border:2px solid #ddd;border-radius:8px;font-size:16px;box-sizing:border-box}
+input:focus,select:focus{border-color:#3498db;outline:none}
+button{width:100%;padding:14px;background:#3498db;color:white;border:none;border-radius:8px;font-size:18px;font-weight:bold;cursor:pointer;margin-top:15px}
+button:hover{background:#2980b9}
+.result{background:#ecf0f1;padding:20px;border-radius:8px;margin-top:20px;display:none}
+.result p{margin:8px 0;font-size:18px}
+.result .total{font-size:24px;font-weight:bold;color:#27ae60}
+.content{margin-top:30px;line-height:1.6;color:#555}
+h2{color:#2c3e50;font-size:22px;margin-top:25px}
+.faq{margin-top:30px}
+.faq-item{background:#f9f9f9;padding:15px;border-radius:8px;margin-bottom:12px}
+.faq-item h3{margin:0 0 8px 0;font-size:18px;color:#2c3e50}
+.faq-item p{margin:0;color:#555}
+</style>
+</head>
+<body>
+<div class="container">
+<h1>Bill Tip Calculator</h1>
+<p class="subtitle">Split your bill and tip in seconds</p>
+<label>Bill Amount ($)</label>
+<input type="number" id="bill" placeholder="0.00" step="0.01" min="0">
+<label>Tip Percentage</label>
+<select id="tip">
+<option value="15">15% - Good Service</option>
+<option value="18">18% - Great Service</option>
+<option value="20" selected>20% - Excellent Service</option>
+<option value="custom">Custom %</option>
+</select>
+<input type="number" id="customTip" placeholder="Enter custom %" style="display:none">
+<label>Split Between (People)</label>
+<input type="number" id="people" value="1" min="1">
+<button onclick="calculate()">Calculate Tip</button>
+<div class="result" id="result">
+<p>Tip Amount: $<span id="tipAmount">0.00</span></p>
+<p>Total Bill: $<span id="totalBill">0.00</span></p>
+<p class="total">Per Person: $<span id="perPerson">0.00</span></p>
+</div>
+<div class="content">
+<h2>Split Bills Without the Hassle</h2>
+<p>Splitting the bill with friends? This bill tip calculator calculates both the tip and how much each person owes. No more arguing over who pays what. Just enter the total and number of people.</p>
+<h2>Key Benefits</h2>
+<ul>
+<li><strong>Instant Split:</strong> See per-person amount immediately</li>
+<li><strong>Accurate Math:</strong> Handles decimals correctly</li>
+<li><strong>Simple Interface:</strong> No confusing options</li>
+<li><strong>Free Tool:</strong> Use it unlimited times</li>
+</ul>
+<div class="faq">
+<h2>Frequently Asked Questions</h2>
+<div class="faq-item">
+<h3>How do I split a bill with tip between 4 people?</h3>
+<p>Enter the bill amount, select tip %, set people to 4, and check the "Per Person" result.</p>
+</div>
+<div class="faq-item">
+<h3>Can I split unevenly if someone ordered more?</h3>
+<p>This tool splits equally. For uneven splits, calculate each person's subtotal separately.</p>
+</div>
+<div class="faq-item">
+<h3>Does the calculator round the amounts?</h3>
+<p>Yes, it rounds to 2 decimal places for accurate dollar and cent calculations.</p>
+</div>
+</div>
+</div>
+</div>
+<script>
+document.getElementById('tip').addEventListener('change',function(){
+document.getElementById('customTip').style.display=this.value==='custom'?'block':'none';
+});
+function calculate(){
+let bill=parseFloat(document.getElementById('bill').value)||0;
+let tipSelect=document.getElementById('tip').value;
+let tipPercent=tipSelect==='custom'?parseFloat(document.getElementById('customTip').value)||0:parseFloat(tipSelect);
+let people=parseInt(document.getElementById('people').value)||1;
+if(bill<=0){alert('Please enter a valid bill amount');return;}
+let tipAmount=bill*(tipPercent/100);
+let totalBill=bill+tipAmount;
+let perPerson=totalBill/people;
+document.getElementById('tipAmount').textContent=tipAmount.toFixed(2);
+document.getElementById('totalBill').textContent=totalBill.toFixed(2);
+document.getElementById('perPerson').textContent=perPerson.toFixed(2);
+document.getElementById('result').style.display='block';
+}
+</script>
+</body>
+</html>
