@@ -1,0 +1,90 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>20% Tip Calculator - Calculate 20 Percent Tip Instantly | Free USA Tool</title>
+<meta name="description" content="Free 20% tip calculator for USA. Enter your bill amount and get the 20% tip and total instantly. No signup, mobile friendly, works in seconds.">
+<meta name="keywords" content="20 percent tip calculator, 20% tip calculator, tip calculator USA, calculate tip, restaurant tip calculator">
+<meta name="robots" content="index, follow">
+<link rel="canonical" href="https://smart-tools-hub.github.io/20-percent-tip-calculator.html">
+<style>
+* { margin: 0; padding: 0; box-sizing: border-box; }
+body { font-family: 'Segoe UI', Arial, sans-serif; background: #f5f7fa; padding: 20px; color: #333; }
+.container { max-width: 480px; margin: 40px auto; background: white; padding: 35px; border-radius: 12px; box-shadow: 0 4px 20px rgba(0,0,0,0.08); }
+h1 { color: #667eea; font-size: 26px; margin-bottom: 10px; text-align: center; }
+.subtitle { text-align: center; color: #666; margin-bottom: 25px; font-size: 15px; }
+label { display: block; margin: 15px 0 8px; font-weight: 600; color: #333; }
+input { width: 100%; padding: 14px; font-size: 18px; border: 2px solid #ddd; border-radius: 8px; text-align: center; transition: 0.3s; }
+input:focus { outline: none; border-color: #667eea; }
+.result { margin-top: 25px; padding: 20px; background: #f8f9ff; border-radius: 8px; display: none; }
+.result p { margin: 12px 0; font-size: 18px; }
+.result strong { color: #667eea; font-size: 24px; }
+.info-section { margin-top: 40px; text-align: left; }
+.info-section h2 { color: #667eea; font-size: 20px; margin: 20px 0 10px; }
+.info-section p, .info-section li { color: #555; line-height: 1.6; margin-bottom: 10px; }
+.info-section ul { padding-left: 20px; }
+footer { text-align: center; margin-top: 30px; color: #888; font-size: 13px; }
+</style>
+</head>
+<body>
+<div class="container">
+  <h1>20% Tip Calculator</h1>
+  <p class="subtitle">Calculate 20% tip for USA restaurants instantly</p>
+  
+  <label for="bill">Enter Bill Amount ($)</label>
+  <input type="number" id="bill" placeholder="0.00" step="0.01" min="0" oninput="calculateTip()">
+  
+  <div class="result" id="result">
+    <p>20% Tip Amount: <strong id="tip">$0.00</strong></p>
+    <p>Total Bill with Tip: <strong id="total">$0.00</strong></p>
+    <p style="font-size: 14px; color: #666;">20% is the standard tip rate in the USA</p>
+  </div>
+
+  <div class="info-section">
+    <h2>How to Calculate 20% Tip in the USA</h2>
+    <p>In the United States, 20% is considered the standard tip for good service at restaurants, bars, and cafes. Our free 20% tip calculator helps you figure out the exact amount in seconds without doing math manually.</p>
+    
+    <h2>Why Use This Free Tip Calculator?</h2>
+    <ul>
+      <li><strong>Fast & Accurate:</strong> Get instant results as you type</li>
+      <li><strong>No Signup Required:</strong> 100% free to use, no registration</li>
+      <li><strong>Mobile Friendly:</strong> Works perfectly on phones and tablets</li>
+      <li><strong>USA Focused:</strong> Designed for USD and standard 20% tipping culture</li>
+      <li><strong>No Ads or Popups:</strong> Clean and simple experience</li>
+    </ul>
+
+    <h2>Common Bill Amounts with 20% Tip</h2>
+    <p>For quick reference, here are common calculations:</p>
+    <ul>
+      <li>$20 bill → $4.00 tip → $24.00 total</li>
+      <li>$50 bill → $10.00 tip → $60.00 total</li>
+      <li>$100 bill → $20.00 tip → $120.00 total</li>
+    </ul>
+  </div>
+
+  <footer>
+    © 2026 Smart Tools Hub | Free Online Tools for USA
+  </footer>
+</div>
+
+<script>
+function calculateTip() {
+  let bill = parseFloat(document.getElementById('bill').value);
+  let resultDiv = document.getElementById('result');
+  
+  if(!bill || bill <= 0) {
+    resultDiv.style.display = 'none';
+    return;
+  }
+  
+  let tip = bill * 0.20;
+  let total = bill + tip;
+  
+  document.getElementById('tip').innerText = '$' + tip.toFixed(2);
+  document.getElementById('total').innerText = '$' + total.toFixed(2);
+  resultDiv.style.display = 'block';
+}
+</script>
+</body>
+</html>
