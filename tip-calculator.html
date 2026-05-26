@@ -1,0 +1,100 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Free Tip Calculator - Calculate Tip & Split Bill Online</title>
+<meta name="description" content="Free online tip calculator for USA. Calculate 15%, 18%, 20% tip instantly and split bill between people. No signup needed.">
+<meta name="keywords" content="tip calculator, free tip calculator, calculate tip, split bill">
+<meta name="robots" content="index, follow">
+<meta name="canonical" content="https://smart-tools-hub.github.io/tip-calculator.html">
+<style>
+body{font-family:Arial,sans-serif;background:#f5f7fa;margin:0;padding:20px;color:#333}
+.container{max-width:600px;margin:0 auto;background:#fff;padding:30px;border-radius:12px;box-shadow:0 4px 12px rgba(0,0,0,0.1)}
+h1{color:#2c3e50;text-align:center;font-size:28px;margin-bottom:10px}
+.subtitle{text-align:center;color:#7f8c8d;margin-bottom:25px}
+input,select{width:100%;padding:12px;margin:10px 0;border:2px solid #ddd;border-radius:8px;font-size:16px;box-sizing:border-box}
+input:focus,select:focus{border-color:#3498db;outline:none}
+button{width:100%;padding:14px;background:#3498db;color:white;border:none;border-radius:8px;font-size:18px;font-weight:bold;cursor:pointer;margin-top:15px}
+button:hover{background:#2980b9}
+.result{background:#ecf0f1;padding:20px;border-radius:8px;margin-top:20px;display:none}
+.result p{margin:8px 0;font-size:18px}
+.result .total{font-size:24px;font-weight:bold;color:#27ae60}
+.content{margin-top:30px;line-height:1.6;color:#555}
+h2{color:#2c3e50;font-size:22px;margin-top:25px}
+.faq{margin-top:30px}
+.faq-item{background:#f9f9f9;padding:15px;border-radius:8px;margin-bottom:12px}
+.faq-item h3{margin:0 0 8px 0;font-size:18px;color:#2c3e50}
+.faq-item p{margin:0;color:#555}
+</style>
+</head>
+<body>
+<div class="container">
+<h1>Free Tip Calculator</h1>
+<p class="subtitle">Calculate tip and split bill instantly</p>
+<label>Bill Amount ($)</label>
+<input type="number" id="bill" placeholder="0.00" step="0.01" min="0">
+<label>Tip Percentage</label>
+<select id="tip">
+<option value="15">15% - Good Service</option>
+<option value="18">18% - Great Service</option>
+<option value="20" selected>20% - Excellent Service</option>
+<option value="custom">Custom %</option>
+</select>
+<input type="number" id="customTip" placeholder="Enter custom %" style="display:none">
+<label>Split Between (People)</label>
+<input type="number" id="people" value="1" min="1">
+<button onclick="calculate()">Calculate Tip</button>
+<div class="result" id="result">
+<p>Tip Amount: $<span id="tipAmount">0.00</span></p>
+<p>Total Bill: $<span id="totalBill">0.00</span></p>
+<p class="total">Per Person: $<span id="perPerson">0.00</span></p>
+</div>
+<div class="content">
+<h2>How This Tip Calculator Works</h2>
+<p>Need to calculate tip fast? Our free tip calculator works for restaurants, cafes, bars, and delivery. Enter your bill, pick a tip %, and get instant results. Perfect for USA diners who want to avoid mental math.</p>
+<h2>Why Use It?</h2>
+<ul>
+<li><strong>Instant Results:</strong> No waiting, calculate as you type</li>
+<li><strong>Flexible:</strong> Choose preset tips or enter custom percentage</li>
+<li><strong>Bill Split:</strong> Divide total between friends easily</li>
+<li><strong>100% Free:</strong> No signup, no ads, no limits</li>
+</ul>
+<div class="faq">
+<h2>Frequently Asked Questions</h2>
+<div class="faq-item">
+<h3>How do I calculate tip without a calculator?</h3>
+<p>Move the decimal one place left for 10%, then multiply. For 20%, double the 10% amount. Or use this tool for instant accuracy.</p>
+</div>
+<div class="faq-item">
+<h3>What’s the difference between 15%, 18%, and 20% tip?</h3>
+<p>15% is standard for good service, 18% for great service, 20%+ for excellent service in the USA.</p>
+</div>
+<div class="faq-item">
+<h3>Can I use this for delivery tips too?</h3>
+<p>Yes. It works for any bill where you need to add a tip - restaurants, delivery, taxis, and more.</p>
+</div>
+</div>
+</div>
+</div>
+<script>
+document.getElementById('tip').addEventListener('change',function(){
+document.getElementById('customTip').style.display=this.value==='custom'?'block':'none';
+});
+function calculate(){
+let bill=parseFloat(document.getElementById('bill').value)||0;
+let tipSelect=document.getElementById('tip').value;
+let tipPercent=tipSelect==='custom'?parseFloat(document.getElementById('customTip').value)||0:parseFloat(tipSelect);
+let people=parseInt(document.getElementById('people').value)||1;
+if(bill<=0){alert('Please enter a valid bill amount');return;}
+let tipAmount=bill*(tipPercent/100);
+let totalBill=bill+tipAmount;
+let perPerson=totalBill/people;
+document.getElementById('tipAmount').textContent=tipAmount.toFixed(2);
+document.getElementById('totalBill').textContent=totalBill.toFixed(2);
+document.getElementById('perPerson').textContent=perPerson.toFixed(2);
+document.getElementById('result').style.display='block';
+}
+</script>
+</body>
+</html>
