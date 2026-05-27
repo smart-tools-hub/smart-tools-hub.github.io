@@ -1,0 +1,53 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Aesthetic Color Palette Generator - Beautiful Color Combos Free</title>
+<meta name="description" content="Create aesthetic color palettes instantly. Generate soft, trendy color combos for Instagram, Canva, and websites. Free tool for USA creators.">
+<meta name="keywords" content="aesthetic color palette generator, aesthetic colors, soft color palette">
+<link rel="canonical" href="https://smart-tools-hub.github.io/aesthetic-color-palette-generator.html">
+<style>
+  *{margin:0;padding:0;box-sizing:border-box}
+  body{font-family:'Segoe UI',Tahoma,sans-serif;background:linear-gradient(135deg,#ff9a9e 0%,#fecfef 100%);min-height:100vh;display:flex;justify-content:center;align-items:center;padding:20px}
+  .container{background:white;padding:40px;border-radius:20px;box-shadow:0 20px 60px rgba(0,0,0,0.2);width:100%;max-width:700px;text-align:center}
+  h1{font-size:2.2rem;color:#333;margin-bottom:10px;background:linear-gradient(135deg,#ff9a9e,#fecfef);-webkit-background-clip:text;-webkit-text-fill-color:transparent}
+  .subtitle{color:#666;margin-bottom:30px;font-size:1.1rem}
+  .colors{display:flex;gap:15px;margin-bottom:30px;flex-wrap:wrap;justify-content:center}
+  .color-box{flex:1;min-width:120px;height:150px;border-radius:15px;display:flex;flex-direction:column;justify-content:flex-end;padding:15px;cursor:pointer;transition:transform 0.2s;box-shadow:0 5px 15px rgba(0,0,0,0.1)}
+  .color-box:hover{transform:translateY(-5px)}
+  .hex-code{background:rgba(255,255,255,0.9);padding:8px;border-radius:8px;font-weight:bold;font-family:monospace}
+  button.generate{background:linear-gradient(135deg,#ff9a9e,#fecfef);color:white;border:none;padding:15px 40px;font-size:1.1rem;border-radius:50px;cursor:pointer;font-weight:bold}
+  .toast{position:fixed;bottom:30px;left:50%;transform:translateX(-50%);background:#333;color:white;padding:12px 25px;border-radius:50px;display:none}
+</style>
+</head>
+<body>
+<div class="container">
+  <h1>Aesthetic Color Palette Generator</h1>
+  <p class="subtitle">Generate soft, trendy aesthetic color combos for your projects</p>
+  <div class="colors" id="colors"></div>
+  <button class="generate" onclick="generatePalette()">✨ Generate Aesthetic Palette</button>
+  <div class="toast" id="toast">Color copied!</div>
+</div>
+<script>
+function generatePalette(){
+  const colorsDiv=document.getElementById('colors');
+  colorsDiv.innerHTML='';
+  for(let i=0;i<5;i++){
+    const color='#'+Math.floor(Math.random()*16777215).toString(16).padStart(6,'0');
+    const box=document.createElement('div');
+    box.className='color-box';
+    box.style.backgroundColor=color;
+    box.innerHTML='<div class="hex-code">'+color.toUpperCase()+'</div>';
+    box.onclick=function(){
+      navigator.clipboard.writeText(color.toUpperCase());
+      document.getElementById('toast').style.display='block';
+      setTimeout(function(){document.getElementById('toast').style.display='none';},1500);
+    };
+    colorsDiv.appendChild(box);
+  }
+}
+window.onload=generatePalette;
+</script>
+</body>
+</html>
