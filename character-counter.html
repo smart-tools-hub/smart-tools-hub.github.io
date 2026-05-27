@@ -1,0 +1,53 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Character Counter Online - Count Letters & Spaces Free</title>
+<meta name="description" content="Free character counter tool. Count characters with and without spaces instantly. Perfect for Twitter, SMS, SEO meta descriptions, and social media posts.">
+<style>
+body {font-family: Arial, sans-serif; max-width: 800px; margin: 40px auto; padding: 20px; background: #f5f7fa;}
+h1 {text-align: center; color: #222;}
+.box {background: white; padding: 30px; border-radius: 12px; box-shadow: 0 4px 12px rgba(0,0,0,0.1);}
+textarea {width: 100%; height: 150px; padding: 12px; font-size: 16px; border-radius: 8px; border: 1px solid #ccc; resize: vertical;}
+.stats {display: grid; grid-template-columns: repeat(auto-fit, minmax(150px, 1fr)); gap: 15px; margin-top: 20px;}
+.stat {background: #e0f2fe; padding: 15px; border-radius: 8px; text-align: center;}
+.stat b {font-size: 24px; color: #0369a1;}
+</style>
+</head>
+<body>
+<h1>Character Counter Online - Free Tool</h1>
+
+<div class="box">
+<p>Type or paste your text below to count characters with spaces and without spaces instantly.</p>
+<textarea id="text" placeholder="Start typing or paste your text here..."></textarea>
+<div class="stats">
+<div class="stat"><b id="charsWithSpaces">0</b><br>Characters with Spaces</div>
+<div class="stat"><b id="charsNoSpaces">0</b><br>Characters without Spaces</div>
+<div class="stat"><b id="words">0</b><br>Words</div>
+</div>
+</div>
+
+<script>
+document.getElementById('text').addEventListener('input', function() {
+  const text = this.value;
+  document.getElementById('charsWithSpaces').innerText = text.length;
+  document.getElementById('charsNoSpaces').innerText = text.replace(/\s/g, '').length;
+  document.getElementById('words').innerText = text.trim() ? text.trim().split(/\s+/).length : 0;
+});
+</script>
+
+<div style="margin-top:40px;">
+<h2>How to Use Character Counter</h2>
+<p>1. Paste or type your text in the box above<br>2. See instant results for characters and words<br>3. Use it for Twitter, SMS limits, and SEO meta tags</p>
+
+<h2>Why Use Our Character Counter?</h2>
+<p>- 100% Free and Fast<br>- No login or signup required<br>- Works on mobile and desktop<br>- Real-time counting</p>
+
+<h2>FAQs</h2>
+<p><b>Does it count spaces?</b> Yes, we show both with and without spaces.<br>
+<b>Is there a character limit?</b> No, you can check unlimited text.<br>
+<b>Is my data saved?</b> No, everything runs in your browser.</p>
+</div>
+</body>
+</html>
