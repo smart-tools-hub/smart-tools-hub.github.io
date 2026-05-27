@@ -1,0 +1,103 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Word Counter Online - Count Words, Characters & Reading Time Free</title>
+<meta name="description" content="Free Word Counter tool to count words, characters, sentences, and reading time instantly. No login needed. Perfect for students, writers, bloggers.">
+<meta name="keywords" content="word counter, character counter, online word count, reading time calculator">
+
+<style>
+body {font-family: Arial, sans-serif; max-width: 900px; margin: 0 auto; padding: 20px; background: #f9f9f9;}
+h1, h2 {color: #222;}
+textarea {width: 100%; height: 200px; padding: 12px; font-size: 16px; border: 2px solid #ddd; border-radius: 8px;}
+.stats {display: flex; flex-wrap: wrap; gap: 15px; margin: 20px 0;}
+.stat-box {flex: 1; min-width: 140px; background: white; padding: 15px; border-radius: 8px; box-shadow: 0 2px 5px rgba(0,0,0,0.1); text-align: center;}
+.stat-box h3 {margin: 0; font-size: 28px; color: #007bff;}
+.stat-box p {margin: 5px 0 0; color: #555;}
+.content {background: white; padding: 20px; border-radius: 8px; margin-top: 30px;}
+a {color: #007bff; text-decoration: none;}
+a:hover {text-decoration: underline;}
+</style>
+
+<script type="application/ld+json">
+{
+  "@context": "https://schema.org",
+  "@type": "SoftwareApplication",
+  "name": "Word Counter Online",
+  "operatingSystem": "All",
+  "applicationCategory": "UtilityApplication",
+  "offers": {"@type": "Offer", "price": "0", "priceCurrency": "USD"}
+}
+</script>
+</head>
+<body>
+
+<h1>Word Counter Online - Free Tool</h1>
+<p>Type or paste your text below to count words, characters, and reading time instantly.</p>
+
+<textarea id="textInput" placeholder="Start typing or paste your text here..."></textarea>
+
+<div class="stats">
+  <div class="stat-box"><h3 id="words">0</h3><p>Words</p></div>
+  <div class="stat-box"><h3 id="chars">0</h3><p>Characters</p></div>
+  <div class="stat-box"><h3 id="charsNoSpace">0</h3><p>Characters No Space</p></div>
+  <div class="stat-box"><h3 id="sentences">0</h3><p>Sentences</p></div>
+  <div class="stat-box"><h3 id="readingTime">0</h3><p>Min Read</p></div>
+</div>
+
+<div class="content">
+<h2>How to Use Word Counter Tool</h2>
+<p>1. Paste or type your text in the box above<br>
+2. See instant results for words, characters, sentences<br>
+3. Use it for essays, blog posts, social media captions</p>
+
+<h2>Why Use Our Word Counter?</h2>
+<p>- 100% Free and Fast<br>
+- No login or signup required<br>
+- Works on mobile and desktop<br>
+- Shows reading time and speaking time</p>
+
+<h2>FAQs</h2>
+<p><strong>Does it count spaces?</strong> Yes, we show both with and without spaces.<br>
+<strong>Is there a word limit?</strong> No, you can check unlimited text.<br>
+<strong>Is my data saved?</strong> No, everything runs in your browser.</p>
+
+<h2>Try Our Other Tools</h2>
+<p>
+<a href="/tip-calculator.html">Tip Calculator</a> | 
+<a href="/bill-tip-calculator.html">Bill Tip Calculator</a> | 
+<a href="/age-calculator.html">Age Calculator</a>
+</p>
+</div>
+
+<script>
+const textInput = document.getElementById('textInput');
+textInput.focus();
+
+textInput.addEventListener('input', function() {
+  const text = this.value;
+  
+  // Words
+  const words = text.trim() === '' ? 0 : text.trim().split(/\s+/).length;
+  
+  // Characters
+  const chars = text.length;
+  const charsNoSpace = text.replace(/\s/g, '').length;
+  
+  // Sentences
+  const sentences = text.trim() === '' ? 0 : text.split(/[.!?]+/).filter(s => s.trim().length > 0).length;
+  
+  // Reading time - avg 200 words per minute
+  const readingTime = Math.ceil(words / 200);
+  
+  document.getElementById('words').textContent = words;
+  document.getElementById('chars').textContent = chars;
+  document.getElementById('charsNoSpace').textContent = charsNoSpace;
+  document.getElementById('sentences').textContent = sentences;
+  document.getElementById('readingTime').textContent = readingTime;
+});
+</script>
+
+</body>
+</html>
