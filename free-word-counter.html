@@ -1,0 +1,105 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Free Word Counter & Character Counter Online</title>
+<meta name="description" content="Count words, characters, sentences, and paragraphs instantly. Free online word counter tool for writers, students, and SEO. No signup needed.">
+<meta name="keywords" content="word counter, character counter, online word count, text analyzer, free writing tool">
+<meta name="robots" content="index, follow">
+<link rel="canonical" href="https://smart-tools-hub.github.io/word-counter.html">
+
+<style>
+body{font-family:system-ui,-apple-system,Segoe UI,Roboto,Arial,sans-serif;margin:0;padding:0;background:#f8fafc;color:#1e293b;line-height:1.6}
+.container{max-width:900px;margin:0 auto;padding:20px}
+h1{font-size:32px;color:#0f172a;text-align:center;margin-bottom:10px}
+h2{font-size:22px;color:#334155;margin-top:35px}
+.tool-box{background:#fff;padding:28px;border-radius:14px;box-shadow:0 2px 10px rgba(0,0,0,0.06);margin:25px 0}
+textarea{width:100%;min-height:180px;padding:14px;border:2px solid #e2e8f0;border-radius:10px;font-size:15px;font-family:inherit;resize:vertical;box-sizing:border-box}
+textarea:focus{outline:none;border-color:#3b82f6}
+.stats{display:grid;grid-template-columns:repeat(auto-fit,minmax(140px,1fr));gap:15px;margin-top:20px}
+.stat-box{background:#f1f5f9;padding:18px;border-radius:10px;text-align:center}
+.stat-number{font-size:28px;font-weight:700;color:#3b82f6}
+.stat-label{font-size:13px;color:#64748b;margin-top:4px}
+.content{background:#fff;padding:28px;border-radius:14px;margin-top:25px}
+.internal-links{display:flex;flex-wrap:wrap;gap:10px;margin-top:15px}
+.internal-links a{background:#dbeafe;color:#2563eb;padding:8px 14px;border-radius:6px;text-decoration:none;font-size:14px;font-weight:500}
+.internal-links a:hover{background:#2563eb;color:#fff}
+button{background:#ef4444;color:#fff;border:none;padding:10px 20px;border-radius:8px;font-size:14px;font-weight:600;cursor:pointer;margin-top:10px}
+button:hover{background:#dc2626}
+</style>
+</head>
+
+<body>
+<div class="container">
+<h1>Free Word Counter Tool</h1>
+<p style="text-align:center;color:#64748b">Count words, characters, sentences, and paragraphs in real-time</p>
+
+<div class="tool-box">
+<h2>Type or Paste Your Text</h2>
+<textarea id="textInput" placeholder="Start typing here... or paste your article, essay, or social media post" oninput="updateStats()"></textarea>
+<button onclick="clearText()">Clear Text</button>
+<div class="stats" id="statsBox">
+<div class="stat-box"><div class="stat-number" id="wordCount">0</div><div class="stat-label">Words</div></div>
+<div class="stat-box"><div class="stat-number" id="charCount">0</div><div class="stat-label">Characters</div></div>
+<div class="stat-box"><div class="stat-number" id="charNoSpace">0</div><div class="stat-label">Chars No Space</div></div>
+<div class="stat-box"><div class="stat-number" id="sentenceCount">0</div><div class="stat-label">Sentences</div></div>
+<div class="stat-box"><div class="stat-number" id="paraCount">0</div><div class="stat-label">Paragraphs</div></div>
+</div>
+</div>
+
+<div class="content">
+<h2>Why Use This Word Counter?</h2>
+<p>This free online word counter helps writers, students, and SEO experts meet exact word limits without guessing. It counts in real-time as you type, so you don't need to hit submit or refresh the page.</p>
+
+<h3>Key Features</h3>
+<p><strong>Real-time counting:</strong> See word and character count update instantly while you type.</p>
+<p><strong>Multiple metrics:</strong> Get word count, character count with and without spaces, sentences, and paragraphs all at once.</p>
+<p><strong>100% free & private:</strong> No signup, no limits, and your text never leaves your browser.</p>
+
+<h3>Who Uses This Tool?</h3>
+<ul>
+<li><strong>Students:</strong> Check essay and assignment word limits for school and college</li>
+<li><strong>Writers:</strong> Track article length for blogs, Medium, and LinkedIn posts</li>
+<li><strong>SEO Experts:</strong> Ensure meta descriptions and blog posts hit the target length</li>
+<li><strong>Social Media Managers:</strong> Stay under Twitter and Instagram character limits</li>
+</ul>
+
+<h3>Explore More Free Tools</h3>
+<div class="internal-links">
+<a href="/tip-calculator.html">Tip Calculator</a>
+<a href="/bill-tip-calculator.html">Bill Tip Calculator</a>
+<a href="/character-counter.html">Character Counter</a>
+<a href="/soft-aesthetic-color-palette-generator.html">Color Palette Generator</a>
+</div>
+
+<h3>How It Works</h3>
+<p>We use JavaScript to analyze your text directly in the browser. Words are counted by splitting on spaces and punctuation. Characters include letters, numbers, and symbols. Nothing is sent to our server, so your content stays private.</p>
+</div>
+</div>
+
+<script>
+function updateStats(){
+  const text = document.getElementById('textInput').value;
+  
+  const words = text.trim() === '' ? 0 : text.trim().split(/\s+/).length;
+  const chars = text.length;
+  const charsNoSpace = text.replace(/\s/g, '').length;
+  const sentences = text.trim() === '' ? 0 : text.split(/[.!?]+/).filter(s => s.trim().length > 0).length;
+  const paragraphs = text.trim() === '' ? 0 : text.split(/\n\s*\n/).filter(p => p.trim().length > 0).length;
+  
+  document.getElementById('wordCount').textContent = words;
+  document.getElementById('charCount').textContent = chars;
+  document.getElementById('charNoSpace').textContent = charsNoSpace;
+  document.getElementById('sentenceCount').textContent = sentences;
+  document.getElementById('paraCount').textContent = paragraphs;
+}
+
+function clearText(){
+  document.getElementById('textInput').value = '';
+  updateStats();
+}
+</script>
+
+</body>
+</html>
