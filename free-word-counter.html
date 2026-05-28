@@ -3,23 +3,24 @@
 <head>
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
-<title>Free Word Counter & Character Counter Online</title>
-<meta name="description" content="Count words, characters, sentences, and paragraphs instantly. Free online word counter tool for writers, students, and SEO. No signup needed.">
-<meta name="keywords" content="word counter, character counter, online word count, text analyzer, free writing tool">
+<title>Free Online Text Counter - Words, Characters, Lines</title>
+<meta name="description" content="Analyze your text instantly. Check word count, character count, line count, and reading time for free. No login required.">
+<meta name="keywords" content="text counter, online text analyzer, character count, reading time calculator, free writing tool">
 <meta name="robots" content="index, follow">
-<link rel="canonical" href="https://smart-tools-hub.github.io/word-counter.html">
+<link rel="canonical" href="https://smart-tools-hub.github.io/free-word-counter.html">
 
 <style>
 body{font-family:system-ui,-apple-system,Segoe UI,Roboto,Arial,sans-serif;margin:0;padding:0;background:#f8fafc;color:#1e293b;line-height:1.6}
 .container{max-width:900px;margin:0 auto;padding:20px}
 h1{font-size:32px;color:#0f172a;text-align:center;margin-bottom:10px}
 h2{font-size:22px;color:#334155;margin-top:35px}
+h3{font-size:18px;color:#475569}
 .tool-box{background:#fff;padding:28px;border-radius:14px;box-shadow:0 2px 10px rgba(0,0,0,0.06);margin:25px 0}
 textarea{width:100%;min-height:180px;padding:14px;border:2px solid #e2e8f0;border-radius:10px;font-size:15px;font-family:inherit;resize:vertical;box-sizing:border-box}
 textarea:focus{outline:none;border-color:#3b82f6}
-.stats{display:grid;grid-template-columns:repeat(auto-fit,minmax(140px,1fr));gap:15px;margin-top:20px}
+.stats{display:grid;grid-template-columns:repeat(auto-fit,minmax(130px,1fr));gap:15px;margin-top:20px}
 .stat-box{background:#f1f5f9;padding:18px;border-radius:10px;text-align:center}
-.stat-number{font-size:28px;font-weight:700;color:#3b82f6}
+.stat-number{font-size:26px;font-weight:700;color:#3b82f6}
 .stat-label{font-size:13px;color:#64748b;margin-top:4px}
 .content{background:#fff;padding:28px;border-radius:14px;margin-top:25px}
 .internal-links{display:flex;flex-wrap:wrap;gap:10px;margin-top:15px}
@@ -27,54 +28,57 @@ textarea:focus{outline:none;border-color:#3b82f6}
 .internal-links a:hover{background:#2563eb;color:#fff}
 button{background:#ef4444;color:#fff;border:none;padding:10px 20px;border-radius:8px;font-size:14px;font-weight:600;cursor:pointer;margin-top:10px}
 button:hover{background:#dc2626}
+ul{padding-left:20px}
 </style>
 </head>
 
 <body>
 <div class="container">
-<h1>Free Word Counter Tool</h1>
-<p style="text-align:center;color:#64748b">Count words, characters, sentences, and paragraphs in real-time</p>
+<h1>Online Text Analyzer Tool</h1>
+<p style="text-align:center;color:#64748b">Check words, characters, lines, and estimated reading time in real-time</p>
 
 <div class="tool-box">
-<h2>Type or Paste Your Text</h2>
-<textarea id="textInput" placeholder="Start typing here... or paste your article, essay, or social media post" oninput="updateStats()"></textarea>
+<h2>Paste Your Text Below</h2>
+<textarea id="textInput" placeholder="Start typing or paste your content here..." oninput="updateStats()"></textarea>
 <button onclick="clearText()">Clear Text</button>
 <div class="stats" id="statsBox">
 <div class="stat-box"><div class="stat-number" id="wordCount">0</div><div class="stat-label">Words</div></div>
 <div class="stat-box"><div class="stat-number" id="charCount">0</div><div class="stat-label">Characters</div></div>
-<div class="stat-box"><div class="stat-number" id="charNoSpace">0</div><div class="stat-label">Chars No Space</div></div>
-<div class="stat-box"><div class="stat-number" id="sentenceCount">0</div><div class="stat-label">Sentences</div></div>
-<div class="stat-box"><div class="stat-number" id="paraCount">0</div><div class="stat-label">Paragraphs</div></div>
+<div class="stat-box"><div class="stat-number" id="lineCount">0</div><div class="stat-label">Lines</div></div>
+<div class="stat-box"><div class="stat-number" id="readingTime">0 min</div><div class="stat-label">Reading Time</div></div>
+<div class="stat-box"><div class="stat-number" id="charNoSpace">0</div><div class="stat-label">No Spaces</div></div>
 </div>
 </div>
 
 <div class="content">
-<h2>Why Use This Word Counter?</h2>
-<p>This free online word counter helps writers, students, and SEO experts meet exact word limits without guessing. It counts in real-time as you type, so you don't need to hit submit or refresh the page.</p>
+<h2>About This Text Counter</h2>
+<p>This tool is built for bloggers, copywriters, students, and SEO experts who need to check text stats quickly. It works directly in your browser, so your content stays private and loads instantly.</p>
 
-<h3>Key Features</h3>
-<p><strong>Real-time counting:</strong> See word and character count update instantly while you type.</p>
-<p><strong>Multiple metrics:</strong> Get word count, character count with and without spaces, sentences, and paragraphs all at once.</p>
-<p><strong>100% free & private:</strong> No signup, no limits, and your text never leaves your browser.</p>
+<h3>What Makes It Different</h3>
+<p><strong>Reading Time:</strong> Get an estimate of how long it takes to read your text based on 200 words per minute. Useful for blog posts and articles.</p>
+<p><strong>Line Count:</strong> Count lines for code snippets, poetry, and formatted text.</p>
+<p><strong>Live Updates:</strong> All stats update as you type. No submit button needed.</p>
+<p><strong>100% Free:</strong> No signup, no limits, no ads in the tool area.</p>
 
-<h3>Who Uses This Tool?</h3>
+<h3>Common Use Cases</h3>
 <ul>
-<li><strong>Students:</strong> Check essay and assignment word limits for school and college</li>
-<li><strong>Writers:</strong> Track article length for blogs, Medium, and LinkedIn posts</li>
-<li><strong>SEO Experts:</strong> Ensure meta descriptions and blog posts hit the target length</li>
-<li><strong>Social Media Managers:</strong> Stay under Twitter and Instagram character limits</li>
+<li>Check tweet, Instagram, and LinkedIn post length</li>
+<li>Prepare assignments and essays for school</li>
+<li>Analyze SEO meta titles and descriptions</li>
+<li>Count lines in code and config files</li>
+<li>Track writing progress for novels and blogs</li>
 </ul>
 
 <h3>Explore More Free Tools</h3>
 <div class="internal-links">
 <a href="/tip-calculator.html">Tip Calculator</a>
 <a href="/bill-tip-calculator.html">Bill Tip Calculator</a>
-<a href="/character-counter.html">Character Counter</a>
 <a href="/soft-aesthetic-color-palette-generator.html">Color Palette Generator</a>
+<a href="/word-counter.html">Word Counter</a>
 </div>
 
 <h3>How It Works</h3>
-<p>We use JavaScript to analyze your text directly in the browser. Words are counted by splitting on spaces and punctuation. Characters include letters, numbers, and symbols. Nothing is sent to our server, so your content stays private.</p>
+<p>JavaScript runs locally in your browser to analyze the text. Words are split by spaces, lines by line breaks, and reading time is calculated at 200 words per minute - the average adult reading speed.</p>
 </div>
 </div>
 
@@ -85,14 +89,14 @@ function updateStats(){
   const words = text.trim() === '' ? 0 : text.trim().split(/\s+/).length;
   const chars = text.length;
   const charsNoSpace = text.replace(/\s/g, '').length;
-  const sentences = text.trim() === '' ? 0 : text.split(/[.!?]+/).filter(s => s.trim().length > 0).length;
-  const paragraphs = text.trim() === '' ? 0 : text.split(/\n\s*\n/).filter(p => p.trim().length > 0).length;
+  const lines = text.trim() === '' ? 0 : text.split(/\n/).length;
+  const readingTime = words === 0 ? 0 : Math.ceil(words / 200);
   
   document.getElementById('wordCount').textContent = words;
   document.getElementById('charCount').textContent = chars;
+  document.getElementById('lineCount').textContent = lines;
+  document.getElementById('readingTime').textContent = readingTime + " min";
   document.getElementById('charNoSpace').textContent = charsNoSpace;
-  document.getElementById('sentenceCount').textContent = sentences;
-  document.getElementById('paraCount').textContent = paragraphs;
 }
 
 function clearText(){
