@@ -35,10 +35,44 @@ strong{color:#0f172a}
 <h2>Generate Your Palette</h2>
 <p>Click the button below to create 5 unique aesthetic color combinations instantly.</p>
 
-<!-- YAHAN APNA TOOL KA CODE PASTE KARO -->
-<div id="tool-placeholder" style="padding:40px;text-align:center;background:#f1f5f9;border-radius:8px;">
-[Paste your tool code here]
+<div id="palette">
+  <div class="colors" id="colorBoxes"></div>
+  <button onclick="generatePalette()">Generate</button>
 </div>
+
+<script>
+function generatePalette(){
+  const colors = [];
+  for(let i=0; i<5; i++){
+    const color = '#'+Math.floor(Math.random()*16777215).toString(16).padStart(6,'0');
+    colors.push(color);
+  }
+  displayColors(colors);
+}
+
+function displayColors(colors){
+  const container = document.getElementById('colorBoxes');
+  container.innerHTML = '';
+  colors.forEach(color=>{
+    container.innerHTML += `<div class="color-box" style="background:${color}" onclick="navigator.clipboard.writeText('${color}')">
+      <span>${color}</span>
+    </div>`;
+  });
+}
+
+// Page load par ek baar generate karo
+window.onload = generatePalette;
+</script>
+
+<style>
+#palette{text-align:center}
+.colors{display:flex;gap:10px;justify-content:center;margin:20px 0;flex-wrap:wrap}
+.color-box{width:80px;height:80px;border-radius:8px;cursor:pointer;position:relative}
+.color-box:hover{transform:scale(1.05)}
+.color-box span{position:absolute;bottom:-25px;left:0;right:0;font-size:12px;color:#333}
+button{background:#2563eb;color:#fff;border:none;padding:12px 30px;border-radius:8px;font-size:16px;cursor:pointer;margin-top:10px}
+button:hover{background:#1d4ed8}
+</style>
 </div>
 
 <!-- CONTENT SECTION - NICHE -->
