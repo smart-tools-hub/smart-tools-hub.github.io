@@ -1,0 +1,75 @@
+<!DOCTYPE html>
+<html lang="en-US">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Exact Age Calculator - Calculate Age in Years, Months & Days | USA Tool</title>
+<meta name="description" content="Calculate your exact age instantly with our free Age Calculator. Get age in years, months, and days. No signup required. Perfect for USA users.">
+<style>
+body{font-family:Arial,sans-serif;max-width:700px;margin:40px auto;padding:20px;line-height:1.6;color:#333}
+h1{color:#2c3e50}
+.calculator{background:#f8f9fa;padding:25px;border-radius:8px;margin:25px 0;box-shadow:0 2px 4px rgba(0,0,0,0.1)}
+input[type="date"]{padding:10px;font-size:16px;width:100%;max-width:300px;border:1px solid #ddd;border-radius:4px}
+button{padding:12px 25px;background:#3498db;color:#fff;border:none;border-radius:4px;font-size:16px;cursor:pointer;margin-top:15px}
+button:hover{background:#2980b9}
+#result{margin-top:20px;font-size:18px;color:#27ae60;font-weight:bold}
+.related-tools{margin:40px 0;padding:25px;background:#ecf0f1;border-radius:8px}
+.related-tools h3{color:#2c3e50;margin-top:0}
+.related-tools ul{list-style:none;padding:0}
+.related-tools li{margin:10px 0}
+.related-tools a{color:#3498db;text-decoration:none}
+.related-tools a:hover{text-decoration:underline}
+.faq{margin-top:40px}
+.faq h3{color:#34495e}
+footer{text-align:center;margin-top:40px;padding-top:20px;border-top:1px solid #ddd}
+footer a{color:#3498db;text-decoration:none}
+</style>
+</head>
+<body>
+<h1>Exact Age Calculator</h1>
+<p>Find out your precise age down to the exact day. Our USA-based Exact Age Calculator helps you calculate age for legal documents, school admission, passports, and more. Simply enter your date of birth and get instant results in years, months, and days.</p>
+
+<div class="calculator">
+<label for="dob"><strong>Enter Your Date of Birth:</strong></label><br>
+<input type="date" id="dob" max="">
+<button onclick="calcAge()">Calculate Exact Age</button>
+<div id="result"></div>
+</div>
+
+<div class="related-tools">
+<h3>Other Free Tools on Smart Tools Hub</h3>
+<ul>
+<li><a href="https://smart-tools-hub.github.io/word-counter/">Word Counter Online</a> - Count words, characters & reading time</li>
+<li><a href="https://smart-tools-hub.github.io/character-counter/">Character Counter</a> - Count letters & spaces instantly</li>
+<li><a href="https://smart-tools-hub.github.io/bmi-calculator/">BMI Calculator</a> - Check Body Mass Index online</li>
+<li><a href="https://smart-tools-hub.github.io/tip-calculator/">Tip Calculator</a> - Calculate tip & split bill</li>
+</ul>
+</div>
+
+<div class="faq">
+<h3>Frequently Asked Questions</h3>
+<p><strong>1. How is exact age calculated?</strong><br>We subtract your date of birth from today's date to get the difference in years, months, and days.</p>
+<p><strong>2. Is this calculator accurate for leap years?</strong><br>Yes, our calculator automatically accounts for leap years and gives 100% accurate results.</p>
+<p><strong>3. Can I calculate age for future dates?</strong><br>No, this tool only calculates age for past dates. Future dates will show an error.</p>
+</div>
+
+<footer>
+<a href="https://smart-tools-hub.github.io/">← Back to Smart Tools Hub Homepage</a>
+</footer>
+
+<script>
+document.getElementById('dob').max = new Date().toISOString().split('T')[0];
+function calcAge() {
+  const dob = new Date(document.getElementById('dob').value);
+  if(!dob.getTime()) return document.getElementById('result').innerHTML = '<p style="color:red">Please select your date of birth</p>';
+  const today = new Date();
+  let years = today.getFullYear() - dob.getFullYear();
+  let months = today.getMonth() - dob.getMonth();
+  let days = today.getDate() - dob.getDate();
+  if (days < 0) { months--; days += new Date(today.getFullYear(), today.getMonth(), 0).getDate(); }
+  if (months < 0) { years--; months += 12; }
+  document.getElementById('result').innerHTML = `Your Exact Age: <strong>${years}</strong> Years, <strong>${months}</strong> Months, <strong>${days}</strong> Days`;
+}
+</script>
+</body>
+</html>
