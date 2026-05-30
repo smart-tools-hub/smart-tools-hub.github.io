@@ -1,0 +1,75 @@
+<!DOCTYPE html>
+<html lang="en-US">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>How Old Am I Calculator - Find Your Age Instantly Online</title>
+<meta name="description" content="Wondering 'how old am I'? Enter your date of birth to instantly find your age in years, months, and days. 100% free tool for USA.">
+<style>
+body{font-family:Arial,sans-serif;max-width:700px;margin:40px auto;padding:20px;line-height:1.6;color:#333}
+h1{color:#2c3e50}
+.calculator{background:#f8f9fa;padding:25px;border-radius:8px;margin:25px 0;box-shadow:0 2px 4px rgba(0,0,0,0.1)}
+input[type="date"]{padding:10px;font-size:16px;width:100%;max-width:300px;border:1px solid #ddd;border-radius:4px}
+button{padding:12px 25px;background:#e74c3c;color:#fff;border:none;border-radius:4px;font-size:16px;cursor:pointer;margin-top:15px}
+button:hover{background:#c0392b}
+#result{margin-top:20px;font-size:18px;color:#27ae60;font-weight:bold}
+.related-tools{margin:40px 0;padding:25px;background:#ecf0f1;border-radius:8px}
+.related-tools h3{color:#2c3e50;margin-top:0}
+.related-tools ul{list-style:none;padding:0}
+.related-tools li{margin:10px 0}
+.related-tools a{color:#e74c3c;text-decoration:none}
+.related-tools a:hover{text-decoration:underline}
+.faq{margin-top:40px}
+.faq h3{color:#34495e}
+footer{text-align:center;margin-top:40px;padding-top:20px;border-top:1px solid #ddd}
+footer a{color:#e74c3c;text-decoration:none}
+</style>
+</head>
+<body>
+<h1>How Old Am I?</h1>
+<p>Just type your birthday and instantly know "how old am I" in years, months, and days. Perfect for kids, students, and adults in the USA who want to know their exact age for forms, documents, or just curiosity.</p>
+
+<div class="calculator">
+<label for="dob"><strong>Enter Your Birthday:</strong></label><br>
+<input type="date" id="dob" max="">
+<button onclick="calcAge()">Find My Age</button>
+<div id="result"></div>
+</div>
+
+<div class="related-tools">
+<h3>Other Free Tools on Smart Tools Hub</h3>
+<ul>
+<li><a href="https://smart-tools-hub.github.io/text-counter/">Text Counter Tool</a> - Free online text analysis</li>
+<li><a href="https://smart-tools-hub.github.io/bmi-calculator-for-kids/">BMI Calculator for Kids</a> - Children BMI Percentile Checker</li>
+<li><a href="https://smart-tools-hub.github.io/ideal-weight-calculator/">Ideal Weight Calculator</a> - Find your perfect body weight</li>
+<li><a href="https://smart-tools-hub.github.io/body-fat-calculator/">Body Fat Calculator</a> - Estimate body fat % using BMI</li>
+</ul>
+</div>
+
+<div class="faq">
+<h3>Frequently Asked Questions</h3>
+<p><strong>1. How do I know how old I am?</strong><br>Enter your date of birth in the field above and click "Find My Age" to see your exact age.</p>
+<p><strong>2. Why does it show months and days too?</strong><br>For exact calculation, we break down your age into years, months, and days for complete accuracy.</p>
+<p><strong>3. Is my data saved?</strong><br>No, 100% private. Nothing is stored or sent to any server. Everything runs in your browser.</p>
+</div>
+
+<footer>
+<a href="https://smart-tools-hub.github.io/">← Back to Smart Tools Hub Homepage</a>
+</footer>
+
+<script>
+document.getElementById('dob').max = new Date().toISOString().split('T')[0];
+function calcAge() {
+  const dob = new Date(document.getElementById('dob').value);
+  if(!dob.getTime()) return document.getElementById('result').innerHTML = '<p style="color:red">Please select your birthday</p>';
+  const today = new Date();
+  let years = today.getFullYear() - dob.getFullYear();
+  let months = today.getMonth() - dob.getMonth();
+  let days = today.getDate() - dob.getDate();
+  if (days < 0) { months--; days += new Date(today.getFullYear(), today.getMonth(), 0).getDate(); }
+  if (months < 0) { years--; months += 12; }
+  document.getElementById('result').innerHTML = `You are <strong>${years}</strong> Years, <strong>${months}</strong> Months, and <strong>${days}</strong> Days old`;
+}
+</script>
+</body>
+</html>
