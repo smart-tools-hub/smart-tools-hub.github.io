@@ -1,220 +1,123 @@
+========== FILE: bill-tip-calculator.html ==========
 <!DOCTYPE html>
 <html lang="en">
 <head>
-<meta charset="UTF-8">
-<meta name="viewport" content="width=device-width, initial-scale=1.0">
-<title>Smart Tools Hub ULTRA PRO</title>
-<style>
-* {margin:0; padding:0; box-sizing:border-box;}
-body {
-  background:#0a0e1a;
-  color:#fff;
-  font-family:'Segoe UI', Arial, sans-serif;
-  padding:15px;
-}
-nav {
-  text-align:center;
-  margin:15px 0 30px;
-}
-nav a {
-  color:#38bdf8;
-  text-decoration:none;
-  margin:0 12px;
-  font-weight:600;
-}
-h1 {
-  text-align:center;
-  color:#38bdf8;
-  margin-bottom:35px;
-  font-size:26px;
-  font-weight:800;
-}
-.tools-grid {
-  display:grid;
-  grid-template-columns:repeat(auto-fit, minmax(280px, 1fr));
-  gap:18px;
-  margin-bottom:40px;
-}
-.tool-card {
-  background:#111827;
-  padding:22px;
-  border-radius:14px;
-  box-shadow:0 0 15px rgba(56, 189, 248, 0.1);
-  border:1px solid #1f2937;
-  transition:0.3s;
-}
-.tool-card:hover {
-  border-color:#38bdf8;
-  transform:translateY(-3px);
-}
-.tool-card h2 {
-  color:#38bdf8;
-  margin-bottom:10px;
-  font-size:17px;
-}
-.tool-card p {
-  color:#9ca3af;
-  font-size:13px;
-  margin-bottom:15px;
-}
-.tool-card a {
-  display:block;
-  text-align:center;
-  background:transparent;
-  color:#38bdf8;
-  border:2px solid #38bdf8;
-  padding:10px;
-  border-radius:10px;
-  font-weight:600;
-  text-decoration:none;
-  transition:0.3s;
-}
-.tool-card a:hover {
-  background:#38bdf8;
-  color:#0a0e1a;
-}
-.about {
-  margin-top:40px;
-  text-align:center;
-  padding:20px;
-}
-.about h2 {
-  color:#38bdf8;
-  margin-bottom:15px;
-}
-.about p {
-  color:#9ca3af;
-  margin-bottom:12px;
-  font-size:14px;
-}
-footer {
-  text-align:center;
-  margin-top:40px;
-  padding-top:20px;
-  border-top:1px solid #1f2937;
-  color:#6b7280;
-  font-size:13px;
-}
-footer a {
-  color:#38bdf8;
-  text-decoration:none;
-  margin:0 6px;
-}
-</style>
+<meta charset="UTF-8"><meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Bill Tip Calculator - Smart Tools Hub</title>
+<style>*{margin:0;padding:0;box-sizing:border-box;}body{background:#0a0e1a;color:#fff;font-family:'Segoe UI',system-ui,sans-serif;padding:20px;min-height:100vh;}nav{text-align:center;margin-bottom:40px;}nav a{color:#38bdf8;text-decoration:none;margin:0 15px;font-weight:600;}.container{max-width:650px;margin:0 auto;}h1{text-align:center;color:#38bdf8;margin-bottom:15px;font-size:32px;font-weight:800;}.desc{text-align:center;color:#9ca3af;margin-bottom:40px;font-size:15px;line-height:1.7;}.tool-box{background:#111827;padding:35px;border-radius:14px;border:1px solid #1f2937;box-shadow:0 0 20px rgba(56,189,248,0.1);}label{display:block;margin-bottom:8px;color:#9ca3af;font-size:14px;font-weight:600;}input{width:100%;padding:14px;border-radius:10px;border:2px solid #1f2937;background:#1f2937;color:#fff;margin-bottom:20px;outline:none;font-size:15px;}input:focus{border-color:#38bdf8;}button{background:#38bdf8;color:#0a0e1a;border:none;padding:15px;border-radius:10px;font-weight:700;cursor:pointer;width:100%;font-size:16px;transition:0.3s;}button:hover{background:#0ea5e9;transform:scale(1.02);}.result{margin-top:25px;padding:20px;background:#1f2937;border-radius:10px;text-align:center;color:#38bdf8;font-weight:700;font-size:20px;border:2px solid #38bdf8;display:none;}footer{text-align:center;margin-top:50px;padding-top:25px;border-top:1px solid #1f2937;color:#6b7280;font-size:14px;}</style>
 </head>
 <body>
-
-<nav>
-  <a href="#">Home</a>
-  <a href="#tools">Tools</a>
-  <a href="#about">About</a>
-</nav>
-
-<h1>🔥 Smart Tools Hub ULTRA PRO</h1>
-
-<div class="tools-grid" id="tools">
-
-<!-- Health Tools -->
-<div class="tool-card">
-  <h2>BMI Calculator</h2>
-  <p>Calculate your Body Mass Index instantly</p>
-  <a href="bmi-calculator.html">Open Tool</a>
+<nav><a href="index.html">Home</a><a href="index.html#tools">All Tools</a></nav>
+<div class="container">
+<h1>Bill Tip Calculator</h1>
+<p class="desc">Split restaurant bill with tip calculation per person</p>
+<div class="tool-box">
+<label>Total Bill ($)</label>
+<input type="number" placeholder="Enter total bill" id="bill" step="0.01">
+<label>Tip Percentage (%)</label>
+<input type="number" placeholder="15" id="tip" value="15">
+<label>Number of People</label>
+<input type="number" placeholder="Enter number of people" id="people" value="1" min="1">
+<button onclick="calculateBillTip()">Calculate Per Person</button>
+<div class="result" id="result"></div>
 </div>
-
-<div class="tool-card">
-  <h2>BMI for Kids</h2>
-  <p>Check healthy BMI range for children</p>
-  <a href="bmi-for-kids.html">Open Tool</a>
 </div>
+<footer><p>© 2026 Smart Tools Hub</p><p><a href="index.html" style="color:#38bdf8;text-decoration:none;">Back to Home</a></p><p style="margin-top:10px;">Created by Muhammad Ayaz</p></footer>
+<script>function calculateBillTip(){const bill=parseFloat(document.getElementById('bill').value);const tip=parseFloat(document.getElementById('tip').value);const people=parseInt(document.getElementById('people').value);if(bill&&tip>=0&&people>0){const tipAmount=bill*tip/100;const total=bill+tipAmount;const perPerson=(total/people).toFixed(2);const resultBox=document.getElementById('result');resultBox.style.display="block";resultBox.innerHTML=`Total Tip: $${tipAmount.toFixed(2)}<br>Total Bill: $${total.toFixed(2)}<br>Per Person: $${perPerson}`;}else{alert('Please enter valid values');}}</script>
+</body></html>
 
-<div class="tool-card">
-  <h2>Body Fat Calculator</h2>
-  <p>Estimate your body fat percentage</p>
-  <a href="body-fat-calculator.html">Open Tool</a>
+========== FILE: quick-tip-calculator.html ==========
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8"><meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Quick Tip Calculator - Smart Tools Hub</title>
+<style>*{margin:0;padding:0;box-sizing:border-box;}body{background:#0a0e1a;color:#fff;font-family:'Segoe UI',system-ui,sans-serif;padding:20px;min-height:100vh;}nav{text-align:center;margin-bottom:40px;}nav a{color:#38bdf8;text-decoration:none;margin:0 15px;font-weight:600;}.container{max-width:650px;margin:0 auto;}h1{text-align:center;color:#38bdf8;margin-bottom:15px;font-size:32px;font-weight:800;}.desc{text-align:center;color:#9ca3af;margin-bottom:40px;font-size:15px;line-height:1.7;}.tool-box{background:#111827;padding:35px;border-radius:14px;border:1px solid #1f2937;box-shadow:0 0 20px rgba(56,189,248,0.1);}label{display:block;margin-bottom:8px;color:#9ca3af;font-size:14px;font-weight:600;}input{width:100%;padding:14px;border-radius:10px;border:2px solid #1f2937;background:#1f2937;color:#fff;margin-bottom:20px;outline:none;font-size:15px;}input:focus{border-color:#38bdf8;}.btn-group{display:grid;grid-template-columns:repeat(3,1fr);gap:10px;margin-bottom:20px;}.btn-tip{background:#1f2937;color:#38bdf8;border:2px solid #1f2937;padding:12px;border-radius:10px;font-weight:600;cursor:pointer;transition:0.3s;}.btn-tip:hover{border-color:#38bdf8;background:#111827;}.result{margin-top:25px;padding:20px;background:#1f2937;border-radius:10px;text-align:center;color:#38bdf8;font-weight:700;font-size:20px;border:2px solid #38bdf8;display:none;}footer{text-align:center;margin-top:50px;padding-top:25px;border-top:1px solid #1f2937;color:#6b7280;font-size:14px;}</style>
+</head>
+<body>
+<nav><a href="index.html">Home</a><a href="index.html#tools">All Tools</a></nav>
+<div class="container">
+<h1>Quick Tip Calculator</h1>
+<p class="desc">Fast tip calculation with preset percentages</p>
+<div class="tool-box">
+<label>Bill Amount ($)</label>
+<input type="number" placeholder="Enter bill amount" id="bill" step="0.01">
+<div class="btn-group">
+<button class="btn-tip" onclick="quickTip(10)">10%</button>
+<button class="btn-tip" onclick="quickTip(15)">15%</button>
+<button class="btn-tip" onclick="quickTip(20)">20%</button>
 </div>
-
-<div class="tool-card">
-  <h2>Ideal Weight Calculator</h2>
-  <p>Find your ideal body weight</p>
-  <a href="ideal-weight-calculator.html">Open Tool</a>
+<div class="result" id="result"></div>
 </div>
-
-<!-- Text Tools -->
-<div class="tool-card">
-  <h2>Word Counter</h2>
-  <p>Count words and characters in text</p>
-  <a href="word-counter.html">Open Tool</a>
 </div>
+<footer><p>© 2026 Smart Tools Hub</p><p><a href="index.html" style="color:#38bdf8;text-decoration:none;">Back to Home</a></p><p style="margin-top:10px;">Created by Muhammad Ayaz</p></footer>
+<script>function quickTip(percent){const bill=parseFloat(document.getElementById('bill').value);if(bill){const tipAmount=(bill*percent/100).toFixed(2);const total=(bill+parseFloat(tipAmount)).toFixed(2);const resultBox=document.getElementById('result');resultBox.style.display="block";resultBox.innerHTML=`${percent}% Tip: $${tipAmount}<br>Total: $${total}`;}else{alert('Please enter bill amount');}}</script>
+</body></html>
 
-<div class="tool-card">
-  <h2>Free Word Counter</h2>
-  <p>Advanced word and character counter</p>
-  <a href="free-word-counter.html">Open Tool</a>
+========== FILE: 20-percent-tip-calculator.html ==========
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8"><meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>20% Tip Calculator - Smart Tools Hub</title>
+<style>*{margin:0;padding:0;box-sizing:border-box;}body{background:#0a0e1a;color:#fff;font-family:'Segoe UI',system-ui,sans-serif;padding:20px;min-height:100vh;}nav{text-align:center;margin-bottom:40px;}nav a{color:#38bdf8;text-decoration:none;margin:0 15px;font-weight:600;}.container{max-width:650px;margin:0 auto;}h1{text-align:center;color:#38bdf8;margin-bottom:15px;font-size:32px;font-weight:800;}.desc{text-align:center;color:#9ca3af;margin-bottom:40px;font-size:15px;line-height:1.7;}.tool-box{background:#111827;padding:35px;border-radius:14px;border:1px solid #1f2937;box-shadow:0 0 20px rgba(56,189,248,0.1);}label{display:block;margin-bottom:8px;color:#9ca3af;font-size:14px;font-weight:600;}input{width:100%;padding:14px;border-radius:10px;border:2px solid #1f2937;background:#1f2937;color:#fff;margin-bottom:20px;outline:none;font-size:15px;}input:focus{border-color:#38bdf8;}button{background:#38bdf8;color:#0a0e1a;border:none;padding:15px;border-radius:10px;font-weight:700;cursor:pointer;width:100%;font-size:16px;transition:0.3s;}button:hover{background:#0ea5e9;transform:scale(1.02);}.result{margin-top:25px;padding:20px;background:#1f2937;border-radius:10px;text-align:center;color:#38bdf8;font-weight:700;font-size:20px;border:2px solid #38bdf8;display:none;}footer{text-align:center;margin-top:50px;padding-top:25px;border-top:1px solid #1f2937;color:#6b7280;font-size:14px;}</style>
+</head>
+<body>
+<nav><a href="index.html">Home</a><a href="index.html#tools">All Tools</a></nav>
+<div class="container">
+<h1>20% Tip Calculator</h1>
+<p class="desc">Calculate 20% tip and total bill instantly</p>
+<div class="tool-box">
+<label>Bill Amount ($)</label>
+<input type="number" placeholder="Enter bill amount" id="bill" step="0.01">
+<button onclick="calculate20Percent()">Calculate 20% Tip</button>
+<div class="result" id="result"></div>
 </div>
-
-<div class="tool-card">
-  <h2>Character Counter</h2>
-  <p>Count characters with and without spaces</p>
-  <a href="character-counter.html">Open Tool</a>
 </div>
+<footer><p>© 2026 Smart Tools Hub</p><p><a href="index.html" style="color:#38bdf8;text-decoration:none;">Back to Home</a></p><p style="margin-top:10px;">Created by Muhammad Ayaz</p></footer>
+<script>function calculate20Percent(){const bill=parseFloat(document.getElementById('bill').value);if(bill){const tipAmount=(bill*0.20).toFixed(2);const total=(bill+parseFloat(tipAmount)).toFixed(2);const resultBox=document.getElementById('result');resultBox.style.display="block";resultBox.innerHTML=`20% Tip: $${tipAmount}<br>Total: $${total}`;}else{alert('Please enter bill amount');}}</script>
+</body></html>
 
-<div class="tool-card">
-  <h2>Text Counter</h2>
-  <p>Analyze your text content</p>
-  <a href="text-counter.html">Open Tool</a>
+========== FILE: aesthetic-color-palette-generator.html ==========
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8"><meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Color Palette Generator - Smart Tools Hub</title>
+<style>*{margin:0;padding:0;box-sizing:border-box;}body{background:#0a0e1a;color:#fff;font-family:'Segoe UI',system-ui,sans-serif;padding:20px;min-height:100vh;}nav{text-align:center;margin-bottom:40px;}nav a{color:#38bdf8;text-decoration:none;margin:0 15px;font-weight:600;}.container{max-width:650px;margin:0 auto;}h1{text-align:center;color:#38bdf8;margin-bottom:15px;font-size:32px;font-weight:800;}.desc{text-align:center;color:#9ca3af;margin-bottom:40px;font-size:15px;line-height:1.7;}.tool-box{background:#111827;padding:35px;border-radius:14px;border:1px solid #1f2937;box-shadow:0 0 20px rgba(56,189,248,0.1);}button{background:#38bdf8;color:#0a0e1a;border:none;padding:15px;border-radius:10px;font-weight:700;cursor:pointer;width:100%;font-size:16px;transition:0.3s;margin-bottom:25px;}button:hover{background:#0ea5e9;transform:scale(1.02);}.palette{display:grid;grid-template-columns:repeat(5,1fr);gap:10px;margin-bottom:20px;}.color-box{height:80px;border-radius:10px;display:flex;align-items:flex-end;justify-content:center;padding-bottom:8px;font-size:12px;font-weight:600;color:#fff;text-shadow:0 0 3px rgba(0,0,0,0.7);cursor:pointer;transition:0.3s;}.color-box:hover{transform:scale(1.05);}footer{text-align:center;margin-top:50px;padding-top:25px;border-top:1px solid #1f2937;color:#6b7280;font-size:14px;}</style>
+</head>
+<body>
+<nav><a href="index.html">Home</a><a href="index.html#tools">All Tools</a></nav>
+<div class="container">
+<h1>Color Palette Generator</h1>
+<p class="desc">Generate aesthetic color palettes for your design projects</p>
+<div class="tool-box">
+<button onclick="generatePalette()">Generate New Palette</button>
+<div class="palette" id="palette"></div>
 </div>
-
-<!-- Tip Calculators -->
-<div class="tool-card">
-  <h2>Tip Calculator</h2>
-  <p>Calculate tip amount easily</p>
-  <a href="tip-calculator.html">Open Tool</a>
 </div>
+<footer><p>© 2026 Smart Tools Hub</p><p><a href="index.html" style="color:#38bdf8;text-decoration:none;">Back to Home</a></p><p style="margin-top:10px;">Created by Muhammad Ayaz</p></footer>
+<script>function getRandomColor(){return'#'+Math.floor(Math.random()*16777215).toString(16).padStart(6,'0');}function generatePalette(){const palette=document.getElementById('palette');palette.innerHTML='';for(let i=0;i<5;i++){const color=getRandomColor();const box=document.createElement('div');box.className='color-box';box.style.backgroundColor=color;box.textContent=color.toUpperCase();box.onclick=()=>{navigator.clipboard.writeText(color);alert(`Copied: ${color}`);};palette.appendChild(box);}}generatePalette();</script>
+</body></html>
 
-<div class="tool-card">
-  <h2>Bill Tip Calculator</h2>
-  <p>Split bill with tip calculation</p>
-  <a href="bill-tip-calculator.html">Open Tool</a>
+========== FILE: soft-aesthetic-color-palette-generator.html ==========
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8"><meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Soft Color Palette Generator - Smart Tools Hub</title>
+<style>*{margin:0;padding:0;box-sizing:border-box;}body{background:#0a0e1a;color:#fff;font-family:'Segoe UI',system-ui,sans-serif;padding:20px;min-height:100vh;}nav{text-align:center;margin-bottom:40px;}nav a{color:#38bdf8;text-decoration:none;margin:0 15px;font-weight:600;}.container{max-width:650px;margin:0 auto;}h1{text-align:center;color:#38bdf8;margin-bottom:15px;font-size:32px;font-weight:800;}.desc{text-align:center;color:#9ca3af;margin-bottom:40px;font-size:15px;line-height:1.7;}.tool-box{background:#111827;padding:35px;border-radius:14px;border:1px solid #1f2937;box-shadow:0 0 20px rgba(56,189,248,0.1);}button{background:#38bdf8;color:#0a0e1a;border:none;padding:15px;border-radius:10px;font-weight:700;cursor:pointer;width:100%;font-size:16px;transition:0.3s;margin-bottom:25px;}button:hover{background:#0ea5e9;transform:scale(1.02);}.palette{display:grid;grid-template-columns:repeat(5,1fr);gap:10px;margin-bottom:20px;}.color-box{height:80px;border-radius:10px;display:flex;align-items:flex-end;justify-content:center;padding-bottom:8px;font-size:12px;font-weight:600;color:#1a1a1a;cursor:pointer;transition:0.3s;}.color-box:hover{transform:scale(1.05);}footer{text-align:center;margin-top:50px;padding-top:25px;border-top:1px solid #1f2937;color:#6b7280;font-size:14px;}</style>
+</head>
+<body>
+<nav><a href="index.html">Home</a><a href="index.html#tools">All Tools</a></nav>
+<div class="container">
+<h1>Soft Color Palette Generator</h1>
+<p class="desc">Generate soft aesthetic pastel color palettes</p>
+<div class="tool-box">
+<button onclick="generateSoftPalette()">Generate Soft Palette</button>
+<div class="palette" id="palette"></div>
 </div>
-
-<div class="tool-card">
-  <h2>Quick Tip Calculator</h2>
-  <p>Fast tip calculation tool</p>
-  <a href="quick-tip-calculator.html">Open Tool</a>
 </div>
-
-<div class="tool-card">
-  <h2>20% Tip Calculator</h2>
-  <p>Calculate 20% tip instantly</p>
-  <a href="20-percent-tip-calculator.html">Open Tool</a>
-</div>
-
-<!-- Design Tools -->
-<div class="tool-card">
-  <h2>Color Palette Generator</h2>
-  <p>Generate aesthetic color palettes</p>
-  <a href="aesthetic-color-palette-generator.html">Open Tool</a>
-</div>
-
-<div class="tool-card">
-  <h2>Soft Color Palette</h2>
-  <p>Create soft aesthetic colors</p>
-  <a href="soft-aesthetic-color-palette-generator.html">Open Tool</a>
-</div>
-
-</div>
-
-<div class="about" id="about">
-  <h2>About Smart Tools Hub</h2>
-  <p>Smart Tools Hub ek free online tools website hai jahan aap Calculators, Text Tools, aur Design Tools use kar sakte ho.</p>
-  <p>Yeh website fast, secure aur mobile-friendly hai. Bina download ke directly browser me tools use karo.</p>
-</div>
-
-<footer>
-  <p>© 2026 Smart Tools Hub</p>
-  <p><a href="#">Privacy Policy</a> | <a href="#">Contact</a> | <a href="#">About</a> | <a href="#">Terms</a></p>
-  <p style="margin-top:10px;">Created by Suraj Nair</p>
-</footer>
-
-</body>
-</html>
+<footer><p>© 2026 Smart Tools Hub</p><p><a href="index.html" style="color:#38bdf8;text-decoration:none;">Back to Home</a></p><p style="margin-top:10px;">Created by Muhammad Ayaz</p></footer>
+<script>function getSoftColor(){const r=Math.floor(150+Math.random()*105);const g=Math.floor(150+Math.random()*105);const b=Math.floor(150+Math.random()*105);return`#${r.toString(16).padStart(2,'0')}${g.toString(16).padStart(2,'0')}${b.toString(16).padStart(2,'0')}`;}function generateSoftPalette(){const palette=document.getElementById('palette');palette.innerHTML='';for(let i=0;i<5;i++){const color=getSoftColor();const box=document.createElement('div');box.className='color-box';box.style.backgroundColor=color;box.textContent=color.toUpperCase();box.onclick=()=>{navigator.clipboard.writeText(color);alert(`Copied: ${color}`);};palette.appendChild(box);}}generateSoftPalette();</script>
+</body></html>
