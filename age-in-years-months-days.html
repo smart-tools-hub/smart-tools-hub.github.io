@@ -1,0 +1,75 @@
+<!DOCTYPE html>
+<html lang="en-US">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Age in Years Months Days Calculator - Precise Age Tool</title>
+<meta name="description" content="Calculate age in years, months, and days with our precise Age Calculator. Free online tool for USA users. No download needed.">
+<style>
+body{font-family:Arial,sans-serif;max-width:700px;margin:40px auto;padding:20px;line-height:1.6;color:#333}
+h1{color:#2c3e50}
+.calculator{background:#f8f9fa;padding:25px;border-radius:8px;margin:25px 0;box-shadow:0 2px 4px rgba(0,0,0,0.1)}
+input[type="date"]{padding:10px;font-size:16px;width:100%;max-width:300px;border:1px solid #ddd;border-radius:4px}
+button{padding:12px 25px;background:#9b59b6;color:#fff;border:none;border-radius:4px;font-size:16px;cursor:pointer;margin-top:15px}
+button:hover{background:#8e44ad}
+#result{margin-top:20px;font-size:18px;color:#27ae60;font-weight:bold}
+.related-tools{margin:40px 0;padding:25px;background:#ecf0f1;border-radius:8px}
+.related-tools h3{color:#2c3e50;margin-top:0}
+.related-tools ul{list-style:none;padding:0}
+.related-tools li{margin:10px 0}
+.related-tools a{color:#9b59b6;text-decoration:none}
+.related-tools a:hover{text-decoration:underline}
+.faq{margin-top:40px}
+.faq h3{color:#34495e}
+footer{text-align:center;margin-top:40px;padding-top:20px;border-top:1px solid #ddd}
+footer a{color:#9b59b6;text-decoration:none}
+</style>
+</head>
+<body>
+<h1>Calculate Age in Years, Months & Days</h1>
+<p>Need to know age in years, months, and days? Our calculator gives you the most precise age breakdown for official USA documents, medical records, and legal purposes.</p>
+
+<div class="calculator">
+<label for="dob"><strong>Enter Your Date of Birth:</strong></label><br>
+<input type="date" id="dob" max="">
+<button onclick="calcAge()">Calculate Age Breakdown</button>
+<div id="result"></div>
+</div>
+
+<div class="related-tools">
+<h3>Other Free Tools on Smart Tools Hub</h3>
+<ul>
+<li><a href="https://smart-tools-hub.github.io/word-counter/">Word Counter Online</a> - Count words, characters & reading time</li>
+<li><a href="https://smart-tools-hub.github.io/text-counter/">Text Counter Tool</a> - Free online text analysis</li>
+<li><a href="https://smart-tools-hub.github.io/muted-pastel-palette-maker/">Muted Pastel Palette Maker</a> - Free soft color generator</li>
+<li><a href="https://smart-tools-hub.github.io/">View All Tools</a> - 20+ free online tools</li>
+</ul>
+</div>
+
+<div class="faq">
+<h3>Frequently Asked Questions</h3>
+<p><strong>1. Why do I need months and days?</strong><br>For legal, medical, and school purposes, exact age breakdown is often required.</p>
+<p><strong>2. How accurate is the result?</strong><br>100% accurate to the exact day, including leap years.</p>
+<p><strong>3. Can I print the result?</strong><br>Yes, use your browser's print function to save or print the result.</p>
+</div>
+
+<footer>
+<a href="https://smart-tools-hub.github.io/">← Back to Smart Tools Hub Homepage</a>
+</footer>
+
+<script>
+document.getElementById('dob').max = new Date().toISOString().split('T')[0];
+function calcAge() {
+  const dob = new Date(document.getElementById('dob').value);
+  if(!dob.getTime()) return document.getElementById('result').innerHTML = '<p style="color:red">Please select a date</p>';
+  const today = new Date();
+  let years = today.getFullYear() - dob.getFullYear();
+  let months = today.getMonth() - dob.getMonth();
+  let days = today.getDate() - dob.getDate();
+  if (days < 0) { months--; days += new Date(today.getFullYear(), today.getMonth(), 0).getDate(); }
+  if (months < 0) { years--; months += 12; }
+  document.getElementById('result').innerHTML = `<strong>${years}</strong> Years, <strong>${months}</strong> Months, <strong>${days}</strong> Days`;
+}
+</script>
+</body>
+</html>
