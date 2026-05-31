@@ -1,0 +1,119 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Loan Calculator - Calculate EMI, Interest & Total Payment</title>
+<meta name="description" content="Free Loan Calculator online. Calculate EMI, monthly payment, total interest and total amount. Works for personal loan, home loan, car loan. No signup required.">
+<style>
+body{font-family:Arial,sans-serif;background:#f5f7fa;margin:0;padding:20px;line-height:1.6}
+.container{max-width:700px;margin:auto;background:white;padding:25px;border-radius:12px;box-shadow:0 2px 8px rgba(0,0,0,0.1)}
+h1{color:#222;text-align:center;font-size:28px;margin-bottom:10px}
+p{text-align:center;color:#555;margin-bottom:20px}
+label{display:block;margin-top:15px;font-weight:bold;color:#333}
+input{width:100%;padding:12px;margin:8px 0;border:1px solid #ddd;border-radius:8px;font-size:16px;box-sizing:border-box}
+button{background:#4a90e2;color:white;border:none;padding:14px;border-radius:8px;font-size:18px;cursor:pointer;width:100%;margin-top:15px}
+button:hover{background:#357abd}
+#result{margin-top:25px;padding:20px;border-radius:8px;background:#e8f5e9;display:none}
+.result-box{display:flex;justify-content:space-between;margin:10px 0;font-size:18px}
+.content{margin-top:40px}
+.content h2{color:#333;font-size:22px;margin-top:30px}
+.faq{background:#f9f9f9;padding:15px;border-radius:8px;margin-top:15px}
+@media(max-width:600px){.container{padding:15px}h1{font-size:24px}}
+</style>
+</head>
+<body>
+<div class="container">
+<h1>Loan Calculator</h1>
+<p>Calculate EMI, monthly payment and total interest for any loan type. Enter loan amount, interest rate and tenure.</p>
+
+<label>Loan Amount $</label>
+<input type="number" id="amount" placeholder="Enter loan amount" min="1000" max="1000000">
+
+<label>Annual Interest Rate %</label>
+<input type="number" id="rate" placeholder="Enter interest rate" min="1" max="30" step="0.1">
+
+<label>Loan Tenure Years</label>
+<input type="number" id="years" placeholder="Enter years" min="1" max="30">
+
+<button onclick="calculateLoan()">Calculate EMI Now</button>
+
+<div id="result">
+<h3 style="text-align:center;margin-top:0">Loan Summary</h3>
+<div class="result-box"><span>Monthly EMI:</span><span id="emi" style="font-weight:bold;color:#4a90e2"></span></div>
+<div class="result-box"><span>Total Interest:</span><span id="interest" style="font-weight:bold;color:#ff5722"></span></div>
+<div class="result-box"><span>Total Payment:</span><span id="total" style="font-weight:bold;color:#4caf50"></span></div>
+</div>
+
+<div class="content">
+<h2>What is Loan Calculator?</h2>
+<p>Loan Calculator is a free online tool that helps you calculate Equated Monthly Installment EMI for any type of loan. Whether you are planning for personal loan, home loan, car loan or business loan, this calculator shows exact monthly payment amount. You just need to enter three things: loan amount, annual interest rate, and loan tenure in years. The calculator uses standard EMI formula used by banks worldwide to give accurate results. No registration required and works instantly on mobile phones and desktop computers. Students, business owners and home buyers use this tool daily to plan their loan repayment before applying at bank. All calculations happen in your browser so your financial data stays 100% private and secure.</p>
+
+<h2>How EMI is Calculated - Formula</h2>
+<p>EMI is calculated using this standard banking formula:<br>
+<b>EMI = P × r × (1 + r)^n / [(1 + r)^n - 1]</b><br>
+Where P = Loan Amount, r = Monthly Interest Rate, n = Total Months<br>
+Our calculator automatically converts annual rate to monthly and years to months for accurate results.</p>
+
+<h2>Types of Loans You Can Calculate</h2>
+<ul>
+<li><b>Personal Loan:</b> Check EMI for unsecured personal loans</li>
+<li><b>Home Loan:</b> Plan monthly payment for house purchase</li>
+<li><b>Car Loan:</b> Calculate auto loan EMI before buying car</li>
+<li><b>Business Loan:</b> Estimate repayment for business expansion</li>
+<li><b>Education Loan:</b> Plan student loan monthly installments</li>
+</ul>
+
+<div class="faq">
+<h3>Frequently Asked Questions</h3>
+<b>What is EMI in loan calculator?</b><br>
+EMI stands for Equated Monthly Installment. It is the fixed amount you pay to bank every month until loan is fully repaid. EMI includes both principal amount and interest portion. Our calculator shows exact EMI amount based on loan amount, interest rate and tenure you enter.<br><br>
+
+<b>Can I use this calculator for mortgage loan?</b><br>
+Yes, this loan calculator works for mortgage or home loans also. Just enter home loan amount, interest rate offered by bank, and loan tenure like 15 years or 30 years. It will show monthly mortgage payment with total interest.<br><br>
+
+<b>Does interest rate change EMI amount?</b><br>
+Yes, interest rate has biggest impact on EMI. Even 0.5% difference in interest rate can change monthly payment by hundreds of dollars for large loans. Use this calculator to compare different banks and choose lowest EMI option.
+</div>
+
+<div style="background:#fff3cd;border-left:4px solid #ffc107;padding:15px;margin-top:30px;border-radius:8px">
+<h3 style="margin-top:0;color:#333">Related Loan Calculators</h3>
+<p style="margin-bottom:10px">Calculate other loan EMIs also:</p>
+<ul style="margin:0;padding-left:20px;line-height:1.8">
+<li><a href="emi-calculator.html" style="color:#4a90e2;text-decoration:none">EMI Calculator - Monthly Installment</a></li>
+<li><a href="mortgage-calculator-usa.html" style="color:#4a90e2;text-decoration:none">Mortgage Calculator USA - Home Loan</a></li>
+<li><a href="auto-loan-calculator.html" style="color:#4a90e2;text-decoration:none">Auto Loan Calculator - Car Loan</a></li>
+</ul>
+</div>
+</div>
+</div>
+
+<script>
+function calculateLoan(){
+const P = parseFloat(document.getElementById('amount').value);
+const annualRate = parseFloat(document.getElementById('rate').value);
+const years = parseFloat(document.getElementById('years').value);
+const resultDiv = document.getElementById('result');
+
+if(!P || !annualRate || !years || P<1000){
+resultDiv.style.display='block';
+resultDiv.style.background='#ffebee';
+resultDiv.innerHTML='<p style="color:red;text-align:center">Please enter valid loan amount, rate and years</p>';
+return;
+}
+
+const r = annualRate / 12 / 100;
+const n = years * 12;
+const emi = P * r * Math.pow(1 + r, n) / (Math.pow(1 + r, n) - 1);
+const total = emi * n;
+const interest = total - P;
+
+document.getElementById('emi').textContent = '$' + emi.toFixed(2);
+document.getElementById('interest').textContent = '$' + interest.toFixed(2);
+document.getElementById('total').textContent = '$' + total.toFixed(2);
+resultDiv.style.display='block';
+resultDiv.style.background='#e8f5e9';
+}
+</script>
+</body>
+</html>
