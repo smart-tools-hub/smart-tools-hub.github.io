@@ -1,0 +1,72 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8"><meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>EMI Calculator - Monthly Installment Calculator for All Loans</title>
+<meta name="description" content="Free EMI Calculator online. Calculate monthly installment for home loan, car loan, personal loan. Check EMI amount, interest and total payment instantly.">
+<style>body{font-family:Arial,sans-serif;background:#f5f7fa;margin:0;padding:20px;line-height:1.6}.container{max-width:700px;margin:auto;background:white;padding:25px;border-radius:12px;box-shadow:0 2px 8px rgba(0,0,0,0.1)}h1{color:#222;text-align:center;font-size:28px}p{text-align:center;color:#555}label{display:block;margin-top:15px;font-weight:bold;color:#333}input{width:100%;padding:12px;margin:8px 0;border:1px solid #ddd;border-radius:8px;font-size:16px;box-sizing:border-box}button{background:#4a90e2;color:white;border:none;padding:14px;border-radius:8px;font-size:18px;cursor:pointer;width:100%;margin-top:15px}button:hover{background:#357abd}#result{margin-top:25px;padding:20px;border-radius:8px;background:#e8f5e9;display:none}.result-box{display:flex;justify-content:space-between;margin:10px 0;font-size:18px}.content{margin-top:40px}.content h2{color:#333;font-size:22px;margin-top:30px}.faq{background:#f9f9f9;padding:15px;border-radius:8px;margin-top:15px}@media(max-width:600px){.container{padding:15px}h1{font-size:24px}}</style>
+</head>
+<body>
+<div class="container">
+<h1>EMI Calculator</h1>
+<p>Calculate monthly EMI installment for any loan. Know exact monthly payment before taking loan from bank.</p>
+
+<label>Loan Amount $</label><input type="number" id="amount" placeholder="Loan amount" min="1000">
+<label>Interest Rate % Per Year</label><input type="number" id="rate" placeholder="Annual rate" step="0.1">
+<label>Loan Tenure in Years</label><input type="number" id="years" placeholder="Years" min="1" max="30">
+
+<button onclick="calculateLoan()">Calculate EMI</button>
+
+<div id="result">
+<h3 style="text-align:center;margin-top:0">Your EMI Details</h3>
+<div class="result-box"><span>Monthly EMI:</span><span id="emi" style="font-weight:bold;color:#4a90e2"></span></div>
+<div class="result-box"><span>Total Interest Paid:</span><span id="interest" style="font-weight:bold;color:#ff5722"></span></div>
+<div class="result-box"><span>Total Amount:</span><span id="total" style="font-weight:bold;color:#4caf50"></span></div>
+</div>
+
+<div class="content">
+<h2>What is EMI Calculator?</h2>
+<p>EMI Calculator helps you find exact monthly installment amount for any loan. EMI means Equated Monthly Installment which is fixed amount paid to lender every month. This tool is useful before applying for home loan, car loan or personal loan. You can compare different interest rates and loan tenures to choose lowest EMI option. Banks use same formula to calculate EMI. Our calculator gives instant results without registration. Mobile friendly and works on all devices. Perfect for financial planning and budget management before taking any loan.</p>
+
+<h2>EMI Formula Explained Simply</h2>
+<p><b>EMI = [P x R x (1+R)^N] / [(1+R)^N-1]</b><br>
+P = Principal loan amount<br>
+R = Monthly interest rate = Annual rate / 12 / 100<br>
+N = Total months = Years x 12<br>
+This formula is used by all banks and financial institutions worldwide.</p>
+
+<h2>Why Calculate EMI Before Loan?</h2>
+<ul>
+<li><b>Budget Planning:</b> Know if monthly EMI fits your salary</li>
+<li><b>Compare Banks:</b> Check which bank offers lower EMI</li>
+<li><b>Tenure Choice:</b> See EMI difference between 5 year vs 10 year loan</li>
+<li><b>Total Cost:</b> Understand total interest you will pay</li>
+</ul>
+
+<div class="faq">
+<h3>EMI FAQs</h3>
+<b>What is difference between EMI and interest?</b><br>
+EMI includes both principal and interest. In starting months, EMI has more interest and less principal. In last months, EMI has more principal and less interest. Total EMI remains same every month.<br><br>
+
+<b>How to reduce EMI amount?</b><br>
+You can reduce EMI by 3 ways: 1) Increase down payment 2) Choose longer loan tenure 3) Select loan with lower interest rate. Use this calculator to test different combinations.<br><br>
+
+<b>Does EMI change every month?</b><br>
+No, EMI remains fixed for entire loan tenure in fixed rate loans. Only in floating rate loans EMI may change if interest rate changes as per RBI guidelines.
+</div>
+
+<div style="background:#fff3cd;border-left:4px solid #ffc107;padding:15px;margin-top:30px;border-radius:8px">
+<h3 style="margin-top:0;color:#333">Related Loan Calculators</h3>
+<p style="margin-bottom:10px">Calculate other loan EMIs also:</p>
+<ul style="margin:0;padding-left:20px;line-height:1.8">
+<li><a href="loan-calculator.html" style="color:#4a90e2;text-decoration:none">Loan Calculator - All Loan Types</a></li>
+<li><a href="mortgage-calculator-usa.html" style="color:#4a90e2;text-decoration:none">Mortgage Calculator USA - Home Loan</a></li>
+<li><a href="auto-loan-calculator.html" style="color:#4a90e2;text-decoration:none">Auto Loan Calculator - Car Loan</a></li>
+</ul>
+</div>
+</div>
+</div>
+
+<script>function calculateLoan(){const P=parseFloat(document.getElementById('amount').value);const annualRate=parseFloat(document.getElementById('rate').value);const years=parseFloat(document.getElementById('years').value);const resultDiv=document.getElementById('result');if(!P||!annualRate||!years){resultDiv.style.display='block';resultDiv.style.background='#ffebee';resultDiv.innerHTML='<p style="color:red;text-align:center">Enter all values</p>';return}const r=annualRate/12/100;const n=years*12;const emi=P*r*Math.pow(1+r,n)/(Math.pow(1+r,n)-1);const total=emi*n;const interest=total-P;document.getElementById('emi').textContent='$'+emi.toFixed(2);document.getElementById('interest').textContent='$'+interest.toFixed(2);document.getElementById('total').textContent='$'+total.toFixed(2);resultDiv.style.display='block'}</script>
+</body>
+</html>
