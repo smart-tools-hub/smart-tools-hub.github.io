@@ -1,0 +1,73 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8"><meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Auto Loan Calculator - Car Loan EMI Calculator Online</title>
+<meta name="description" content="Free Auto Loan Calculator. Calculate car loan EMI, monthly payment and total interest. Check EMI for new car loan and used car loan. Fast calculation.">
+<style>body{font-family:Arial,sans-serif;background:#f5f7fa;margin:0;padding:20px;line-height:1.6}.container{max-width:700px;margin:auto;background:white;padding:25px;border-radius:12px;box-shadow:0 2px 8px rgba(0,0,0,0.1)}h1{color:#222;text-align:center;font-size:28px}p{text-align:center;color:#555}label{display:block;margin-top:15px;font-weight:bold;color:#333}input{width:100%;padding:12px;margin:8px 0;border:1px solid #ddd;border-radius:8px;font-size:16px;box-sizing:border-box}button{background:#4a90e2;color:white;border:none;padding:14px;border-radius:8px;font-size:18px;cursor:pointer;width:100%;margin-top:15px}button:hover{background:#357abd}#result{margin-top:25px;padding:20px;border-radius:8px;background:#e8f5e9;display:none}.result-box{display:flex;justify-content:space-between;margin:10px 0;font-size:18px}table{width:100%;border-collapse:collapse;margin-top:15px}th,td{border:1px solid #ddd;padding:10px;text-align:left}.content{margin-top:40px}.content h2{color:#333;font-size:22px;margin-top:30px}.faq{background:#f9f9f9;padding:15px;border-radius:8px;margin-top:15px}@media(max-width:600px){.container{padding:15px}h1{font-size:24px}}</style>
+</head>
+<body>
+<div class="container">
+<h1>Auto Loan Calculator</h1>
+<p>Calculate car loan EMI for new and used cars. Check monthly payment before buying vehicle.</p>
+
+<label>Car Loan Amount $</label><input type="number" id="amount" placeholder="Car price" min="5000">
+<label>Interest Rate % Per Year</label><input type="number" id="rate" placeholder="Auto loan rate" step="0.1">
+<label>Loan Tenure Years</label><input type="number" id="years" placeholder="3 to 7 years" min="1" max="7">
+
+<button onclick="calculateLoan()">Calculate Car EMI</button>
+
+<div id="result">
+<h3 style="text-align:center;margin-top:0">Car Loan Summary</h3>
+<div class="result-box"><span>Monthly Car EMI:</span><span id="emi" style="font-weight:bold;color:#4a90e2"></span></div>
+<div class="result-box"><span>Total Interest:</span><span id="interest" style="font-weight:bold;color:#ff5722"></span></div>
+<div class="result-box"><span>Total Car Cost:</span><span id="total" style="font-weight:bold;color:#4caf50"></span></div>
+</div>
+
+<div class="content">
+<h2>Auto Loan Calculator for Car Buyers</h2>
+<p>Auto Loan Calculator helps you calculate monthly EMI for new car loan and used car loan. Before buying car from dealer, use this tool to check affordable EMI amount. Enter car price, auto loan interest rate and loan tenure 3 to 7 years. Most banks offer car loans for 5 to 7 years maximum. This calculator uses standard EMI formula to show exact monthly payment. Compare EMI for different car models and choose car within budget. No registration and works on mobile phones. Perfect for car shoppers to plan finances before visiting showroom.</p>
+
+<h2>Car Price vs Monthly EMI Table</h2>
+<table>
+<tr><th>Car Price</th><th>5 Year EMI at 8%</th><th>7 Year EMI at 8%</th></tr>
+<tr><td>$20,000</td><td>$406</td><td>$312</td></tr>
+<tr><td>$30,000</td><td>$608</td><td>$468</td></tr>
+<tr><td>$40,000</td><td>$811</td><td>$624</td></tr>
+</table>
+
+<h2>Car Loan Tips Before Buying</h2>
+<ul>
+<li><b>Down Payment:</b> Pay 20% down to reduce EMI and interest</li>
+<li><b>Loan Tenure:</b> 5 year loan has lower interest than 7 year</li>
+<li><b>Used Car:</b> Interest rate higher for used car loans</li>
+<li><b>Pre-Approval:</b> Get loan pre-approval before dealer negotiation</li>
+</ul>
+
+<div class="faq">
+<h3>Car Loan FAQs</h3>
+<b>What is average car loan interest rate?</b><br>
+New car loan rate is 6% to 9% per year. Used car loan rate is 8% to 12% per year. Rate depends on credit score and bank. Enter exact rate offered by dealer in calculator.<br><br>
+
+<b>How many years loan for car purchase?</b><br>
+Most auto loans in USA are 5 years or 60 months. Some banks offer 7 years for expensive cars. Shorter tenure means higher EMI but less total interest paid.<br><br>
+
+<b>Should I take loan or pay full cash for car?</b><br>
+If loan interest is less than investment return, loan is better. Use calculator to compare total interest vs investment gains. For most people, 20% down + 5 year loan is best option.
+</div>
+
+<div style="background:#fff3cd;border-left:4px solid #ffc107;padding:15px;margin-top:30px;border-radius:8px">
+<h3 style="margin-top:0;color:#333">Related Loan Calculators</h3>
+<p style="margin-bottom:10px">Calculate other loan EMIs also:</p>
+<ul style="margin:0;padding-left:20px;line-height:1.8">
+<li><a href="loan-calculator.html" style="color:#4a90e2;text-decoration:none">Loan Calculator - All Loan Types</a></li>
+<li><a href="emi-calculator.html" style="color:#4a90e2;text-decoration:none">EMI Calculator - Monthly Installment</a></li>
+<li><a href="mortgage-calculator-usa.html" style="color:#4a90e2;text-decoration:none">Mortgage Calculator USA - Home Loan</a></li>
+</ul>
+</div>
+</div>
+</div>
+
+<script>function calculateLoan(){const P=parseFloat(document.getElementById('amount').value);const annualRate=parseFloat(document.getElementById('rate').value);const years=parseFloat(document.getElementById('years').value);const resultDiv=document.getElementById('result');if(!P||!annualRate||!years){resultDiv.style.display='block';resultDiv.style.background='#ffebee';resultDiv.innerHTML='<p style="color:red;text-align:center">Enter car price, rate and years</p>';return}const r=annualRate/12/100;const n=years*12;const emi=P*r*Math.pow(1+r,n)/(Math.pow(1+r,n)-1);const total=emi*n;const interest=total-P;document.getElementById('emi').textContent='$'+emi.toFixed(2);document.getElementById('interest').textContent='$'+interest.toFixed(2);document.getElementById('total').textContent='$'+total.toFixed(2);resultDiv.style.display='block'}</script>
+</body>
+</html>
