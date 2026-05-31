@@ -1,0 +1,73 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8"><meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Mortgage Calculator USA - Home Loan EMI Calculator FHA Loan</title>
+<meta name="description" content="Free Mortgage Calculator USA. Calculate monthly mortgage payment for home loan. FHA loan, 30 year mortgage, 15 year loan EMI. USA home buyers tool.">
+<style>body{font-family:Arial,sans-serif;background:#f5f7fa;margin:0;padding:20px;line-height:1.6}.container{max-width:700px;margin:auto;background:white;padding:25px;border-radius:12px;box-shadow:0 2px 8px rgba(0,0,0,0.1)}h1{color:#222;text-align:center;font-size:28px}p{text-align:center;color:#555}label{display:block;margin-top:15px;font-weight:bold;color:#333}input{width:100%;padding:12px;margin:8px 0;border:1px solid #ddd;border-radius:8px;font-size:16px;box-sizing:border-box}button{background:#4a90e2;color:white;border:none;padding:14px;border-radius:8px;font-size:18px;cursor:pointer;width:100%;margin-top:15px}button:hover{background:#357abd}#result{margin-top:25px;padding:20px;border-radius:8px;background:#e8f5e9;display:none}.result-box{display:flex;justify-content:space-between;margin:10px 0;font-size:18px}.content{margin-top:40px}.content h2{color:#333;font-size:22px;margin-top:30px}.faq{background:#f9f9f9;padding:15px;border-radius:8px;margin-top:15px}@media(max-width:600px){.container{padding:15px}h1{font-size:24px}}</style>
+</head>
+<body>
+<div class="container">
+<h1>Mortgage Calculator USA</h1>
+<p>Calculate monthly mortgage payment for USA home loans. FHA loan, conventional loan, 30 year mortgage EMI calculator.</p>
+
+<label>Home Loan Amount $</label><input type="number" id="amount" placeholder="Loan amount" min="50000">
+<label>Interest Rate % Annual</label><input type="number" id="rate" placeholder="Mortgage rate" step="0.01">
+<label>Loan Term Years</label><input type="number" id="years" placeholder="15 or 30 years" value="30" min="10" max="30">
+
+<button onclick="calculateLoan()">Calculate Mortgage Payment</button>
+
+<div id="result">
+<h3 style="text-align:center;margin-top:0">USA Mortgage Summary</h3>
+<div class="result-box"><span>Monthly Payment:</span><span id="emi" style="font-weight:bold;color:#4a90e2"></span></div>
+<div class="result-box"><span>Total Interest 30 Years:</span><span id="interest" style="font-weight:bold;color:#ff5722"></span></div>
+<div class="result-box"><span>Total Paid:</span><span id="total" style="font-weight:bold;color:#4caf50"></span></div>
+</div>
+
+<div class="content">
+<h2>Mortgage Calculator for USA Home Buyers</h2>
+<p>Mortgage Calculator USA helps American home buyers calculate monthly mortgage payment for FHA loans, conventional loans and VA loans. In United States, most home loans are 30 year fixed mortgage. This calculator uses USA standard formula approved by Fannie Mae and Freddie Mac. Enter home loan amount, current mortgage interest rate and loan term 15 or 30 years to get exact monthly payment. USA home buyers use this tool to check affordability before house hunting. No registration required and 100% free for US residents. Works on mobile and desktop for quick mortgage planning.</p>
+
+<h2>30 Year vs 15 Year Mortgage USA</h2>
+<ul>
+<li><b>30 Year Mortgage:</b> Lower monthly payment, more total interest. Popular in USA</li>
+<li><b>15 Year Mortgage:</b> Higher monthly payment, save lakhs in interest, pay off faster</li>
+<li><b>FHA Loan:</b> Low down payment 3.5% for first time home buyers in USA</li>
+<li><b>Conventional Loan:</b> Need 20% down payment, no mortgage insurance</li>
+</ul>
+
+<h2>Current USA Mortgage Tips 2026</h2>
+<ol>
+<li>Check credit score 700+ for best mortgage rates in USA</li>
+<li>Compare rates from Wells Fargo, Chase, Bank of America</li>
+<li>20% down payment removes PMI insurance cost</li>
+<li>Use this calculator before pre-approval from lender</li>
+</ol>
+
+<div class="faq">
+<h3>USA Mortgage FAQs</h3>
+<b>What is current mortgage rate in USA 2026?</b><br>
+Mortgage rates in USA change daily. As of 2026, 30 year fixed rate ranges 6.5% to 7.5%. Check with local US banks for exact rate. This calculator lets you test different rates to plan budget.<br><br>
+
+<b>How much down payment needed for USA home loan?</b><br>
+FHA loan needs only 3.5% down payment. Conventional loan needs 20% down payment to avoid PMI. Use calculator to see EMI difference with different down payment amounts.<br><br>
+
+<b>Is 30 year mortgage better for USA buyers?</b><br>
+30 year mortgage gives lower monthly payment which suits most American families. 15 year mortgage saves interest but EMI is much higher. Use calculator to compare both options for your budget.
+</div>
+
+<div style="background:#fff3cd;border-left:4px solid #ffc107;padding:15px;margin-top:30px;border-radius:8px">
+<h3 style="margin-top:0;color:#333">Related Loan Calculators</h3>
+<p style="margin-bottom:10px">Calculate other loan EMIs also:</p>
+<ul style="margin:0;padding-left:20px;line-height:1.8">
+<li><a href="loan-calculator.html" style="color:#4a90e2;text-decoration:none">Loan Calculator - All Loan Types</a></li>
+<li><a href="emi-calculator.html" style="color:#4a90e2;text-decoration:none">EMI Calculator - Monthly Installment</a></li>
+<li><a href="auto-loan-calculator.html" style="color:#4a90e2;text-decoration:none">Auto Loan Calculator - Car Loan</a></li>
+</ul>
+</div>
+</div>
+</div>
+
+<script>function calculateLoan(){const P=parseFloat(document.getElementById('amount').value);const annualRate=parseFloat(document.getElementById('rate').value);const years=parseFloat(document.getElementById('years').value);const resultDiv=document.getElementById('result');if(!P||!annualRate||!years){resultDiv.style.display='block';resultDiv.style.background='#ffebee';resultDiv.innerHTML='<p style="color:red;text-align:center">Enter loan amount, rate and years</p>';return}const r=annualRate/12/100;const n=years*12;const emi=P*r*Math.pow(1+r,n)/(Math.pow(1+r,n)-1);const total=emi*n;const interest=total-P;document.getElementById('emi').textContent='$'+emi.toFixed(2);document.getElementById('interest').textContent='$'+interest.toFixed(2);document.getElementById('total').textContent='$'+total.toFixed(2);resultDiv.style.display='block'}</script>
+</body>
+</html>
