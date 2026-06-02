@@ -3,79 +3,340 @@
 <head>
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
-<title>Smart Tools Hub ULTRA PRO</title>
-  <!-- Google tag (gtag.js) -->
-<script async src="https://www.googletagmanager.com/gtag/js?id=G-L18N2S5RTS"></script>
-<script>
-  window.dataLayer = window.dataLayer || [];
-  function gtag(){dataLayer.push(arguments);}
-  gtag('js', new Date());
-
-  gtag('config', 'G-L18N2S5RTS');
-</script>
+<title>Smart Tools Hub - Free Online Tools & Calculators</title>
+<meta name="description" content="All-in-One Free Online Tools by Muhammad Ayaz. BMI Calculator, Loan Calculator, Unit Converters, Word Counter and more. Fast, simple, no download required.">
 <style>
-* {margin:0; padding:0; box-sizing:border-box;}
-body {background:#0a0e1a;color:#fff;font-family:'Segoe UI', Arial, sans-serif;padding:15px;}
-nav {text-align:center;margin:15px 0 30px;}
-nav a {color:#38bdf8;text-decoration:none;margin:0 12px;font-weight:600;}
-h1 {text-align:center;color:#38bdf8;margin-bottom:35px;font-size:26px;font-weight:800;}
-.tools-grid {display:grid;grid-template-columns:repeat(auto-fit, minmax(280px, 1fr));gap:18px;margin-bottom:40px;}
-.tool-card {background:#111827;padding:22px;border-radius:14px;box-shadow:0 0 15px rgba(56, 189, 248, 0.1);border:1px solid #1f2937;transition:0.3s;}
-.tool-card:hover {border-color:#38bdf8;transform:translateY(-3px);}
-.tool-card h2 {color:#38bdf8;margin-bottom:10px;font-size:17px;}
-.tool-card p {color:#9ca3af;font-size:13px;margin-bottom:15px;}
-.tool-card a {display:block;text-align:center;background:transparent;color:#38bdf8;border:2px solid #38bdf8;padding:10px;border-radius:10px;font-weight:600;text-decoration:none;transition:0.3s;}
-.tool-card a:hover {background:#38bdf8;color:#0a0e1a;}
-.about {margin-top:40px;text-align:center;padding:20px;}
-.about h2 {color:#38bdf8;margin-bottom:15px;text-shadow:0 0 10px rgba(56, 189, 248, 0.5);}
-.about p {color:#9ca3af;margin-bottom:12px;font-size:14px;line-height:1.7;}
-hr {margin:25px auto;width:60%;border:none;border-top:1px solid #1f2937;}
-footer {text-align:center;margin-top:40px;padding-top:20px;border-top:1px solid #1f2937;color:#6b7280;font-size:13px;}
-footer a {color:#38bdf8;text-decoration:none;margin:0 6px;}
-.creator {color:#38bdf8;margin-top:10px;font-weight:600;}
+* { margin:0; padding:0; box-sizing:border-box; font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif; }
+body {
+  background: linear-gradient(135deg, #fdf2f8 0%, #f0f9ff 100%);
+  min-height: 100vh;
+  color: #333;
+}
+.header {
+  background: rgba(255,255,255,0.85);
+  backdrop-filter: blur(10px);
+  padding: 18px 50px;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  box-shadow: 0 2px 20px rgba(0,0,0,0.06);
+  position: sticky;
+  top: 0;
+  z-index: 100;
+}
+.logo { 
+  font-size: 24px; 
+  font-weight: 700; 
+  background: linear-gradient(90deg, #7c3aed, #ec4899);
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+}
+nav a { 
+  margin: 0 18px; 
+  text-decoration: none; 
+  color: #555; 
+  font-weight: 500;
+  transition: 0.3s;
+}
+nav a:hover { color: #ec4899; }
+.hero {
+  text-align: center;
+  padding: 90px 20px;
+}
+.hero h1 {
+  font-size: 50px;
+  background: linear-gradient(90deg, #7c3aed, #ec4899, #f59e0b);
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+  margin-bottom: 18px;
+  font-weight: 800;
+}
+.hero p { 
+  font-size: 18px; 
+  color: #666; 
+  margin-bottom: 35px;
+  max-width: 600px;
+  margin-left: auto;
+  margin-right: auto;
+}
+.btn {
+  background: linear-gradient(90deg, #ec4899, #8b5cf6);
+  color: white;
+  padding: 15px 38px;
+  border: none;
+  border-radius: 50px;
+  font-size: 16px;
+  cursor: pointer;
+  text-decoration: none;
+  display: inline-block;
+  font-weight: 600;
+  transition: 0.3s;
+  box-shadow: 0 8px 20px rgba(236, 72, 153, 0.3);
+}
+.btn:hover { transform: translateY(-3px); box-shadow: 0 12px 25px rgba(236, 72, 153, 0.4); }
+.tools-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(260px, 1fr));
+  gap: 28px;
+  padding: 60px 50px;
+  max-width: 1300px;
+  margin: auto;
+}
+.tool-card {
+  background: white;
+  padding: 32px 22px;
+  border-radius: 22px;
+  text-align: center;
+  box-shadow: 0 10px 30px rgba(0,0,0,0.07);
+  transition: 0.4s;
+  border: 1px solid rgba(236, 72, 153, 0.1);
+}
+.tool-card:hover { 
+  transform: translateY(-10px); 
+  box-shadow: 0 18px 40px rgba(236, 72, 153, 0.15);
+  border-color: #ec4899;
+}
+.tool-icon { 
+  font-size: 42px; 
+  margin-bottom: 18px; 
+}
+.tool-card h3 { 
+  color: #1e293b; 
+  margin-bottom: 12px; 
+  font-size: 19px;
+  font-weight: 700;
+}
+.tool-card p { 
+  color: #64748b; 
+  font-size: 14px; 
+  margin-bottom: 18px;
+  line-height: 1.6;
+}
+.tool-card a {
+  background: linear-gradient(90deg, #ec4899, #8b5cf6);
+  color: white;
+  padding: 11px 28px;
+  border-radius: 30px;
+  text-decoration: none;
+  font-size: 14px;
+  font-weight: 600;
+  transition: 0.3s;
+  display: inline-block;
+}
+.tool-card a:hover { opacity: 0.9; }
+.section {
+  text-align: center;
+  padding: 70px 20px;
+  max-width: 850px;
+  margin: auto;
+}
+.section h2 { 
+  font-size: 36px; 
+  margin-bottom: 20px; 
+  background: linear-gradient(90deg, #7c3aed, #ec4899);
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+  font-weight: 800;
+}
+.section p { 
+  color: #555; 
+  line-height: 1.9;
+  font-size: 16px;
+}
+.footer {
+  background: #0f172a;
+  color: #cbd5e1;
+  text-align: center;
+  padding: 45px 20px;
+  margin-top: 60px;
+}
+.footer-links { margin-bottom: 20px; }
+.footer a { 
+  color: #f1f5f9; 
+  margin: 0 15px; 
+  text-decoration: none;
+  font-weight: 500;
+  transition: 0.3s;
+}
+.footer a:hover { color: #ec4899; }
+.footer p { margin-top: 18px; font-size: 14px; color: #94a3b8; }
+@media (max-width: 768px) {
+  .header { padding: 15px 20px; flex-direction: column; gap: 12px; }
+  .hero h1 { font-size: 34px; }
+  .tools-grid { padding: 40px 20px; grid-template-columns: 1fr; }
+}
 </style>
 </head>
 <body>
 
-<nav>
-  <a href="#">Home</a>
-  <a href="#tools">Tools</a>
-  <a href="#about">About</a>
-</nav>
+<div class="header">
+  <div class="logo">Smart Tools Hub</div>
+  <nav>
+    <a href="#home">Home</a>
+    <a href="#tools">Tools</a>
+    <a href="about-us.html">About Us</a>
+    <a href="contact.html">Contact</a>
+  </nav>
+</div>
 
-<h1>🔥 Smart Tools Hub ULTRA PRO</h1>
+<div class="hero" id="home">
+  <h1>All-in-One Smart Tools</h1>
+  <p>Experience powerful, fast, and free online tools. Built by Muhammad Ayaz to make your daily tasks simple and efficient.</p>
+  <a href="#tools" class="btn">Explore All Tools</a>
+</div>
+
+<div class="section" id="about">
+  <h2>What Is Smart Tools Hub?</h2>
+  <p>Smart Tools Hub is a free collection of practical online utilities designed to help users complete everyday digital tasks quickly. All tools work directly in your browser without downloads, installations, or registration. Created with accuracy and simplicity in mind for students, professionals, and everyday users worldwide.</p>
+</div>
 
 <div class="tools-grid" id="tools">
 
-<div class="tool-card"><h2>BMI Calculator</h2><p>Calculate your Body Mass Index instantly</p><a href="bmi-calculator.html">Open Tool</a></div>
-<div class="tool-card"><h2>BMI for Kids</h2><p>Check healthy BMI range for children</p><a href="bmi-for-kids.html">Open Tool</a></div>
-<div class="tool-card"><h2>Body Fat Calculator</h2><p>Estimate your body fat percentage</p><a href="body-fat-calculator.html">Open Tool</a></div>
-<div class="tool-card"><h2>Ideal Weight Calculator</h2><p>Find your ideal body weight</p><a href="ideal-weight-calculator.html">Open Tool</a></div>
-<div class="tool-card"><h2>Word Counter</h2><p>Count words and characters in text</p><a href="word-counter.html">Open Tool</a></div>
-<div class="tool-card"><h2>Character Counter</h2><p>Count characters with and without spaces</p><a href="character-counter.html">Open Tool</a></div>
-<div class="tool-card"><h2>Text Counter</h2><p>Analyze your text content</p><a href="text-counter.html">Open Tool</a></div>
-<div class="tool-card"><h2>Tip Calculator</h2><p>Calculate tip amount easily</p><a href="tip-calculator.html">Open Tool</a></div>
-<div class="tool-card"><h2>Bill Tip Calculator</h2><p>Split bill with tip calculation</p><a href="bill-tip-calculator.html">Open Tool</a></div>
-<div class="tool-card"><h2>Quick Tip Calculator</h2><p>Fast tip calculation tool</p><a href="quick-tip-calculator.html">Open Tool</a></div>
-<div class="tool-card"><h2>20% Tip Calculator</h2><p>Calculate 20% tip instantly</p><a href="20-percent-tip-calculator.html">Open Tool</a></div>
-<div class="tool-card"><h2>Color Palette Generator</h2><p>Generate aesthetic color palettes</p><a href="aesthetic-color-palette-generator.html">Open Tool</a></div>
-<div class="tool-card"><h2>Soft Color Palette</h2><p>Create soft aesthetic colors</p><a href="soft-aesthetic-color-palette-generator.html">Open Tool</a></div>
+  <div class="tool-card">
+    <div class="tool-icon">📏</div>
+    <h3>Feet to Meters</h3>
+    <p>Convert feet to meters instantly for USA measurements</p>
+    <a href="feet-to-meters-converter.html">Open Tool</a>
+  </div>
+
+  <div class="tool-card">
+    <div class="tool-icon">⚖️</div>
+    <h3>Pounds to KG</h3>
+    <p>Convert pounds to kilograms easily for weight tracking</p>
+    <a href="pounds-to-kg-converter.html">Open Tool</a>
+  </div>
+
+  <div class="tool-card">
+    <div class="tool-icon">🌡️</div>
+    <h3>Fahrenheit to Celsius</h3>
+    <p>Convert F to C for USA weather and cooking needs</p>
+    <a href="fahrenheit-to-celsius-converter.html">Open Tool</a>
+  </div>
+
+  <div class="tool-card">
+    <div class="tool-icon">🛣️</div>
+    <h3>Miles to KM</h3>
+    <p>Convert miles to kilometers for US roads and travel</p>
+    <a href="miles-to-km-converter.html">Open Tool</a>
+  </div>
+
+  <div class="tool-card">
+    <div class="tool-icon">🏋️</div>
+    <h3>BMI Calculator</h3>
+    <p>Calculate your Body Mass Index instantly</p>
+    <a href="bmi-calculator.html">Open Tool</a>
+  </div>
+
+  <div class="tool-card">
+    <div class="tool-icon">👶</div>
+    <h3>BMI for Kids</h3>
+    <p>Check healthy BMI range for children</p>
+    <a href="bmi-for-kids.html">Open Tool</a>
+  </div>
+
+  <div class="tool-card">
+    <div class="tool-icon">📊</div>
+    <h3>Body Fat Calculator</h3>
+    <p>Estimate your body fat percentage accurately</p>
+    <a href="body-fat-calculator.html">Open Tool</a>
+  </div>
+
+  <div class="tool-card">
+    <div class="tool-icon">⚖️</div>
+    <h3>Ideal Weight Calculator</h3>
+    <p>Find your ideal body weight based on height</p>
+    <a href="ideal-weight-calculator.html">Open Tool</a>
+  </div>
+
+  <div class="tool-card">
+    <div class="tool-icon">📝</div>
+    <h3>Character Counter</h3>
+    <p>Count characters with and without spaces</p>
+    <a href="character-counter.html">Open Tool</a>
+  </div>
+
+  <div class="tool-card">
+    <div class="tool-icon">📄</div>
+    <h3>Word Counter</h3>
+    <p>Count words and characters in your text</p>
+    <a href="word-counter.html">Open Tool</a>
+  </div>
+
+  <div class="tool-card">
+    <div class="tool-icon">📋</div>
+    <h3>Text Counter</h3>
+    <p>Analyze your text content in detail</p>
+    <a href="text-counter.html">Open Tool</a>
+  </div>
+
+  <div class="tool-card">
+    <div class="tool-icon">💰</div>
+    <h3>Tip Calculator</h3>
+    <p>Calculate tip amount easily for USA restaurants</p>
+    <a href="tip-calculator.html">Open Tool</a>
+  </div>
+
+  <div class="tool-card">
+    <div class="tool-icon">💵</div>
+    <h3>Quick Tip Calculator</h3>
+    <p>Fast tip calculation for bills</p>
+    <a href="quick-tip-calculator.html">Open Tool</a>
+  </div>
+
+  <div class="tool-card">
+    <div class="tool-icon">💯</div>
+    <h3>20% Tip Calculator</h3>
+    <p>Calculate 20% tip instantly</p>
+    <a href="20-percent-tip-calculator.html">Open Tool</a>
+  </div>
+
+  <div class="tool-card">
+    <div class="tool-icon">🎨</div>
+    <h3>Color Palette Generator</h3>
+    <p>Generate aesthetic color palettes</p>
+    <a href="aesthetic-color-palette-generator.html">Open Tool</a>
+  </div>
+
+  <div class="tool-card">
+    <div class="tool-icon">🎨</div>
+    <h3>Soft Color Palette</h3>
+    <p>Create soft and aesthetic color schemes</p>
+    <a href="soft-aesthetic-color-palette-generator.html">Open Tool</a>
+  </div>
+
+  <div class="tool-card">
+    <div class="tool-icon">🎂</div>
+    <h3>Age Calculator</h3>
+    <p>Calculate exact age in years, months, days</p>
+    <a href="age-in-years-months-days.html">Open Tool</a>
+  </div>
+
+  <div class="tool-card">
+    <div class="tool-icon">📅</div>
+    <h3>DOB to Age Calculator</h3>
+    <p>Convert date of birth to exact age</p>
+    <a href="dob-to-age-calculator.html">Open Tool</a>
+  </div>
+
+  <div class="tool-card">
+    <div class="tool-icon">🏠</div>
+    <h3>Loan Calculator</h3>
+    <p>Calculate EMI and loan payments</p>
+    <a href="loan-calculator.html">Open Tool</a>
+  </div>
 
 </div>
 
-<div class="about" id="about">
-  <h2>About Smart Tools Hub</h2>
-  <p>Smart Tools Hub is a free online tools website where you can use Calculators, Text Tools, and Design Tools.</p>
-  <p>This website is fast, secure, and mobile-friendly. Use tools directly in your browser without any download.</p>
-  <p>This platform is specially made for students, creators, and daily users to make their work easy and fast.</p>
-  <hr>
-  <p class="creator">Created by Muhammad Ayaz</p>
+<div class="footer">
+  <div class="footer-links">
+    <a href="about-us.html">About Us</a>
+    <a href="privacy-policy.html">Privacy Policy</a>
+    <a href="disclaimer.html">Disclaimer</a>
+    <a href="contact.html">Contact</a>
+  </div>
+  <p>© 2026 Smart-Tools-Hub.github.io. All Rights Reserved.</p>
+  <p>Designed and Developed by Muhammad Ayaz</p>
 </div>
 
-<footer>
-  <p>© 2026 Smart Tools Hub</p>
-  <p><a href="#">Privacy Policy</a> | <a href="#">Contact</a> | <a href="#">About</a> | <a href="#">Terms</a> | <a href="#">Disclaimer</a></p>
-  <p class="creator">Created by Muhammad Ayaz</p>
-</footer>
 </body>
 </html>
