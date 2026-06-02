@@ -3,8 +3,8 @@
 <head>
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
-<title>Smart Tools Hub - Free Online Tools & Calculators</title>
-<meta name="description" content="All-in-One Free Online Tools by Muhammad Ayaz. BMI Calculator, Loan Calculator, Unit Converters, Word Counter and more. Fast, simple, no download required.">
+<title>Smart Tools Hub - 30+ Free Online Tools & Calculators by Muhammad Ayaz</title>
+<meta name="description" content="All-in-One Free Online Tools by Muhammad Ayaz. BMI, Loan, Age, Unit Converters, QR, Word Counter and 30+ tools. Fast, simple, no download required.">
 <style>
 * { margin:0; padding:0; box-sizing:border-box; font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif; }
 body {
@@ -13,7 +13,7 @@ body {
   color: #333;
 }
 .header {
-  background: rgba(255,255,255,0.85);
+  background: rgba(255,255,255,0.9);
   backdrop-filter: blur(10px);
   padding: 18px 50px;
   display: flex;
@@ -23,6 +23,7 @@ body {
   position: sticky;
   top: 0;
   z-index: 100;
+  flex-wrap: wrap;
 }
 .logo { 
   font-size: 24px; 
@@ -32,11 +33,12 @@ body {
   -webkit-text-fill-color: transparent;
 }
 nav a { 
-  margin: 0 18px; 
+  margin: 0 14px; 
   text-decoration: none; 
   color: #555; 
   font-weight: 500;
   transition: 0.3s;
+  font-size: 15px;
 }
 nav a:hover { color: #ec4899; }
 .hero {
@@ -55,7 +57,7 @@ nav a:hover { color: #ec4899; }
   font-size: 18px; 
   color: #666; 
   margin-bottom: 35px;
-  max-width: 600px;
+  max-width: 650px;
   margin-left: auto;
   margin-right: auto;
 }
@@ -79,7 +81,7 @@ nav a:hover { color: #ec4899; }
   grid-template-columns: repeat(auto-fit, minmax(260px, 1fr));
   gap: 28px;
   padding: 60px 50px;
-  max-width: 1300px;
+  max-width: 1400px;
   margin: auto;
 }
 .tool-card {
@@ -103,14 +105,16 @@ nav a:hover { color: #ec4899; }
 .tool-card h3 { 
   color: #1e293b; 
   margin-bottom: 12px; 
-  font-size: 19px;
+  font-size: 18px;
   font-weight: 700;
+  min-height: 45px;
 }
 .tool-card p { 
   color: #64748b; 
   font-size: 14px; 
   margin-bottom: 18px;
   line-height: 1.6;
+  min-height: 50px;
 }
 .tool-card a {
   background: linear-gradient(90deg, #ec4899, #8b5cf6);
@@ -173,53 +177,57 @@ nav a:hover { color: #ec4899; }
   <div class="logo">Smart Tools Hub</div>
   <nav>
     <a href="#home">Home</a>
-    <a href="#tools">Tools</a>
-    <a href="about-us.html">About Us</a>
+    <a href="#tools">All Tools</a>
+    <a href="about.html">About</a>
     <a href="contact.html">Contact</a>
+    <a href="privacy-policy.html">Privacy</a>
+    <a href="disclaimer.html">Disclaimer</a>
   </nav>
 </div>
 
 <div class="hero" id="home">
-  <h1>All-in-One Smart Tools</h1>
-  <p>Experience powerful, fast, and free online tools. Built by Muhammad Ayaz to make your daily tasks simple and efficient.</p>
-  <a href="#tools" class="btn">Explore All Tools</a>
+  <h1>30+ Free Smart Tools</h1>
+  <p>Complete collection of fast, accurate online tools. Built by Muhammad Ayaz. No signup, no download, 100% free for everyone worldwide.</p>
+  <a href="#tools" class="btn">Browse All Tools Below</a>
 </div>
 
-<div class="section" id="about">
-  <h2>What Is Smart Tools Hub?</h2>
-  <p>Smart Tools Hub is a free collection of practical online utilities designed to help users complete everyday digital tasks quickly. All tools work directly in your browser without downloads, installations, or registration. Created with accuracy and simplicity in mind for students, professionals, and everyday users worldwide.</p>
+<div class="section">
+  <h2>Why Smart Tools Hub?</h2>
+  <p>Every tool is mobile-friendly, accurate, and works instantly in your browser. Created with simplicity in mind for students, professionals, and daily users.</p>
 </div>
 
 <div class="tools-grid" id="tools">
 
+  <!-- UNIT CONVERTERS -->
   <div class="tool-card">
     <div class="tool-icon">📏</div>
-    <h3>Feet to Meters</h3>
+    <h3>Feet to Meters Converter</h3>
     <p>Convert feet to meters instantly for USA measurements</p>
     <a href="feet-to-meters-converter.html">Open Tool</a>
   </div>
 
   <div class="tool-card">
     <div class="tool-icon">⚖️</div>
-    <h3>Pounds to KG</h3>
-    <p>Convert pounds to kilograms easily for weight tracking</p>
+    <h3>Pounds to KG Converter</h3>
+    <p>Convert pounds to kilograms easily</p>
     <a href="pounds-to-kg-converter.html">Open Tool</a>
   </div>
 
   <div class="tool-card">
     <div class="tool-icon">🌡️</div>
     <h3>Fahrenheit to Celsius</h3>
-    <p>Convert F to C for USA weather and cooking needs</p>
+    <p>Convert F to C for weather and cooking</p>
     <a href="fahrenheit-to-celsius-converter.html">Open Tool</a>
   </div>
 
   <div class="tool-card">
     <div class="tool-icon">🛣️</div>
-    <h3>Miles to KM</h3>
-    <p>Convert miles to kilometers for US roads and travel</p>
+    <h3>Miles to KM Converter</h3>
+    <p>Convert miles to kilometers for travel</p>
     <a href="miles-to-km-converter.html">Open Tool</a>
   </div>
 
+  <!-- HEALTH & FITNESS -->
   <div class="tool-card">
     <div class="tool-icon">🏋️</div>
     <h3>BMI Calculator</h3>
@@ -237,17 +245,18 @@ nav a:hover { color: #ec4899; }
   <div class="tool-card">
     <div class="tool-icon">📊</div>
     <h3>Body Fat Calculator</h3>
-    <p>Estimate your body fat percentage accurately</p>
+    <p>Estimate your body fat percentage</p>
     <a href="body-fat-calculator.html">Open Tool</a>
   </div>
 
   <div class="tool-card">
     <div class="tool-icon">⚖️</div>
     <h3>Ideal Weight Calculator</h3>
-    <p>Find your ideal body weight based on height</p>
+    <p>Find your ideal body weight by height</p>
     <a href="ideal-weight-calculator.html">Open Tool</a>
   </div>
 
+  <!-- TEXT TOOLS -->
   <div class="tool-card">
     <div class="tool-icon">📝</div>
     <h3>Character Counter</h3>
@@ -258,7 +267,7 @@ nav a:hover { color: #ec4899; }
   <div class="tool-card">
     <div class="tool-icon">📄</div>
     <h3>Word Counter</h3>
-    <p>Count words and characters in your text</p>
+    <p>Count words and characters in text</p>
     <a href="word-counter.html">Open Tool</a>
   </div>
 
@@ -270,9 +279,17 @@ nav a:hover { color: #ec4899; }
   </div>
 
   <div class="tool-card">
+    <div class="tool-icon">📝</div>
+    <h3>Free Word Counter</h3>
+    <p>Free online word and character counter</p>
+    <a href="free-word-counter.html">Open Tool</a>
+  </div>
+
+  <!-- FINANCIAL TOOLS -->
+  <div class="tool-card">
     <div class="tool-icon">💰</div>
     <h3>Tip Calculator</h3>
-    <p>Calculate tip amount easily for USA restaurants</p>
+    <p>Calculate tip amount for USA restaurants</p>
     <a href="tip-calculator.html">Open Tool</a>
   </div>
 
@@ -291,19 +308,48 @@ nav a:hover { color: #ec4899; }
   </div>
 
   <div class="tool-card">
-    <div class="tool-icon">🎨</div>
-    <h3>Color Palette Generator</h3>
-    <p>Generate aesthetic color palettes</p>
-    <a href="aesthetic-color-palette-generator.html">Open Tool</a>
+    <div class="tool-icon">🧾</div>
+    <h3>Bill Tip Calculator</h3>
+    <p>Split bill and calculate tip amount</p>
+    <a href="bill-tip-calculator.html">Open Tool</a>
   </div>
 
   <div class="tool-card">
-    <div class="tool-icon">🎨</div>
-    <h3>Soft Color Palette</h3>
-    <p>Create soft and aesthetic color schemes</p>
-    <a href="soft-aesthetic-color-palette-generator.html">Open Tool</a>
+    <div class="tool-icon">🏠</div>
+    <h3>Loan Calculator</h3>
+    <p>Calculate EMI and loan payments</p>
+    <a href="loan-calculator.html">Open Tool</a>
   </div>
 
+  <div class="tool-card">
+    <div class="tool-icon">🚗</div>
+    <h3>Auto Loan Calculator</h3>
+    <p>Calculate car loan EMI and interest</p>
+    <a href="auto-loan-calculator.html">Open Tool</a>
+  </div>
+
+  <div class="tool-card">
+    <div class="tool-icon">🏡</div>
+    <h3>EMI Calculator</h3>
+    <p>Calculate Equated Monthly Installment</p>
+    <a href="emi-calculator.html">Open Tool</a>
+  </div>
+
+  <div class="tool-card">
+    <div class="tool-icon">🏠</div>
+    <h3>Mortgage Calculator USA</h3>
+    <p>Calculate home loan EMI for USA</p>
+    <a href="mortgage-calculator-usa.html">Open Tool</a>
+  </div>
+
+  <div class="tool-card">
+    <div class="tool-icon">%</div>
+    <h3>Percentage Calculator</h3>
+    <p>Calculate percentage increase, decrease</p>
+    <a href="percentage-calculator.html">Open Tool</a>
+  </div>
+
+  <!-- AGE & DATE TOOLS -->
   <div class="tool-card">
     <div class="tool-icon">🎂</div>
     <h3>Age Calculator</h3>
@@ -319,17 +365,39 @@ nav a:hover { color: #ec4899; }
   </div>
 
   <div class="tool-card">
-    <div class="tool-icon">🏠</div>
-    <h3>Loan Calculator</h3>
-    <p>Calculate EMI and loan payments</p>
-    <a href="loan-calculator.html">Open Tool</a>
+    <div class="tool-icon">⏰</div>
+    <h3>Exact Age Calculator</h3>
+    <p>Calculate precise age with seconds</p>
+    <a href="exact-age-calculator.html">Open Tool</a>
+  </div>
+
+  <div class="tool-card">
+    <div class="tool-icon">👤</div>
+    <h3>How Old Am I Calculator</h3>
+    <p>Find your current age from birth date</p>
+    <a href="how-old-am-i-calculator.html">Open Tool</a>
+  </div>
+
+  <!-- DESIGN TOOLS -->
+  <div class="tool-card">
+    <div class="tool-icon">🎨</div>
+    <h3>Color Palette Generator</h3>
+    <p>Generate aesthetic color palettes</p>
+    <a href="aesthetic-color-palette-generator.html">Open Tool</a>
+  </div>
+
+  <div class="tool-card">
+    <div class="tool-icon">🎨</div>
+    <h3>Soft Color Palette</h3>
+    <p>Create soft and aesthetic color schemes</p>
+    <a href="soft-aesthetic-color-palette-generator.html">Open Tool</a>
   </div>
 
 </div>
 
 <div class="footer">
   <div class="footer-links">
-    <a href="about-us.html">About Us</a>
+    <a href="about.html">About Us</a>
     <a href="privacy-policy.html">Privacy Policy</a>
     <a href="disclaimer.html">Disclaimer</a>
     <a href="contact.html">Contact</a>
