@@ -1,0 +1,28 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Feet to Meters Converter - Convert ft to m Free | USA Tool</title>
+<meta name="description" content="Convert Feet to Meters instantly. Free ft to m converter for USA. Perfect for construction, real estate, and home improvement projects in America.">
+<style>body{font-family:Segoe UI,Arial;background:#0f172a;padding:20px} .box{max-width:650px;margin:40px auto;background:white;border-radius:16px;padding:35px;box-shadow:0 15px 40px rgba(0,0,0,0.3)} h1{color:#0f172a;text-align:center} input,select{width:100%;padding:15px;border:2px solid #e2e8f0;border-radius:8px;margin:12px 0;font-size:17px} button{width:100%;padding:16px;background:#0f172a;color:white;border:none;border-radius:8px;font-size:18px;font-weight:bold;cursor:pointer} .result{margin-top:25px;padding:25px;background:#f1f5f9;border-radius:10px;text-align:center;display:none} .result.show{display:block} .result p{font-size:42px;font-weight:bold;color:#0f172a} .seo{margin-top:40px;padding:25px;background:#f8fafc;border-radius:12px;line-height:1.8;color:#334155} .seo h2{color:#0f172a;margin-bottom:15px}</style>
+</head>
+<body>
+<div class="box">
+<h1>📏 Feet to Meters Converter</h1>
+<input type="number" id="val" value="10" placeholder="Enter feet">
+<select id="to"><option value="m">Meters</option><option value="cm">Centimeters</option><option value="km">Kilometers</option></select>
+<button onclick="c()">Convert ft to m</button>
+<div class="result" id="r"><p id="a">0</p></div>
+
+<div class="seo">
+<h2>Feet to Meters Converter for USA</h2>
+<p>Americans use Feet and Inches for measuring height, room size, and construction. But international standards use Meters. Our free Feet to Meters converter helps US homeowners, builders, and students convert ft to m instantly without any math.</p>
+<p><b>Why Americans need this:</b> When buying furniture from IKEA, reading international blueprints, or comparing property sizes globally, you need accurate ft to meter conversion. 1 Foot = 0.3048 Meters exactly.</p>
+<p><b>Popular uses in United States:</b> Converting room dimensions for home renovation, calculating building heights, sports field measurements, and real estate listings. Contractors across Texas, California, and New York use this daily.</p>
+<p>This USA-focused converter gives results to 4 decimal places. 100% free, no signup, works perfectly on mobile and desktop. Fastest ft to m calculator online for American users.</p>
+</div>
+</div>
+<script>function c(){let v=parseFloat(document.getElementById('val').value);let t=document.getElementById('to').value;let r=t=='m'?v*0.3048:t=='cm'?v*30.48:v*0.0003048;document.getElementById('a').innerText=r.toFixed(4)+' '+t.toUpperCase();document.getElementById('r').classList.add('show');}</script>
+</body>
+</html>
