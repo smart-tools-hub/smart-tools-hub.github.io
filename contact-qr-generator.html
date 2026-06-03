@@ -1,0 +1,39 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<title>Contact QR Code Generator - Create vCard QR for Phone Contacts</title>
+<meta name="description" content="Free Contact QR Code Generator. Create vCard QR codes to share phone numbers and email. USA businesses use it for digital business cards.">
+</head>
+<body>
+<h1>Contact QR Code Generator</h1>
+<p>Create vCard QR codes for digital business cards. USA clients scan and save your contact info directly to phone in 1 tap.</p>
+
+<input type="text" id="name" placeholder="Full Name">
+<input type="tel" id="phone" placeholder="Phone Number">
+<input type="email" id="email" placeholder="Email Address">
+<button onclick="genContact()">Generate Contact QR</button>
+<div id="qr"></div>
+
+<h2>Digital Business Cards</h2>
+<p>Replace paper business cards with Contact QR codes. USA professionals print QR codes on cards or email signatures.</p>
+
+<h2>FAQ - Contact QR Codes</h2>
+<h3>What phone apps support Contact QR?</h3>
+<p>All iPhone and Android cameras scan vCard QR codes and prompt to save contact automatically.</p>
+<h3>Can I add address and website?</h3>
+<p>Yes. Add more fields in the code if needed. Basic version includes name, phone, email.</p>
+<h3>Is this better than paper cards?</h3>
+<p>Yes. No printing cost, easy to update, and USA clients prefer digital contacts.</p>
+
+<script src="https://cdn.jsdelivr.net/npm/qrcode@1.5.3/build/qrcode.min.js"></script>
+<script>
+function genContact(){
+let n=document.getElementById('name').value;
+let p=document.getElementById('phone').value;
+let e=document.getElementById('email').value;
+let text=`MECARD:N:${n};TEL:${p};EMAIL:${e};;`;
+document.getElementById('qr').innerHTML='';
+QRCode.toCanvas(text,{width:280},(e,c)=>{document.getElementById('qr').appendChild(c);});
+}
+</script>
+</body></html>
