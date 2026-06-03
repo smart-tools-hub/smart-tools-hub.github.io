@@ -1,0 +1,39 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<title>WiFi QR Code Generator - Share WiFi Password with QR Scan</title>
+<meta name="description" content="Free WiFi QR Code Generator. Create QR codes for WiFi networks. Customers scan to connect without typing password. Perfect for USA cafes and offices.">
+</head>
+<body>
+<h1>WiFi QR Code Generator</h1>
+<p>Create WiFi QR codes for restaurants, cafes, and offices in USA. Customers scan and connect instantly without asking for password.</p>
+
+<input type="text" id="ssid" placeholder="WiFi Name">
+<input type="text" id="pass" placeholder="WiFi Password">
+<select id="enc"><option>WPA</option><option>WEP</option><option>nopass</option></select>
+<button onclick="genWiFi()">Generate WiFi QR</button>
+<div id="qr"></div>
+
+<h2>Why Use WiFi QR Codes</h2>
+<p>USA coffee shops use WiFi QR codes on tables. Customers scan and connect in 1 second. No need to type long passwords.</p>
+
+<h2>FAQ - WiFi QR Codes</h2>
+<h3>Is it safe to share WiFi password with QR?</h3>
+<p>Yes. QR code only shares the password you enter. It does not expose your router settings.</p>
+<h3>Will this work for guest WiFi?</h3>
+<p>Perfect for guest WiFi. Create a QR code and print it on a sign at your USA business.</p>
+<h3>What if I change WiFi password?</h3>
+<p>Just generate a new QR code with the new password and replace the old one.</p>
+
+<script src="https://cdn.jsdelivr.net/npm/qrcode@1.5.3/build/qrcode.min.js"></script>
+<script>
+function genWiFi(){
+let s=document.getElementById('ssid').value;
+let p=document.getElementById('pass').value;
+let e=document.getElementById('enc').value;
+let text=`WIFI:T:${e};S:${s};P:${p};;`;
+document.getElementById('qr').innerHTML='';
+QRCode.toCanvas(text,{width:280},(e,c)=>{document.getElementById('qr').appendChild(c);});
+}
+</script>
+</body></html>
