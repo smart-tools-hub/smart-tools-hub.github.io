@@ -2,37 +2,50 @@
 <urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9">
   <url>
     <loc>https://smart-tools-hub.github.io/</loc>
-    <lastmod>2026-09-30</lastmod>
+    <lastmod>2026-10-03</lastmod>
     <priority>1.0</priority>
   </url>
-  <url>
-    <loc>https://smart-tools-hub.github.io/bmi-calculator.html</loc>
-    <lastmod>2026-09-30</lastmod>
-    <priority>0.9</priority>
-  </url>
-  <url>
-    <loc>https://smart-tools-hub.github.io/bmi-for-kids.html</loc>
-    <lastmod>2026-09-30</lastmod>
-    <priority>0.9</priority>
-  </url>
-  <url>
-    <loc>https://smart-tools-hub.github.io/body-fat-calculator.html</loc>
-    <lastmod>2026-09-30</lastmod>
-    <priority>0.9</priority>
-  </url>
-  <url>
-    <loc>https://smart-tools-hub.github.io/20-percent-tip-calculator.html</loc>
-    <lastmod>2026-09-30</lastmod>
-    <priority>0.9</priority>
-  </url>
-  <url>
-    <loc>https://smart-tools-hub.github.io/aesthetic-color-palette-generator.html</loc>
-    <lastmod>2026-09-30</lastmod>
-    <priority>0.9</priority>
-  </url>
-  <url>
-    <loc>https://smart-tools-hub.github.io/bill-tip-calculator.html</loc>
-    <lastmod>2026-09-30</lastmod>
-    <priority>0.9</priority>
-  </url>
+  
+  <!-- Health Tools -->
+  <url><loc>https://smart-tools-hub.github.io/bmi-calculator.html</loc><lastmod>2026-09-01</lastmod><priority>0.8</priority></url>
+  <url><loc>https://smart-tools-hub.github.io/bmi-for-kids.html</loc><lastmod>2026-09-01</lastmod><priority>0.8</priority></url>
+  <url><loc>https://smart-tools-hub.github.io/body-fat-calculator.html</loc><lastmod>2026-09-01</lastmod><priority>0.8</priority></url>
+  <url><loc>https://smart-tools-hub.github.io/ideal-weight-calculator.html</loc><lastmod>2026-09-01</lastmod><priority>0.7</priority></url>
+  
+  <!-- Age Tools -->
+  <url><loc>https://smart-tools-hub.github.io/age-in-years-months-days.html</loc><lastmod>2026-09-01</lastmod><priority>0.7</priority></url>
+  <url><loc>https://smart-tools-hub.github.io/dob-to-age-calculator.html</loc><lastmod>2026-09-01</lastmod><priority>0.7</priority></url>
+  <url><loc>https://smart-tools-hub.github.io/exact-age-calculator.html</loc><lastmod>2026-09-01</lastmod><priority>0.7</priority></url>
+  <url><loc>https://smart-tools-hub.github.io/how-old-am-i-calculator.html</loc><lastmod>2026-09-01</lastmod><priority>0.7</priority></url>
+  
+  <!-- Finance Tools -->
+  <url><loc>https://smart-tools-hub.github.io/auto-loan-calculator.html</loc><lastmod>2026-09-01</lastmod><priority>0.7</priority></url>
+  <url><loc>https://smart-tools-hub.github.io/loan-calculator.html</loc><lastmod>2026-09-01</lastmod><priority>0.7</priority></url>
+  <url><loc>https://smart-tools-hub.github.io/emi-calculator.html</loc><lastmod>2026-09-01</lastmod><priority>0.7</priority></url>
+  <url><loc>https://smart-tools-hub.github.io/mortgage-calculator-usa.html</loc><lastmod>2026-09-01</lastmod><priority>0.7</priority></url>
+  <url><loc>https://smart-tools-hub.github.io/20-percent-tip-calculator.html</loc><lastmod>2026-09-01</lastmod><priority>0.6</priority></url>
+  <url><loc>https://smart-tools-hub.github.io/bill-tip-calculator.html</loc><lastmod>2026-09-01</lastmod><priority>0.6</priority></url>
+  <url><loc>https://smart-tools-hub.github.io/quick-tip-calculator.html</loc><lastmod>2026-09-01</lastmod><priority>0.6</priority></url>
+  <url><loc>https://smart-tools-hub.github.io/tip-calculator.html</loc><lastmod>2026-09-01</lastmod><priority>0.6</priority></url>
+  <url><loc>https://smart-tools-hub.github.io/percentage-calculator.html</loc><lastmod>2026-09-01</lastmod><priority>0.6</priority></url>
+  
+  <!-- Converters -->
+  <url><loc>https://smart-tools-hub.github.io/fahrenheit-to-celsius-converter.html</loc><lastmod>2026-09-01</lastmod><priority>0.6</priority></url>
+  <url><loc>https://smart-tools-hub.github.io/feet-to-meters-converter.html</loc><lastmod>2026-09-01</lastmod><priority>0.6</priority></url>
+  <url><loc>https://smart-tools-hub.github.io/miles-to-km-converter.html</loc><lastmod>2026-09-01</lastmod><priority>0.6</priority></url>
+  <url><loc>https://smart-tools-hub.github.io/pounds-to-kg-converter.html</loc><lastmod>2026-09-01</lastmod><priority>0.6</priority></url>
+  
+  <!-- Text & Design Tools -->
+  <url><loc>https://smart-tools-hub.github.io/aesthetic-color-palette-generator.html</loc><lastmod>2026-09-01</lastmod><priority>0.6</priority></url>
+  <url><loc>https://smart-tools-hub.github.io/soft-aesthetic-color-palette-generator.html</loc><lastmod>2026-09-01</lastmod><priority>0.6</priority></url>
+  <url><loc>https://smart-tools-hub.github.io/character-counter.html</loc><lastmod>2026-09-01</lastmod><priority>0.6</priority></url>
+  <url><loc>https://smart-tools-hub.github.io/text-counter.html</loc><lastmod>2026-09-01</lastmod><priority>0.6</priority></url>
+  <url><loc>https://smart-tools-hub.github.io/word-counter.html</loc><lastmod>2026-09-01</lastmod><priority>0.6</priority></url>
+  <url><loc>https://smart-tools-hub.github.io/free-word-counter.html</loc><lastmod>2026-09-01</lastmod><priority>0.6</priority></url>
+  
+  <!-- NEW QR Tools - High Priority -->
+  <url><loc>https://smart-tools-hub.github.io/qr-code-generator.html</loc><lastmod>2026-10-03</lastmod><priority>1.0</priority></url>
+  <url><loc>https://smart-tools-hub.github.io/wifi-qr-generator.html</loc><lastmod>2026-10-03</lastmod><priority>1.0</priority></url>
+  <url><loc>https://smart-tools-hub.github.io/text-qr-generator.html</loc><lastmod>2026-10-03</lastmod><priority>1.0</priority></url>
+  <url><loc>https://smart-tools-hub.github.io/contact-qr-generator.html</loc><lastmod>2026-10-03</lastmod><priority>1.0</priority></url>
 </urlset>
