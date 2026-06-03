@@ -3,18 +3,33 @@
 <head>
 <title>URL to QR Code Generator - Create QR for Website Links Free</title>
 <meta name="description" content="Free URL QR Code Generator. Convert website links to QR codes instantly. No signup. Perfect for USA businesses to share website URLs.">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<style>
+body{font-family:Arial,sans-serif;max-width:700px;margin:0 auto;padding:20px;line-height:1.6;background:#f5f5f5}
+.container{background:#fff;padding:30px;border-radius:8px;box-shadow:0 2px 8px rgba(0,0,0,0.1)}
+h1{color:#2563eb;font-size:28px;margin-bottom:10px}
+h2{color:#333;font-size:22px;margin-top:30px}
+h3{color:#555;font-size:18px;margin-top:20px}
+p{color:#666}
+input{width:100%;padding:12px;margin:8px 0;border:2px solid #ddd;border-radius:4px;font-size:16px;box-sizing:border-box}
+button{background:#2563eb;color:#fff;padding:12px 24px;border:none;border-radius:4px;font-size:16px;cursor:pointer;width:100%;margin-top:10px}
+button:hover{background:#1d4ed8}
+#qr{margin-top:20px;text-align:center;padding:20px;background:#f9f9f9;border-radius:4px}
+#qr canvas{max-width:100%;height:auto}
+.faq{background:#f0f7ff;padding:20px;border-radius:4px;margin-top:30px}
+@media(max-width:600px){h1{font-size:24px}.container{padding:20px}}
+</style>
 </head>
 <body>
+<div class="container">
 <h1>URL to QR Code Generator</h1>
 <p>Turn any website link into a scannable QR code in 1 second. Free tool for USA businesses to put QR codes on business cards, flyers, and posters.</p>
-
 <input type="url" id="url" placeholder="https://yourwebsite.com">
 <button onclick="genQR()">Generate URL QR</button>
 <div id="qr"></div>
-
 <h2>How to Use URL QR Codes</h2>
 <p>1. Paste your website URL above<br>2. Click Generate<br>3. Right click and save the QR image</p>
-
+<div class="faq">
 <h2>FAQ - URL QR Codes</h2>
 <h3>Can I use this for my business website?</h3>
 <p>Yes. USA companies use URL QR codes on brochures so customers scan and visit site directly.</p>
@@ -22,13 +37,15 @@
 <p>Yes. All modern phones scan URL QR codes with camera app. No extra app needed.</p>
 <h3>Can I track QR code scans?</h3>
 <p>This free generator creates static QR codes. For tracking, use Bitly or Google Analytics on your URL.</p>
-
+</div>
+</div>
 <script src="https://cdn.jsdelivr.net/npm/qrcode@1.5.3/build/qrcode.min.js"></script>
 <script>
 function genQR(){
 let text=document.getElementById('url').value;
+if(!text){alert('Enter a URL first');return}
 document.getElementById('qr').innerHTML='';
-QRCode.toCanvas(text,{width:280},(e,c)=>{document.getElementById('qr').appendChild(c);});
+QRCode.toCanvas(text,{width:280,margin:2},(e,c)=>{document.getElementById('qr').appendChild(c);});
 }
 </script>
 </body></html>
