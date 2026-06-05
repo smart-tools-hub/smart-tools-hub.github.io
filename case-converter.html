@@ -1,0 +1,89 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Case Converter - Text Case Changer Tool Online Free</title>
+<meta name="description" content="Free Case Converter tool. Convert text to Uppercase, Lowercase, Title Case, Sentence case instantly. Fast text case changer with copy button.">
+<style>
+body{font-family:Arial,sans-serif;max-width:800px;margin:0 auto;padding:20px;line-height:1.6;background:#f5f5f5}
+h1,h2{color:#2c3e50}
+.tool-box{background:#fff;padding:20px;border-radius:8px;box-shadow:0 2px 5px rgba(0,0,0,0.1);margin:20px 0}
+textarea{width:100%;height:120px;padding:10px;border:1px solid #ddd;border-radius:4px;font-size:14px}
+button{background:#3498db;color:#fff;border:none;padding:10px 15px;border-radius:4px;cursor:pointer;margin:5px 2px}
+button:hover{background:#2980b9}
+a{color:#3498db;text-decoration:none}
+a:hover{text-decoration:underline}
+ul{list-style:none;padding:0}
+li{margin:10px 0}
+</style>
+</head>
+<body>
+
+<h1>Free Case Converter Tool</h1>
+<p>Convert your text to any case instantly. Our <strong>Case Converter</strong> helps you change text to Uppercase, Lowercase, Title Case, and Sentence case in 1 click. Perfect for writers, students, coders, and content creators.</p>
+
+<div class="tool-box">
+<h2>Text Case Changer</h2>
+<textarea id="inputText" placeholder="Type or paste your text here..."></textarea><br>
+<button onclick="toUpper()">UPPERCASE</button>
+<button onclick="toLower()">lowercase</button>
+<button onclick="toTitle()">Title Case</button>
+<button onclick="toSentence()">Sentence case</button>
+<button onclick="copyText()">Copy</button>
+</div>
+
+<script>
+function toUpper(){document.getElementById('inputText').value = document.getElementById('inputText').value.toUpperCase();}
+function toLower(){document.getElementById('inputText').value = document.getElementById('inputText').value.toLowerCase();}
+function toTitle(){
+let text = document.getElementById('inputText').value.toLowerCase();
+document.getElementById('inputText').value = text.replace(/\w\S*/g, w => w.charAt(0).toUpperCase() + w.substr(1));
+}
+function toSentence(){
+let text = document.getElementById('inputText').value.toLowerCase();
+document.getElementById('inputText').value = text.replace(/(^\s*\w|[\.\!\?]\s*\w)/g, c => c.toUpperCase());
+}
+function copyText(){
+let text = document.getElementById('inputText');
+text.select();
+document.execCommand('copy');
+alert('Text Copied!');
+}
+</script>
+
+<h2>Convert Text to Uppercase for Emphasis</h2>
+<p>Use our <strong>Convert Text to Uppercase</strong> feature when you need to emphasize text or follow formatting rules. UPPERCASE is commonly used in headings, acronyms like NASA, FBI, and legal documents. It makes text stand out but avoid using it for long paragraphs as it reduces readability.</p>
+
+<h2>Lowercase Converter for Clean Text</h2>
+<p>The <strong>Lowercase Converter</strong> transforms all letters to small case. This is useful for email addresses, URLs, hashtags, and coding variables. Most programming languages require lowercase for function names. Convert messy mixed-case text to clean lowercase in one click.</p>
+
+<h2>Title Case for Headlines and Names</h2>
+<p>Our Title Case option capitalizes the first letter of every word. Perfect for blog titles, book names, and proper nouns. Example: "this is a title" becomes "This Is A Title". Writers and bloggers use this daily to format articles professionally without manual editing.</p>
+
+<h2>Sentence Case for Normal Writing</h2>
+<p>Sentence case capitalizes only the first letter of each sentence. This <strong>Text Case Changer</strong> automatically fixes paragraphs where caps lock was on. Ideal for emails, essays, and normal writing. Paste your text and convert to proper sentence format instantly.</p>
+
+<h3>Try Our Other Free Tools</h3>
+<ul>
+<li><a href="/password-generator.html">Password Generator</a> - Create strong random passwords</li>
+<li><a href="/word-counter.html">Word Counter Tool</a> - Count words and characters</li>
+<li><a href="/bmi-calculator.html">BMI Calculator</a> - Check your Body Mass Index</li>
+<li><a href="/age-calculator.html">Age Calculator</a> - Calculate exact age</li>
+</ul>
+
+<h2>Case Converter FAQs</h2>
+<p><strong>Q1: What's the difference between Title Case and Sentence case?</strong><br>
+A: Title Case capitalizes every word, Sentence case only capitalizes first word of each sentence.</p>
+
+<p><strong>Q2: Can I convert large text with this tool?</strong><br>
+A: Yes, paste thousands of words and convert instantly. No limit.</p>
+
+<p><strong>Q3: Does this tool work offline?</strong><br>
+A: Yes, it runs in your browser. No internet needed after page loads.</p>
+
+<p><strong>Q4: Is my text saved or stored anywhere?</strong><br>
+A: No. All conversion happens in your browser. We don't store your text.</p>
+
+</body>
+</html>
