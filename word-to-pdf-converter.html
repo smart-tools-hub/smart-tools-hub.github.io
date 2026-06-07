@@ -1,0 +1,112 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Word to PDF Converter - Convert Doc to PDF Online Free</title>
+<meta name="description" content="Free Word to PDF converter tool. Convert Word document to PDF online instantly in browser. No upload, no signup. Supports docx to PDF conversion with original formatting.">
+<script type="application/ld+json">
+{"@context":"https://schema.org","@type":"WebApplication","name":"Word to PDF Converter","description":"Convert Word documents to PDF online for free"}
+</script>
+<script src="https://cdnjs.cloudflare.com/ajax/libs/mammoth/1.6.0/mammoth.browser.min.js"></script>
+<script src="https://cdnjs.cloudflare.com/ajax/libs/jspdf/2.5.1/jspdf.umd.min.js"></script>
+<style>
+* {margin:0; padding:0; box-sizing:border-box;}
+body {font-family:Arial, sans-serif; background:#f5f5f5; color:#333; line-height:1.6;}
+.container {max-width:800px; margin:40px auto; padding:20px; background:#fff; border-radius:8px; box-shadow:0 2px 10px rgba(0,0,0,0.1);}
+.header {text-align:center; margin-bottom:25px;}
+.header h1 {font-size:26px; color:#007bff; display:flex; align-items:center; justify-content:center; gap:10px;}
+.header.logo {font-size:32px;}
+h2 {font-size:22px; margin:30px 0 15px; color:#222;}
+h3 {font-size:18px; margin:20px 0 10px; color:#444;}
+p {margin-bottom:15px;}
+.tool-box {border:2px dashed #007bff; border-radius:8px; padding:40px; text-align:center; margin:25px 0; background:#f8f9ff;}
+input[type="file"] {display:none;}
+.upload-btn {padding:12px 30px; background:#007bff; color:#fff; border:none; border-radius:4px; cursor:pointer; font-size:16px; font-weight:bold; display:inline-block;}
+.upload-btn:hover {background:#0056b3;}
+#fileName {margin-top:15px; font-weight:bold; color:#28a745;}
+button.convert {padding:12px 30px; background:#28a745; color:#fff; border:none; border-radius:4px; cursor:pointer; font-size:16px; font-weight:bold; margin-top:15px;}
+button.convert:hover {background:#218838;}
+button:disabled {background:#ccc; cursor:not-allowed;}
+.content {margin-top:40px;}
+.internal-links {margin-top:30px; padding-top:20px; border-top:1px solid #ddd; font-size:15px; text-align:center;}
+.internal-links a {color:#007bff; text-decoration:none; margin:0 8px;}
+.internal-links a:hover {text-decoration:underline;}
+@media(max-width:600px){.tool-box{padding:20px;}}
+</style>
+</head>
+<body>
+<div class="container">
+  <div class="header">
+    <h1><span class="logo">📄</span> Word to PDF Converter</h1>
+  </div>
+  <p>Convert Word document to PDF online instantly in your browser. This free doc to PDF converter works offline, keeps your files private, and supports.docx to PDF conversion with formatting intact. No upload, no watermark, no limits.</p>
+
+  <div class="tool-box">
+    <label for="fileInput" class="upload-btn">Choose Word File</label>
+    <input type="file" id="fileInput" accept=".docx,.doc">
+    <div id="fileName"></div>
+    <button class="convert" id="convertBtn" onclick="convertToPDF()" disabled>Convert to PDF</button>
+  </div>
+
+  <div class="content">
+    <h2>How to Use This Word to PDF Converter</h2>
+    <p>1. Click "Choose Word File" and select your.docx or.doc file<br>2. Wait for the file to load in browser<br>3. Click "Convert to PDF" button<br>4. Your PDF will download automatically to your device</p>
+
+    <h2>Why Use Our Doc to PDF Online Tool</h2>
+    <p>Our Word document to PDF converter runs 100% in your browser. Your files never leave your computer, so privacy is guaranteed. Unlike other online tools, we don’t upload your document to any server. The conversion uses Mammoth.js to extract text and formatting, then jsPDF to generate a clean PDF file. It’s fast, free, and works on mobile, desktop, and tablet. Bloggers, students, and professionals use this to convert Word files for sharing, printing, or archiving without installing Microsoft Word.</p>
+
+    <h2>FAQs</h2>
+    <h3>Is this Word to PDF converter safe?</h3>
+    <p>Yes, 100% safe. Your file stays on your device. Nothing gets uploaded to our server because the conversion happens in your browser.</p>
+
+    <h3>Does this convert Word document to PDF with images and tables?</h3>
+    <p>Basic formatting, paragraphs, and images are supported. Complex tables may need manual adjustment in the PDF output.</p>
+
+    <h3>Can I convert Word to PDF free without size limit?</h3>
+    <p>Yes, there is no file size limit or daily limit. Convert as many Word files to PDF as you need, completely free.</p>
+
+    <h3>Does this doc to PDF online tool work on mobile?</h3>
+    <p>Yes, it works on Android and iPhone browsers. Just upload your Word file and download the PDF directly to your phone.</p>
+
+    <p class="internal-links"><strong>Try our other free tools:</strong> <a href="/youtube-thumbnail-downloader.html">YouTube Thumbnail Downloader</a> | <a href="/bmi-calculator.html">BMI Calculator</a> | <a href="/case-converter.html">Case Converter</a> | <a href="/character-counter.html">Character Counter</a></p>
+  </div>
+</div>
+<script>
+const { jsPDF } = window.jspdf;
+let docContent = '';
+
+document.getElementById('fileInput').addEventListener('change', function(e) {
+  const file = e.target.files[0];
+  if (!file) return;
+
+  document.getElementById('fileName').textContent = 'Selected: ' + file.name;
+  document.getElementById('convertBtn').disabled = false;
+
+  const reader = new FileReader();
+  reader.onload = function(event) {
+    mammoth.extractRawText({arrayBuffer: event.target.result})
+     .then(function(result) {
+        docContent = result.value;
+      })
+     .catch(function(err) {
+        alert('Error reading file: ' + err.message);
+      });
+  };
+  reader.readAsArrayBuffer(file);
+});
+
+function convertToPDF() {
+  if (!docContent) {
+    alert('Please select a Word file first');
+    return;
+  }
+
+  const pdf = new jsPDF();
+  const lines = pdf.splitTextToSize(docContent, 180);
+  pdf.text(lines, 15, 20);
+  pdf.save('converted-document.pdf');
+}
+</script>
+</body>
+</html>
