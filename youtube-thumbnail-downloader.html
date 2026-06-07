@@ -1,0 +1,94 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>YouTube Thumbnail Downloader - Download HD Thumbnails Free</title>
+<meta name="description" content="Free YouTube thumbnail downloader to download HD, HQ, SD and Max Resolution thumbnails instantly. No signup, works for YouTube shorts too.">
+<script type="application/ld+json">
+{"@context":"https://schema.org","@type":"WebApplication","name":"YouTube Thumbnail Downloader","description":"Download YouTube video thumbnails in HD quality"}
+</script>
+<style>
+* {margin:0; padding:0; box-sizing:border-box;}
+body {font-family:Arial, sans-serif; background:#f5f5f5; color:#333; line-height:1.6;}
+.container {max-width:800px; margin:40px auto; padding:20px; background:#fff; border-radius:8px; box-shadow:0 2px 10px rgba(0,0,0,0.1);}
+h1 {font-size:28px; margin-bottom:10px; color:#c00;}
+h2 {font-size:22px; margin:30px 0 15px; color:#222;}
+h3 {font-size:18px; margin:20px 0 10px; color:#444;}
+p {margin-bottom:15px;}
+.tool-box {display:flex; gap:10px; margin:25px 0;}
+#ytUrl {flex:1; padding:12px; border:2px solid #ddd; border-radius:4px; font-size:16px;}
+button {padding:12px 25px; background:#c00; color:#fff; border:none; border-radius:4px; cursor:pointer; font-size:16px; font-weight:bold;}
+button:hover {background:#900;}
+#result {margin:30px 0; text-align:center;}
+#result img {max-width:100%; border-radius:4px; margin-bottom:15px;}
+.buttons {display:flex; gap:10px; justify-content:center; flex-wrap:wrap;}
+.buttons a {padding:10px 20px; background:#007bff; color:#fff; text-decoration:none; border-radius:4px; font-weight:bold;}
+.buttons a:hover {background:#0056b3;}
+.content {margin-top:40px;}
+.internal-links {margin-top:30px; padding-top:20px; border-top:1px solid #ddd;}
+.internal-links a {color:#007bff; text-decoration:none; margin:0 5px;}
+@media(max-width:600px){.tool-box{flex-direction:column;}}
+</style>
+</head>
+<body>
+<div class="container">
+  <h1>Free YouTube Thumbnail Downloader</h1>
+  <p>Paste any YouTube video URL and instantly download thumbnails in Max Resolution, HD, HQ, and SD quality. This free YouTube thumbnail grabber works for all videos and Shorts without signup or watermark.</p>
+
+  <div class="tool-box">
+    <input type="text" id="ytUrl" placeholder="Paste YouTube URL here...">
+    <button onclick="getThumbnail()">Get Thumbnail</button>
+  </div>
+
+  <div id="result"></div>
+
+  <div class="content">
+    <h2>How to Use This YouTube Thumbnail Grabber</h2>
+    <p>1. Copy any YouTube video or Shorts URL from your browser<br>2. Paste it in the input box above<br>3. Click "Get Thumbnail" button<br>4. Choose your preferred resolution and download</p>
+
+    <h2>Why Use Our YouTube Thumbnail Downloader</h2>
+    <p>Our tool pulls original high quality thumbnails directly from YouTube servers. You get 4 resolution options: Max 1280x720, HD 640x480, HQ 480x360, and SD 320x180. No quality loss, no ads, no limits. Bloggers, YouTubers, and designers use this to get clean thumbnails for content, previews, and research. Works on mobile, desktop, and tablet without installing any app.</p>
+
+    <h2>FAQs</h2>
+    <h3>Is it legal to download YouTube thumbnails?</h3>
+    <p>Yes, thumbnails are publicly available assets. Just don’t reuse copyrighted images without permission from the creator.</p>
+
+    <h3>What resolutions can I get with this YouTube thumbnail grabber?</h3>
+    <p>You can download in 4 sizes: Max Resolution 1280x720, HD 640x480, HQ 480x360, and SD 320x180.</p>
+
+    <h3>Does this work for YouTube Shorts and live streams?</h3>
+    <p>Yes, our downloader works for all YouTube videos, Shorts, and live streams as long as the video has a thumbnail.</p>
+
+    <h3>Do I need to install software or create an account?</h3>
+    <p>No installation needed. This is a 100% web based tool. Just paste the URL and download instantly on any device.</p>
+
+    <p class="internal-links">Try our other free tools: <a href="/youtube-video-downloader.html">YouTube Video Downloader</a> | <a href="/youtube-title-generator.html">Title Generator</a> | <a href="/hashtag-generator.html">Hashtag Generator</a></p>
+  </div>
+</div>
+<script>
+function getThumbnail() {
+  const url = document.getElementById('ytUrl').value.trim();
+  const match = url.match(/(?:v=|\/|shorts\/)([0-9A-Za-z_-]{11})/);
+  if (!match) {
+    alert('Invalid YouTube URL. Please paste a valid YouTube video link.');
+    return;
+  }
+  const id = match[1];
+  const res = {
+    'Max Resolution': `https://img.youtube.com/vi/${id}/maxresdefault.jpg`,
+    'HD': `https://img.youtube.com/vi/${id}/sddefault.jpg`,
+    'HQ': `https://img.youtube.com/vi/${id}/hqdefault.jpg`,
+    'SD': `https://img.youtube.com/vi/${id}/mqdefault.jpg`
+  };
+
+  let html = `<img src="${res['Max Resolution']}" alt="YouTube Thumbnail Preview"><div class="buttons">`;
+  for (let [name, link] of Object.entries(res)) {
+    html += `<a href="${link}" download="yt-thumbnail-${id}-${name}.jpg" target="_blank">Download ${name}</a>`;
+  }
+  html += '</div>';
+  document.getElementById('result').innerHTML = html;
+}
+</script>
+</body>
+</html>
