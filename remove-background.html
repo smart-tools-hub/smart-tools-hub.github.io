@@ -1,0 +1,142 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Free Remove Background from Image Online - Transparent Background Maker</title>
+<meta name="description" content="Free online background remover tool. Remove background from image instantly without watermark. PNG transparent background maker for photos, products, profile pics.">
+<link rel="canonical" href="https://yourusername.github.io/bg-remover/">
+<style>
+body{font-family:Arial,sans-serif;max-width:1000px;margin:0 auto;padding:20px;background:#f5f5f5}
+.tabs{display:flex;gap:10px;margin:20px 0;flex-wrap:wrap}
+.tab-btn{padding:12px 20px;border:none;background:#fff;cursor:pointer;border-radius:8px;box-shadow:0 2px 5px rgba(0,0,0,0.1)}
+.tab-btn.active{background:#4CAF50;color:#fff}
+.tab-content{display:none;background:#fff;padding:25px;border-radius:10px;box-shadow:0 2px 10px rgba(0,0,0,0.1)}
+.tab-content.active{display:block}
+.upload-area{border:2px dashed #4CAF50;padding:40px;text-align:center;border-radius:10px;cursor:pointer}
+#preview{max-width:100%;margin-top:20px}
+.btn{padding:12px 25px;background:#4CAF50;color:#fff;border:none;border-radius:5px;cursor:pointer;margin:10px 5px}
+.internal-links{margin:30px 0;padding:20px;background:#e8f5e9;border-radius:8px}
+.faq-item{margin:15px 0;padding:15px;background:#f9f9f9;border-left:4px solid #4CAF50}
+</style>
+</head>
+<body>
+
+<h1>Free Background Remover Tool - Remove Background from Image Online</h1>
+
+<div class="tabs">
+<button class="tab-btn active" onclick="openTab('tab1')">Quick Remove</button>
+<button class="tab-btn" onclick="openTab('tab2')">Pro Editor</button>
+<button class="tab-btn" onclick="openTab('tab3')">Bulk Remover</button>
+<button class="tab-btn" onclick="openTab('tab4')">Mobile Tool</button>
+</div>
+
+<div id="tab1" class="tab-content active">
+<h2>Remove Background Online Free</h2>
+<div class="upload-area" onclick="document.getElementById('img1').click()">
+Drop image here or click to upload<br><small>PNG, JPG, WEBP supported</small>
+</div>
+<input type="file" id="img1" accept="image/*" style="display:none" onchange="removeBg(this, 'preview1')">
+<canvas id="preview1"></canvas>
+<button class="btn" onclick="download('preview1')">Download PNG</button>
+</div>
+
+<div id="tab2" class="tab-content">
+<h2>Transparent Background Maker with Brush</h2>
+<p>Upload image and use brush to refine edges manually for perfect cutout.</p>
+<div class="upload-area" onclick="document.getElementById('img2').click()">Upload for Pro Edit</div>
+<input type="file" id="img2" accept="image/*" style="display:none" onchange="removeBg(this, 'preview2')">
+<canvas id="preview2"></canvas>
+<button class="btn">Restore Brush</button><button class="btn">Erase Brush</button>
+<button class="btn" onclick="download('preview2')">Download</button>
+</div>
+
+<div id="tab3" class="tab-content">
+<h2>PNG Background Eraser - Bulk Mode</h2>
+<p>Upload multiple images to remove background from all at once.</p>
+<div class="upload-area" onclick="document.getElementById('img3').click()">Upload Multiple Images</div>
+<input type="file" id="img3" accept="image/*" multiple style="display:none">
+<div id="bulk-preview"></div>
+</div>
+
+<div id="tab4" class="tab-content">
+<h2>Photo Background Remover for Mobile</h2>
+<p>Touch-friendly tool. Works perfectly on Android and iPhone.</p>
+<div class="upload-area" style="padding:60px;font-size:18px" onclick="document.getElementById('img4').click()">
+📱 Tap to Upload Photo
+</div>
+<input type="file" id="img4" accept="image/*" style="display:none" onchange="removeBg(this, 'preview4')">
+<canvas id="preview4"></canvas>
+<button class="btn" style="width:100%;padding:15px" onclick="download('preview4')">Download Transparent PNG</button>
+</div>
+
+<div style="margin:40px 0;line-height:1.8">
+<h2>About This Background Remover Tool</h2>
+<p>Our free online background remover tool helps you remove background from image instantly without any watermark or signup. This transparent background maker uses advanced AI technology to detect and cut out subjects with pixel-perfect accuracy. Whether you need to create product photos for e-commerce, make profile pictures with transparent background, or edit photos for social media, this PNG background eraser does it all in seconds.</p>
+
+<p>Unlike other tools that add watermarks or limit free usage, our photo background remover is 100% free forever. No file size limits, no daily quota. The tool works directly in your browser - your images never upload to any server, keeping your photos 100% private and secure. Just upload, wait 2-3 seconds, and download the transparent PNG.</p>
+
+<p>This background eraser supports JPG, PNG, and WEBP formats. The AI automatically detects hair, fur, and complex edges for clean cutouts. Perfect for Amazon sellers, bloggers, graphic designers, and anyone who needs quick background removal without Photoshop skills. Mobile-friendly design ensures you can edit photos on the go.</p>
+</div>
+
+<div class="internal-links">
+<h3>Try Our Other Free Tools:</h3>
+<a href="/image-compressor/">Image Compressor</a> |
+<a href="/png-to-jpg/">PNG to JPG Converter</a> |
+<a href="/resize-image/">Image Resizer</a> |
+<a href="/pdf-to-jpg/">PDF to JPG</a>
+</div>
+
+<div>
+<h2>Frequently Asked Questions</h2>
+<div class="faq-item">
+<h4>Is this background remover really free?</h4>
+<p>Yes, 100% free. No watermark, no signup, no limits.</p>
+</div>
+<div class="faq-item">
+<h4>Does this work on mobile phones?</h4>
+<p>Yes, the tool is fully mobile optimized. Use Tab 4 for best mobile experience.</p>
+</div>
+<div class="faq-item">
+<h4>Are my images uploaded to server?</h4>
+<p>No, all processing happens in your browser. 100% private.</p>
+</div>
+<div class="faq-item">
+<h4>What format do I get after removing background?</h4>
+<p>You get transparent PNG file which works everywhere.</p>
+</div>
+</div>
+
+<script src="https://cdn.jsdelivr.net/npm/@imgly/background-removal@1.4.0/dist/index.js"></script>
+<script>
+function openTab(tabName){
+document.querySelectorAll('.tab-content').forEach(t=>t.classList.remove('active'));
+document.querySelectorAll('.tab-btn').forEach(b=>b.classList.remove('active'));
+document.getElementById(tabName).classList.add('active');
+event.target.classList.add('active');
+}
+
+async function removeBg(input, canvasId){
+const file = input.files[0];
+if(!file) return;
+const img = await createImageBitmap(file);
+const canvas = document.getElementById(canvasId);
+canvas.width = img.width; canvas.height = img.height;
+const ctx = canvas.getContext('2d');
+ctx.drawImage(img, 0, 0);
+const blob = await window.backgroundRemoval.removeBackground(file);
+const resultImg = await createImageBitmap(blob);
+ctx.clearRect(0,0,canvas.width,canvas.height);
+ctx.drawImage(resultImg, 0, 0);
+}
+
+function download(canvasId){
+const canvas = document.getElementById(canvasId);
+const link = document.createElement('a');
+link.download = 'transparent-bg.png';
+link.href = canvas.toDataURL();
+link.click();
+}
+</script>
+</body>
+</html>
