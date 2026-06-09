@@ -1,0 +1,90 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>CPS Test Online Free - Click Speed Test in 5, 10, 20 Seconds Without Signup</title>
+<meta name="description" content="Test your click speed with our free CPS Test tool. Click as fast as you can in 5, 10, or 20 seconds to measure clicks per second. No signup, instant results, mobile friendly. Perfect for gamers and typists.">
+<style>
+body{font-family:Arial,sans-serif;max-width:800px;margin:40px auto;padding:20px;line-height:1.7;color:#333;background:#f8f9fa}
+h1,h2{color:#222;margin-top:30px}
+.box{background:white;padding:30px;border-radius:10px;box-shadow:0 2px 12px rgba(0,0,0,0.08);text-align:center;margin:30px 0}
+#clickBtn{width:220px;height:220px;border-radius:50%;background:#4CAF50;color:white;border:none;font-size:22px;font-weight:bold;cursor:pointer;margin:25px auto;display:block;transition:transform 0.1s}
+#clickBtn:active{background:#45a049;transform:scale(0.95)}
+#clickBtn:disabled{background:#ccc;cursor:not-allowed}
+.timer{font-size:36px;font-weight:bold;color:#333;margin:20px}
+.score{font-size:30px;color:#4CAF50;margin:15px;font-weight:bold}
+select,button{padding:12px 24px;font-size:16px;margin:5px;border-radius:6px;border:1px solid #ddd;cursor:pointer}
+.resetBtn{background:#ff4444;color:white;border:none}
+.resetBtn:hover{background:#cc0000}
+.related{margin-top:40px;padding:20px;background:#fff;border-radius:8px}
+.related a{color:#0066cc;text-decoration:none;margin:0 10px}
+.related a:hover{text-decoration:underline}
+</style>
+</head>
+<body>
+
+<h1>CPS Test Online Free - Click Speed Test in 5, 10, 20 Seconds</h1>
+
+<div class="box">
+<p>Select time and click the button as fast as you can!</p>
+<select id="timeSelect">
+<option value="5">5 Seconds</option>
+<option value="10" selected>10 Seconds</option>
+<option value="20">20 Seconds</option>
+</select>
+<div class="timer" id="timer">Time: 10s</div>
+<button id="clickBtn">Click Here!</button>
+<div class="score" id="score">Clicks: 0</div>
+<div class="score" id="cps">CPS: 0.00</div>
+<button class="resetBtn" onclick="resetTest()">Reset Test</button>
+</div>
+
+<h2>What is CPS Test and Why It Matters</h2>
+<p>A CPS Test measures your clicks per second - how fast you can click a mouse button or tap a screen within a set time limit. CPS stands for Clicks Per Second and it is a popular metric among gamers, especially Minecraft PvP players, who need fast clicking to gain an advantage in combat. But CPS testing is not just for gamers. Typists, data entry workers, and anyone looking to improve their hand-eye coordination can use this free online CPS test to track their clicking speed over time.</p>
+
+<p>Our CPS Test tool lets you choose between 5 seconds, 10 seconds, or 20 seconds mode. The shorter tests measure your burst speed, while the 20 second test shows your sustained clicking ability. Many people start at 6-8 CPS and can train themselves to reach 10-12 CPS with practice. Professional Minecraft players often hit 14-16 CPS using techniques like jitter clicking or butterfly clicking.</p>
+
+<h2>How to Use This Free Click Speed Test</h2>
+<p>Using our CPS Test is simple. First, select your preferred time duration from the dropdown menu above. Then click the green button as fast as you possibly can until the timer runs out. Your total clicks and clicks per second will update in real time. When the test ends, your final CPS score will be displayed. Click the Reset button to try again and beat your previous record.</p>
+
+<p>This tool works on both desktop and mobile devices. On mobile, tap the button rapidly with one or two fingers. For best results, use a gaming mouse on desktop and find a comfortable hand position. Do not strain your wrist - clicking speed should improve naturally with practice.</p>
+
+<h2>Tips to Improve Your Click Speed Score</h2>
+<p>If you want to increase your CPS, start with proper posture and relax your hand. Tension slows you down. Try using your index and middle finger together on the mouse button for butterfly clicking. Another technique is jitter clicking, where you vibrate your arm to make the mouse click rapidly. Practice daily for 5 minutes and you will see improvement within a week.</p>
+
+<p>Remember that CPS is just one measure of clicking ability. Accuracy and consistency matter too. Our free CPS test tool saves no data and requires no signup, so you can test yourself anytime without privacy concerns.</p>
+
+<h2>Frequently Asked Questions About CPS Testing</h2>
+<p><strong>What is a good CPS score?</strong> Average people click at 5-7 CPS. Gamers aim for 10+ CPS. Anything above 12 CPS is considered excellent.</p>
+<p><strong>Does CPS matter outside gaming?</strong> Yes. Fast clicking helps in data entry, online surveys, and any task requiring rapid mouse input.</p>
+<p><strong>Can I cheat the CPS test?</strong> Auto clickers will give false results. This test is designed for manual clicking only.</p>
+
+<div class="related">
+<h2>Related Free Tools</h2>
+<p>Test other skills with our free online utilities: 
+<a href="/percentage-calculator.html">Percentage Calculator</a> | 
+<a href="/free-word-counter.html">Word Counter Tool</a> | 
+<a href="/character-counter.html">Character Counter</a> | 
+<a href="/index.html">All Tools</a>
+</p>
+</div>
+
+<script>
+let clicks=0, time=10, timer=null, running=false;
+const btn=document.getElementById('clickBtn'), timerEl=document.getElementById('timer'), scoreEl=document.getElementById('score'), cpsEl=document.getElementById('cps'), timeSelect=document.getElementById('timeSelect');
+
+timeSelect.onchange=()=>{time=parseInt(timeSelect.value);resetTest();}
+btn.onclick=()=>{
+if(!running){startTest();}
+clicks++;scoreEl.textContent='Clicks: '+clicks;cpsEl.textContent='CPS: '+(clicks/time).toFixed(2);
+}
+function startTest(){
+running=true;clicks=0;btn.disabled=false;let t=time;timerEl.textContent='Time: '+t+'s';scoreEl.textContent='Clicks: 0';cpsEl.textContent='CPS: 0.00';
+timer=setInterval(()=>{t--;timerEl.textContent='Time: '+t+'s';if(t<=0){clearInterval(timer);running=false;btn.disabled=true;timerEl.textContent='Time Up!'}},1000);
+}
+function resetTest(){clearInterval(timer);running=false;clicks=0;timerEl.textContent='Time: '+time+'s';scoreEl.textContent='Clicks: 0';cpsEl.textContent='CPS: 0.00';btn.disabled=false;}
+</script>
+
+</body>
+</html>
