@@ -2,26 +2,54 @@
 <html lang="en">
 <head>
 <meta charset="UTF-8">
-<meta name="viewport" content="width=device-width, initial-scale=1.0">
-<title>Miles to KM Converter - Convert mi to km Free | USA Distance</title>
-<meta name="description" content="Convert Miles to Kilometers instantly. Free mi to km converter for USA drivers, runners, and travelers. Road distance calculator for America.">
-<style>body{font-family:Segoe UI,Arial;background:#2563eb;padding:20px} .box{max-width:650px;margin:40px auto;background:white;border-radius:16px;padding:35px} h1{color:#2563eb;text-align:center} input{width:100%;padding:15px;border:2px solid #e2e8f0;border-radius:8px;margin:12px 0;font-size:17px} button{width:100%;padding:16px;background:#2563eb;color:white;border:none;border-radius:8px;font-size:18px;font-weight:bold;cursor:pointer} .result{margin-top:25px;padding:25px;background:#eff6ff;border-radius:10px;text-align:center;display:none} .result.show{display:block} .result p{font-size:42px;font-weight:bold;color:#2563eb} .seo{margin-top:40px;padding:25px;background:#eff6ff;line-height:1.8;color:#444}</style>
+<title>Miles to KM Converter USA | Convert mi to KM Free</title>
+<meta name="description" content="Convert Miles to Kilometers instantly. Free mi to km converter for USA drivers. 1 Mile = 1.609344 KM. 60 mph = 96.56 km/h.">
+<style>
+body{font-family:Segue UI,Arial;background:#2563eb;padding:20px;margin:0}
+.box{max-width:650px;margin:40px auto;background:#fff;padding:25px;border-radius:12px;box-shadow:0 4px 12px rgba(0,0,0,0.3)}
+h1{color:#1e40af;text-align:center;margin-bottom:20px}
+input,button{width:100%;padding:12px;margin:8px 0;font-size:16px;border:2px solid #2563eb;border-radius:6px;box-sizing:border-box}
+button{background:#2563eb;color:#fff;font-weight:bold;cursor:pointer}
+button:hover{background:#1d4ed8}
+.result{margin-top:15px;padding:15px;background:#dbeafe;font-weight:bold;text-align:center;border-radius:6px}
+.seo{margin-top:30px;text-align:left}
+.seo h2{color:#1e40af;margin-top:25px;font-size:20px}
+.seo p{line-height:1.7;color:#333;margin:10px 0}
+.related{margin-top:30px;padding:15px;background:#dbeafe;border-radius:8px}
+.related h3{color:#1e40af;margin-top:0;font-size:18px}
+.related a{color:#1e40af;text-decoration:none;margin-right:12px}
+.related a:hover{text-decoration:underline}
+</style>
 </head>
 <body>
 <div class="box">
-<h1>🚗 Miles to KM Converter USA</h1>
+<h1>Miles to KM Converter USA</h1>
 <input type="number" id="val" value="60" placeholder="Enter miles">
 <button onclick="c()">Convert mi to km</button>
-<div class="result" id="r"><p id="a">0 KM</p></div>
+<div class="result" id="rsp"><p id="a">60 mi = 96.56 KM</p></div>
 
 <div class="seo">
 <h2>Miles to Kilometers Converter for American Drivers</h2>
 <p>USA road signs show distance in Miles. But Google Maps, GPS, and international travel use Kilometers. American drivers need mi to km conversion for road trips, running, and fuel calculations.</p>
-<p><b>1 Mile = 1.609344 Kilometers</b>. 60 mph speed limit = 96.56 km/h. Marathon 26.2 miles = 42.16 km.</p>
-<p><b>Americans use this for:</b> Converting speed limits, calculating MPG to L/100km, marathon training, cross-country road trips from California to New York, and international driving licenses.</p>
+<p><b>1 Mile = 1.609344 KM.</b> 60 mph speed limit = 96.56 km/h. Marathon 26.2 miles = 42.16 km.</p>
+<p><b>Americans use this for:</b> Converting speed limits, calculating MPG to L/100km, marathon training, cross-country road trips, and international driving licenses.</p>
 <p>Fast mi to km converter made for USA traffic. Free tool trusted by drivers, runners, and travelers across all 50 states.</p>
 </div>
+
+<div class="related">
+<h3>Related Free Tools</h3>
+<a href="fahrenheit-to-celsius-converter.html">Fahrenheit to Celsius Converter</a> | 
+<a href="cps-test-online-free.html">CPS Test Online</a> | 
+<a href="/">All Free Tools</a>
 </div>
-<script>function c(){let v=parseFloat(document.getElementById('val').value);let r=v*1.609344;document.getElementById('a').innerText=r.toFixed(4)+' KM';document.getElementById('r').classList.add('show');}</script>
-</body>
+
+</div>
+<script>
+function c(){
+  let v=parseFloat(document.getElementById('val').value);
+  if(!v){document.getElementById('a').innerText='Please enter miles';return}
+  let r=v*1.609344;
+  document.getElementById('a').innerText=v+' Miles = '+r.toFixed(2)+' Kilometers';
+}
+</script>
 </html>
