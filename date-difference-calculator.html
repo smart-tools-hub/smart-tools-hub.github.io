@@ -1,0 +1,72 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Date Difference Calculator - Calculate Days Between Two Dates Online</title>
+<meta name="description" content="Free date difference calculator to find days, weeks, months, and years between two dates. Fast online tool to calculate duration between dates for age gap, projects, events.">
+<style>
+body{font-family:Arial,sans-serif;max-width:800px;margin:40px auto;padding:20px;line-height:1.7;color:#111}
+h1{font-size:28px;margin-bottom:10px}
+h2{font-size:22px;margin-top:30px}
+input,button{padding:12px;margin:6px 0;width:100%;font-size:16px;box-sizing:border-box}
+button{background:#2563eb;color:#fff;border:none;border-radius:6px;cursor:pointer;font-weight:bold}
+button:hover{background:#1d4ed8}
+.result{margin-top:20px;padding:15px;background:#f3f4f6;border-radius:6px;font-weight:bold}
+a{color:#2563eb;text-decoration:none}
+a:hover{text-decoration:underline}
+.content{margin-top:40px}
+</style>
+</head>
+<body>
+<h1>Date Difference Calculator</h1>
+<p>Calculate the exact number of days between any two dates instantly. This free online tool shows total days, weeks, months, and years between your selected dates.</p>
+
+<label>Start Date:</label>
+<input type="date" id="startDate">
+<label>End Date:</label>
+<input type="date" id="endDate">
+<button onclick="calcDiff()">Calculate Days</button>
+
+<div class="result" id="result"></div>
+
+<p>Also try our <a href="/age-in-years-months.html">Age Calculator</a>, <a href="/bmi-calculator.html">BMI Calculator</a>, and <a href="/20-percent-tip-calc.html">Tip Calculator</a>.</p>
+
+<div class="content">
+<h2>How to Calculate Days Between Two Dates Online</h2>
+<p>Our free date difference calculator helps you find the exact number of days between any two dates in seconds. Whether you want to know how many days are left until your birthday, calculate project duration, or check the age gap between two people, this tool gives accurate results without manual math.</p>
+
+<h2>Why Use a Date Difference Calculator</h2>
+<p>Counting days manually is slow and error prone, especially when months have different lengths and leap years are involved. This online days between dates calculator handles all that automatically. Just pick the start date and end date, and you get total days, weeks, months, and years in one click.</p>
+<p>Students use it to calculate days for assignments. HR teams use it to track employee leave days. Travelers use it to count days between booking and departure. Event planners use it to find duration between dates. Even couples use it to track relationship milestones and anniversaries.</p>
+
+<h2>How the Date Calculator Works</h2>
+<p>The calculator takes your two dates and finds the time difference in milliseconds. Then it converts that into days, weeks, months, and years. It accounts for leap years and different month lengths so you always get the correct number. The result shows total days as well as approximate weeks and months for quick reference.</p>
+
+<h2>Long Tail Keywords This Tool Helps With</h2>
+<p>If you searched for terms like how many days between two dates, calculate days between dates online, date duration calculator, days calculator from date to date, number of days between dates including both dates, or date gap calculator, you are in the right place. This tool is built to answer those exact queries with fast and accurate results.</p>
+
+<h2>More Free Tools on Smart Tools Hub</h2>
+<p>For more quick calculations, check our <a href="/age-in-years-months.html">Age in Years and Months Calculator</a> to find exact age from birth date. Use the <a href="/auto-loan-calculator.html">Auto Loan Calculator</a> to see monthly payments and interest. Our <a href="/bmi-for-kids.html">BMI for Kids Calculator</a> helps parents track child growth. The <a href="/bill-tip-calculator.html">Bill Tip Calculator</a> makes restaurant math easy. All tools are free, mobile friendly, and work instantly in your browser without signup.</p>
+<p>Bookmark this date difference calculator for future use. No ads, no signup, just clean results every time you need to count days between dates.</p>
+</div>
+
+<script>
+function calcDiff(){
+  const s = new Date(document.getElementById('startDate').value);
+  const e = new Date(document.getElementById('endDate').value);
+  if(!s || !e || isNaN(s) || isNaN(e)){alert('Please select both dates');return;}
+  const diffTime = Math.abs(e - s);
+  const diffDays = Math.ceil(diffTime / (1000*60*60*24));
+  const weeks = Math.floor(diffDays/7);
+  const months = Math.floor(diffDays/30.44);
+  const years = Math.floor(diffDays/365.25);
+  document.getElementById('result').innerHTML = 
+    `Total Days: ${diffDays}<br>
+     Weeks: ${weeks}<br>
+     Months: ~${months}<br>
+     Years: ~${years}`;
+}
+</script>
+</body>
+</html>
