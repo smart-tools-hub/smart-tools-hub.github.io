@@ -1,0 +1,193 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Free CSS Gradient Generator - Create Beautiful Gradients Online</title>
+  <meta name="description" content="Free online CSS Gradient Generator. Create linear and radial gradients with live preview. Copy CSS code instantly. Perfect for modern web design.">
+  <style>
+    * { margin: 0; padding: 0; box-sizing: border-box; }
+    body {
+      font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', sans-serif;
+      background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
+      min-height: 100vh;
+      padding: 40px 20px;
+    }
+    .container {
+      max-width: 800px;
+      margin: 0 auto;
+      background: white;
+      border-radius: 20px;
+      padding: 40px;
+      box-shadow: 0 20px 60px rgba(0,0,0,0.3);
+    }
+    h1 {
+      font-size: 2.5rem;
+      background: linear-gradient(135deg, #667eea, #764ba2);
+      -webkit-background-clip: text;
+      -webkit-text-fill-color: transparent;
+      margin-bottom: 30px;
+      text-align: center;
+    }
+    .preview {
+      width: 100%;
+      height: 250px;
+      border-radius: 15px;
+      margin-bottom: 30px;
+      border: 2px solid #e0e0e0;
+    }
+    .controls {
+      display: grid;
+      gap: 20px;
+      margin-bottom: 25px;
+    }
+    .control-group {
+      display: flex;
+      flex-direction: column;
+      gap: 8px;
+    }
+    label {
+      font-weight: 600;
+      color: #333;
+      font-size: 0.95rem;
+    }
+    input[type="color"] {
+      width: 100%;
+      height: 50px;
+      border: 2px solid #ddd;
+      border-radius: 10px;
+      cursor: pointer;
+    }
+    input[type="range"] {
+      width: 100%;
+    }
+    select {
+      padding: 12px;
+      border: 2px solid #ddd;
+      border-radius: 10px;
+      font-size: 1rem;
+      cursor: pointer;
+    }
+    .code-box {
+      background: #1e1e1e;
+      color: #4ec9b0;
+      padding: 20px;
+      border-radius: 10px;
+      font-family: 'Courier New', monospace;
+      font-size: 0.95rem;
+      margin-bottom: 20px;
+      word-break: break-all;
+    }
+    .copy-btn {
+      width: 100%;
+      padding: 15px;
+      background: linear-gradient(135deg, #667eea, #764ba2);
+      color: white;
+      border: none;
+      border-radius: 10px;
+      font-size: 1.1rem;
+      font-weight: 600;
+      cursor: pointer;
+      transition: transform 0.2s;
+    }
+    .copy-btn:hover { transform: translateY(-2px); }
+    .back-link {
+      display: inline-block;
+      margin-top: 30px;
+      color: #667eea;
+      text-decoration: none;
+      font-weight: 600;
+    }
+    @media (max-width: 768px) {
+      .container { padding: 25px; }
+      h1 { font-size: 2rem; }
+    }
+  </style>
+</head>
+<body>
+  <div class="container">
+    <h1>CSS Gradient Generator</h1>
+    
+    <div class="preview" id="preview"></div>
+    
+    <div class="controls">
+      <div class="control-group">
+        <label>Color 1</label>
+        <input type="color" id="color1" value="#667eea">
+      </div>
+      <div class="control-group">
+        <label>Color 2</label>
+        <input type="color" id="color2" value="#764ba2">
+      </div>
+      <div class="control-group">
+        <label>Angle: <span id="angleVal">135</span>°</label>
+        <input type="range" id="angle" min="0" max="360" value="135">
+      </div>
+      <div class="control-group">
+        <label>Gradient Type</label>
+        <select id="type">
+          <option value="linear">Linear</option>
+          <option value="radial">Radial</option>
+        </select>
+      </div>
+    </div>
+    
+    <div class="code-box" id="cssCode"></div>
+    <button class="copy-btn" onclick="copyCSS()">Copy CSS Code</button>
+    
+    <a href="/" class="back-link">← Back to All Tools</a>
+  </div>
+
+  <script>
+    const color1 = document.getElementById('color1');
+    const color2 = document.getElementById('color2');
+    const angle = document.getElementById('angle');
+    const angleVal = document.getElementById('angleVal');
+    const type = document.getElementById('type');
+    const preview = document.getElementById('preview');
+    const cssCode = document.getElementById('cssCode');
+    
+    function updateGradient() {
+      angleVal.textContent = angle.value;
+      let gradient;
+      if (type.value === 'linear') {
+        gradient = `linear-gradient(${angle.value}deg, ${color1.value}, ${color2.value})`;
+      } else {
+        gradient = `radial-gradient(circle, ${color1.value}, ${color2.value})`;
+      }
+      preview.style.background = gradient;
+      cssCode.textContent = `background: ${gradient};`;
+    }
+    
+    function copyCSS() {
+      navigator.clipboard.writeText(cssCode.textContent);
+      const btn = document.querySelector('.copy-btn');
+      btn.textContent = 'Copied!';
+      setTimeout(() => btn.textContent = 'Copy CSS Code', 2000);
+    }
+    
+    [color1, color2, angle, type].forEach(el => el.addEventListener('input', updateGradient));
+    updateGradient();
+  </script>
+  
+ <div style="margin-top: 50px; padding-top: 40px; border-top: 2px solid #eee; color: #333; line-height: 1.8;">
+  <h2 style="font-size: 2rem; margin-bottom: 20px;">Free CSS Gradient Generator Online Tool</h2>
+  <p>Create stunning website backgrounds with our free CSS gradient generator online. Design beautiful linear and radial gradients in seconds with live preview. No more guessing CSS values – just pick colors, adjust the angle, and copy the code instantly for your website or web app.</p>
+  
+  <p>Gradients are essential for modern web design. They add depth, create smooth color transitions, and make your UI look professional. Our CSS gradient code generator supports both linear gradients with custom angles and radial gradients for circular effects. The output uses standard CSS syntax that works on all modern browsers without prefixes.</p>
+  
+  <h2 style="font-size: 2rem; margin: 35px 0 20px;">How to Use This Gradient Maker</h2>
+  <p>Using our online gradient generator is super easy. Select your first color using the color picker, then choose a second color to create the transition. For linear gradients, move the angle slider from 0 to 360 degrees to control the direction. Switch to radial for a circular gradient that spreads from the center. Watch the live preview update instantly as you make changes.</p>
+  
+  <p>Once you’re happy with the design, click the Copy button to grab the CSS code. Paste it directly into your stylesheet as a background property. You can use the generated gradient for backgrounds, buttons, cards, headers, or any HTML element that accepts CSS backgrounds.</p>
+  
+  <h2 style="font-size: 2rem; margin: 35px 0 20px;">Gradient Design Tips for Better UI</h2>
+  <p>For professional results, use colors with similar brightness levels. High contrast gradients work great for bold designs, while subtle gradients create elegant backgrounds. Angles between 90° and 180° are most common for website sections. Try 135° for a diagonal effect that adds movement to your design.</p>
+  
+  <p>Combine gradients with transparency using RGBA colors for layered effects. You can also add multiple color stops by extending the CSS code manually. Test your gradient on both light and dark backgrounds to ensure good contrast and readability.</p>
+  
+  <p>Pair this tool with our <a href="/box-shadow-generator.html" style="color: #667eea; font-weight: 600;">CSS Box Shadow Generator</a> and <a href="/color-picker.html" style="color: #667eea; font-weight: 600;">Online Color Picker</a> to create complete modern UI designs. Check out all free developer tools at <a href="/" style="color: #667eea; font-weight: 600;">Smart Tools Hub</a>.</p>
+</div>
+  
+</body>
+</html>
