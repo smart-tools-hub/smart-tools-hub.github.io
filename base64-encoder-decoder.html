@@ -1,0 +1,72 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Base64 Encoder Decoder - Encode & Decode Text Online Free</title>
+<meta name="description" content="Free online Base64 Encoder and Decoder tool. Convert text to Base64 and decode Base64 to text instantly. No signup required. Perfect for developers and data encoding.">
+</head>
+<body>
+
+<h1>Base64 Encoder Decoder Tool</h1>
+
+<textarea id="input" placeholder="Enter text to encode or Base64 to decode..." rows="10" style="width:100%;"></textarea>
+<button onclick="encode()" style="margin:10px 5px;">Encode to Base64</button>
+<button onclick="decode()" style="margin:10px 5px;">Decode Base64</button>
+<textarea id="output" placeholder="Result will appear here..." rows="10" style="width:100%;" readonly></textarea>
+<button onclick="copyCode()" style="margin:10px 0;">Copy Result</button>
+
+<div style="margin-top:30px;">
+<h2>What is Base64 Encoder Decoder?</h2>
+<p>A Base64 Encoder Decoder is a free online tool that converts plain text into Base64 format and decodes Base64 back to readable text. Base64 encoding is widely used in web development, email attachments, data URLs, and API authentication. It converts binary data into ASCII characters, making it safe to transmit over systems that only support text.</p>
+
+<p>Developers use Base64 encoding to embed images in HTML CSS, store data in JSON, and encode credentials for HTTP Basic Authentication. Our Base64 Encoder Decoder works 100% in your browser. Your data never leaves your device, ensuring complete privacy and security. Just paste your text or Base64 string, click encode or decode, and get instant results.</p>
+
+<p>This tool is perfect for programmers, web developers, and IT professionals who need quick Base64 conversion. Whether you need to encode sensitive data, decode JWT tokens, or convert files to Base64 for embedding in code, this online Base64 converter handles it all without limits. No installation, no signup, completely free to use anytime.</p>
+
+<h2>How to Encode and Decode Base64 Online</h2>
+<p>Using our Base64 tool is very simple. Paste your plain text in the input box and click "Encode to Base64" to convert it to Base64 format. If you have a Base64 string, paste it and click "Decode Base64" to get back the original text. The result appears instantly in the output box ready to copy.</p>
+
+<h2>FAQ</h2>
+<p><strong>Is Base64 encryption?</strong><br>
+No. Base64 is encoding, not encryption. It is easily reversible and should not be used to protect sensitive data.</p>
+
+<p><strong>Can I encode images to Base64?</strong><br>
+Yes. You can convert image files to Base64 using online converters, then use the output with this decoder if needed.</p>
+
+<p><strong>Does this tool have a character limit?</strong><br>
+No limit. You can encode or decode text of any length directly in your browser.</p>
+
+<h2>Related Tools</h2>
+<p>Check out these other free tools: <a href="css-minifier.html">CSS Minifier</a>, <a href="box-shadow-generator.html">Box Shadow Generator</a>, <a href="gradient-generator.html">Gradient Generator</a>, <a href="color-picker.html">Color Picker</a>, <a href="case-converter.html">Case Converter</a>, and <a href="character-counter.html">Character Counter</a>.</p>
+</div>
+
+<script>
+function encode() {
+  try {
+    const input = document.getElementById('input').value;
+    const encoded = btoa(unescape(encodeURIComponent(input)));
+    document.getElementById('output').value = encoded;
+  } catch(e) {
+    document.getElementById('output').value = 'Error: Invalid input for encoding';
+  }
+}
+function decode() {
+  try {
+    const input = document.getElementById('input').value;
+    const decoded = decodeURIComponent(escape(atob(input)));
+    document.getElementById('output').value = decoded;
+  } catch(e) {
+    document.getElementById('output').value = 'Error: Invalid Base64 string';
+  }
+}
+function copyCode() {
+  const output = document.getElementById('output');
+  output.select();
+  document.execCommand('copy');
+  alert('Copied to clipboard!');
+}
+</script>
+
+</body>
+</html>
