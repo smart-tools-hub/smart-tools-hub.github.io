@@ -1,0 +1,61 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>CSS Minifier - Minify CSS Code Online Free | Smart Tools Hub</title>
+<meta name="description" content="Free online CSS Minifier tool to compress and minify CSS code instantly. Remove whitespace, comments, and reduce CSS file size for faster website loading. No signup required.">
+</head>
+<body>
+
+<h1>CSS Minifier Tool - Compress CSS Code Online</h1>
+
+<textarea id="input" placeholder="Paste your CSS code here..." rows="12" style="width:100%;"></textarea>
+<button onclick="minify()" style="margin:10px 0;">Minify CSS</button>
+<textarea id="output" placeholder="Minified CSS will appear here..." rows="12" style="width:100%;" readonly></textarea>
+<button onclick="copyCode()" style="margin:10px 0;">Copy Minified CSS</button>
+
+<div style="margin-top:30px;">
+<h2>What is a CSS Minifier Tool?</h2>
+<p>A CSS Minifier is a free online tool that compresses your CSS code by removing unnecessary characters like whitespace, line breaks, comments, and extra semicolons. This process reduces your CSS file size significantly without changing how your website looks. Faster loading CSS means better Google PageSpeed scores and improved user experience for your visitors.</p>
+
+<p>Developers and web designers use CSS minification before pushing code to production. Our CSS Minifier works 100% in your browser - your code never leaves your device. Just paste your CSS, click minify, and copy the compressed output instantly. No installation, no signup, no limits.</p>
+
+<p>This tool is perfect for WordPress users, Shopify store owners, and front-end developers who want to optimize website speed. Minified CSS loads faster on mobile devices and improves Core Web Vitals metrics that Google uses for ranking. You can minify entire stylesheets or small CSS snippets with equal accuracy.</p>
+
+<h2>How to Minify CSS Code Online</h2>
+<p>Using our CSS Minifier is simple. Copy your CSS code from your editor and paste it in the input box above. Click the "Minify CSS" button and the tool will instantly remove all comments, extra spaces, and line breaks. The compressed CSS appears in the output box ready to copy. Paste it back into your .css file and upload to your server.</p>
+
+<h2>FAQ</h2>
+<p><strong>Does CSS Minifier break my code?</strong><br>
+No. Our minifier only removes safe characters like comments and whitespace. Your CSS selectors, properties, and values remain exactly the same.</p>
+
+<p><strong>Can I minify multiple CSS files at once?</strong><br>
+Combine all CSS files into one first, then paste into the tool. Minifying combined CSS gives better compression than minifying files separately.</p>
+
+<p><strong>Is there a file size limit?</strong><br>
+No limit. You can minify CSS files of any size directly in your browser.</p>
+
+<h2>Related Tools</h2>
+<p>Check out these other free tools: <a href="box-shadow-generator.html">Box Shadow Generator</a>, <a href="gradient-generator.html">Gradient Generator</a>, <a href="color-picker.html">Color Picker</a>, <a href="case-converter.html">Case Converter</a>, <a href="character-counter.html">Character Counter</a>, and <a href="password-generator.html">Password Generator</a>.</p>
+</div>
+
+<script>
+function minify() {
+  let css = document.getElementById('input').value;
+  css = css.replace(/\/\*[\s\S]*?\*\//g, '');
+  css = css.replace(/\s+/g, ' ');
+  css = css.replace(/\s*([{}:;,])\s*/g, '$1');
+  css = css.replace(/;}/g, '}');
+  document.getElementById('output').value = css.trim();
+}
+function copyCode() {
+  const output = document.getElementById('output');
+  output.select();
+  document.execCommand('copy');
+  alert('Copied to clipboard!');
+}
+</script>
+
+</body>
+</html>
