@@ -1,0 +1,44 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <title>Hex to RGB Color Converter Online Free</title>
+  <meta name="description" content="Convert hex color codes to RGB values instantly. Free tool for web designers and developers.">
+</head>
+<body>
+  <h1>Hex to RGB Color Converter</h1>
+  
+  <div class="converter">
+    <label>Enter Hex Color Code:</label>
+    <input type="text" id="hexInput" placeholder="#FF5733" maxlength="7">
+    <button onclick="convertHexToRgb()">Convert</button>
+    
+    <div id="result"></div>
+    <div id="colorPreview"></div>
+  </div>
+
+  <script>
+  function convertHexToRgb() {
+    let hex = document.getElementById('hexInput').value.trim();
+    if(hex.startsWith('#')) hex = hex.slice(1);
+    
+    if(hex.length !== 6) {
+      document.getElementById('result').innerHTML = 'Please enter a valid 6 digit hex code';
+      return;
+    }
+    
+    let r = parseInt(hex.substr(0,2), 16);
+    let g = parseInt(hex.substr(2,2), 16);
+    let b = parseInt(hex.substr(4,2), 16);
+    
+    let rgb = `rgb(${r}, ${g}, ${b})`;
+    document.getElementById('result').innerHTML = `RGB Value: <strong>${rgb}</strong>`;
+    document.getElementById('colorPreview').style.backgroundColor = `rgb(${r}, ${g}, ${b})`;
+  }
+  </script>
+  
+  <style>
+  #colorPreview {width:100px; height:100px; margin-top:20px; border:1px solid #ccc;}
+  .converter {max-width:500px; margin:20px 0;}
+  </style>
+</body>
+</html>
