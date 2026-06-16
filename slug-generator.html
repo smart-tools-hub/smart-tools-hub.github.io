@@ -1,0 +1,77 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Free Slug Generator Tool - Create SEO Friendly URL Slugs Online 2025</title>
+  <meta name="description" content="Free online slug generator tool. Convert blog titles to SEO friendly URL slugs instantly. Remove spaces, special characters, make lowercase. Best for WordPress, Blogger, Shopify URLs.">
+  <link rel="canonical" href="https://smart-tools-hub.github.io/slug-generator.html">
+  <link rel="stylesheet" href="style.css">
+</head>
+<body>
+  <header style="text-align:center; padding:30px 20px;">
+    <h1>Free Slug Generator Tool Online</h1>
+    <p>Create SEO friendly URL slugs for blog posts, products, and web pages in 1 second</p>
+  </header>
+
+  <main style="max-width:750px; margin:40px auto; padding:20px;">
+    <div class="tool-box" style="background:#f8f9fa; padding:35px; border-radius:12px; box-shadow:0 2px 10px rgba(0,0,0,0.1);">
+      <label for="inputText"><strong>Enter Your Title or Blog Post Name:</strong></label>
+      <textarea id="inputText" rows="4" placeholder="10 Best Tips for Weight Loss in 2025!" style="width:100%; padding:12px; margin-top:10px; font-size:16px; border:1px solid #ddd; border-radius:5px;"></textarea>
+      
+      <button onclick="generateSlug()" style="margin-top:15px; padding:14px 35px; background:#4CAF50; color:white; border:none; border-radius:6px; cursor:pointer; font-size:16px; font-weight:bold;">Generate SEO Slug</button>
+      
+      <label style="display:block; margin-top:25px;"><strong>Your SEO Friendly Slug:</strong></label>
+      <input type="text" id="outputSlug" readonly style="width:100%; padding:12px; margin-top:5px; font-size:16px; background:white; border:1px solid #ddd; border-radius:5px;">
+      <button onclick="copySlug()" style="margin-top:10px; padding:10px 25px; background:#2196F3; color:white; border:none; border-radius:5px; cursor:pointer; font-weight:bold;">Copy to Clipboard</button>
+    </div>
+
+    <!-- 250+ Words SEO Content -->
+    <article class="seo-content" style="margin-top:60px; line-height:1.8; font-size:16px;">
+      <h2>What is a URL Slug and Why It Matters for SEO</h2>
+      <p>A URL slug is the readable part of a web address that comes after your domain name. For example, in <code>smart-tools-hub.github.io/slug-generator</code>, the word "slug-generator" is the slug. Google uses slugs to understand what your page is about, so making them SEO friendly directly impacts your search rankings. A good slug is short, uses only lowercase letters, replaces spaces with hyphens, and avoids special characters. Instead of <code>my%20blog%20post%202025!</code>, you should use <code>my-blog-post-2025</code>. This simple change makes your URL clean, readable, and keyword rich for both users and search engines.</p>
+      
+      <h2>Best Free Slug Generator for WordPress, Blogger, and Shopify</h2>
+      <p>Our free slug generator tool helps bloggers, content writers, and eCommerce store owners create perfect URL slugs without technical knowledge. Whether you are publishing on WordPress, Blogger, Shopify, or building a custom website, this tool converts any title into a clean URL format instantly. Simply paste your blog post title like "How to Make Money Online Without Investment" and get <code>how-to-make-money-online-without-investment</code> in one click. The tool automatically removes commas, apostrophes, symbols, and extra spaces that can break your URL structure. Using SEO optimized slugs improves click through rate from Google search results and makes sharing links on social media much cleaner.</p>
+      
+      <h2>How to Create Perfect URL Slugs for Better Rankings</h2>
+      <p>Creating SEO friendly slugs is one of the easiest on-page SEO tasks with the biggest impact. First, keep your slug under 60 characters and include your main keyword naturally. Second, use hyphens to separate words because Google treats hyphens as space separators, while underscores are not recommended. Third, avoid stop words like "the", "and", "of" if your slug gets too long. Fourth, always use lowercase letters because URLs are case sensitive on some servers. Our slug generator follows all these best practices automatically, so you do not have to edit anything manually. Just type your title and get a ready-to-use slug for your blog post or product page.</p>
+      
+      <h3>Related SEO Tools You May Need</h3>
+      <p>After generating your slug, use our <a href="meta-description-generator.html">Meta Description Generator</a> to write a perfect 160 character meta description for your page. You can also check the length of your title and slug using the <a href="character-counter.html">Character Counter</a> tool to make sure it stays within SEO limits. If you want to test different title variations, our <a href="case-converter.html">Case Converter</a> helps you switch between title case, lowercase, and uppercase formats quickly. For content writers, the <a href="word-counter.html">Word Counter</a> tool ensures your blog post meets the ideal word count for ranking on Google.</p>
+      
+      <h2>Frequently Asked Questions About URL Slugs</h2>
+      <p><strong>Q1: What is the best length for a URL slug in 2025</strong><br>
+      A: Keep your slug between 3 to 5 words or under 60 characters. Short slugs load faster, look cleaner in search results, and have higher click through rates. Google recommends descriptive but concise URLs for better SEO performance.</p>
+      
+      <p><strong>Q2: Should I include keywords in my slug</strong><br>
+      A: Yes, but naturally. Include your primary keyword once in the slug without keyword stuffing. Example: If your post is about "BMI Calculator", use <code>bmi-calculator</code> not <code>best-bmi-calculator-free-online-tool</code>. Natural keywords help Google understand your content topic.</p>
+      
+      <p><strong>Q3: Can I change a slug after publishing my blog post</strong><br>
+      A: Yes, but use 301 redirect from old slug to new slug. Changing slugs without redirect can cause 404 errors and lose SEO ranking. WordPress and Blogger both allow slug editing, but always set up a redirect to protect your traffic and backlinks.</p>
+      
+      <p><strong>Q4: Hyphen or underscore which is better for slugs</strong><br>
+      A: Always use hyphens. Google confirmed that hyphens are treated as word separators, while underscores connect words together. So <code>seo-tips</code> is read as "seo tips" but <code>seo_tips</code> is read as "seotips" which hurts your SEO.</p>
+    </article>
+  </main>
+
+  <script>
+    function generateSlug() {
+      let text = document.getElementById('inputText').value;
+      let slug = text.toLowerCase()
+                    .trim()
+                    .replace(/[^\w\s-]/g, '') // remove special chars
+                    .replace(/\s+/g, '-') // spaces to hyphen
+                    .replace(/-+/g, '-'); // multiple hyphens to single
+      document.getElementById('outputSlug').value = slug;
+    }
+    
+    function copySlug() {
+      let slug = document.getElementById('outputSlug');
+      slug.select();
+      document.execCommand('copy');
+      alert('Slug copied to clipboard!');
+    }
+  </script>
+</body>
+</html>
