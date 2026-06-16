@@ -1,0 +1,98 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Compound Interest Calculator Online Free - Calculate Investment Growth 2025</title>
+  <meta name="description" content="Free compound interest calculator. Calculate how your investment grows with monthly, yearly compounding. See future value, total interest, and growth chart. Best for savings, FD, mutual funds.">
+  <link rel="canonical" href="https://smart-tools-hub.github.io/compound-interest-calculator.html">
+  <link rel="stylesheet" href="style.css">
+</head>
+<body>
+  <header style="text-align:center; padding:30px 20px;">
+    <h1>Compound Interest Calculator</h1>
+    <p>Calculate how your money grows with compound interest over time</p>
+  </header>
+
+  <main style="max-width:750px; margin:40px auto; padding:20px;">
+    <div class="tool-box" style="background:#f8f9fa; padding:35px; border-radius:12px; box-shadow:0 2px 10px rgba(0,0,0,0.1);">
+      <label><strong>Principal Amount ₹:</strong></label>
+      <input type="number" id="principal" placeholder="100000" style="width:100%; padding:10px; margin:8px 0 15px; border:1px solid #ddd; border-radius:5px;">
+      
+      <label><strong>Annual Interest Rate %:</strong></label>
+      <input type="number" id="rate" placeholder="8" step="0.1" style="width:100%; padding:10px; margin:8px 0 15px; border:1px solid #ddd; border-radius:5px;">
+      
+      <label><strong>Time in Years:</strong></label>
+      <input type="number" id="time" placeholder="10" style="width:100%; padding:10px; margin:8px 0 15px; border:1px solid #ddd; border-radius:5px;">
+      
+      <label><strong>Compounding Frequency:</strong></label>
+      <select id="frequency" style="width:100%; padding:10px; margin:8px 0 20px; border:1px solid #ddd; border-radius:5px;">
+        <option value="1">Yearly</option>
+        <option value="2">Half Yearly</option>
+        <option value="4">Quarterly</option>
+        <option value="12" selected>Monthly</option>
+        <option value="365">Daily</option>
+      </select>
+      
+      <button onclick="calculateCI()" style="width:100%; padding:14px; background:#4CAF50; color:white; border:none; border-radius:6px; cursor:pointer; font-size:16px; font-weight:bold;">Calculate Compound Interest</button>
+      
+      <div id="result" style="margin-top:25px; display:none;">
+        <h3>Your Investment Growth</h3>
+        <p><strong>Future Value:</strong> ₹<span id="futureValue"></span></p>
+        <p><strong>Total Interest Earned:</strong> ₹<span id="interest"></span></p>
+        <p><strong>Total Investment:</strong> ₹<span id="totalInvest"></span></p>
+      </div>
+    </div>
+
+    <!-- 250+ Words SEO Content -->
+    <article class="seo-content" style="margin-top:60px; line-height:1.8; font-size:16px;">
+      <h2>What is Compound Interest and Why It Matters</h2>
+      <p>Compound interest is the interest calculated on your initial principal plus the accumulated interest from previous periods. This is also called "interest on interest" and it makes your money grow exponentially over time. Unlike simple interest, compound interest rewards you for keeping money invested longer. Albert Einstein called compound interest the "eighth wonder of the world" because of its power to multiply wealth. Our free compound interest calculator helps you see exactly how much your savings, fixed deposit, mutual fund, or any investment will grow over months and years with different compounding frequencies.</p>
+      
+      <h2>Best Compound Interest Calculator for Indian Investors 2025</h2>
+      <p>Planning to invest in FD, RD, mutual funds, or stocks? This compound interest calculator online free tool gives you accurate future value calculations instantly. Just enter your principal amount, expected annual return rate, investment duration in years, and select compounding frequency like monthly or quarterly. The calculator uses the standard formula A = P(1 + r/n)^(nt) to show your final amount and total interest earned. Whether you are a student learning finance, a beginner investor, or planning retirement savings, this tool helps you understand the power of compounding and make smarter financial decisions for long term wealth building.</p>
+      
+      <h2>How Compounding Frequency Affects Your Returns</h2>
+      <p>Compounding frequency makes a big difference in your final returns. Monthly compounding gives higher returns than yearly compounding because interest gets added to principal more often. For example, ₹1 lakh invested at 10% for 10 years becomes ₹2.59 lakh with yearly compounding, but ₹2.70 lakh with monthly compounding. Daily compounding gives the maximum returns. This is why banks and mutual funds prefer monthly or daily compounding. Use our calculator to compare different compounding frequencies and choose investments that compound more frequently for maximum growth. Small changes in interest rate and time can create huge differences thanks to the power of compounding.</p>
+      
+      <h3>Related Financial Calculators</h3>
+      <p>After calculating compound interest, check your loan details with our <a href="loan-calculator.html">Loan Calculator</a> to compare borrowing vs investing. You can also calculate monthly installments using the <a href="emi-calculator.html">EMI Calculator</a> if you are taking a loan against your investment. For quick percentage calculations on your returns, use the <a href="percentage-calculator.html">Percentage Calculator</a>. If you want to plan your monthly budget around investments, our <a href="auto-loan-calculator.html">Auto Loan Calculator</a> helps you balance EMIs with savings goals.</p>
+      
+      <h2>Frequently Asked Questions About Compound Interest</h2>
+      <p><strong>Q1: What is the compound interest formula</strong><br>
+      A: The formula is A = P(1 + r/n)^(nt) where A is final amount, P is principal, r is annual interest rate, n is compounding frequency per year, and t is time in years. Our calculator does this math automatically for you.</p>
+      
+      <p><strong>Q2: Is compound interest better than simple interest</strong><br>
+      A: Yes, compound interest always gives higher returns than simple interest for periods longer than 1 year. The longer you invest, the bigger the difference becomes because interest keeps earning interest in compound interest.</p>
+      
+      <p><strong>Q3: Which compounding frequency is best for savings</strong><br>
+      A: Daily or monthly compounding is best because interest gets added to your principal more frequently. Most Indian banks offer quarterly compounding on FD, while mutual funds compound daily, giving you better returns over time.</p>
+      
+      <p><strong>Q4: How to calculate compound interest monthly in India</strong><br>
+      A: Use our free calculator above. Enter principal, annual rate, years, and select "Monthly" as compounding frequency. It will show your future value and total interest earned without any complex manual calculation.</p>
+    </article>
+  </main>
+
+  <script>
+    function calculateCI() {
+      let p = parseFloat(document.getElementById('principal').value);
+      let r = parseFloat(document.getElementById('rate').value) / 100;
+      let t = parseFloat(document.getElementById('time').value);
+      let n = parseFloat(document.getElementById('frequency').value);
+      
+      if(!p || !r || !t) {
+        alert('Please fill all fields');
+        return;
+      }
+      
+      let amount = p * Math.pow((1 + r/n), n*t);
+      let interest = amount - p;
+      
+      document.getElementById('futureValue').innerText = amount.toFixed(2);
+      document.getElementById('interest').innerText = interest.toFixed(2);
+      document.getElementById('totalInvest').innerText = p.toFixed(2);
+      document.getElementById('result').style.display = 'block';
+    }
+  </script>
+</body>
+</html>
