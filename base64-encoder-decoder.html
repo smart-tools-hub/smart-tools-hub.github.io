@@ -17,48 +17,39 @@
 <button onclick="copyCode()" style="margin:10px 0;">Copy Result</button>
 
 <div style="margin-top:30px;">
-<div class="tool-content">
-<h2>What is Base64 Encoder Decoder and Real Use Cases?</h2>
-<p>Base64 ek binary-to-text encoding format hai jo data ko ASCII string me convert karta hai. Jab API me JSON bhejte waqt special characters error dete hain, ya email attachment send karna ho, tab Base64 use hota hai. Web developers isko data URI banane, JWT token decode karne aur HTTP Basic Auth credentials encode karne ke liye daily use karte hain. Important: Base64 encryption nahi hai - sirf data ko readable format me badalta hai.</p>
+What is Base64 Encoder Decoder and Real Use Cases?
+Base64 ek binary-to-text encoding format hai jo data ko ASCII string me convert karta hai. Jab API me JSON bhejte waqt special characters error dete hain, ya email attachment send karna ho, tab Base64 use hota hai. Web developers isko data URI banane, JWT token decode karne aur HTTP Basic Auth credentials encode karne ke liye daily use karte hain. Important: Base64 encryption nahi hai - sirf data ko readable format me badalta hai.
 
-<h2>How to Encode and Decode Text in 3 Seconds</h2>
-<ol>
-<li><strong>Encode:</strong> Input box me likho: <code>Admin@SmartToolsHub#2026</code></li>
-<li>Click "Encode to Base64" → Output: <code>QWRtaW5AU21hcnRUb29sc0h1YiMyMDI2</code></li>
-<li><strong>Decode:</strong> Encoded string paste karo aur "Decode Base64" dabao → Wapis original text mil jayega</li>
-</ol>
-<p><em>Manual encoding me 10 min lagte hain. Ye browser tool 1 second me kar deta hai.</em></p>
+How to Encode and Decode Text in 3 Seconds
+Encode: Input box me likho: Admin@SmartToolsHub#2026
+Click "Encode to Base64" → Output: QWRtaW5AU21hcnRUb29sc0h1YiMyMDI2
+Decode: Encoded string paste karo aur "Decode Base64" dabao → Wapis original text mil jayega
+Manual encoding me 10 min lagte hain. Ye browser tool 1 second me kar deta hai.
 
-<h2>5 Pro Tips for Developers & Programmers</h2>
-<ul>
-<li><strong>Embed Images:</strong> Choti SVG/PNG ko CSS me direct daalo: <code>url(data:image/svg+xml;base64,PHN2Zz4...)</code> - HTTP request kam ho jayegi</li>
-<li><strong>URL Safe Base64:</strong> Base64 me + aur / aate hain jo URL break karte hain. Use: <code>.replace(/\+/g, '-').replace(/\//g, '_')</code></li>
-<li><strong>JWT Tokens:</strong> JSON Web Token ka 2nd part Base64 encoded hota hai. Isko decode karke payload data check kar sakte ho.</li>
-<li><strong>File Size Warning:</strong> 100KB se badi file ko Base64 karne se size 33% badh jata hai. Sirf icons aur choti images ke liye use karo.</li>
-<li><strong>Security Note:</strong> Base64 ko koi bhi <code>atob()</code> command se decode kar lega. Password hide karne ke liye bcrypt ya AES encryption use karo.</li>
-</ul>
+5 Pro Tips for Developers & Programmers
+Embed Images: Choti SVG/PNG ko CSS me direct daalo: url(data:image/svg+xml;base64,PHN2Zz4...) - HTTP request kam ho jayegi
+URL Safe Base64: Base64 me + aur / aate hain jo URL break karte hain. Use: .replace(/\+/g, '-').replace(/\//g, '_')
+JWT Tokens: JSON Web Token ka 2nd part Base64 encoded hota hai. Isko decode karke payload data check kar sakte ho.
+File Size Warning: 100KB se badi file ko Base64 karne se size 33% badh jata hai. Sirf icons aur choti images ke liye use karo.
+Security Note: Base64 ko koi bhi atob() command se decode kar lega. Password hide karne ke liye bcrypt ya AES encryption use karo.
+Frequently Asked Questions - Base64 Tool
+Q: Is Base64 encryption or secure for passwords?
+A: No. Base64 is encoding, not encryption. Koi bhi online decoder se 1 click me reversible hai. Sensitive data ke liye kabhi use mat karna. Use HTTPS + AES-256 instead.
 
-<h2>Frequently Asked Questions - Base64 Tool</h2>
+Q: Can I convert images and PDF files to Base64?
+A: Yes, but best for files under 2MB. Large files se browser slow ho jata hai. Icons, logos, choti images ke liye perfect hai. Output ko data:image/png;base64, prefix ke sath use karo.
 
-<p><strong>Q: Is Base64 encryption or secure for passwords?</strong><br>
-A: No. Base64 is encoding, not encryption. Koi bhi online decoder se 1 click me reversible hai. Sensitive data ke liye kabhi use mat karna. Use HTTPS + AES-256 instead.</p>
+Q: Is there any character or size limit?
+A: No limit at all. Text jitna marzi lamba ho, sab processing browser me hoti hai. Tumhara data server pe nahi jata = 100% privacy safe.
 
-<p><strong>Q: Can I convert images and PDF files to Base64?</strong><br>
-A: Yes, but best for files under 2MB. Large files se browser slow ho jata hai. Icons, logos, choti images ke liye perfect hai. Output ko <code>data:image/png;base64,</code> prefix ke sath use karo.</p>
+Q: What's difference between Base64 and Base64URL?
+A: Normal Base64 me + / characters hote hain. Base64URL me inko - _ se replace kar dete hain taake URL me safe rahe. JWT aur OAuth tokens Base64URL use karte hain.
 
-<p><strong>Q: Is there any character or size limit?</strong><br>
-A: No limit at all. Text jitna marzi lamba ho, sab processing browser me hoti hai. Tumhara data server pe nahi jata = 100% privacy safe.</p>
+Other Free Developer Tools
+Web development ke liye ye tools bhi try karo:
 
-<p><strong>Q: What's difference between Base64 and Base64URL?</strong><br>
-A: Normal Base64 me + / characters hote hain. Base64URL me inko - _ se replace kar dete hain taake URL me safe rahe. JWT aur OAuth tokens Base64URL use karte hain.</p>
-
-<h2>Other Free Developer Tools</h2>
-<p>Web development ke liye ye tools bhi try karo:</p>
-<ul>
-<li><a href="css-minifier.html" title="Minify CSS files">CSS Minifier - Reduce CSS Size 40-70%</a></li>
-<li><a href="json-formatter.html" title="Format JSON online">JSON Formatter & Validator Tool</a></li>
-<li><a href="url-encoder.html" title="Encode URL parameters">URL Encoder Decoder Online</a></li>
-<li><a href="hash-generator.html" title="Generate hash">MD5 SHA256 Hash Generator</a></li>
-<li><a href="color-picker.html" title="Pick color from image">Color Picker from Image Tool</a></li>
-</ul>
-</div>
+CSS Minifier - Reduce CSS Size 40-70%
+JSON Formatter & Validator Tool
+URL Encoder Decoder Online
+MD5 SHA256 Hash Generator
+Color Picker from Image Tool
