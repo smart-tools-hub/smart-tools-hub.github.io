@@ -1,0 +1,67 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Keyword Density Checker - Free SEO Tool 2026 | Check Keyword % Instantly</title>
+<meta name="description" content="Free Keyword Density Checker tool for SEO 2026. Analyze keyword frequency, check optimal density 1-2.5%, avoid keyword stuffing. No signup, instant results for bloggers & SEO experts.">
+<meta name="keywords" content="keyword density checker, keyword density tool, SEO keyword analyzer, keyword frequency counter, check keyword density, optimal keyword density, keyword stuffing checker">
+</head>
+<body style="font-family:Arial;max-width:900px;margin:40px auto;padding:20px;line-height:1.6">
+<div style="background:white;padding:30px;border-radius:10px;box-shadow:0 2px 10px rgba(0,0,0,0.1)">
+
+<h1>Keyword Density Checker - Free SEO Tool 2026</h1>
+
+<!-- TOOL START -->
+<textarea id="content" placeholder="Paste your article, blog post or content here..." style="width:100%;height:220px;padding:12px;border:2px solid #ddd;border-radius:8px;font-size:14px"></textarea>
+<br>
+<input type="text" id="keyword" placeholder="Enter your target keyword/phrase" style="width:100%;padding:12px;margin-top:12px;border:2px solid #ddd;border-radius:8px">
+<br>
+<button onclick="checkDensity()" style="background:#2563eb;color:white;padding:14px 35px;border:none;border-radius:8px;cursor:pointer;font-size:16px;margin-top:15px;font-weight:bold">Check Keyword Density</button>
+
+<div id="results" style="margin-top:25px;padding:20px;background:#f0f9ff;border-left:4px solid #2563eb;border-radius:5px;display:none"></div>
+<!-- TOOL END -->
+
+<!-- 300 WORDS SEO CONTENT START -->
+<div style="margin-top:50px">
+<h2>What is Keyword Density Checker & Why It Matters for SEO 2026?</h2>
+<p>A <b>Keyword Density Checker</b> is an essential SEO tool that helps bloggers, content writers, and digital marketers analyze how frequently their target keyword appears in content. Maintaining optimal keyword density between <b>1% to 2.5%</b> is crucial for ranking higher on Google without getting penalized for keyword stuffing.</p>
+
+<p>Our free online keyword density analyzer instantly counts total words, keyword frequency, and calculates exact density percentage. Unlike paid tools, this keyword checker works 100% free with no signup or limits. Simply paste your article and enter your focus keyword to see results in seconds.</p>
+
+<h3>How to Use Keyword Density Tool for Better Rankings?</h3>
+<p>Using this keyword density checker is super simple. First, paste your full article in the text box above. Next, enter your primary keyword or long-tail phrase you want to rank for. Click "Check Density" and get instant analysis of keyword usage percentage, total word count, and frequency count.</p>
+
+<p>Google's algorithm in 2026 prefers natural keyword placement over forced repetition. If your density is above 3%, you risk keyword stuffing penalty. If below 0.5%, Google may not understand your content topic. This tool helps you find the perfect balance for SEO success.</p>
+
+<h3>Free SEO Tools by Smart Tools Hub</h3>
+<p>Smart Tools Hub offers 100% free SEO tools for bloggers and marketers. Check out our <a href="word-counter.html" style="color:#2563eb">Word Counter</a> for article length analysis, <a href="percentage-calculator.html" style="color:#2563eb">Percentage Calculator</a> for SEO metrics, and <a href="json-formatter.html" style="color:#2563eb">JSON Formatter</a> for developers. All tools work instantly without registration.</p>
+
+<p>Bookmark this <b>keyword density checker online</b> tool for daily SEO content optimization. Stay ahead with Smart Tools Hub - your complete free toolkit for digital success in 2026.</p>
+</div>
+<!-- 300 WORDS SEO CONTENT END -->
+
+</div>
+
+<script>
+function checkDensity(){
+const content=document.getElementById('content').value.toLowerCase();
+const keyword=document.getElementById('keyword').value.toLowerCase().trim();
+if(!content||!keyword){alert('Please paste content + enter keyword');return}
+const words=content.split(/\s+/).filter(w=>w.length>2);
+const totalWords=words.length;
+const keywordCount=(content.match(new RegExp('\\b'+keyword.replace(/[.*+?^${}()|[\]\\]/g,'\\$&')+'\\b','g'))||[]).length;
+const density=((keywordCount/totalWords)*100).toFixed(2);
+let status=density>2.5?'High - Risk of keyword stuffing':density<0.5?'Low - Add keyword naturally':'Perfect - Ideal for SEO';
+document.getElementById('results').style.display='block';
+document.getElementById('results').innerHTML=`<h3>SEO Analysis Results</h3>
+<p><b>Keyword:</b> ${keyword}</p>
+<p><b>Total Words:</b> ${totalWords}</p>
+<p><b>Keyword Count:</b> ${keywordCount}</p>
+<p><b>Keyword Density:</b> ${density}%</p>
+<p style="color:${density>2.5?'red':density<0.5?'orange':'green'};font-weight:bold">Status: ${status}</p>
+<p style="font-size:13px;margin-top:15px">Pro Tip: Ideal density 1-2.5%. Use synonyms & LSI keywords for natural SEO.</p>`;
+}
+</script>
+</body>
+</html>
