@@ -34,7 +34,13 @@ footer { text-align: center; margin-top: 30px; color: #888; font-size: 13px; }
   
   <label for="bill">Enter Bill Amount ($)</label>
   <input type="number" id="bill" placeholder="0.00" step="0.01" min="0" oninput="calculateTip()">
-  
+
+  <select id="tipPercent" onchange="calculateTip()">
+  <option value="0.15">15% Tip</option>
+  <option value="0.18">18% Tip</option>
+  <option value="0.20" selected>20% Tip</option>
+  <option value="0.25">25% Tip</option>
+</select>
   <div class="result" id="result">
     <p>20% Tip Amount: <strong id="tip">$0.00</strong></p>
     <p>Total Bill with Tip: <strong id="total">$0.00</strong></p>
@@ -63,14 +69,37 @@ footer { text-align: center; margin-top: 30px; color: #888; font-size: 13px; }
     </ul>
   </div>
 
+  <h2>How to Calculate 20% Tip Online in 2026</h2>
+<p>20% tip nikalna bohot easy hai. Bas apne bill amount ko 0.20 se multiply kar dein. Example: Agar restaurant ka bill $80 hai to 20% tip = $80 x 0.20 = $16 hoga. Ye calculator 1 click me exact tip nikal deta hai USA, Canada, UK sab ke liye. No signup, no ads, 100% free.</p>
+
+<h2>20% Tip Chart - Quick Reference</h2>
+<table border="1" style="width:100%; margin:20px 0; border-collapse:collapse;">
+<tr style="background:#f0f0f0;"><th style="padding:10px;">Bill Amount $</th><th style="padding:10px;">20% Tip $</th><th style="padding:10px;">Total Bill $</th></tr>
+<tr><td style="padding:8px; text-align:center;">25</td><td style="padding:8px; text-align:center;">5.00</td><td style="padding:8px; text-align:center;">30.00</td></tr>
+<tr><td style="padding:8px; text-align:center;">50</td><td style="padding:8px; text-align:center;">10.00</td><td style="padding:8px; text-align:center;">60.00</td></tr>
+<tr><td style="padding:8px; text-align:center;">100</td><td style="padding:8px; text-align:center;">20.00</td><td style="padding:8px; text-align:center;">120.00</td></tr>
+<tr><td style="padding:8px; text-align:center;">200</td><td style="padding:8px; text-align:center;">40.00</td><td style="padding:8px; text-align:center;">240.00</td></tr>
+</table>
+
+<h2>FAQ - 20% Tip Calculator</h2>
+<p><b>Q: Is 20% tip good in USA?</b><br>A: Haan bhai, 2026 me USA me 20% standard tip hai restaurants me. 15% minimum, 18% good service, 20% excellent service ke liye.</p>
+<p><b>Q: 20% of $100 kitna banta hai?</b><br>A: $100 x 0.20 = $20 tip. Total bill $120 ho jayega.</p>
+<p><b>Q: Ye calculator mobile pe kaam karega?</b><br>A: Bilkul 100% mobile friendly hai. Phone, tablet sab pe perfect chalega.</p>
   <footer>
     © 2026 Smart Tools Hub | Free Online Tools for USA
   </footer>
+  <h2>Try These Free Tools Too</h2>
+<ul>
+<li><a href="/bmi-calculator.html">BMI Calculator</a> - Height weight se BMI check karo</li>
+<li><a href="/percentage-calculator.html">Percentage Calculator</a> - % nikalna 1 click me</li>
+<li><a href="/age-calculator.html">Age Calculator</a> - Date of birth se age nikalo</li>
+</ul>
 </div>
 
 <script>
 function calculateTip() {
   let bill = parseFloat(document.getElementById('bill').value);
+  let percent = document.getElementById('tipPercent').value;
   let resultDiv = document.getElementById('result');
   
   if(!bill || bill <= 0) {
@@ -78,13 +107,13 @@ function calculateTip() {
     return;
   }
   
-  let tip = bill * 0.20;
+  let tip = bill * percent;
   let total = bill + tip;
   
-  document.getElementById('tip').innerText = '$' + tip.toFixed(2);
-  document.getElementById('total').innerText = '$' + total.toFixed(2);
+  resultDiv.innerHTML = `Tip: $${tip.toFixed(2)}<br>Total: $${total.toFixed(2)}`;
   resultDiv.style.display = 'block';
 }
+</script>
 </script>
 </body>
 </html>
