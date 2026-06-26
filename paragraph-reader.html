@@ -1,0 +1,172 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Paragraph Reader Tool - Free Online Text to Speech 2026</title>
+  <meta name="description" content="Free Paragraph Reader Tool to read text aloud instantly. Best TTS tool for students, bloggers. No signup, unlimited use, 100% free.">
+  <style>
+    :root{--blue:#1a73e8;--bg:#f7f9fc;--card:#fff;--border:#e5e7eb;}
+    body{font-family: 'Segoe UI', Arial, sans-serif; background:var(--bg); margin:0; color:#222; line-height:1.7;}
+    .container{max-width: 900px; margin: 0 auto; padding: 0 20px;}
+    
+    /* Top Tabs = Video wala style */
+    .top-tabs{display:flex; gap:8px; margin:20px 0; flex-wrap:wrap;}
+    .tab{padding:10px 18px; background:var(--card); border:1px solid var(--border); border-radius:8px; text-decoration:none; color:#333; font-weight:600; font-size:14px;}
+    .tab.active{background:var(--blue); color:#fff; border-color:var(--blue);}
+
+    .card{background:var(--card); padding: 25px; border-radius: 12px; box-shadow: 0 2px 8px rgba(0,0,0,0.05); margin-bottom: 24px; border:1px solid var(--border);}
+    h1{font-size:28px; margin:0 0 10px; color:#111;}
+    h2{font-size:22px; margin:0 0 15px; color:var(--blue); border-bottom:2px solid #eee; padding-bottom:8px;}
+    h3{font-size:18px; margin:15px 0 8px; color:#333;}
+    
+    /* Tool Box */
+    textarea{width: 100%; height: 180px; padding: 12px; border: 2px solid var(--border); border-radius: 8px; font-size: 16px; box-sizing: border-box;}
+    .controls{display: flex; gap: 10px; flex-wrap: wrap; margin-top: 15px; align-items: center;}
+    select, button{padding: 11px 16px; border-radius: 8px; border: 1px solid var(--border); font-size: 15px;}
+    button{background: var(--blue); color: #fff; border: none; cursor: pointer; font-weight: bold;}
+    button:disabled{background: #aaa; cursor: not-allowed;}
+
+    /* Related Tools Sidebar = Video ke Right Side jaisa */
+    .grid-2{display:grid; grid-template-columns: 1fr 320px; gap:24px;}
+    .sidebar .card{padding:20px;}
+    .sidebar ul{list-style:none; padding:0; margin:0;}
+    .sidebar li a{display:block; padding:10px; border-radius:6px; text-decoration:none; color:#333; font-weight:500;}
+    .sidebar li a:hover{background:#f1f8ff; color:var(--blue);}
+
+    .faq{margin-top: 15px; border-top: 1px solid var(--border); padding-top: 15px;}
+    @media(max-width:900px){.grid-2{grid-template-columns:1fr;}}
+  </style>
+</head>
+<body>
+  <div class="container">
+
+    <!-- ========= TOP TABS ========= -->
+    <div class="top-tabs">
+      <a href="/paragraph-reader.html" class="tab active">Tool</a>
+      <a href="#how-to" class="tab">How to Use</a>
+      <a href="#about" class="tab">About</a>
+      <a href="#faq" class="tab">FAQ</a>
+    </div>
+
+    <h1>Paragraph Reader Tool - Free Online Text to Speech</h1>
+
+    <div class="grid-2">
+      <!-- ========= MAIN CONTENT ========= -->
+      <div>
+        <!-- ========= TOOL BOX ========= -->
+        <div class="card">
+          <textarea id="textInput" placeholder="Paste your paragraph, article, or notes here..."></textarea>
+          <div class="controls">
+            <select id="voiceSelect" title="Select Voice"></select>
+            <select id="speedSelect" title="Select Speed">
+              <option value="0.8">Slow</option>
+              <option value="1" selected>Normal</option>
+              <option value="1.5">Fast</option>
+              <option value="2">2x</option>
+            </select>
+            <button id="playBtn">▶ Start Reading</button>
+            <button id="pauseBtn" disabled>⏸ Pause</button>
+            <button id="stopBtn" disabled>⏹ Stop</button>
+          </div>
+        </div>
+
+        <!-- ========= 500+ WORD ARTICLE ========= -->
+        <div class="card" id="about">
+          <h2>What is a Paragraph Reader Tool?</h2>
+          <p>A <b>Paragraph Reader Tool</b> is a free online Text-to-Speech TTS tool that reads any paragraph, article, or note out loud for you. Just paste your text into the box and hit "Play". This tool is built for people who don’t want to read long articles, want to give their eyes a break, or want to proofread their writing by listening to it. In 2026, it's the #1 free tool for students, bloggers, content creators, and visually impaired users.</p>
+
+          <h2 id="how-to">How to Use the Paragraph Reader Tool - 3 Easy Steps</h2>
+          <ol>
+            <li><b>Paste Your Text:</b> Copy and paste any English paragraph, blog post, PDF text, or notes into the text box above.</li>
+            <li><b>Choose Voice & Speed:</b> Pick a Male, Female, or Robotic voice from the dropdown. You can also set the speed to Slow, Normal, Fast, or 2x.</li>
+            <li><b>Click Play:</b> Hit the "Start Reading" button. The tool will instantly start reading your entire paragraph out loud. Use Pause, Resume, and Stop anytime.</li>
+          </ol>
+          
+          <h2>Key Features & Benefits</h2>
+          <ul>
+            <li><b>Reduce Eye Strain:</b> Listen to long PDFs, research papers, or blog posts instead of reading them.</li>
+            <li><b>Multitask Easily:</b> Listen to articles while cooking, walking, or commuting.</li>
+            <li><b>Proofread Like a Pro:</b> Your ears catch mistakes your eyes miss.</li>
+            <li><b>Best for Students:</b> Consume study notes at 2x speed. Cover more syllabus in less time.</li>
+            <li><b>100% Free + No Limits:</b> Read unlimited paragraphs every single day. No signup.</li>
+          </ul>
+        </div>
+        
+        <!-- ========= FAQs ========= -->
+        <div class="card" id="faq">
+          <h2>Frequently Asked Questions FAQs</h2>
+          <div class="faq">
+            <h3>1. Is the Paragraph Reader Tool really Free?</h3>
+            <p>Yes, 100%. This tool is completely free forever. There is no daily limit and no signup required.</p>
+          </div>
+          <div class="faq">
+            <h3>2. Does it support Urdu and other languages?</h3>
+            <p>Yes. It uses your browser's built-in voices. So it supports Urdu, Hindi, Arabic, Spanish, and 50+ other languages.</p>
+          </div>
+          <div class="faq">
+            <h3>3. Will it work on Mobile phones?</h3>
+            <p>Absolutely. The tool is 100% mobile-friendly and works perfectly on Android and iPhone browsers.</p>
+          </div>
+        </div>
+      </div>
+
+      <!-- ========= RIGHT SIDEBAR = RELATED TOOLS ========= -->
+      <aside class="sidebar">
+        <div class="card">
+          <h3>Related Tools</h3>
+          <ul>
+            <li><a href="/word-counter.html">→ Word Counter Tool</a></li>
+            <li><a href="/case-converter.html">→ Case Converter Tool</a></li>
+            <li><a href="/grammar-checker.html">→ Grammar Checker Tool</a></li>
+            <li><a href="/text-to-speech.html">→ Text to Speech Tool</a></li>
+            <li><a href="/all-tools.html"><strong>→ View All 44 Tools</strong></a></li>
+          </ul>
+        </div>
+      </aside>
+    </div>
+  </div>
+
+<script>
+  const textInput = document.getElementById('textInput');
+  const voiceSelect = document.getElementById('voiceSelect');
+  const speedSelect = document.getElementById('speedSelect');
+  const playBtn = document.getElementById('playBtn');
+  const pauseBtn = document.getElementById('pauseBtn');
+  const stopBtn = document.getElementById('stopBtn');
+  
+  let utterance = null;
+  function loadVoices() {
+    const voices = speechSynthesis.getVoices();
+    voiceSelect.innerHTML = '';
+    voices.forEach((voice, i) => {
+      const option = document.createElement('option');
+      option.value = i;
+      option.textContent = `${voice.name} [${voice.lang}]`;
+      voiceSelect.appendChild(option);
+    });
+  }
+  speechSynthesis.onvoiceschanged = loadVoices;
+  loadVoices();
+
+  playBtn.onclick = () => {
+    if (textInput.value.trim() === '') {alert('Please paste some text first!'); return;}
+    speechSynthesis.cancel();
+    utterance = new SpeechSynthesisUtterance(textInput.value);
+    const voices = speechSynthesis.getVoices();
+    utterance.voice = voices[voiceSelect.value];
+    utterance.rate = parseFloat(speedSelect.value);
+    utterance.onstart = () => {playBtn.disabled = true; pauseBtn.disabled = false; stopBtn.disabled = false;}
+    utterance.onend = () => {playBtn.disabled = false; pauseBtn.disabled = true; stopBtn.disabled = true; pauseBtn.textContent = '⏸ Pause';}
+    speechSynthesis.speak(utterance);
+  }
+  pauseBtn.onclick = () => {
+    if (speechSynthesis.speaking) {
+      if (!speechSynthesis.paused) {speechSynthesis.pause(); pauseBtn.textContent = '▶ Resume';}
+      else {speechSynthesis.resume(); pauseBtn.textContent = '⏸ Pause';}
+    }
+  }
+  stopBtn.onclick = () => {speechSynthesis.cancel(); playBtn.disabled = false; pauseBtn.disabled = true; stopBtn.disabled = true; pauseBtn.textContent = '⏸ Pause';}
+</script>
+</body>
+</html>
