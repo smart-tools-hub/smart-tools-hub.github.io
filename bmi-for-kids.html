@@ -8,16 +8,64 @@
 <style>body{font-family:Arial,sans-serif;max-width:600px;margin:40px auto;padding:20px;background:#f3e5f5} .box{background:white;padding:30px;border-radius:10px;box-shadow:0 2px 10px rgba(0,0,0,0.1)} input,select{width:100%;padding:12px;margin:10px 0;border:2px solid #ddd;border-radius:5px;font-size:16px} button{width:100%;padding:14px;background:#9c27b0;color:white;border:none;border-radius:5px;font-size:18px;cursor:pointer} #result{margin-top:20px;padding:15px;border-radius:5px;text-align:center;font-size:18px;font-weight:bold} .faq{margin-top:30px;text-align:left}</style>
 </head>
 <body>
+  <body>
+<!-- Header Start -->
+<header style="background:linear-gradient(90deg, #7C3AED, #4F46E5); padding:15px 20px; box-shadow:0 2px 8px rgba(0,0,0,0.1);">
+  <div style="max-width:1100px; margin:0 auto; display:flex; align-items:center; justify-content:space-between;">
+    
+    <a href="/" style="color:white; font-size:22px; font-weight:800; text-decoration:none; letter-spacing:0.5px;">
+      Smart Tools Hub
+    </a>
+
+    <nav style="display:flex; gap:20px;">
+      <a href="/" style="color:white; text-decoration:none; font-weight:500;">Home</a>
+      <a href="/bmi-calculator.html" style="color:white; text-decoration:none; font-weight:500;">BMI</a>
+      <a href="/contact.html" style="color:white; text-decoration:none; font-weight:500;">Contact</a>
+    </nav>
+
+  </div>
+</header>
+<!-- Header End -->
 <div class="box">
 <h1>Kids BMI Calculator</h1>
 <p>Calculate BMI percentile for children and teens aged 2-19. Kids BMI is compared to other kids of same age and gender using CDC growth charts.</p>
-<input type="number" id="height" placeholder="Height in cm">
-<input type="number" id="weight" placeholder="Weight in kg">
-<input type="number" id="age" placeholder="Age 2-19 years" min="2" max="19">
-<select id="gender"><option value="boy">Boy</option><option value="girl">Girl</option></select>
+<label>Height in CM:
+  <input type="number" id="height" placeholder="e.g. 140">
+</label>
+
+<label>Weight in KG:
+  <input type="number" id="weight" placeholder="e.g. 29">
+</label>
+
+<label>Age:
+  <label>Gender:
+  <select id="gender">
+    <option value="boy">Boy</option>
+    <option value="girl">Girl</option>
+  </select>
+</label>
+  <input type="number" id="age" placeholder="Age 2-19 years" min="2" max="19">
+</label>
 <button onclick="calcKidBMI()">Calculate Kids BMI</button>
 <div id="result"></div>
+<script>
+function calculateBMI(){
+  let age = document.getElementById('age').value;
+  let gender = document.getElementById('gender').value;
+  let h = document.getElementById('height').value / 100; // CM to Meter
+  let w = document.getElementById('weight').value;
+  
+  if(!age || !h || !w){ alert("Please fill Age, Height & Weight"); return; }
 
+  let bmi = (w / (h*h)).toFixed(1);
+  
+  // Simple Logic: Asli CDC chart baad me lagayenge
+  let cat = bmi < 18.5 ? "Underweight" : bmi < 25 ? "Healthy Weight" : "Overweight";
+  
+  document.getElementById('result').innerHTML = 
+    `<h3>Your BMI: ${bmi}</h3><p>Category: ${cat} for ${gender}, Age ${age}</p>`;
+}
+</script>
   <div style="margin-top:30px;text-align:left;max-width:700px;">
 <h2>What is Kids BMI Calculator?</h2>
 <p>This Kids BMI Calculator calculates Body Mass Index percentile for children and teens aged 2-19 years. Unlike adult BMI, Kids BMI is compared to other kids of the same age and gender using CDC growth charts. It shows where a child stands in their age group. To check adult BMI, use our <a href="/bmi-calculator.html">BMI Calculator</a>.</p>
