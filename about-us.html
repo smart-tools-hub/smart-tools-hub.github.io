@@ -4,7 +4,7 @@
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
 <title>About Us - Smart Tool Hub</title>
-<meta name="description" content="About Smart Tool Hub. A free platform with unlimited online smart tools. No signup, no ads, 100% private. Made for students, freelancers, and bloggers.">
+<meta name="description" content="About Smart Tool Hub. A premium free platform with unlimited online smart tools. No signup, no ads, 100% private. Built for professionals, creators, and businesses worldwide.">
 <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@400;600;700&display=swap" rel="stylesheet">
 <style>
 :root{--blue:#0d6efd;--black:#1a1a1a;--bg:#f7f9fc;--card:#ffffff}
@@ -12,17 +12,24 @@ body{font-family:'Poppins',Arial,sans-serif;margin:0;background:var(--bg);color:
 .header{background:var(--blue);color:#fff;padding:20px;text-align:center}
 .header .logo{font-size:28px;font-weight:700; letter-spacing:1px}
 .nav{background:var(--card);box-shadow:0 2px 5px rgba(0,0,0,.05);padding:12px;text-align:center;position:sticky;top:0;z-index:10}
-.nav a{margin:0 18px;color:var(--black);text-decoration:none;font-weight:600}
+.nav a{margin:0 18px;color:var(--black);text-decoration:none;font-weight:600; transition:color .3s}
+.nav a:hover{color:var(--blue)}
 .container{max-width:1200px;margin:30px auto;display:grid;grid-template-columns:1fr 320px;gap:40px;padding:0 20px}
 .main-card{background:var(--card);padding:40px;border-radius:12px;box-shadow:0 8px 25px rgba(0,0,0,.08)}
-h1{color:var(--black);font-size:32px;margin-top:0;font-weight:700;text-align:center;border-bottom:3px solid var(--blue);padding-bottom:15px}
-h2{color:var(--black);font-size:24px;margin-top:30px;font-weight:600}
+h1{color:var(--black);font-size:32px;margin-top:0;font-weight:700;text-align:center;border-bottom:3px solid var(--blue);padding-bottom:15px; transition:border-color .3s}
+h1:hover{border-color:#004aad}
+h2{color:var(--black);font-size:24px;margin-top:30px;font-weight:600; display:inline-block; position:relative; padding-bottom:5px}
+h2::after{content:''; position:absolute; left:0; bottom:0; width:0; height:3px; background:var(--blue); transition:width .3s}
+h2:hover::after{width:100%}
+p{transition:transform .2s}
+p:hover{transform:translateX(5px)}
 .sidebar{background:var(--card);padding:25px;border-radius:12px;box-shadow:0 8px 25px rgba(0,0,0,.08); border:1px solid #e9ecef; height:fit-content; position:sticky; top:100px; text-align:center}
 .sidebar h3{margin-top:0;color:var(--black);border-bottom:2px solid var(--blue);padding-bottom:10px; text-align:center}
-/* Digital Clock CSS */
-.digital-clock{background:#0d6efd;color:#fff;font-size:28px;font-weight:700;padding:15px 10px;border-radius:10px;margin:0 auto 10px;letter-spacing:2px;font-family:'Courier New', monospace;box-shadow:inset 0 0 15px rgba(0,0,0,.3)}
+/* Digital Clock CSS - Clean */
+.digital-clock{background:#0d6efd;color:#fff;font-size:28px;font-weight:700;padding:15px 10px;border-radius:10px;margin:0 auto;letter-spacing:2px;font-family:'Courier New', monospace;box-shadow:inset 0 0 15px rgba(0,0,0,.3)}
 .footer{background:var(--blue);color:#fff;padding:20px;text-align:center;margin-top:40px}
-.highlight{background:#e9f5ff; padding:20px; border-left:5px solid var(--blue); border-radius:5px; margin:20px 0; font-size:18px}
+.highlight{background:#e9f5ff; padding:20px; border-left:5px solid var(--blue); border-radius:5px; margin:20px 0; font-size:18px; transition:box-shadow .3s}
+.highlight:hover{box-shadow:0 0 15px rgba(13,110,253,.2)}
 @media(max-width:900px){.container{grid-template-columns:1fr}}
 </style>
 </head>
@@ -34,35 +41,33 @@ h2{color:var(--black);font-size:24px;margin-top:30px;font-weight:600}
   <div class="main-card">
     <h1>About Us</h1>
     
-    <p>Welcome to <b>Smart Tool Hub</b> - your number one destination for all free online smart tools. Our goal is very simple: to make complex tasks easy for everyone in just one click.</p>
+    <p>Welcome to <b>Smart Tool Hub</b> - a premium platform engineered to streamline your digital workflow. Our core objective is to deliver powerful, instant-access tools that eliminate complexity and maximize productivity.</p>
 
     <div class="highlight">
-    <p><b>Why We Started Smart Tool Hub?</b><br>
-    We were tired of websites that ask for signup, show 10 pop-up ads, and still don't work properly. So we decided to build a place that is 100% clean, 100% free, and 100% fast. A place where you only focus on your work, not on ads.</p>
+    <p><b>Our Vision</b><br>
+    We identified a gap in the market: tools burdened with sign-ups, intrusive ads, and poor performance. Smart Tool Hub was created to solve this. We provide a clean, high-speed, and completely free environment where you can focus solely on results.</p>
     </div>
 
-    <h2>What We Believe In</h2>
-    <p><b>1. Unlimited & Free Forever:</b> There is no limit here. Use any tool, as many times as you want. We will never ask for money or credit card. New tools are added every week based on your requests.<br><br>
-    <b>2. Your Privacy is Everything:</b> We respect your data. All our tools run 100% in your browser. We do not collect, save, or see any of your text or files. Your work stays with you.<br><br>
-    <b>3. Built for Everyone:</b> Whether you are a student, a content writer, a freelancer, or a business owner, our tools are made to save you time. The design is simple so anyone can use it without any training.</p>
+    <h2>Core Principles</h2>
+    <p><b>1. Unlimited Access, Zero Cost:</b> All tools are free, forever. No usage caps, no hidden fees, and no account creation required. We continuously expand our suite based on global user demand.<br><br>
+    <b>2. Absolute Privacy & Security:</b> All processing occurs client-side, directly in your browser. Your data is never transmitted to, or stored on, our servers. Your work remains confidential.<br><br>
+    <b>3. Performance-First Design:</b> Our tools are optimized for speed and efficiency. The interface is intuitive and minimalist, ensuring a seamless experience for professionals, creators, and businesses across the globe.</p>
 
-    <h2>Our Promise to You</h2>
-    <p>We promise to keep this website clean, fast, and ad-free. If you face any problem or need a new tool, just tell us on the Contact page. We listen and we build.</p>
+    <h2>Our Commitment</h2>
+    <p>We are committed to maintaining a superior, ad-free user experience. For support or tool requests, please use our Contact page. We value your feedback and act on it.</p>
     
-    <p style="margin-top:40px; text-align:center; font-size:20px; font-weight:700;">Smart Tool Hub - Work Smart, Not Hard ❤️</p>
+    <p style="margin-top:40px; text-align:center; font-size:20px; font-weight:700;">Smart Tool Hub - Precision. Speed. Simplicity.</p>
   </div>
 
   <div class="sidebar">
-    <h3>Live Time PK</h3>
+    <h3>Live Time</h3>
     <div id="digitalClock" class="digital-clock">00:00:00</div>
-    <p style="font-weight:600;">Pakistan Standard Time</p>
   </div>
 </div>
 
-<footer class="footer"><p>© 2026 Smart Tool Hub | All Rights Reserved</p></footer>
+<footer class="footer"><p>© 2026 Smart Tool Hub</p></footer>
 
 <script>
-// Digital Clock JS
 function updateDigitalClock() {
     const now = new Date();
     let hours = String(now.getHours()).padStart(2, '0');
@@ -75,4 +80,3 @@ updateDigitalClock();
 </script>
 </body>
 </html>
-
