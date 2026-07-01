@@ -5,63 +5,109 @@
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
 <title>Privacy Policy - Smart Tools Hub</title>
 <style>
+/* ========== FULL STYLE ========== */
 *{margin:0;padding:0;box-sizing:border-box}
-html, body{height:100%} /* YE NAYA DALA */
-body{font-family:Arial,sans-serif;background:#f5f5f5;display:flex;flex-direction:column;min-height:100vh} /* min-height:100vh DALA */
+html, body{height:100%}
+body{font-family:'Segoe UI', Arial, sans-serif;background:#f5f7fa;display:flex;flex-direction:column;min-height:100vh}
 
-.header-wrap{background:#2563eb;position:sticky;top:0;z-index:999}
-.header{max-width:1200px;margin:0 auto;padding:0 40px;height:65px;display:flex;justify-content:space-between;align-items:center}
-.logo{color:#fff;font-size:22px;font-weight:700;display:flex;align-items:center;gap:8px}
-.logo::before{content:"🔧"}
-.menu a{margin-left:20px;color:#fff;text-decoration:none;font-weight:600;font-size:15px;padding:8px 12px;border-radius:5px}
-.menu a:hover{background:rgba(255,255,255,.2)}
-.menu a.active{background:#fff;color:#2563eb}
+/* 1. HEADER - NEELA, CENTER LOGO + MENU */
+.header{background:#2563eb;color:#fff;text-align:center;padding:18px 20px 14px 20px;position:sticky;top:0;z-index:999;box-shadow:0 2px 8px rgba(0,0,0,.15)}
+.logo{font-size:24px;font-weight:800;display:flex;align-items:center;justify-content:center;gap:10px;margin-bottom:10px;letter-spacing:0.5px}
+.logo::before{content:"🔧";font-size:26px}
+.menu a{margin:0 16px;color:#e0e7ff;text-decoration:none;font-weight:600;font-size:15px;padding:4px 0;border-bottom:2px solid transparent;transition:.2s}
+.menu a:hover, .menu a.active{color:#fff;border-bottom:2px solid #fff}
 
-.main{max-width:1200px;margin:30px auto;padding:0 40px;display:flex;gap:30px;flex:1;width:100%} /* flex:1 DALA */
+/* 2. MAIN CONTENT */
+.main{max-width:1200px;margin:30px auto;padding:0 30px;display:flex;gap:30px;flex:1;width:100%}
 .left{flex:1;max-width:700px}
-h1{text-align:center;font-size:28px;margin-bottom:20px;padding-bottom:12px;border-bottom:3px solid #2563eb}
-.box{background:#fff;padding:25px;margin-bottom:20px;border:1px solid #ddd;border-radius:6px}
-.box:hover{transform:translateY(-5px);box-shadow:0 8px 20px rgba(0,0,0,.1);transition:.3s}
-.right{width:300px}
-.timebox{background:#fff;padding:20px;border:1px solid #ddd;border-radius:6px;text-align:center}
-.time{background:#2563eb;color:#fff;font-size:26px;font-weight:700;padding:16px;border-radius:6px;font-family:monospace}
+h1{text-align:center;font-size:28px;margin-bottom:20px;padding-bottom:12px;border-bottom:3px solid #2563eb;color:#1e293b}
+.box{background:#fff;padding:25px;margin-bottom:20px;border-radius:10px;box-shadow:0 3px 10px rgba(0,0,0,.06);border:1px solid #e5e7eb;transition:.3s}
+.box:hover{transform:translateY(-5px);box-shadow:0 8px 20px rgba(0,0,0,.1)}
+.box h3{margin:0 0 12px 0;font-size:18px;color:#1e293b}
+.box p{color:#4b5563;line-height:1.8;margin:0;font-size:15px}
 
-.foot{background:#2563eb;color:#fff;text-align:center;padding:16px;font-size:14px;margin-top:auto} /* margin-top:auto DALA */
+/* 3. SIDEBAR GHARI - SCREENSHOT STYLE */
+.right{width:300px}
+.timebox{background:#fff;padding:25px;border-radius:12px;text-align:center;box-shadow:0 4px 15px rgba(0,0,0,.08);border:1px solid #eee}
+.timebox h3{font-size:18px;font-weight:700;color:#000;margin-bottom:10px}
+.timebox h3::after{content:'';display:block;width:70px;height:2px;background:#2563eb;margin:8px auto 0;border-radius:2px}
+.time{
+  background:linear-gradient(135deg,#3b82f6 0%,#2563eb 100%);
+  color:#fff;font-size:32px;font-weight:700;padding:22px;border-radius:12px;
+  font-family:'Courier New',monospace;letter-spacing:3px;box-shadow:inset 0 2px 6px rgba(0,0,0,.2)
+}
+
+/* 4. FOOTER */
+.foot{background:#1e40af;color:#fff;text-align:center;padding:16px;font-size:14px;margin-top:auto;font-weight:500}
 </style>
 </head>
 <body>
 
-<div class="header-wrap">
-  <div class="header">
-    <div class="logo">SMART TOOL HUB</div>
-    <div class="menu" id="navbar">
-      <a href="index.html">Home</a>
-      <a href="about-us.html">About Us</a>
-      <a href="contact-us.html">Contact</a>
-      <a href="privacy-policy.html">Privacy</a>
+<!-- HEADER -->
+<div class="header">
+  <div class="logo">SMART TOOL HUB</div>
+  <nav class="menu" id="navbar">
+    <a href="index.html">Home</a>
+    <a href="about-us.html">About Us</a>
+    <a href="contact-us.html">Contact</a>
+    <a href="privacy-policy.html" class="active">Privacy</a>
+  </nav>
+</div>
+
+<!-- CONTENT -->
+<div class="main">
+  <div class="left">
+    <h1>Privacy Policy</h1>
+    
+    <div class="box">
+      <h3>🔒 Your Privacy Matters to Us</h3>
+      <p>At Smart Tools Hub, we believe your privacy is non-negotiable. We built this site so you can use tools without worry.</p>
+    </div>
+
+    <div class="box">
+      <h3>1. We Don't Collect Your Data. Period.</h3>
+      <p>Our tools like PTA Calculator run 100% in your browser. We do not collect your name, email, IP, or what you calculate. Nothing is sent to our servers.</p>
+    </div>
+
+    <div class="box">
+      <h3>2. No Tracking Cookies</h3>
+      <p>We do not use cookies to track you across the web. We only use essential cookies to make the site work fast.</p>
+    </div>
+
+    <div class="box">
+      <h3>3. Ads & Third-Party</h3>
+      <p>To keep this site free, we may show Google AdSense ads. Google has its own privacy rules. We also link to other sites and are not responsible for them.</p>
+    </div>
+
+    <div class="box">
+      <h3>4. Contact Us</h3>
+      <p>Any questions? Email us: <b>ptacalculatorpk@gmail.com</b></p>
+    </div>
+  </div>
+
+  <div class="right">
+    <div class="timebox">
+      <h3>Live Time</h3>
+      <div class="time" id="clock">00:00:00</div>
     </div>
   </div>
 </div>
 
-<div class="main">
-  <div class="left">
-    <h1>Privacy Policy</h1>
-    <div class="box"><h3>🔒 Your Privacy Matters to Us</h3><p>At Smart Tools Hub, we believe your privacy is non-negotiable.</p></div>
-    <div class="box"><h3>1. We Don't Collect Your Data. Period.</h3><p>Our tools run 100% in your browser. Nothing is sent to our servers.</p></div>
-    <div class="box"><h3>2. No Cookies for Tracking</h3><p>We do not use tracking cookies or spy on your activity.</p></div>
-    <div class="box"><h3>3. Ads & Third-Party Services</h3><p>We may show ads via Google AdSense.</p></div>
-    <div class="box"><h3>4. Contact Us</h3><p><b>Email: ptacalculatorpk@gmail.com</b></p></div>
-  </div>
-  <div class="right">
-    <div class="timebox"><h3>Live Time</h3><div class="time" id="clock">00:00:00</div></div>
-  </div>
-</div>
-
-<footer class="foot">© 2026 Smart Tools Hub</footer>
+<!-- FOOTER -->
+<footer class="foot">© 2026 Smart Tools Hub. All Rights Reserved.</footer>
 
 <script>
+// GHARI CHALANE KA CODE
 function t(){document.getElementById('clock').textContent=new Date().toLocaleTimeString('en-US',{hour12:false})}t();setInterval(t,1000);
-document.querySelectorAll('#navbar a').forEach(a=>{if(a.href.endsWith(location.pathname.split('/').pop()))a.classList.add('active')});
+
+// MENU ACTIVE KARNE KA CODE
+const page = location.pathname.split('/').pop() || 'index.html';
+document.querySelectorAll('#navbar a').forEach(a => {
+  if(a.getAttribute('href') === page){
+    document.querySelectorAll('#navbar a').forEach(x=>x.classList.remove('active'));
+    a.classList.add('active');
+  }
+});
 </script>
 </body>
 </html>
