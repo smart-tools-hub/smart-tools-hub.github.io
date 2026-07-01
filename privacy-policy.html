@@ -4,86 +4,96 @@
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
 <title>Privacy Policy - Smart Tools Hub</title>
+<meta name="description" content="Privacy Policy for Smart Tools Hub. We do not collect, store, or track any of your data. All tools run 100% in your browser. 100% private and secure.">
+<link href="https://fonts.googleapis.com/css2?family=Poppins:wght@400;600;700&display=swap" rel="stylesheet">
 <style>
-*{margin:0;padding:0;box-sizing:border-box}
-body{font-family:Arial, sans-serif;background:#f5f7fa;color:#333}
-
-.topbar{background:#2563eb;color:#fff;text-align:center;padding:16px 0}
-.logo{font-size:22px;font-weight:700;display:inline-flex;align-items:center;gap:8px}
-.logo::before{content:"🔩";font-size:24px} /* Wrench Icon - Video jaisa */
-
-.navbar{background:#fff;text-align:center;padding:12px 0;border-bottom:1px solid #e5e7eb}
-.navbar a{margin:0 18px;color:#333;text-decoration:none;font-weight:600;font-size:15px}
-.navbar a:hover, .navbar a.active{color:#2563eb}
-
-.main{max-width:1100px;margin:30px auto;padding:0 30px;display:flex;gap:30px;align-items:flex-start} /* Ghari scroll ke sath jayegi */
-.left{flex:1;max-width:700px;background:#fff;padding:30px;border-radius:10px;box-shadow:0 2px 8px rgba(0,0,0,.06)}
-h1{text-align:center;font-size:28px;margin-bottom:20px;color:#111}
-.left p{line-height:1.8;font-size:15px;color:#444;margin-bottom:15px}
-.left h3{font-size:18px;margin:20px 0 10px 0;color:#111}
-.box{background:#fff;border:1px solid #e5e7eb;padding:18px;border-radius:8px;margin-bottom:15px}
-
-.right{width:300px}
-.timecard{background:#fff;padding:20px;border-radius:10px;box-shadow:0 2px 8px rgba(0,0,0,.06);text-align:center}
-.timecard h3{font-size:16px;font-weight:700;color:#333;margin-bottom:12px}
-.time{background:#2563eb;color:#fff;font-size:24px;font-weight:700;padding:14px;border-radius:8px;font-family:'Courier New',monospace;letter-spacing:2px}
-
-.foot{background:#1e40af;color:#fff;text-align:center;padding:14px;font-size:14px;margin-top:40px}
+:root{--blue:#0d6efd;--black:#1a1a1a;--bg:#f7f9fc;--card:#ffffff}
+body{font-family:'Poppins',Arial,sans-serif;margin:0;background:var(--bg);color:var(--black);line-height:1.9;font-size:17px}
+.header{background:var(--blue);color:#fff;padding:20px;text-align:center}
+.header .logo{font-size:28px;font-weight:700; letter-spacing:1px}
+.nav{background:var(--card);box-shadow:0 2px 5px rgba(0,0,0,.05);padding:12px;text-align:center;position:sticky;top:0;z-index:10}
+.nav a{margin:0 18px;color:var(--black);text-decoration:none;font-weight:600; transition:color .3s}
+.nav a:hover{color:var(--blue)}
+.nav a.active{color:var(--blue)} /* Active Menu Blue */
+.container{max-width:1200px;margin:30px auto;display:grid;grid-template-columns:1fr 320px;gap:40px;padding:0 20px}
+.main-card{background:var(--card);padding:40px;border-radius:12px;box-shadow:0 8px 25px rgba(0,0,0,.08)}
+h1{color:var(--black);font-size:32px;margin-top:0;font-weight:700;text-align:center;border-bottom:3px solid var(--blue);padding-bottom:15px; transition:border-color .3s}
+h1:hover{border-color:#004aad}
+h2{color:var(--black);font-size:24px;margin-top:30px;font-weight:600; display:inline-block; position:relative; padding-bottom:5px}
+h2::after{content:''; position:absolute; left:0; bottom:0; width:0; height:3px; background:var(--blue); transition:width .3s}
+h2:hover::after{width:100%}
+p{transition:transform .2s}
+p:hover{transform:translateX(5px)}
+.sidebar{background:var(--card);padding:25px;border-radius:12px;box-shadow:0 8px 25px rgba(0,0,0,.08); border:1px solid #e9ecef; height:fit-content; position:sticky; top:100px; text-align:center}
+.sidebar h3{margin-top:0;color:var(--black);border-bottom:2px solid var(--blue);padding-bottom:10px; text-align:center}
+/* Digital Clock CSS - Clean */
+.digital-clock{background:#0d6efd;color:#fff;font-size:28px;font-weight:700;padding:15px 10px;border-radius:10px;margin:0 auto;letter-spacing:2px;font-family:'Courier New', monospace;box-shadow:inset 0 0 15px rgba(0,0,0,.3)}
+.footer{background:var(--blue);color:#fff;padding:20px;text-align:center;margin-top:40px}
+.highlight{background:#e9f5ff; padding:20px; border-left:5px solid var(--blue); border-radius:5px; margin:20px 0; font-size:18px; transition:box-shadow .3s}
+.highlight:hover{box-shadow:0 0 15px rgba(13,110,253,.2)}
+@media(max-width:900px){.container{grid-template-columns:1fr}}
 </style>
 </head>
 <body>
-
-<div class="topbar">
-  <div class="logo">SMART TOOL HUB</div>
+<div class="header"><div class="logo">🔧 SMART TOOL HUB</div></div>
+<div class="nav" id="navbar">
+  <a href="/">Home</a>
+  <a href="/about-us.html">About Us</a>
+  <a href="/contact-us.html">Contact</a>
+  <a href="/privacy-policy.html">Privacy</a>
 </div>
 
-<div class="navbar" id="navbar">
-  <a href="index.html">Home</a>
-  <a href="about-us.html">About Us</a>
-  <a href="contact-us.html">Contact</a>
-  <a href="privacy-policy.html">Privacy</a>
-</div>
-
-<div class="main">
-  <div class="left">
-    <h1>Privacy Policy</h1>
-
-    <div class="box">
-      <h3>1. No Data Collection</h3>
-      <p>Smart Tools Hub respects your privacy completely. All our tools run 100% in your browser. We do not collect, store, or share any personal information, IP addresses, or usage data.</p>
-    </div>
-
-    <div class="box">
-      <h3>2. No Cookies for Tracking</h3>
-      <p>We do not use any tracking or advertising cookies. We only use essential cookies to make the website function properly.</p>
-    </div>
-
-    <div class="box">
-      <h3>3. Third-Party Services</h3>
-      <p>Our site may contain links to other sites. We are not responsible for the privacy practices of these third-party sites.</p>
-    </div>
+<div class="container">
+  <div class="main-card">
+    <h1>Privacy Policy</h1> <!-- Heading Change -->
     
-    <div class="box">
-      <h3>4. Contact Us</h3>
-      <p>If you have any questions about this Privacy Policy, you can contact us at: <b>ptacalculatorpk@gmail.com</b></p>
+    <p>At <b>Smart Tools Hub</b>, we take your privacy seriously. This policy explains exactly what data we do and do not collect when you use our free online tools.</p>
+
+    <div class="highlight">
+    <p><b>Our Core Promise</b><br>
+    You can use 100% of our tools without giving us your name, email, or any personal information. We are committed to a zero-data platform.</p>
     </div>
 
+    <h2>1. No Data Collection</h2>
+    <p>All calculations and processing happen directly in your web browser. We do not collect your IP address, location, search queries, or the data you input into our tools. Nothing is ever sent to our servers.<br><br>
+    <b>Client-Side Only:</b> Your work remains 100% confidential and on your device only.</p>
+
+    <h2>2. No Tracking Cookies</h2>
+    <p>We do not use any advertising, analytics, or tracking cookies. The only cookies we may use are essential for the website to function, and they contain no personal information.</p>
+
+    <h2>3. Third-Party Links</h2>
+    <p>Our website may contain links to other websites. We are not responsible for the privacy practices of these external sites. We encourage you to read their policies.</p>
+
+    <h2>4. Contact Us</h2>
+    <p>If you have any questions about this Privacy Policy, please contact us at: <b>ptacalculatorpk@gmail.com</b></p>
+    
+    <p style="margin-top:40px; text-align:center; font-size:16px; font-weight:600; color:#666;">Last Updated: October 05, 2026</p>
   </div>
 
-  <div class="right">
-    <div class="timecard">
-      <h3>Live Time</h3>
-      <div class="time" id="clock">00:00:00</div>
-    </div>
+  <div class="sidebar">
+    <h3>Live Time</h3>
+    <div id="digitalClock" class="digital-clock">00:00:00</div>
   </div>
 </div>
 
-<footer class="foot">© 2026 Smart Tools Hub. All Rights Reserved.</footer>
+<footer class="footer"><p>© 2026 Smart Tools Hub</p></footer>
 
 <script>
-function t(){document.getElementById('clock').textContent=new Date().toLocaleTimeString('en-US',{hour12:false})}t();setInterval(t,1000);
+function updateDigitalClock() {
+    const now = new Date();
+    let hours = String(now.getHours()).padStart(2, '0');
+    let minutes = String(now.getMinutes()).padStart(2, '0');
+    let seconds = String(now.getSeconds()).padStart(2, '0');
+    document.getElementById('digitalClock').textContent = hours + ':' + minutes + ':' + seconds;
+}
+setInterval(updateDigitalClock, 1000);
+updateDigitalClock();
+
+// Active Menu Logic
 const page = location.pathname.split('/').pop() || 'index.html';
-document.querySelectorAll('#navbar a').forEach(a => {if(a.getAttribute('href') === page)a.classList.add('active')});
+document.querySelectorAll('#navbar a').forEach(a => {
+  if(a.getAttribute('href') === '/'+page || a.getAttribute('href') === page)a.classList.add('active')
+});
 </script>
 </body>
 </html>
