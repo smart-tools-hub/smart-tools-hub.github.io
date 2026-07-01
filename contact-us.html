@@ -3,59 +3,88 @@
 <head>
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
-<title>About Smart Tool Hub</title>
+<title>Contact Smart Tool Hub</title>
 <style>
 *{margin:0;padding:0;box-sizing:border-box}
 body{font-family:Arial,sans-serif;background:#f5f5f5}
+
+/* HEADER BLUE CENTER */
 .header{background:#2563eb;color:#fff;text-align:center;padding:18px;font-size:22px;font-weight:700}
-.header::before{content:"🔧 ";font-size:24px}
+.header::before{content:"🖊️ ";font-size:24px}
+
+/* MENU SCROLL KE SATH JAYEGA */
 .menu{background:#fff;text-align:center;padding:14px;border-bottom:1px solid #ddd}
-.menu a{margin:0 18px;color:#333;text-decoration:none;font-weight:600}
+.menu a{margin:0 18px;color:#333;text-decoration:none;font-weight:600;transition:.3s}
+.menu a:hover{color:#2563eb}
 .menu a.active{color:#2563eb}
-.main{max-width:1100px;margin:30px auto;padding:0 40px;display:flex;gap:30px}
-.left{flex:1}
+
+/* CENTER CONTENT */
+.main{max-width:1100px;margin:30px auto;padding:0 40px;display:flex;gap:30px;justify-content:center}
+.left{flex:1;max-width:700px}
 h1{text-align:center;font-size:28px;margin-bottom:15px;padding-bottom:12px;border-bottom:3px solid #2563eb}
-.box{background:#fff;padding:25px;margin-bottom:20px;border:1px solid #ddd;border-radius:6px;transition:.3s}
-.box:hover{transform:translateY(-6px);box-shadow:0 8px 20px rgba(0,0,0,.1)}
+
+/* BOX + HOVER PE MOVE KAREGA */
+.box{background:#fff;padding:25px;margin-bottom:20px;border:1px solid #ddd;border-radius:6px;transition:all .3s ease;cursor:pointer}
+.box:hover{transform:translateY(-8px);box-shadow:0 10px 25px rgba(0,0,0,.12)} /* MOUSE PE UTHEGA */
+
 .box p{color:#555;line-height:1.8;margin:0 0 10px 0;font-size:15px}
-.vision{background:#e6f2ff;border-left:4px solid #2563eb;padding:20px;border-radius:6px;transition:.3s}
-.vision:hover{transform:translateY(-6px);box-shadow:0 8px 20px rgba(0,0,0,.1)}
+.touch{background:#e6f2ff;border-left:4px solid #2563eb;padding:20px;border-radius:6px;transition:all .3s ease}
+.touch:hover{transform:translateY(-8px);box-shadow:0 10px 25px rgba(0,0,0,.12)} /* TOUCH BOX BHI UTHEGA */
+.touch h3{margin:0 0 10px 0;font-size:17px}
+
+/* EMAIL CLICK PE COLOR CHANGE */
+.mail{background:#dbeafe;padding:12px;border:2px dashed #2563eb;text-align:center;margin-top:10px;border-radius:5px;font-weight:700}
+.mail a{color:#1d4ed8;text-decoration:none;transition:.3s}
+.mail a:hover{color:#2563eb;text-decoration:underline} /* HOVER PE NEEELA */
+.mail a:active{color:#dc2626} /* CLICK PE LAAL HO JAYEGA */
+
+/* SIDEBAR GHADI */
 .right{width:300px}
-.timebox{background:#fff;padding:20px;border:1px solid #ddd;border-radius:6px;text-align:center}
+.timebox{background:#fff;padding:20px;border:1px solid #ddd;border-radius:6px;text-align:center;transition:all .3s ease}
+.timebox:hover{transform:translateY(-8px);box-shadow:0 10px 25px rgba(0,0,0,.12)}
+.timebox h3{margin:0 0 12px 0;font-size:16px}
 .time{background:#2563eb;color:#fff;font-size:26px;font-weight:700;padding:16px;border-radius:6px;font-family:monospace}
-.foot{background:#2563eb;color:#fff;text-align:center;padding:16px;font-size:14px;margin-top:40px} /* YE FOOTER HAI */
+
+/* FOOTER BLUE */
+.foot{background:#2563eb;color:#fff;text-align:center;padding:16px;font-size:14px;margin-top:40px}
 </style>
 </head>
 <body>
+
 <div class="header">SMART TOOL HUB</div>
-<div class="menu">
+
+<div class="menu"> <!-- SCROLL KE SATH UPAR JAYEGA -->
 <a href="index.html">Home</a>
-<a href="about-us.html" class="active">About Us</a>
-<a href="contact-us.html">Contact</a>
+<a href="about-us.html">About Us</a>
+<a href="contact-us.html" class="active">Contact</a>
 <a href="privacy-policy.html">Privacy</a>
 </div>
 
 <div class="main">
 <div class="left">
-<h1>About Us</h1>
-<div class="box">
-<p>Welcome to Smart Tools Hub - a premium platform engineered to streamline your digital workflow.</p>
+<h1>Contact Us</h1> <!-- CONTACT HAI BHAI ABOUT NAHI -->
+
+<div class="box"> <!-- BORDER + HOVER MOVE -->
+<p>Welcome to Smart Tools Hub - a premium platform engineered to streamline your digital workflow. Our core objective is to deliver powerful, instant-access tools that eliminate complexity and maximize productivity.</p>
 </div>
-<div class="box vision">
-<h3>Our Vision</h3>
-<p>Our vision is to become the internet's most trusted toolkit. No tracking, no data collection.</p>
+
+<div class="touch"> <!-- BORDER + HOVER MOVE -->
+<h3>Get In Touch</h3>
+<p>We identified a gap in the market: tools burdened with sign-ups, intrusive ads, and poor performance. Smart Tools Hub was created to solve this. Email us and we will reply within 24 hours.</p>
+<div class="mail"><a href="mailto:ptacalculatorpk@gmail.com">ptacalculatorpk@gmail.com</a></div> <!-- CLICK PE LAAL -->
 </div>
+
 </div>
 
 <div class="right">
-<div class="timebox">
+<div class="timebox"> <!-- HOVER MOVE -->
 <h3>Live Time</h3>
 <div class="time" id="clock">00:00:00</div>
 </div>
 </div>
 </div>
 
-<footer class="foot">© 2026 Smart Tools Hub</footer> <!-- FOOTER AA GAYA -->
+<footer class="foot">© 2026 Smart Tools Hub</footer>
 
 <script>function t(){document.getElementById('clock').textContent=new Date().toLocaleTimeString('en-US',{hour12:false})}t();setInterval(t,1000);</script>
 </body>
