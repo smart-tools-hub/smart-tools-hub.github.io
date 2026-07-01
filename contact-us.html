@@ -5,62 +5,66 @@
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
 <title>Contact Smart Tool Hub</title>
 <style>
-*{margin:0;padding:0;box-sizing:border-box}html,body{height:100%}body{font-family:'Segoe UI',Arial,sans-serif;background:#f8fafc;color:#334155;display:flex;flex-direction:column}
-.topbar{background:#2563eb;color:#fff;padding:18px 70px}
-.topbar .logo{font-size:24px;font-weight:800}
-.navbar{background:#fff;border-bottom:1px solid #e2e8f0;padding:0 70px;display:flex;gap:32px}
-.navbar a{color:#475569;text-decoration:none;font-weight:600;font-size:15px;padding:16px 0;position:relative;transition:all .3s ease}
-.navbar a:hover{color:#2563eb;transform:translateY(-2px)}
-.navbar a::after{content:'';position:absolute;left:50%;bottom:10px;width:0;height:3px;background:#2563eb;transition:all .3s ease;transform:translateX(-50%)}
-.navbar a:hover::after, .navbar a.active::after{width:100%;left:0;transform:translateX(0)}
+*{margin:0;padding:0;box-sizing:border-box}body{font-family:'Segoe UI',Arial,sans-serif;background:#f5f7fa;color:#334155}
+.header{background:#2563eb;color:#fff;padding:20px 0;text-align:center}
+.header .logo{font-size:26px;font-weight:800;display:inline-flex;align-items:center;gap:12px}
+.header .logo::before{content:"🔧";font-size:28px}
+.navbar{background:#fff;border-bottom:1px solid #e2e8f0;padding:15px 0;text-align:center}
+.navbar a{display:inline-block;color:#1e293b;text-decoration:none;font-weight:600;margin:0 20px;font-size:16px;padding:5px 0;position:relative;transition:all .3s ease}
+.navbar a:hover{color:#2563eb;transform:translateY(-3px)}
+.navbar a::after{content:'';position:absolute;left:0;bottom:0;width:0;height:3px;background:#2563eb;transition:width .3s}
+.navbar a:hover::after, .navbar a.active::after{width:100%}
 .navbar a.active{color:#2563eb}
-.main-wrap{flex:1;max-width:1200px;width:100%;margin:35px auto;padding:0 70px;display:grid;grid-template-columns:1fr 320px;gap:30px}
-h1{font-size:32px;color:#1e293b;margin-bottom:18px;font-weight:700;position:relative;padding-bottom:10px}
-h1::after{content:'';position:absolute;left:0;bottom:0;width:0;height:3px;background:#2563eb;transition:width .3s}
-h1:hover::after{width:70px}
-.card{background:#fff;border:1px solid #e2e8f0;padding:28px;border-radius:8px;margin-bottom:20px;box-shadow:0 1px 3px rgba(0,0,0,.05)}
-.card p{color:#475569;line-height:1.8;font-size:16px;margin-bottom:12px}
-.clock-box{background:#2563eb;color:#fff;padding:24px;border-radius:8px;text-align:center;position:sticky;top:130px}
-.clock-box h3{font-size:15px;font-weight:600;margin-bottom:12px;opacity:.95;text-transform:uppercase;letter-spacing:1px}
-.clock{font-size:36px;font-weight:800;font-family:'Courier New',monospace;background:#1e40af;padding:16px;border-radius:6px;letter-spacing:3px}
-.email{margin-top:15px;background:#eff6ff;padding:15px;border-radius:6px;text-align:center;border:2px dashed #2563eb;font-weight:700;font-size:17px}
+.wrap{max-width:1100px;margin:40px auto;padding:0 40px;display:grid;grid-template-columns:1fr 320px;gap:35px}
+h1{font-size:36px;color:#000;text-align:center;margin-bottom:18px;font-weight:800;position:relative;padding-bottom:15px;transition:all .3s}
+h1:hover{transform:translateY(-3px)}
+h1::after{content:'';position:absolute;left:50%;bottom:0;width:90px;height:4px;background:#2563eb;transform:translateX(-50%);border-radius:2px}
+.card{background:#fff;border:1px solid #e2e8f0;padding:30px;border-radius:10px;margin-bottom:22px;box-shadow:0 2px 5px rgba(0,0,0,.04);transition:all .3s}
+.card:hover{transform:translateY(-4px);box-shadow:0 6px 12px rgba(0,0,0,.08)}
+.card p{color:#475569;line-height:1.9;font-size:17px;margin-bottom:14px}
+.vision-box{background:#eff6ff;border-left:5px solid #2563eb;padding:22px;border-radius:8px}
+.vision-box h3{color:#000;font-size:20px;margin-bottom:10px;font-weight:700}
+.clock-card{background:#fff;border:1px solid #e2e8f0;padding:22px;border-radius:10px;text-align:center}
+.clock-card h3{font-size:17px;color:#1e293b;margin-bottom:14px;font-weight:700}
+.clock{background:#2563eb;color:#fff;font-size:30px;font-weight:800;font-family:'Courier New',monospace;padding:20px;border-radius:8px;letter-spacing:2px}
+.email{margin-top:15px;background:#dbeafe;padding:16px;border-radius:8px;border:2px dashed #2563eb;text-align:center;font-weight:700;font-size:18px}
 .email a{color:#1d4ed8;text-decoration:none}
-footer{background:#2563eb;color:#fff;text-align:center;padding:18px;margin-top:auto;font-size:14px;font-weight:500}
 </style>
 </head>
 <body>
-<header>
-  <div class="topbar"><div class="logo">SMART TOOL HUB</div></div>
-  <nav class="navbar">
-    <a href="index.html">Home</a>
-    <a href="about-us.html">About Us</a>
-    <a href="contact-us.html" class="active">Contact</a>
-    <a href="privacy-policy.html">Privacy</a>
-  </nav>
-</header>
+<div class="header">
+  <div class="logo">SMART TOOL HUB</div>
+</div>
+<nav class="navbar">
+  <a href="index.html">Home</a>
+  <a href="about-us.html">About Us</a>
+  <a href="contact-us.html" class="active">Contact</a>
+  <a href="privacy-policy.html">Privacy</a>
+</nav>
 
-<div class="main-wrap">
+<div class="wrap">
   <main>
     <h1>Contact Us</h1>
     <div class="card">
-      <p>Welcome to Smart Tools Hub - a premium platform engineered to streamline your digital workflow. Our core objective is to deliver powerful, instant-access tools that eliminate complexity.</p>
-      <p>We identified a gap in the market: tools burdened with sign-ups and ads. Smart Tools Hub was created to solve this.</p>
+      <p>Welcome to Smart Tools Hub - a premium platform engineered to streamline your digital workflow. Our core objective is to deliver powerful, instant-access tools that eliminate complexity and maximize productivity for students, creators, and professionals worldwide.</p>
+      <p>We identified a major gap in the market: tools burdened with forced sign-ups, intrusive ads, and poor performance. Smart Tools Hub was created to solve this problem permanently with clean, fast, and private tools.</p>
     </div>
-    <div class="card">
-      <h2 style="font-size:22px;color:#2563eb;margin-bottom:12px;">Get In Touch</h2>
-      <p>Email us directly. We reply within 24 hours.</p>
-      <div class="email"><a href="mailto:ptacalculatorpk@gmail.com">ptacalculatorpk@gmail.com</a></div>
+    <div class="card vision-box">
+      <h3>Get In Touch</h3>
+      <p>Have a question, found a bug, or want to request a new tool? Email us directly. We read every single message and reply within 24 hours on business days.</p>
+      <div class="email">
+        <a href="mailto:ptacalculatorpk@gmail.com">ptacalculatorpk@gmail.com</a>
+      </div>
     </div>
   </main>
+
   <aside>
-    <div class="clock-box">
+    <div class="clock-card">
       <h3>Live Time</h3>
       <div class="clock" id="clock">00:00:00</div>
     </div>
   </aside>
 </div>
-
-<footer>© 2026 Smart Tool Hub. All Rights Reserved.</footer>
 
 <script>function u(){document.getElementById('clock').textContent=new Date().toLocaleTimeString('en-US',{hour12:false})}u();setInterval(u,1000);</script>
 </body>
