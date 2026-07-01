@@ -8,26 +8,70 @@
 *{margin:0;padding:0;box-sizing:border-box}
 html,body{height:100%}
 body{font-family:Arial,sans-serif;background:#f5f5f5;display:flex;flex-direction:column}
-.top{position:sticky;top:0;z-index:999}
-.header{background:#2563eb;color:#fff;text-align:center;padding:18px;font-size:22px;font-weight:700}
-.header::before{content:"🔧 ";font-size:24px}
-.menu{background:#fff;text-align:center;padding:14px;border-bottom:1px solid #ddd}
-.menu a{margin:0 18px;color:#333;text-decoration:none;font-weight:600}
-.menu a.active{color:#2563eb}
-.main{max-width:1100px;margin:30px auto;padding:0 40px;display:flex;gap:30px;flex:1}
+
+/] HEADER + MENU EK SATH RIGHT/LEFT */
+.top{position:sticky;top:0;z-index:999;background:#2563eb;padding:0 40px;display:flex;justify-content:space-between;align-items:center;height:65px} /* YE NAYA STYLE HAI */
+.logo{color:#fff;font-size:22px;font-weight:700;display:flex;align-items:center;gap:8px} /* LOGO */
+.logo::before{content:"🔧 ";font-size:24px} /* SPANNER */
+.menu a{margin-left:25px;color:#fff;text-decoration:none;font-weight:600;font-size:15px;transition:.3s;padding:6px 10px;border-radius:4px}
+.menu a:hover{background:rgba(255,255,255,.2)} /* HOVER SAFED HALKA */
+.menu a.active{background:#fff;color:#2563eb} /* ACTIVE NEELA BUTTON */
+
+/* CENTER CONTENT */
+.main{max-width:1100px;margin:30px auto;padding:0 40px;display:flex;gap:30px;justify-content:center;flex:1}
 .left{flex:1;max-width:700px}
 h1{text-align:center;font-size:28px;margin-bottom:15px;padding-bottom:12px;border-bottom:3px solid #2563eb}
-.box{background:#fff;padding:25px;margin-bottom:20px;border:1px solid #ddd;border-radius:6px}
+.box{background:#fff;padding:25px;margin-bottom:20px;border:1px solid #ddd;border-radius:6px;transition:all .3s ease;cursor:pointer}
+.box:hover{transform:translateY(-8px);box-shadow:0 10px 25px rgba(0,0,0,.15)}
+.box h3{margin:0 0 10px 0;font-size:17px;color:#000}
+.box p{color:#555;line-height:1.8;margin:0 0 10px 0;font-size:15px}
 .right{width:300px}
-.timebox{background:#fff;padding:20px;border:1px solid #ddd;border-radius:6px;text-align:center}
+.timebox{background:#fff;padding:20px;border:1px solid #ddd;border-radius:6px;text-align:center;transition:all .3s ease}
+.timebox:hover{transform:translateY(-8px);box-shadow:0 10px 25px rgba(0,0,0,.15)}
 .time{background:#2563eb;color:#fff;font-size:26px;font-weight:700;padding:16px;border-radius:6px;font-family:monospace}
 .foot{background:#2563eb;color:#fff;text-align:center;padding:16px;font-size:14px;margin-top:auto}
 </style>
 </head>
 <body>
-<div class="top"><div class="header">SMART TOOL HUB</div><div class="menu"><a href="index.html">Home</a><a href="about-us.html">About Us</a><a href="contact-us.html">Contact</a><a href="privacy-policy.html" class="active">Privacy</a></div></div>
-<div class="main"><div class="left"><h1>Privacy Policy</h1><div class="box"><h3>1. No Data Collection</h3><p>Smart Tools Hub does not collect data.</p></div></div><div class="right"><div class="timebox"><h3>Live Time</h3><div class="time" id="clock">00:00:00</div></div></div></div>
+
+<!-- HEADER EK HI BAR ME LOGO + MENU -->
+<div class="top">
+<div class="logo">SMART TOOL HUB</div>
+<div class="menu" id="navbar">
+<a href="index.html">Home</a>
+<a href="about-us.html">About Us</a>
+<a href="contact-us.html">Contact</a>
+<a href="privacy-policy.html">Privacy</a>
+</div>
+</div>
+
+<div class="main">
+<div class="left">
+<h1>Privacy Policy</h1>
+<div class="box"><h3>1. No Data Collection</h3><p>Smart Tools Hub does not collect, store, or share any personal data.</p></div>
+<div class="box"><h3>2. Third-Party Services</h3><p>We are not responsible for other sites.</p></div>
+<div class="box"><h3>3. Ads and Analytics</h3><p>We may use Google AdSense.</p></div>
+<div class="box"><h3>4. Contact Us</h3><p>Email: <b>ptacalculatorpk@gmail.com</b></p></div>
+</div>
+<div class="right">
+<div class="timebox"><h3>Live Time</h3><div class="time" id="clock">00:00:00</div></div>
+</div>
+</div>
+
 <footer class="foot">© 2026 Smart Tools Hub</footer>
-<script>function t(){document.getElementById('clock').textContent=new Date().toLocaleTimeString('en-US',{hour12:false})}t();setInterval(t,1000);</script>
+
+<script>
+// GHADI
+function t(){document.getElementById('clock').textContent=new Date().toLocaleTimeString('en-US',{hour12:false})}t();setInterval(t,1000);
+
+// MENU ACTIVE
+const links = document.querySelectorAll('#navbar a');
+const currentPage = window.location.pathname.split('/').pop() || 'index.html';
+links.forEach(link => {
+  if(link.getAttribute('href') === currentPage){
+    link.classList.add('active');
+  }
+});
+</script>
 </body>
 </html>
