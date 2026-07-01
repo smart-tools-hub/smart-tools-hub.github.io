@@ -16,18 +16,24 @@ body{font-family:'Poppins',Arial,sans-serif;margin:0;background:var(--bg);color:
 .nav a:hover{color:var(--blue)}
 .container{max-width:1200px;margin:30px auto;display:grid;grid-template-columns:1fr 320px;gap:40px;padding:0 20px}
 .main-card{background:var(--card);padding:40px;border-radius:12px;box-shadow:0 8px 25px rgba(0,0,0,.08)}
-h1{color:var(--black);font-size:32px;margin-top:0;font-weight:700;text-align:center;border-bottom:3px solid var(--blue);padding-bottom:15px}
-h2{color:var(--black);font-size:24px;margin-top:30px;font-weight:600; border-left:4px solid var(--blue); padding-left:12px}
+h1{color:var(--black);font-size:32px;margin-top:0;font-weight:700;text-align:center;border-bottom:3px solid var(--blue);padding-bottom:15px; transition:border-color .3s}
+h1:hover{border-color:#004aad}
+h2{color:var(--black);font-size:24px;margin-top:30px;font-weight:600; display:inline-block; position:relative; padding-bottom:5px}
+h2::after{content:''; position:absolute; left:0; bottom:0; width:0; height:3px; background:var(--blue); transition:width .3s}
+h2:hover::after{width:100%}
+p{transition:transform .2s}
+p:hover{transform:translateX(5px)}
 .sidebar{background:var(--card);padding:25px;border-radius:12px;box-shadow:0 8px 25px rgba(0,0,0,.08); border:1px solid #e9ecef; height:fit-content; position:sticky; top:100px; text-align:center}
-.sidebar h3{margin-top:0;color:var(--black);border-bottom:2px solid var(--blue);padding-bottom:10px}
+.sidebar h3{margin-top:0;color:var(--black);border-bottom:2px solid var(--blue);padding-bottom:10px; text-align:center}
 .digital-clock{background:#0d6efd;color:#fff;font-size:28px;font-weight:700;padding:15px 10px;border-radius:10px;margin:0 auto;letter-spacing:2px;font-family:'Courier New', monospace;box-shadow:inset 0 0 15px rgba(0,0,0,.3)}
 .footer{background:var(--blue);color:#fff;padding:20px;text-align:center;margin-top:40px}
-.highlight{background:#e9f5ff; padding:20px; border-left:5px solid var(--blue); border-radius:5px; margin:20px 0}
+.highlight{background:#e9f5ff; padding:20px; border-left:5px solid var(--blue); border-radius:5px; margin:20px 0; font-size:18px; transition:box-shadow .3s}
+.highlight:hover{box-shadow:0 0 15px rgba(13,110,253,.2)}
 @media(max-width:900px){.container{grid-template-columns:1fr}}
 </style>
 </head>
 <body>
-<div class="header"><div class="logo">🔧 SMART TOOL HUB</div></div>
+<div class="header"><div class="logo">🔧 SMART TOOLS HUB</div></div>
 <div class="nav">
   <a href="/">Home</a>
   <a href="/about.html">About Us</a>
@@ -40,28 +46,28 @@ h2{color:var(--black);font-size:24px;margin-top:30px;font-weight:600; border-lef
 <div class="container">
   <div class="main-card">
     <h1>Terms & Conditions</h1>
-    <p><strong>Last Updated:</strong> April 28, 2026</p>
-
-    <p>By accessing and using <b>Smart Tools Hub</b>, you agree to comply with these Terms & Conditions. Please read them carefully.</p>
+    
+    <p>By using <b>Smart Tools Hub</b> you agree to these terms. We provide free, fast, and secure tools for everyone without any signup or cost.</p>
 
     <div class="highlight">
-    <p><b>Key Point:</b> All our tools are 100% free to use. No signup, no subscription, and no hidden charges.</p>
+    <p><b>Key Point</b><br>
+    All tools are 100% free forever. No personal data is collected. All processing happens directly in your browser.</p>
     </div>
 
-    <h2>1. Use of Tools</h2>
-    <p>You may use all tools for personal and commercial purposes. However, you must not use them for any illegal, harmful, or abusive activities.</p>
+    <h2>Use of Our Tools</h2>
+    <p>Use our tools only for legal and ethical purposes. Misuse, spamming, or overloading the platform is strictly prohibited.</p>
 
-    <h2>2. Accuracy & Liability</h2>
-    <p>We strive for accuracy, but we do not guarantee error-free results. Smart Tools Hub is not responsible for any loss or damage resulting from the use of our tools.</p>
+    <h2>Accuracy & Responsibility</h2>
+    <p>We maintain high accuracy, but cannot guarantee 100% error-free results. Use all outputs at your own responsibility.</p>
 
-    <h2>3. Intellectual Property</h2>
-    <p>All content, branding, and code on this website are the property of Smart Tools Hub. Unauthorized copying or redistribution is prohibited.</p>
+    <h2>Intellectual Property</h2>
+    <p>All content, design, and code are owned by Smart Tools Hub. Do not copy or republish without permission.</p>
 
-    <h2>4. Changes to Terms</h2>
-    <p>We may update these Terms at any time. Continued use of the website means you accept the updated terms.</p>
+    <h2>Changes to Terms</h2>
+    <p>We may update these terms anytime. Continued use of the site means you accept the changes.</p>
 
-    <h2>5. Contact</h2>
-    <p>For any questions regarding these Terms, please visit our <a href="/contact.html">Contact page</a>.</p>
+    <h2>Contact Us</h2>
+    <p>For questions about these Terms, visit our <a href="/contact.html">Contact page</a>.</p>
     
     <p style="margin-top:40px; text-align:center; font-size:20px; font-weight:700;">Smart Tools Hub - Precision. Speed. Simplicity.</p>
   </div>
@@ -72,7 +78,7 @@ h2{color:var(--black);font-size:24px;margin-top:30px;font-weight:600; border-lef
   </div>
 </div>
 
-<footer class="footer"><p>© 2026 Smart Tools Hub | All Rights Reserved</p></footer>
+<footer class="footer"><p>© 2026 Smart Tools Hub</p></footer>
 
 <script>
 function updateDigitalClock() {
