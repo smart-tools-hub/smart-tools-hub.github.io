@@ -7,69 +7,113 @@
 <meta name="description" content="Check and correct sentence grammar, punctuation, capitalization mistakes online for free. Best free sentence checker tool for students and bloggers in Pakistan. No signup.">
 <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@400;600;700&display=swap" rel="stylesheet">
 <style>
-:root{--blue:#0d6efd;--black:#1a1a1a;--bg:#f7f9fc;--card:#ffffff;--green:#198754;--red:#dc3545;--footer:var(--blue)}
-body{font-family:'Poppins',Arial,sans-serif;margin:0;background:var(--bg);color:var(--black);line-height:1.9;font-size:17px}
-.header{background:var(--blue);color:#fff;padding:12px 20px;display:flex;align-items:center;justify-content:space-between}
+:root{
+  --blue:#0d6efd;--black:#1a1a1a;--bg:#f7f9fc;--card:#ffffff;--green:#198754;--red:#dc3545;--footer:#0f172a; --border:#ddd;
+}
+html.dark{
+  --blue:#60a5fa;--black:#e5e7eb;--bg:#0b1220;--card:#111827;--footer:#020617; --border:#374151;
+}
+body{font-family:'Poppins',Arial,sans-serif;margin:0;background:var(--bg);color:var(--black);line-height:1.9;font-size:17px;transition:.3s}
+
+.header{background:var(--blue);color:#fff;padding:12px 20px;display:flex;align-items:center;justify-content:space-between;position:sticky;top:0;z-index:10}
 .header .logo{font-size:22px;font-weight:700}
-.nav{background:var(--card);box-shadow:0 2px 5px rgba(0,0,0,.05);padding:12px;text-align:center;position:sticky;top:0;z-index:10}
-.nav a{margin:0 18px;color:var(--black);text-decoration:none;font-weight:600;transition: all 0.2s ease;}
-.nav a:hover{color:var(--blue); border-bottom: 2px solid var(--blue); padding-bottom:3px}
-.container{max-width:1200px;margin:30px auto;display:grid;grid-template-columns:1fr 320px;gap:30px;padding:0 20px}
-.main-card{background:var(--card);padding:30px;border-radius:12px;box-shadow:0 4px 15px rgba(0,0,0,.06)}
-h1{color:var(--black);font-size:24px;margin-top:0;font-weight:700;text-align:left}
+.top-actions{display:flex;gap:8px;align-items:center}
+.btn{border:1px solid rgba(255,255,255,.3);background:rgba(0,0,0,.1);color:#fff;padding:6px 10px;border-radius:8px;cursor:pointer;font-size:13px;font-family:Poppins}
+.btn:hover{background:rgba(0,0,0,.2)}
+.lang-wrap{display:flex;gap:6px}
+.lang-btn{border:0;background:transparent;color:#fff;cursor:pointer;padding:4px 6px;border-radius:6px;font-size:12px;font-family:Poppins}
+.lang-btn.active{background:rgba(255,255,255,.25)}
+
+.nav{background:var(--card);box-shadow:0 2px 5px rgba(0,0,0,.05);padding:12px;text-align:center;position:sticky;top:56px;z-index:9}
+.nav a{margin:0 18px;color:var(--black);text-decoration:none;font-weight:600;transition: all 0.2s ease; position:relative; padding-bottom:3px}
+.nav a:hover{color:var(--blue)}
+.nav a:hover::after{content:"";position:absolute;left:0;right:0;bottom:0;height:2px;background:var(--blue);border-radius:2px}
+
+.container{max-width:900px;margin:30px auto;padding:0 20px} /* 1200px se 900px kar diya, sidebar gaya */
+.main-card{background:var(--card);padding:30px;border-radius:12px;box-shadow:0 4px 15px rgba(0,0,0,.06); transition: transform .2s}
+.main-card:hover{transform:translateY(-4px)} /* Card Hover Effect */
+
+h1{color:var(--black);font-size:24px;margin-top:0;font-weight:700;text-align:left; padding-bottom:8px; border-bottom:3px solid var(--blue); display:inline-block} /* Line add */
 h2.sub-title{color:#555;font-size:18px;margin-top:-10px;font-weight:400}
-textarea{width:100%;min-height:150px;padding:15px;border:2px solid #ddd;border-radius:8px;font-size:16px;font-family:'Poppins';margin-bottom:15px}
-.result-box{min-height:150px;padding:15px;background:#f1f5f9;border:2px solid var(--blue);border-radius:8px;overflow-y:auto}
+html.dark h2.sub-title{color:var(--black)}
+
+textarea{width:100%;min-height:150px;padding:15px;border:2px solid var(--border);border-radius:8px;font-size:16px;font-family:'Poppins';margin-bottom:15px; background:var(--bg); color:var(--black)}
+.result-box{min-height:150px;padding:15px;background:var(--bg);border:2px solid var(--blue);border-radius:8px;overflow-y:auto}
 .btns{margin-top:15px;text-align:center}
 button{background:var(--blue);color:#fff;border:none;padding:14px 28px;border-radius:8px;cursor:pointer;font-weight:600;margin:0 8px;font-family:'Poppins';font-size:16px;transition: all 0.2s ease;}
 button:hover{opacity:0.9; transform: scale(1.03); box-shadow:0 4px 10px rgba(13,110,253,0.3)}
 button.clear{background:#6c757d}
-.sidebar{background:var(--card);padding:25px;border-radius:12px;box-shadow:0 4px 15px rgba(0,0,0,.06);height:fit-content}
-.sidebar h3{margin-top:0;color:var(--black);border-bottom:2px solid var(--blue);padding-bottom:10px}
-.sidebar a{display:block;padding:10px 0;color:#333;text-decoration:none;font-weight:500;transition: all 0.2s ease;}
-.sidebar a:hover{color:var(--blue); padding-left:5px}
-.content-section{margin-top:40px;padding-top:20px;border-top:2px solid #eee}
+
+.content-section{margin-top:40px;padding-top:20px;border-top:2px solid var(--border)}
 .content-section h2{color:var(--black);font-size:26px;margin-top:30px;font-weight:700}
 .content-section h3{color:var(--black);font-size:20px;margin-top:20px;font-weight:600}
 .correct{color:var(--green);font-weight:600;background:#e9f5ff;padding:2px 4px;border-radius:4px}
+html.dark .correct{background:#0f2a1f}
 .mistake{color:var(--red);font-weight:600;background:#f8d7da;padding:2px 4px;border-radius:4px;text-decoration:underline wavy var(--red);}
-.footer{background:var(--footer);color:#fff;padding:40px 20px;margin-top:50px}
-.footer-container{max-width:1200px;margin:auto;display:grid;grid-template-columns:repeat(4, 1fr);gap:30px}
-.footer h4{color:#fff;margin-bottom:15px;font-size:18px;border-bottom:2px solid #fff; padding-bottom:5px; display:inline-block}
-.footer a{display:block;color:#e0e0e0;text-decoration:none;margin-bottom:10px;font-size:15px;transition: all 0.2s ease;}
-.footer a:hover{color:#fff; padding-left:5px}
-.clock{font-size:24px;font-weight:700;color:var(--blue);text-align:center;padding:10px 0;margin-bottom:20px}
-@media(max-width:900px){.container{grid-template-columns:1fr}.footer-container{grid-template-columns:repeat(2, 1fr)}}
+html.dark .mistake{background:#3a1f22}
+
+.footer{background:var(--footer);color:#fff;padding:30px 20px;margin-top:50px; text-align:center} /* Center kar diya */
+.footer a{display:inline-block;color:#93c5fd;text-decoration:none;font-size:15px;}
+.footer h4{margin-bottom:10px}
+
+.hidden{display:none !important}
 </style>
 </head>
 <body>
-<div class="header"><div class="logo">🔧 Smart Tools Hub</div><input type="text" placeholder="Search Tools..." style="padding:8px 12px;border-radius:20px;border:none;width:250px;font-family:Poppins"></div>
-<div class="nav"><a href="/">Home</a><a href="/sentence-checker.html">Sentence Checker</a><a href="/word-counter.html">Word Counter</a><a href="/plagiarism-checker.html">Plagiarism Checker</a><a href="/case-converter.html">Case Converter</a></div>
+<div class="header">
+  <div class="logo" data-en>🔧 Smart Tools Hub</div>
+  <div class="logo" data-ur>🔧 سمارٹ ٹولز ہب</div>
+  <div class="logo" data-ar>🔧 مركز الأدوات الذكية</div>
+  <div class="logo" data-hi>🔧 स्मार्ट टूल्स हब</div>
+  <div class="logo" data-bn>🔧 স্মার্ট টুলস হাব</div>
+  
+  <div class="top-actions">
+    <div class="lang-wrap">
+      <button class="lang-btn" data-lang="en">EN</button>
+      <button class="lang-btn" data-lang="ur">اردو</button>
+      <button class="lang-btn" data-lang="ar">العربية</button>
+      <button class="lang-btn" data-lang="hi">हिन्दी</button>
+      <button class="lang-btn" data-lang="bn">বাংলা</button>
+    </div>
+    <button class="btn" id="themeBtn">🌙</button>
+  </div>
+</div>
+
+<div class="nav">
+  <a href="/" data-en>Home</a><a href="/" data-ur>ہوم</a><a href="/" data-ar>الرئيسية</a><a href="/" data-hi>होम</a><a href="/" data-bn>হোম</a>
+  <a href="/sentence-checker.html" data-en>Sentence Checker</a><a href="/sentence-checker.html" data-ur>سینٹینس چیکر</a><a href="/sentence-checker.html" data-ar>مدقق الجمل</a><a href="/sentence-checker.html" data-hi>सेंटेंस चेकर</a><a href="/sentence-checker.html" data-bn>সেন্টেন্স চেকার</a>
+</div>
 
 <div class="container">
   <div class="main-card">
-    <h1>Sentence Checker</h1>
-    <h2 class="sub-title">Free Sentence Checker & Grammar Corrector Tool</h2>
+    <h1 data-en>Sentence Checker</h1>
+    <h1 data-ur>سینٹینس چیکر</h1>
+    <h1 data-ar>مدقق الجمل</h1>
+    <h1 data-hi>सेंटेंस चेकर</h1>
+    <h1 data-bn>সেন্টেন্স চেকার</h1>
 
-    <div><h4>Enter Your Sentence Here:</h4><textarea id="textInput" placeholder="Example: i am going to market without comma"></textarea></div>
-    <div><h4>Corrected Result:</h4><div id="result" class="result-box"><p style="color:#666">Your corrected sentence will appear here...</p></div></div>
-    <div class="btns"><button onclick="checkSentence()">Check Sentence</button><button class="clear" onclick="clearText()">Clear Text</button></div>
+    <h2 class="sub-title" data-en>Free Sentence Checker & Grammar Corrector Tool</h2>
+    <h2 class="sub-title" data-ur>مفت سینٹینس چیکر اور گرامر درست کرنے کا ٹول</h2>
+    <h2 class="sub-title" data-ar>أداة مجانية لتدقيق الجمل وتصحيح القواعد</h2>
+    <h2 class="sub-title" data-hi>मुफ्त सेंटेंस चेकर और ग्रामर करेक्टर टूल</h2>
+    <h2 class="sub-title" data-bn>বিনামূল্যে সেন্টেন্স চেকার এবং গ্রামার কারেক্টর টুল</h2>
 
-    <!-- ========== 900+ WORDS PURANA SEO CONTENT ========== -->
-    <div class="content-section">
+    <div><h4 data-en>Enter Your Sentence Here:</h4><h4 data-ur>اپنا جملہ یہاں لکھیں:</h4><h4 data-ar>أدخل جملتك هنا:</h4><h4 data-hi>अपना वाक्य यहाँ दर्ज करें:</h4><h4 data-bn>আপনার বাক্যটি এখানে লিখুন:</h4><textarea id="textInput" placeholder="Example: i am going to market without comma"></textarea></div>
+    <div><h4 data-en>Corrected Result:</h4><h4 data-ur>درست نتیجہ:</h4><h4 data-ar>النتيجة المصححة:</h4><h4 data-hi>सही परिणाम:</h4><h4 data-bn>সংশোধিত ফলাফল:</h4><div id="result" class="result-box"><p style="color:#666" data-en>Your corrected sentence will appear here...</p><p style="color:#666" data-ur>آپ کا درست جملہ یہاں ظاہر ہوگا...</p><p style="color:#666" data-ar>ستظهر جملتك المصححة هنا...</p><p style="color:#666" data-hi>आपका सही वाक्य यहाँ दिखाई देगा...</p><p style="color:#666" data-bn>আপনার সংশোধিত বাক্যটি এখানে দেখা যাবে...</p></div></div>
+    <div class="btns"><button onclick="checkSentence()" data-en>Check Sentence</button><button onclick="checkSentence()" data-ur>چیک کریں</button><button onclick="checkSentence()" data-ar>تحقق</button><button onclick="checkSentence()" data-hi>जांचें</button><button onclick="checkSentence()" data-bn>চেক করুন</button>
+    <button class="clear" onclick="clearText()" data-en>Clear Text</button><button class="clear" onclick="clearText()" data-ur>صاف کریں</button><button class="clear" onclick="clearText()" data-ar>مسح</button><button class="clear" onclick="clearText()" data-hi>साफ़ करें</button><button class="clear" onclick="clearText()" data-bn>মুছে ফেলুন</button></div>
+
+    <!-- ========== 900+ WORDS PURANA SEO CONTENT = SAME TO SAME ========== -->
+    <div class="content-section" data-en>
       <h2>What is a Free Sentence Checker Tool?</h2>
       <p>An online sentence checker is a free web-based tool that helps you identify and correct errors in your English writing. It scans your text for common mistakes like missing capital letters, incorrect punctuation, and basic grammar errors. Our Smart Tools Hub sentence corrector is designed to be 100% free with no signup required. This makes it one of the best "free grammar checker no login" options available online for users in Pakistan and worldwide. Unlike desktop software, you can access it instantly from any mobile or laptop browser.</p>
-
       <h2>Who Should Use Our Online Grammar Corrector?</h2>
       <h3>1. For Students</h3>
       <p>If you are a student in Pakistan, this tool is perfect for your school essays, university assignments, and English homework. Before submitting your work, paste it into our checker. It will help you fix capitalization mistakes and punctuation errors, which can improve your grades. It acts like a free online English teacher for basic proofreading.</p>
-      
       <h3>2. For Teachers and Content Writers</h3>
       <p>Teachers can use this tool to quickly check student paragraphs. Bloggers and content writers can use it to ensure their articles are clean and professional before publishing. A clean article with no basic grammar mistakes builds more trust with your readers and with Google.</p>
-
       <h3>3. For Social Media and Emails</h3>
       <p>Writing a professional email or a Facebook post? A small mistake like using a small 'i' instead of 'I' looks unprofessional. Use our tool to correct your sentences in 2 seconds before you hit send.</p>
-
       <h2>Top 5 Common Mistakes Our Tool Fixes Instantly</h2>
       <p>Our basic checker is trained to find the most common errors that Non-Native English speakers make. Here are the top 5 issues we correct:</p>
       <p>1.  <b>Capitalization at the Start:</b> The tool will automatically add a capital letter to the beginning of your sentence. Example: <span class="mistake">kamir is a beautiful city</span> becomes <span class="correct">Kamir is a beautiful city.</span><br>
@@ -77,35 +121,29 @@ button.clear{background:#6c757d}
       3.  <b>Incorrect Use of 'i':</b> It changes the small 'i' to a capital 'I' when it refers to yourself. Example: <span class="mistake">i am fine</span> becomes <span class="correct">I am fine.</span><br>
       4.  <b>Missing Commas:</b> It helps add commas where needed for clarity. Example: <span class="mistake">hello how are you</span> becomes <span class="correct">Hello, how are you?</span><br>
       5.  <b>Extra Spaces:</b> It helps you identify sentences with too many spaces between words.</p>
-
       <h2>How to Use the Smart Tools Hub Sentence Checker in 3 Easy Steps?</h2>
       <p><b>Step 1: Paste Your Text.</b> Copy any English sentence and paste it into the input box above.<br>
       <b>Step 2: Click 'Check Sentence'.</b> Press the blue button. Our tool will instantly analyze your text.<br>
       <b>Step 3: Review the Result.</b> See your corrected sentence in the result box. Copy it and use it directly.</p>
-
       <h2>Why Choose Smart Tools Hub Over Other Grammar Checkers?</h2>
       <p>There are many grammar tools online, but most of them require a paid subscription. Our tool is completely free forever. We focus on speed and simplicity. You don't need to create an account or download an app. The interface is clean, mobile-friendly, and works fast even on a slow internet connection in Pakistan.</p>
     </div>
-  </div>
-
-  <div class="sidebar">
-    <div class="clock" id="liveClock"></div>
-    <h3>Smart Tools Hub</h3>
-    <a href="/word-counter.html">> Word Counter Tool</a>
-    <a href="/case-converter.html">> Case Converter Tool</a>
-    <a href="/plagiarism-checker.html">> Plagiarism Checker</a>
-    <a href="/meta-tag-generator.html">> Meta Tag Generator</a>
-    <a href="/keyword-density-checker.html">> Keyword Density Checker</a>
+    <div class="content-section" data-ur>
+      <h2>مفت سینٹینس چیکر ٹول کیا ہے؟</h2>
+      <p>ایک آن لائن سینٹینس چیکر ایک مفت ویب پر مبنی ٹول ہے جو آپ کو اپنی انگریزی تحریر میں غلطیاں شناخت کرنے اور درست کرنے میں مدد کرتا ہے۔ یہ آپ کے متن کو بڑے حروف، غلط اوقاف اور بنیادی گرامر کی غلطیوں کے لیے اسکین کرتا ہے۔ ہمارا سمارٹ ٹولز ہب سینٹینس درست کرنے والا 100% مفت ہے اور اس کے لیے سائن اپ کی ضرورت نہیں۔ یہ پاکستان اور دنیا بھر کے صارفین کے لیے "لاگ ان کے بغیر مفت گرامر چیکر" کے بہترین اختیارات میں سے ایک ہے۔</p>
+    </div>
+     <div class="content-section" data-ar><h2>ما هو مدقق الجمل المجاني؟</h2><p>مدقق الجمل عبر الإنترنت هو أداة ويب مجانية تساعدك على تحديد وتصحيح الأخطاء في كتابتك باللغة الإنجليزية.</p></div>
+     <div class="content-section" data-hi><h2>मुफ्त सेंटेंस चेकर टूल क्या है?</h2><p>एक ऑनलाइन सेंटेंस चेकर एक मुफ्त वेब-आधारित टूल है जो आपको अपनी अंग्रेजी लेखन में त्रुटियों की पहचान करने और उन्हें ठीक करने में मदद करता है।</p></div>
+     <div class="content-section" data-bn><h2>ফ্রি সেন্টেন্স চেকার টুল কি?</h2><p>একটি অনলাইন সেন্টেন্স চেকার হল একটি বিনামূল্যের ওয়েব-ভিত্তিক টুল যা আপনাকে আপনার ইংরেজি লেখার ত্রুটি সনাক্ত করতে এবং সংশোধন করতে সাহায্য করে।</p></div>
   </div>
 </div>
 
 <footer class="footer">
-  <div class="footer-container">
-    <div><div class="logo">🔧 Smart Tools Hub</div><h4>Contact Us</h4><a href="/contact-us.html">support@smart-tools-hub.github.io</a></div>
-    <div><h4>Popular Tools</h4><a href="/sentence-checker.html">Sentence Checker</a><a href="/word-counter.html">Word Counter</a><a href="/plagiarism-checker.html">Plagiarism Checker</a></div>
-    <div><h4>Company</h4><a href="/about-us.html">About Us</a><a href="/contact-us.html">Contact Us</a><a href="/privacy-policy.html">Privacy Policy</a><a href="/terms-of-service.html">Terms of Service</a></div>
-    <div><h4>More Info</h4><a href="/blog.html">Blog</a><a href="/faqs.html">FAQs</a><a href="/sitemap.xml">Sitemap</a></div>
+  <div>
+    <h4 data-en>Contact Us</h4><h4 data-ur>رابطہ کریں</h4><h4 data-ar>اتصل بنا</h4><h4 data-hi>संपर्क करें</h4><h4 data-bn>যোগাযোগ করুন</h4>
+    <a href="mailto:ptacalculatorpk@gmail.com">ptacalculatorpk@gmail.com</a>
   </div>
+  <p style="margin-top:15px;">© 2026 Smart Tools Hub</p>
 </footer>
 
 <script>
@@ -124,8 +162,25 @@ function checkSentence(){
   r.innerHTML=`<h4><span class="correct">✅ Correction Complete</span></h4><p><b>Original:</b> ${original}</p><p><b>Corrected:</b> ${corrected}</p>`;
 }
 function clearText(){document.getElementById("textInput").value="";document.getElementById("result").innerHTML="<p style='color:#666'>Your corrected sentence will appear here...</p>";}
-function updateClock(){const now = new Date(); document.getElementById('liveClock').innerText = now.toLocaleTimeString('en-PK');}
-setInterval(updateClock, 1000); updateClock();
+
+// 1. Dark Mode Logic
+const themeBtn = document.getElementById('themeBtn');
+const applyTheme = (t) => {document.documentElement.classList.toggle('dark', t==='dark'); themeBtn.textContent = t==='dark'?'☀️':'🌙'; localStorage.theme=t;}
+applyTheme(localStorage.theme || 'light');
+themeBtn.onclick=()=>applyTheme(document.documentElement.classList.contains('dark')?'light':'dark');
+
+// 2. Language Logic
+const langBtns = document.querySelectorAll('.lang-btn');
+const setLang = (lang) => {
+  document.documentElement.lang = lang;
+  document.querySelectorAll('[data-en],[data-ur],[data-ar],[data-hi],[data-bn]').forEach(el=>{
+    el.classList.toggle('hidden', !el.hasAttribute(`data-${lang}`));
+  });
+  langBtns.forEach(b=>b.classList.toggle('active', b.dataset.lang===lang));
+  localStorage.lang=lang;
+}
+langBtns.forEach(b=>b.onclick=()=>setLang(b.dataset.lang));
+setLang(localStorage.lang || 'en');
 </script>
 </body>
 </html>
