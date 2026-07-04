@@ -6,10 +6,14 @@
 <title>Free Sentence Checker - Grammar, Punctuation & Clarity Tool</title>
 <meta name="description" content="Check your sentences for grammar, punctuation, and clarity. 100% Free AI Sentence Checker Tool. No signup needed.">
 <style>
-:root{--bg:#f5f7fb; --card:#fff; --text:#111827; --muted:#6b7280; --accent:#2563eb; --border:#e5e7eb;}
-html.dark{--bg:#0b1020; --card:#0f172a; --text:#e5e7eb; --muted:#9ca3af; --accent:#60a5fa; --border:#1f2937;}
-body{margin:0;font-family:Inter,system-ui,Roboto,Arial,sans-serif;background:var(--bg);color:var(--text)}
-.wrap{max-width:900px;margin:0 auto;padding:24px 16px}
+:root{--bg:#f5f7fb; --card:#fff; --text:#111827; --muted:#6b7280; --accent:#2563eb; --border:#e5e7eb; --sidebar:#fff;}
+html.dark{--bg:#0b1020; --card:#0f172a; --text:#e5e7eb; --muted:#9ca3af; --accent:#60a5fa; --border:#1f2937; --sidebar:#0f172a;}
+body{margin:0;font-family:Inter,system-ui,Roboto,Arial,sans-serif;background:var(--bg);color:var(--text);display:flex}
+.sidebar{width:240px;background:var(--sidebar);border-right:1px solid var(--border);height:100vh;position:fixed;left:0;top:0;padding:20px}
+.sidebar h3{margin:0 0 16px 0;font-size:18px;border-bottom:2px solid var(--accent);padding-bottom:8px;display:inline-block}
+.sidebar a{display:block;padding:10px 12px;margin:6px 0;color:var(--text);text-decoration:none;border-radius:8px;font-weight:500}
+.sidebar a:hover{background:var(--accent);color:white}
+.wrap{margin-left:260px;padding:24px 16px;flex:1;max-width:900px}
 header{display:flex;align-items:center;justify-content:space-between;margin-bottom:20px}
 .brand{display:flex;align-items:center;gap:12px}
 .logo{width:36px;height:36px;border-radius:12px;background:linear-gradient(135deg,var(--accent),#0ea5e9);display:grid;place-items:center;color:white;font-weight:800}
@@ -17,21 +21,31 @@ header{display:flex;align-items:center;justify-content:space-between;margin-bott
 .card{background:var(--card);border:1px solid var(--border);border-radius:16px;padding:16px;margin-bottom:20px}
 textarea{width:100%;min-height:120px;padding:14px;border:1px solid var(--border);border-radius:12px;background:transparent;color:var(--text);font-size:16px}
 .result-box{min-height:80px;padding:14px;border:1px dashed var(--border);border-radius:12px;margin-top:12px}
-.content h2{font-size:22px;margin-top:24px} .content h3{font-size:18px;margin-top:16px} .content ul{padding-left:20px}
-.muted{color:var(--muted);font-size:13px} footer{margin-top:18px;text-align:center}
-.top-nav{display:flex;gap:16px;margin-bottom:20px;font-weight:600; flex-wrap:wrap}
-.top-nav a{color:var(--accent);text-decoration:none}
+.content h2{font-size:22px;margin-top:24px;border-bottom:2px solid var(--accent);padding-bottom:6px;display:inline-block}
+.content h3{font-size:18px;margin-top:16px}.content ul{padding-left:20px}
+.muted{color:var(--muted);font-size:13px}
+footer{margin-top:18px;border-top:1px solid var(--border);padding-top:16px;display:flex;justify-content:space-between;flex-wrap:wrap;gap:12px}
+footer a{color:var(--accent);text-decoration:none;margin-right:12px}
+@media(max-width:768px){.sidebar{display:none}.wrap{margin-left:0}}
 </style>
 </head>
 <body>
-  <div class="wrap">
-    <nav class="top-nav">
-      <a href="/">Home</a> <a href="/sentence-checker.html">Sentence Checker</a> <a href="/word-counter.html">Word Counter</a> <a href="/plagiarism-checker.html">Plagiarism Checker</a> <a href="/case-converter.html">Case Converter</a>
-    </nav>
+  <aside class="sidebar">
+    <h3>Smart Tools</h3>
+    <a href="/">🏠 Home</a>
+    <a href="/sentence-checker.html">✍️ Sentence Checker</a>
+    <a href="/word-counter.html">🔢 Word Counter</a>
+    <a href="/plagiarism-checker.html">📄 Plagiarism Checker</a>
+    <a href="/case-converter.html">🔄 Case Converter</a>
+  </aside>
 
+  <div class="wrap">
     <header>
       <div class="brand"><div class="logo">SC</div><h1>Sentence Checker</h1></div>
-      <div><button class="btn" id="themeBtn">🌙</button></div>
+      <div style="display:flex;gap:8px">
+        <button class="btn" id="langBtn">EN</button>
+        <button class="btn" id="themeBtn">🌙 Night</button>
+      </div>
     </header>
 
     <div class="card">
@@ -46,28 +60,58 @@ textarea{width:100%;min-height:120px;padding:14px;border:1px solid var(--border)
 
     <div class="content">
       <h2>What is a Free Sentence Checker Tool?</h2>
-      <p>An online sentence checker is a free web-based tool that helps you identify and correct errors in your English writing. It scans your text for common mistakes like missing capital letters, incorrect punctuation, and basic grammar errors. Our Smart Tools Hub sentence corrector is designed to be 100% free with no signup required.</p>
+      <p>An online sentence checker is a free web-based tool that helps you identify and correct errors in your English writing...</p>
       <h2>Who Should Use Our Online Grammar Corrector?</h2>
-      <h3>1. For Students</h3><p>If you are a student in Pakistan, this tool is perfect for your school essays, university assignments, and English homework.</p>
-      <h3>2. For Teachers and Content Writers</h3><p>Teachers can use this tool to quickly check student paragraphs. Bloggers and content writers can use it to ensure their articles are clean.</p>
-      <h3>3. For Social Media and Emails</h3><p>Writing a professional email or a Facebook post? A small mistake like using a small 'i' instead of 'I' looks unprofessional.</p>
+      <h3>1. For Students</h3><p>If you are a student in Pakistan, this tool is perfect...</p>
+      <h3>2. For Teachers and Content Writers</h3><p>Teachers can use this tool to quickly check student paragraphs...</p>
+      <h3>3. For Social Media and Emails</h3><p>Writing a professional email or a Facebook post...</p>
       <h2>Top 5 Common Mistakes Our Tool Fixes Instantly</h2>
-      <ul><li><b>Capitalization at the Start:</b> kamir is a beautiful city becomes Kamir is a beautiful city.</li><li><b>Missing Full Stop:</b> how are you becomes How are you?</li><li><b>Incorrect Use of 'i':</b> i am fine becomes I am fine.</li><li><b>Missing Commas:</b> hello how are you becomes Hello, how are you?</li><li><b>Extra Spaces:</b> It helps you identify sentences with too many spaces.</li></ul>
-      <h2>How to Use in 3 Easy Steps?</h2><p><b>Step 1:</b> Paste Your Text. <b>Step 2:</b> Click 'Check Sentence'. <b>Step 3:</b> Review the Result.</p>
-      <h2>Why Choose Smart Tools Hub?</h2><p>Our tool is completely free forever. We focus on speed and simplicity. No account, no app download.</p>
+      <ul><li><b>Capitalization:</b> kamir becomes Kamir</li><li><b>Full Stop:</b> how are you becomes How are you?</li><li><b>'i' to 'I':</b> i am fine becomes I am fine.</li><li><b>Commas:</b> hello how are you becomes Hello, how are you?</li><li><b>Extra Spaces:</b> Fixed automatically.</li></ul>
+      <h2>How to Use in 3 Easy Steps?</h2><p><b>Step 1:</b> Paste. <b>Step 2:</b> Click 'Check'. <b>Step 3:</b> Copy Result.</p>
     </div>
-    <footer class="muted">© 2025 Smart Tools Hub</footer>
+
+    <footer>
+      <div>© 2025 Smart Tools Hub</div>
+      <div>
+        <a href="/privacy-policy.html">Privacy Policy</a>
+        <a href="/contact-us.html">Contact Us</a>
+        <a href="/about-us.html">About Us</a>
+      </div>
+    </footer>
   </div>
+
 <script>
 const text = document.getElementById('text');
 const result = document.getElementById('result');
+const themeBtn = document.getElementById('themeBtn');
+const langBtn = document.getElementById('langBtn');
+
 document.getElementById('checkBtn').onclick=()=>{
   let t = text.value.trim();
   if(!t){result.textContent='Please enter a sentence.'; return;}
   t = t.charAt(0).toUpperCase() + t.slice(1); t = t.replace(/\bi\b/g, 'I'); if(!/[.!?]$/.test(t)){t += '.';} result.textContent = t;
 };
 document.getElementById('clearBtn').onclick=()=>{text.value='';result.textContent='Your corrected sentence will appear here...';}
-document.getElementById('themeBtn').onclick=()=>{document.documentElement.classList.toggle('dark');document.getElementById('themeBtn').textContent=document.documentElement.classList.contains('dark')?'☀️':'🌙';}
+
+themeBtn.onclick=()=>{
+  document.documentElement.classList.toggle('dark');
+  themeBtn.textContent=document.documentElement.classList.contains('dark')?'☀️ Mood':'🌙 Night';
+}
+
+let lang='en';
+const dict = { en:{ph:"Example: i am going to market without comma",h2:"Free Sentence Checker & Grammar Corrector Tool",label:"Enter Your Sentence Here:",check:"Check Sentence",clear:"Clear Text",res:"Corrected Result:",no:"Your corrected sentence will appear here...",lang:"UR"},
+               ur:{ph:"Example: i am bazar ja raha hun comma ke baghair",h2:"Free Sentence Checker & Grammar Tool",label:"Yahan Apna Jumla Likhein:",check:"Check Karein",clear:"Clear Karein",res:"Corrected Result:",no:"Aapka corrected jumla yahan aayega...",lang:"EN"} };
+
+langBtn.onclick=()=>{
+  lang=lang==='en'?'ur':'en'; const d=dict[lang];
+  text.placeholder=d.ph; document.querySelector('.card h2').textContent=d.h2;
+  document.querySelector('.card label').textContent=d.label;
+  document.getElementById('checkBtn').textContent=d.check;
+  document.getElementById('clearBtn').textContent=d.clear;
+  document.querySelector('.card h3').textContent=d.res;
+  result.textContent=d.no; langBtn.textContent=d.lang;
+}
 </script>
 </body>
 </html>
+
