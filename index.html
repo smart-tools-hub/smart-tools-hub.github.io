@@ -4,56 +4,40 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Text Analysis Tools - Smart Tools Hub</title>
-    <meta name="description" content="Use Smart Tools Hub's free Text Analysis Tools. Check spelling, grammar, count words & characters, all in one place.">
+    <meta name="description" content="Use Smart Tools Hub's free Text Analysis Tools. Check spelling, grammar, count words & characters, change case, all in one place.">
     <style>
-        :root{--bg:#f4f7f9;--card:#fff;--text:#212529;--subtext:#6c757d;--primary:#0d6efd;--border:#dee2e6}
-        body.dark{--bg:#121212;--card:#1e1e1e;--text:#e0e0e0;--subtext:#bdbdbd;--primary:#58a6ff;--border:#333}
-        *{box-sizing:border-box;margin:0;padding:0;transition:background-color 0.3s, color 0.3s}
-        body{font-family: 'Segoe UI', Arial, sans-serif; background:var(--bg); color:var(--text)}
+        *{box-sizing:border-box;margin:0;padding:0}
+        body{font-family: 'Segoe UI', Arial, sans-serif; background:#f8f9fa; color:#212529}
         
-        /* ===== HEADER ===== */
-        header{background:var(--card); border-bottom:1px solid var(--border); position:sticky; top:0; z-index:100}
-        .nav-container{max-width:1300px;margin:0 auto;padding:0 20px;display:flex;align-items:center;justify-content:space-between;height:70px}
-        nav ul{list-style:none;display:flex;gap:30px;align-items:center}
-        nav a{text-decoration:none;color:var(--subtext);font-weight:600;font-size:0.95rem;position:relative;padding:5px 0}
-        nav a:hover{color:var(--primary)}
-        nav a:hover::after{content:'';position:absolute;left:0;bottom:0;width:100%;height:2px;background:var(--primary)}
-        .btn-pricing{background:var(--primary);color:#fff !important;padding:10px 18px;border-radius:8px;font-weight:700}
-        .btn-pricing:hover::after{display:none}
-        #theme-toggle{background:none;border:1px solid var(--border);color:var(--text);width:40px;height:40px;border-radius:50%;cursor:pointer;font-size:1.2rem}
+        /* ===== HEADER START ===== */
+        header{background:#fff; border-bottom:1px solid #e9ecef; position:sticky; top:0; z-index:100}
+        .nav-container{max-width:1200px;margin:0 auto;padding:0 20px;display:flex;align-items:center;justify-content:space-between;height:65px}
+        .logo{font-size:1.5rem;font-weight:700;color:#0d6efd;text-decoration:none}
+        .logo span{color:#212529}
+        nav ul{list-style:none;display:flex;gap:25px;align-items:center}
+        nav a{text-decoration:none;color:#495057;font-weight:500;font-size:0.95rem;transition:0.2s}
+        nav a:hover{color:#0d6efd}
+        .btn-pricing{background:#0d6efd;color:#fff !important;padding:8px 16px;border-radius:8px;display:flex;align-items:center;gap:6px}
+        .btn-pricing svg{width:16px;height:16px}
+        .menu-toggle{display:none;font-size:1.5rem;cursor:pointer}
+        /* ===== HEADER END ===== */
 
-        /* ===== LAYOUT: SIDEBAR + MAIN ===== */
-        .page-wrap{max-width:1300px;margin:0 auto;padding:40px 20px;display:grid;grid-template-columns:280px 1fr;gap:30px}
+        .container{max-width:1100px;margin:0 auto;padding:40px 20px}
+        h1{font-size:clamp(2rem, 5vw, 2.5rem);text-align:center;margin-bottom:15px;color:#0d6efd}
+        .subtitle{text-align:center; font-size:clamp(1rem, 2.5vw, 1.1rem); max-width:700px; margin:0 auto 40px auto; color:#6c757d; line-height:1.6}
+        .tools-wrapper{display:grid;grid-template-columns:repeat(auto-fit,minmax(260px,1fr));gap:25px}
+        .tool-box{background:#fff;padding:25px;border-radius:16px;box-shadow:0 5px 15px rgba(0,0,0,0.07);text-decoration:none;color:#212529;transition:all 0.3s ease;border:1px solid #e9ecef}
+        .tool-box:hover{transform:translateY(-8px); box-shadow:0 10px 20px rgba(13,110,253,0.15); border-color:#0d6efd}
+        .tool-icon{width:50px;height:50px;background:#e7f1ff;border-radius:12px;display:flex;align-items:center;justify-content:center;margin-bottom:15px}
+        .tool-icon svg{width:28px;height:28px;color:#0d6efd}
+        .tool-box h3{margin:0 0 8px 0;font-size:1.2rem}
+        .tool-box p{margin:0;font-size:0.95rem;color:#6c757d}
         
-        /* SIDEBAR */
-        .sidebar{background:var(--card);padding:25px;border-radius:16px;border:1px solid var(--border);height:fit-content;position:sticky;top:90px;box-shadow:0 4px 12px rgba(0,0,0,0.05)}
-        .sidebar h4{font-size:0.9rem;margin-bottom:15px;color:var(--subtext);text-transform:uppercase;letter-spacing:0.5px;font-weight:700}
-        .sidebar a{display:block;padding:11px 14px;border-radius:8px;text-decoration:none;color:var(--text);font-weight:500;margin-bottom:6px;transition:0.2s}
-        .sidebar a:hover,.sidebar a.active{background:rgba(13,110,253,0.1);color:var(--primary);font-weight:600}
-        
-        /* MAIN CONTENT */
-        .main-content{padding-top:10px}
-        .subtitle{font-size:1.1rem; max-width:700px; margin:0 0 35px 0; color:var(--subtext); line-height:1.7; text-align:left}
-        
-        /* TOOLS GRID */
-        .tools-wrapper{display:grid;grid-template-columns:repeat(auto-fit,minmax(280px,1fr));gap:30px}
-        .tool-box{background:var(--card);padding:30px;border-radius:16px;box-shadow:0 4px 12px rgba(0,0,0,0.05);text-decoration:none;color:var(--text);transition:all 0.3s ease;border:1px solid var(--border);display:flex;flex-direction:column;align-items:flex-start}
-        .tool-box:hover{transform:translateY(-8px); box-shadow:0 12px 24px rgba(0,0,0,0.1); border-color:var(--primary)}
-        
-        /* 2 LOGO WALA ICON BOX */
-        .tool-icon-wrap{display:flex; gap:10px; margin-bottom:20px}
-        .tool-icon{width:50px;height:50px;background:rgba(13,110,253,0.1);border-radius:12px;display:flex;align-items:center;justify-content:center; font-size:24px}
-        
-        .tool-box h3{margin:0 0 10px 0;font-size:1.25rem;font-weight:700}
-        .tool-box p{margin:0;font-size:0.95rem;color:var(--subtext); line-height:1.6}
-        
-        @media(max-width: 992px){
-            .page-wrap{grid-template-columns:1fr}
-            .sidebar{position:static; margin-bottom:20px}
+        @media(max-width: 768px){
             nav ul{display:none}
-            .subtitle{text-align:center}
-            .tool-box{align-items:center; text-align:center}
-            .tool-icon-wrap{justify-content:center}
+            .menu-toggle{display:block}
+            .container{padding:30px 15px}
+            .tools-wrapper{gap:15px}
         }
     </style>
 </head>
@@ -61,74 +45,48 @@
 
     <header>
         <div class="nav-container">
-            <nav style="margin-left:auto"> <!-- Logo hata diya -->
+            <a href="/" class="logo">Smart<span>Tools</span>Hub</a>
+            <nav>
                 <ul>
-                    <li><a href="/pricing" class="btn-pricing">+ Pricing</a></li>
+                    <li><a href="/pricing" class="btn-pricing">
+                        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="currentColor"><path fill-rule="evenodd" d="M12.963 2.286a.75.75 0 0 0-1.926 0L9.47 6.51a.75.75 0 0 1-.573.573L4.286 8.963a.75.75 0 0 0 0 1.926l4.223 1.476a.75.75 0 0 1 .573.573l1.476 4.223a.75.75 0 0 0 1.926 0l1.476-4.223a.75.75 0 0 1 .573-.573l4.223-1.476a.75.75 0 0 0 0-1.926l-4.223-1.476a.75.75 0 0 1-.573-.573L12.963 2.286Z" clip-rule="evenodd" /></svg>
+                        Pricing
+                    </a></li>
                     <li><a href="/text-analysis-tools/">Text Tools</a></li>
                     <li><a href="/seo-tools/">SEO Tools</a></li>
                     <li><a href="/login">Login</a></li>
-                    <li><button id="theme-toggle">🌙</button></li>
                 </ul>
             </nav>
+            <div class="menu-toggle">☰</div>
         </div>
     </header>
 
-    <div class="page-wrap">
-        <!-- ===== SIDEBAR START ===== -->
-        <aside class="sidebar">
-            <h4>Internal Text Tools</h4>
-            <a href="spell-checker-tool/" class="active">Spell Checker</a>
-            <a href="word-counter-tool/">Word Counter</a>
-            <a href="case-converter-tool/">Case Converter</a>
-            <a href="grammar-checker-tool/">Grammar Checker</a>
-            <a href="plagiarism-checker-tool/">Plagiarism Checker</a>
-            <a href="para-rewriter-tool/">Para Rewriter</a>
+    <div class="container">
+        <h1>Text Analysis Tools</h1>
+        <p class="subtitle">
+            Power up your writing with our all-in-one text toolkit. From fixing typos to counting characters, 
+            Smart Tools Hub gives you everything you need to polish your content instantly. 100% Free.
+        </p>
+
+        <div class="tools-wrapper">
             
-            <h4 style="margin-top:25px;">Other Categories</h4>
-            <a href="/seo-tools/">SEO Tools</a>
-            <a href="/pdf-tools/">PDF Tools</a>
-            <a href="/image-tools/">Image Tools</a>
-        </aside>
-        <!-- ===== SIDEBAR END ===== -->
+            <a href="spell-checker-tool/" class="tool-box">
+                <div class="tool-icon">
+                    <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke-width="1.5" stroke="currentColor"><path stroke-linecap="round" stroke-linejoin="round" d="m16.862 4.487 1.687-1.688a1.875 1.875 0 1 1 2.652 2.652L10.582 16.07a4.5 4.5 0 0 1-1.897 1.13L6 18l.8-2.685a4.5 4.5 0 0 1 1.13-1.897l8.932-8.931Z" /></svg>
+                </div>
+                <h3>Spell Checker</h3>
+                <p>Instantly find and correct all spelling errors in your text.</p>
+            </a>
 
-        <!-- ===== MAIN CONTENT START ===== -->
-        <main class="main-content">
-            <!-- HEADING HATA DIYA -->
-            <p class="subtitle">
-                Power up your writing with our all-in-one text toolkit. From fixing typos to counting characters, 
-                Smart Tools Hub gives you everything you need to polish your content instantly. 100% Free.
-            </p>
+            <a href="word-counter-tool/" class="tool-box">
+                <div class="tool-icon">
+                   <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke-width="1.5" stroke="currentColor"><path stroke-linecap="round" stroke-linejoin="round" d="M3.75 3.75v4.5m0-4.5h4.5M3.75 3.75l1.5 1.5M20.25 3.75v4.5m0-4.5h-4.5m4.5 0-1.5 1.5m-1.5 1.5L15 5.25m0 13.5 1.5-1.5m0 1.5h-4.5m4.5 0v-4.5M3.75 20.25v-4.5m0 4.5h4.5m-4.5 0 1.5-1.5M9 15l1.5 1.5" /></svg>
+                </div>
+                <h3>Word Counter</h3>
+                <p>Count words, characters, sentences, and paragraphs in seconds.</p>
+            </a>
 
-            <div class="tools-wrapper" id="toolsGrid">
-                <a href="spell-checker-tool/" class="tool-box">
-                    <div class="tool-icon-wrap"> <!-- 2 LOGO YAHAN -->
-                        <div class="tool-icon">🔧</div>
-                        <div class="tool-icon">🔧</div>
-                    </div>
-                    <h3>Spell Checker</h3>
-                    <p>Instantly find and correct all spelling errors in your text.</p>
-                </a>
-
-                <a href="word-counter-tool/" class="tool-box">
-                    <div class="tool-icon-wrap"> <!-- 2 LOGO YAHAN -->
-                        <div class="tool-icon">🔧</div>
-                        <div class="tool-icon">🔧</div>
-                    </div>
-                    <h3>Word Counter</h3>
-                    <p>Count words, characters, sentences, and paragraphs in seconds.</p>
-                </a>
-            </div>
-        </main>
-        <!-- ===== MAIN CONTENT END ===== -->
+        </div>
     </div>
-
-<script>
-    // Dark Mode Toggle
-    const toggle = document.getElementById('theme-toggle');
-    toggle.onclick = () => {
-        document.body.classList.toggle('dark');
-        toggle.textContent = document.body.classList.contains('dark') ? '☀️' : '🌙';
-    }
-</script>
 </body>
 </html>
