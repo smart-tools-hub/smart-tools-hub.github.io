@@ -88,37 +88,70 @@
     </div>
   </div>
 
-  <footer>
-    <div class="wrap">
-      <a href="/">Home</a> 
-      <a href="/about-us/">About Us</a> 
-      <a href="/contact-us/">Contact Us</a>
-      <a href="/privacy-policy/">Privacy</a>
-      <p style="margin-top:10px;">© 2026 Smart Tools Hub</p>
+ <style>
+.site-footer{background:#f8f9fa; color:#333; font-family: system-ui, -apple-system, Segoe UI, Roboto, sans-serif; padding-top:40px; border-top:1px solid #e9ecef;}
+.footer-top{max-width:1200px; margin:0 auto; padding:0 15px; display:grid; grid-template-columns: 1fr 1.2fr 0.8fr; gap:40px;}
+@media(max-width:992px){.footer-top{grid-template-columns:1fr 1fr}}
+@media(max-width:600px){.footer-top{grid-template-columns:1fr}}
+
+.footer-col h4{font-size:18px; font-weight:700; margin:0 0 15px 0; color:#212529;}
+.footer-col p, .footer-col li{font-size:15px; color:#555; line-height:1.7; margin:0 0 8px 0;}
+.footer-col ul{list-style:none; padding:0; margin:0;}
+.footer-col a{color:#555; text-decoration:none; transition:color .3s;}
+.footer-col a:hover{color:#0d6efd;}
+
+.footer-logo{font-size:28px; font-weight:700; margin-bottom:15px;}
+.footer-logo span{color:#dc3545;} /* SEO Red color */
+.footer-logo svg{width:18px; height:18px; vertical-align: middle;}
+
+.lang-box{display:inline-block; border:1px solid #ccc; border-radius:4px; padding:5px 10px; font-size:14px; margin-bottom:15px;}
+.lang-box img{width:16px; vertical-align: middle; margin-right:5px;}
+
+.copy-bar{background:#212529; color:#aaa; text-align:center; padding:15px; margin-top:30px; font-size:13px;}
+</style>
+
+<footer class="site-footer">
+  <div class="footer-top">
+    
+    <div class="footer-col">
+      <div class="footer-logo">Smart<span>SEO</span><svg xmlns="http://www.w3.org/2000/svg" fill="#0d6efd" viewBox="0 0 24 24"><path d="M15.5 14h-.79l-.28-.27A6.471 6.471 0 0 0 16 9.5 6.5 6.5 0 1 0 9.5 16c1.61 0 3.09-.59 4.23-1.57l.27.28v.79l5 4.99L20.49 19l-4.99-5zm-6 0C7.01 14 5 11.99 5 9.5S7.01 5 9.5 5 14 7.01 14 9.5 11.99 14 9.5 14z"/></svg>Tools</div>
+      
+      <div class="lang-box">
+        🌐 English ▼
+      </div>
+
+      <h4>Contact Us</h4>
+      <p>support@smartseohub.com</p>
+
+      <h4 style="margin-top:20px;">Address</h4>
+      <p>123, Main Market<br>Jampur, Punjab, PK.</p>
     </div>
-  </footer>
 
-<script>
-  const dict = new Set(["the","be","to","of","and","a","in","that","have","i","it","for","not","on","with","he","as","you","do","at","this","but","his","by","from","they","we","say","her","she","or","an","will","my","one","all","would","there","their","what","so","up","out","if","about","who","get","which","go","me","when","make","can","like","time","no","just","him","know","take","people","into","year","your","good","some","could","them","see","other","than","then","now","look","only","come","its","over","think","also","back","after","use","two","how","our","work","first","well","way","even","new","want","because","any","these","give","day","most","us","online","spell","checker","tool","free","accurate","fast","writers","students","bloggers","content","digital","world","essay","article","email","professional","unprofessional","credibility","web","based","utility","scan","entire","identify","dictionary","browser","checkers","built","long","form","distraction","interface","polish","writing","perfection","registration","mechanism","simple","effective","paste","left","hand","box","click","button","engine","processes","compares","comprehensive","internal","recognized","flagged","potential","displayed","right","column","incorrect","highlighted","red","wavy","underline","visual","feedback","incredibly","easy","spot","correct","errors","manually","client","side","means","never","leaves","ensuring","complete","privacy","security","save","track","data","advanced","features","apart","internet","interface","layout","used","top","tier","premium","grammarly","smallseotools","unlimited","count","thousands","restrictions","perfect","researchers","authors","creators","documents","hidden","fees","limits","mandatory","account","creation","open","immediately","responsive","design","ensures","flawlessly","laptop","tablet","smartphone","columns","stack","mobile","focused","happens","directly","device","essential","resource","range","assignments","theses","submission","seo","maintain","high","quality","standard","websites","helps","google","ranking","seekers","perfect","resumes","cover","letters","social","media","managers","copywriters","quickly","captions","ad","copies","publishing","purpose","full","tricky","excellent","catching","common","errors","their","there","they","re","you","re","it","s","than","affect","effect","accept","except","accommodate","definitely","separate","occurrence","embarrassment","maintenance","necessary","regularly","current","learn","improve","english","run","confident","automated","proper","nouns","brand","names","technical","jargon","slang","reviewing","results","designed","punctuation","sentence","structure","upcoming","grammar","absolutely","modern","android","ios","devices","vertically","experience","create","login","address","many","times","without"]);
-  
-  function checkSpell(){
-    let text = document.getElementById('text').value;
-    if(!text.trim()){alert('Please enter some text first.');return;}
-    let words = text.split(/(\b)/);
-    let resultHTML = words.map(word => {
-      let cleanWord = word.toLowerCase().replace(/[^a-z]/g, '');
-      if(cleanWord.length > 2 && !dict.has(cleanWord) && /^[a-z]+$/.test(cleanWord)){
-        return `<span class="miss" title="Possible misspelling">${word}</span>`;
-      }
-      return word;
-    }).join('');
-    document.getElementById('result').innerHTML = resultHTML || 'No text to check.';
-  }
-  function clearAll(){
-    document.getElementById('text').value = '';
-    document.getElementById('result').innerHTML = 'Your spelling mistakes will be highlighted here...';
-  }
-</script>
+    <div class="footer-col">
+      <h4>Popular Tools</h4>
+      <ul>
+        <li><a href="/plagiarism-checker/">Plagiarism Checker</a></li>
+        <li><a href="/reverse-image-search/">Reverse Image Search</a></li>
+        <li><a href="/video-downloader/">Video Downloader</a></li>
+        <li><a href="/paraphrasing-tool/">Paraphrasing Tool</a></li>
+        <li><a href="/ai-detector/">AI Detector</a></li>
+        <li><a href="/grammar-checker/">Free Grammar Checker</a></li>
+      </ul>
+    </div>
 
-</body>
-</html>
+    <div class="footer-col">
+      <ul>
+        <li><a href="/terms-of-service/">Terms of Services</a></li>
+        <li><a href="/testimonials/">Testimonials</a></li>
+        <li><a href="/contact-us/">Contact Us</a></li>
+        <li><a href="/about-us/">About Us</a></li>
+        <li><a href="/advertise/">Advertise</a></li>
+        <li><a href="/privacy-policy/">Privacy</a></li>
+      </ul>
+    </div>
+
+  </div>
+  <div class="copy-bar">
+    © 2026 SmartSEOHub.com
+  </div>
+</footer>
