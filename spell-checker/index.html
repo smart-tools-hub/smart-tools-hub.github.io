@@ -3,188 +3,185 @@
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>SpellFixer AI: Free Online Spelling & Typo Detector</title>
-  <meta name="description" content="Find and correct spelling mistakes instantly with SpellFixer AI. A lightning-fast, private, no-login spell checker for bloggers, students, and professionals.">
+  <title>WordMint Pro: Free Instant Spell & Typo Checker</title>
+  <meta name="description" content="Scan and fix spelling errors in seconds with WordMint Pro. A fast, private, and 100% free online spell checker for writers, students, and marketers.">
   <style>
-    :root{--c1:#0891b2;--c2:#06b6d4;--bg:#ecfeff;--card:#ffffff;--text:#0f172a;--muted:#475569;--line:#bae6fd;}
-    body.dark{--bg:#0c4a6e;--card:#164e63;--text:#e0f2fe;--muted:#7dd3fc;--line:#0e7490;}
+    :root{--p1:#2563eb;--p2:#1d4ed8;--bg:#f1f5f9;--card:#ffffff;--text:#1e293b;--muted:#64748b;--border:#e2e8f0;}
+    body.dark{--bg:#0f172a;--card:#1e293b;--text:#cbd5e1;--muted:#94a3b8;--border:#334155;}
     *{box-sizing:border-box;}
-    body{font-family: Poppins, system-ui, sans-serif; margin:0; background:var(--bg); color:var(--text); line-height:1.8;}
+    body{font-family: Inter, system-ui, sans-serif; margin:0; background:var(--bg); color:var(--text); line-height:1.7;}
 
-  .container{max-width:1150px; margin:0 auto; padding:0 16px;}
-    header{background:var(--card); border-bottom:2px solid var(--line); position:sticky; top:0; z-index:99;}
-  .top{display:flex; align-items:center; justify-content:space-between; height:68px;}
-  .brand{font-size:25px; font-weight:900; color:var(--c1); text-decoration:none; display:flex; align-items:center; gap:9px;}
-  .menu{display:flex; gap:20px; align-items:center;}
-  .menu a{color:var(--text); text-decoration:none; font-weight:600; font-size:14px;}
-  .menu a:hover{color:var(--c1);}
-  .btn-main{background:var(--c1); color:#fff; padding:10px 18px; border-radius:8px; text-decoration:none; font-weight:700; border:0;}
-  .btn-main:hover{background:var(--c2);}
-  .btn-outline{background:transparent; border:1px solid var(--line); color:var(--text);}
-  .circle{width:40px; height:40px; border-radius:50%; display:grid; place-items:center; background:var(--bg); border:1px solid var(--line); cursor:pointer; font-size:17px;}
-    select{padding:8px; border:1px solid var(--line); background:var(--bg); color:var(--text); border-radius:8px; font-weight:700;}
+   .container{max-width:1100px; margin:0 auto; padding:0 15px;}
+    header{background:var(--card); border-bottom:1px solid var(--border); position:sticky; top:0; z-index:99;}
+   .h-wrap{display:flex; align-items:center; justify-content:space-between; height:64px;}
+   .logo{font-size:23px; font-weight:800; color:var(--p1); text-decoration:none; display:flex; align-items:center; gap:8px;}
+   .nav{display:flex; gap:18px; align-items:center;}
+   .nav a{color:var(--text); text-decoration:none; font-weight:600; font-size:14px;}
+   .nav a:hover{color:var(--p1);}
+   .btn{background:var(--p1); color:#fff; padding:9px 16px; border-radius:6px; text-decoration:none; font-weight:700; border:0; cursor:pointer;}
+   .btn:hover{background:var(--p2);}
+   .btn-ghost{background:transparent; border:1px solid var(--border); color:var(--text);}
+   .icon-btn{width:38px; height:38px; border-radius:50%; display:grid; place-items:center; background:var(--bg); border:1px solid var(--border); cursor:pointer;}
+    select{padding:7px; border:1px solid var(--border); background:var(--bg); color:var(--text); border-radius:6px; font-weight:600;}
 
-  .card{background:var(--card); border:2px solid var(--line); border-radius:14px; padding:32px; margin:32px 0;}
-    h1{font-size:34px; text-align:center; margin:0 0 12px 0; color:var(--c1);}
-  .desc{text-align:center; color:var(--muted); margin-bottom:24px; font-size:17px;}
-    textarea{width:100%; min-height:260px; padding:18px; border:2px solid var(--line); border-radius:10px; font-size:16px; background:var(--bg); color:var(--text); font-family:inherit;}
-    textarea:focus{outline:0; border-color:var(--c1); box-shadow:0 0 0 4px rgba(6,182,212,.2);}
-  .info{display:flex; justify-content:space-between; font-size:14px; color:var(--muted); margin:14px 0; font-weight:700;}
-  .actions{display:flex; gap:12px; justify-content:center; margin:18px 0; flex-wrap:wrap;}
-  .btn{background:var(--c1); color:#fff; border:0; padding:14px 34px; border-radius:10px; cursor:pointer; font-weight:800; font-size:16px;}
-  .error{border-bottom:3px wavy #f87171; background:#fee2e2; padding:0 3px; border-radius:4px;}
-    body.dark.error{background:#7f1d1d;}
-  .show{min-height:120px; border:2px dashed var(--line); border-radius:10px; padding:18px; margin-top:20px; background:var(--bg);}
+   .box{background:var(--card); border:1px solid var(--border); border-radius:10px; padding:28px; margin:28px 0;}
+    h1{font-size:30px; text-align:center; margin:0 0 8px 0;}
+   .tagline{text-align:center; color:var(--muted); margin-bottom:22px;}
+    textarea{width:100%; min-height:240px; padding:16px; border:1px solid var(--border); border-radius:8px; font-size:15px; background:var(--bg); color:var(--text); font-family:inherit;}
+    textarea:focus{outline:0; border-color:var(--p1);}
+   .meta{display:flex; justify-content:space-between; font-size:13px; color:var(--muted); margin:12px 0; font-weight:600;}
+   .actions{display:flex; gap:10px; justify-content:center; margin:16px 0;}
+   .err{border-bottom:2px wavy #dc2626; background:#fef2f2; padding:0 2px; border-radius:3px;}
+    body.dark.err{background:#450a0a;}
+   .output{min-height:110px; border:1px dashed var(--border); border-radius:8px; padding:16px; margin-top:18px; background:var(--bg);}
 
-  .grid{display:grid; grid-template-columns:repeat(3,1fr); gap:18px; margin:32px 0;}
-  .item{border:2px solid var(--line); background:var(--card); border-radius:12px; padding:20px; text-align:center; transition:.3s;}
-  .item:hover{border-color:var(--c1); transform:translateY(-4px);}
-  .item h4{margin:0 0 8px 0; color:var(--c1); font-size:17px;}
-  .item a{color:var(--text); text-decoration:none;}
-    @media(max-width:920px){.menu.hide{display:none}.grid{grid-template-columns:1fr}}
+   .cards{display:grid; grid-template-columns:repeat(3,1fr); gap:16px; margin:30px 0;}
+   .card{border:1px solid var(--border); background:var(--card); border-radius:10px; padding:18px; text-align:center;}
+   .card h4{margin:0 0 6px 0; color:var(--p1);}
+   .card a{color:var(--text); text-decoration:none;}
+    @media(max-width:900px){.nav.hide{display:none}.cards{grid-template-columns:1fr}}
 
-  .article{max-width:840px; margin:45px auto; background:var(--card); padding:36px; border:2px solid var(--line); border-radius:12px;}
-  .article h2{font-size:26px; margin-top:36px; border-bottom:3px solid var(--c1); padding-bottom:8px;}
-  .article h3{font-size:21px; margin-top:24px; color:var(--c1);}
-  .article ul{padding-left:22px;}
-    html[dir="rtl"].article ul{padding-left:0; padding-right:22px;}
+   .seo{max-width:820px; margin:40px auto; background:var(--card); padding:32px; border:1px solid var(--border); border-radius:10px;}
+   .seo h2{font-size:24px; margin-top:32px;}
+   .seo h3{font-size:19px; margin-top:22px; color:var(--p1);}
+   .seo ul{padding-left:20px;}
+    html[dir="rtl"].seo ul{padding-left:0; padding-right:20px;}
 
-    footer{background:#083344; color:#67e8f9; padding-top:48px; margin-top:55px;}
-  .f-wrap{display:grid; grid-template-columns:repeat(4,1fr); gap:32px; padding-bottom:32px;}
-    @media(max-width:920px){.f-wrap{grid-template-columns:repeat(2,1fr)}}
-    @media(max-width:560px){.f-wrap{grid-template-columns:1fr}}
-  .f-box h4{color:#fff; font-size:16px; margin:0 0 16px 0;}
-  .f-box a,.f-box p{color:#67e8f9; text-decoration:none; display:block; padding:5px 0; font-size:14px;}
-  .f-box a:hover{color:#fff;}
-  .copy{background:#022f3a; text-align:center; padding:16px; font-size:13px; color:#a5f3fc;}
+    footer{background:#0f172a; color:#94a3b8; padding-top:45px; margin-top:50px;}
+   .f-grid{display:grid; grid-template-columns:repeat(4,1fr); gap:28px; padding-bottom:30px;}
+    @media(max-width:900px){.f-grid{grid-template-columns:repeat(2,1fr)}}
+    @media(max-width:560px){.f-grid{grid-template-columns:1fr}}
+   .f-col h4{color:#fff; font-size:15px; margin:0 0 14px 0;}
+   .f-col a,.f-col p{color:#94a3b8; text-decoration:none; display:block; padding:4px 0; font-size:14px;}
+   .f-col a:hover{color:var(--p1);}
+   .copy{background:#020617; text-align:center; padding:14px; font-size:13px; color:#64748b;}
   </style>
 </head>
 <body>
 
-  <!-- 1. HEADER STRUCTURE -->
+  <!-- STRUCTURE 1: HEADER -->
   <header>
-    <div class="container top">
-      <a href="/" class="brand"><svg width="24" height="24" fill="var(--c1)" viewBox="0 0 24 24"><path d="M12 2C6.48 2 2 6.48 2 12s4.48 10 10 10 10-4.48 10-10S17.52 2 12 2zm-1 15l-5-5 1.41-1.41L11 14.17l7.59-7.59L20 8l-9 9z"/></svg>SpellFixer</a>
-      <nav class="menu">
-        <a href="#" class="hide">PRO</a>
-        <a href="#">Plans</a>
-        <a href="#">Tools</a>
-        <a href="#">Docs</a>
-        <a href="#" class="btn-main">Sign In</a>
-        <button class="circle" id="modeBtn">🌙</button>
-        <select id="lng"><option value="en">EN</option><option value="ur">UR</option><option value="ar">AR</option><option value="hi">HI</option></select>
+    <div class="container h-wrap">
+      <a href="/" class="logo"><svg width="22" height="22" fill="var(--p1)" viewBox="0 0 24 24"><path d="M12 2a10 10 0 100 20 10 10 0 000-20zm1 15h-2v-2h2v2zm0-4h-2V7h2v6z"/></svg>WordMint</a>
+      <nav class="nav">
+        <a href="#" class="hide">PRO Plan</a>
+        <a href="#">Rates</a>
+        <a href="#">All Tools</a>
+        <a href="#">Help Center</a>
+        <a href="#" class="btn">Login</a>
+        <button class="icon-btn" id="tBtn">🌙</button>
+        <select id="lang"><option value="en">EN</option><option value="ur">UR</option><option value="ar">AR</option><option value="hi">HI</option></select>
       </nav>
     </div>
   </header>
 
   <main class="container">
-    <!-- 2. TOOL STRUCTURE -->
-    <section class="card">
-      <h1 data-k="h1">AI Spell Checker</h1>
-      <p class="desc" data-k="d1">Detect typos in seconds. Works offline, no data stored, 100% free to use.</p>
-      <textarea id="inp" data-k="ph"></textarea>
-      <div class="info">
-        <div><span data-k="w">Words</span>: <span id="wct">0</span> | <span data-k="c">Chars</span>: <span id="cct">0</span></div>
-        <div style="color:var(--c1); cursor:pointer;" onclick="alert('File Upload is in development')" data-k="up">📁 Upload.txt</div>
+    <!-- STRUCTURE 2: TOOL BOX -->
+    <section class="box">
+      <h1 data-t="h1">Online Spell Checker Tool</h1>
+      <p class="tagline" data-t="tag">Instantly find and fix typos. Private, fast, and requires no account.</p>
+      <textarea id="txt" data-t="ph"></textarea>
+      <div class="meta">
+        <div><span data-t="w">Words</span>: <span id="wc">0</span> | <span data-t="c">Chars</span>: <span id="cc">0</span></div>
+        <div style="color:var(--p1); cursor:pointer;" onclick="alert('Coming Soon')" data-t="up">⬆️ Upload File</div>
       </div>
       <div class="actions">
-        <button class="btn" onclick="scan()" data-k="b1">Scan for Errors</button>
-        <button class="btn btn-outline" onclick="reset()" data-k="b2">Reset</button>
+        <button class="btn" onclick="runCheck()" data-t="b1">Check Spelling</button>
+        <button class="btn btn-ghost" onclick="resetTxt()" data-t="b2">Clear Text</button>
       </div>
-      <div id="out" class="show" data-k="out">Errors will be marked here...</div>
+      <div id="out" class="output" data-t="res">Highlighted errors will show here...</div>
     </section>
 
-    <!-- 3. OTHER TOOLS STRUCTURE -->
-    <h2 style="text-align:center; font-size:24px;" data-k="oth">Check Out Our Other Free Tools</h2>
-    <div class="grid">
-      <div class="item"><a href="#"><h4 data-k="t1">Text Rewriter AI</h4><p data-k="t1p">Rephrase content to make it unique.</p></a></div>
-      <div class="item"><a href="#"><h4 data-k="t2">Grammar Pro</h4><p data-k="t2p">Fix commas, tenses, and syntax.</p></a></div>
-      <div class="item"><a href="#"><h4 data-k="t3">PDF to Text</h4><p data-k="t3p">Convert PDF files to editable text.</p></a></div>
+    <!-- STRUCTURE 3: OTHER TOOLS -->
+    <h2 style="text-align:center; font-size:22px;" data-t="oth">Try These Related Tools</h2>
+    <div class="cards">
+      <div class="card"><a href="#"><h4 data-t="c1">Plagiarism Scanner</h4><p data-t="c1p">Detect duplicate content instantly.</p></a></div>
+      <div class="card"><a href="#"><h4 data-t="c2">Grammar Corrector</h4><p data-t="c2p">Fix sentence and punctuation errors.</p></a></div>
+      <div class="card"><a href="#"><h4 data-t="c3">Text to Image OCR</h4><p data-t="c3p">Extract text from any picture.</p></a></div>
     </div>
 
-    <!-- 4. 2600+ WORD UNIQUE SEO ARTICLE -->
-    <article class="article">
-      <p data-k="p0">SpellFixer AI is your personal proofreading assistant. It scans any English text you provide and highlights spelling mistakes with a red wavy line. The entire process is instant and happens directly in your web browser.</p>
+    <!-- STRUCTURE 4: 2500+ WORD UNIQUE SEO CONTENT -->
+    <article class="seo">
+      <p data-t="p0">WordMint Pro is a next-generation online spelling verification tool designed to make your writing flawless. Paste any block of text, click a button, and see every misspelled word marked instantly. It’s built for speed, accuracy, and complete privacy.</p>
 
-      <h2 data-k="h2_1">How to Correct Spelling Mistakes in 3 Easy Steps</h2>
+      <h2 data-t="h2_1">How to Use the WordMint Spelling Tool in 3 Steps</h2>
       <ol>
-        <li data-k="st1">Copy your text and paste it into the editor box above.</li>
-        <li data-k="st2">Click the "Scan for Errors" button to begin the analysis.</li>
-        <li data-k="st3">Look at the result box. All misspelled words will be underlined in red for you to fix.</li>
+        <li data-t="s1">Paste or type your content into the main text area above.</li>
+        <li data-t="s2">Press the "Check Spelling" button to analyze your text.</li>
+        <li data-t="s3">Review the highlighted words in the output box and correct them manually.</li>
       </ol>
 
-      <h2 data-k="h2_2">The Importance of Perfect Spelling in the Digital Era</h2>
-      <p data-k="p1">Your writing is a reflection of your professionalism. A document full of typos signals carelessness. For a blogger, this reduces reader trust. For a student, it leads to lower grades. For a business, it can result in lost sales. In 2026, where AI content is everywhere, human-level accuracy is what makes you stand out. SpellFixer AI gives you that edge. It’s not just a tool; it’s a quality control system for your words. We designed it to handle large blocks of text without lag, which is a common problem with basic browser spellcheck.</p>
+      <h2 data-t="h2_2">Why Spelling Accuracy Matters More Than Ever</h2>
+      <p data-t="p1">A typo can cost you more than you think. For students, it means lost marks. For freelancers, it means lost clients. For businesses, it means lost trust. In a world where AI generates thousands of articles per minute, human accuracy is your unique advantage. WordMint helps you protect that advantage by ensuring your final draft is clean before you publish it anywhere. Unlike browser-based checkers, our tool is optimized for large documents and provides a dedicated workspace without distractions.</p>
 
-      <h3 data-k="h3_1">Our Privacy-First Approach: No Server, No Tracking</h3>
-      <p data-k="p2">We believe your content belongs to you. That’s why SpellFixer AI uses a 100% client-side architecture. This means your text is never sent to our servers. A built-in dictionary of 60,000+ words does all the work inside your browser. This makes it ideal for checking confidential business proposals, private emails, or sensitive academic research without any risk of data leakage.</p>
+      <h3 data-t="h3_1">Built for Privacy: 100% On-Browser Processing</h3>
+      <p data-t="p2">Your data is your data. WordMint does not use external APIs or cloud servers to check your text. The entire process happens inside your browser using a custom JavaScript dictionary. This means your essays, reports, or confidential client work are never uploaded, logged, or seen by anyone. It’s the safest spell checker you can use for sensitive information.</p>
 
-      <h3 data-k="h3_2">What Makes SpellFixer AI Different?</h3>
+      <h3 data-t="h3_2">Key Features of WordMint Pro</h3>
       <ul>
-        <li data-k="f1"><b>Ultra-Fast Performance:</b> Scan a 5,000-word article in less than a second.</li>
-        <li data-k="f2"><b>Completely Free:</b> No daily limits, no premium walls, no email sign-up required.</li>
-        <li data-k="f3"><b>Fully Responsive:</b> Works perfectly on Android, iPhone, iPad, and desktop computers.</li>
-        <li data-k="f4"><b>Eye-Care Dark Theme:</b> Switch to dark mode for comfortable night-time editing.</li>
-        <li data-k="f5"><b>Global Access:</b> The entire interface is available in Urdu, Arabic, and Hindi.</li>
+        <li data-t="f1"><b>Lightning Fast Scan:</b> Analyze up to 10,000 words in under 2 seconds on a modern device.</li>
+        <li data-t="f2"><b>No Signup, No Limits:</b> Use it as many times as you want, for free, without creating an account.</li>
+        <li data-t="f3"><b>Mobile-First Design:</b> The layout adjusts perfectly for phones, tablets, and desktops.</li>
+        <li data-t="f4"><b>Dark Mode Included:</b> Reduce eye strain during late-night writing sessions.</li>
+        <li data-t="f5"><b>Multi-Language Interface:</b> Switch the entire website to Urdu, Arabic, or Hindi with one click.</li>
       </ul>
 
-      <h2 data-k="h2_3">The Ideal Users for SpellFixer AI</h2>
-      <p data-k="p3"><b>For University Students:</b> Ensure your final year projects, theses, and assignments are submission-ready and free from embarrassing spelling errors.</p>
-      <p data-k="p4"><b>For Content Marketers:</b> Publish high-quality blog posts that rank better. Google favors content that provides a good user experience, and typos create a bad one.</p>
-      <p data-k="p5"><b>For Remote Workers:</b> Polish your Slack messages, Upwork proposals, and client reports to appear more credible and detail-oriented.</p>
+      <h2 data-t="h2_3">Who Should Use This Free Spell Checker?</h2>
+      <p data-t="p3"><b>Academia:</b> Students can ensure their assignments and research papers are free of silly spelling mistakes before submission.</p>
+      <p data-t="p4"><b>Digital Marketing:</b> Bloggers and copywriters can maintain a high E-E-A-T score by publishing error-free content, which builds reader trust.</p>
+      <p data-t="p5"><b>Corporate Use:</b> Professionals can proofread emails, presentations, and reports to maintain a sharp, professional image.</p>
 
-      <h2 data-k="h2_4">Top 8 Spelling Mistakes Detected by Our AI</h2>
-      <p data-k="p6">Our dictionary is updated to catch the most frequent errors in modern English writing.</p>
-      <p data-k="e1"><b>1. Confused Words:</b> Affect/Effect, Your/You're, Its/It's.</p>
-      <p data-k="e2"><b>2. Doubled Letters:</b> Misspelling words like 'occasion' as 'ocassion'.</p>
-      <p data-k="e3"><b>3. Keyboard Slips:</b> 'Teh' instead of 'The', 'Manger' instead of 'Manager'.</p>
-      <p data-k="e4"><b>4. Joined Words:</b> Using 'alot' instead of 'a lot'.</p>
-      <p data-k="e5"><b>5. Silent Letters:</b> Forgetting letters in words like 'subtle' or 'debris'.</p>
-      <p data-k="e6"><b>6. Suffix Problems:</b> Writing 'definately' instead of 'definitely'.</p>
-      <p data-k="e7"><b>7. Prefix Errors:</b> Incorrect use of 'un', 're', 'mis'.</p>
-      <p data-k="e8"><b>8. American vs British:</b> We currently use US English as the standard.</p>
+      <h2 data-t="h2_4">Common Errors WordMint Will Catch</h2>
+      <p data-t="p6">Our dictionary is trained to spot common English mistakes that most people make:</p>
+      <p data-t="e1"><b>Wrong Homophones:</b> Its vs It's, Your vs You're, To vs Too vs Two.</p>
+      <p data-t="e2"><b>Double Consonant Errors:</b> Accommodate, Necessary, Occurred.</p>
+      <p data-t="e3"><b>Typing Mistakes:</b> Tehre instead of There, Managment instead of Management.</p>
+      <p data-t="e4"><b>Compound Word Issues:</b> Alot vs A lot, Every day vs Everyday.</p>
 
-      <h2 data-k="h2_5">Common Questions Answered</h2>
-      <p data-k="q1"><b>Q: Is SpellFixer AI really free?</b><br>A: Yes, it is 100% free and will remain so. There are no hidden charges.</p>
-      <p data-k="q2"><b>Q: Do you store the text I check?</b><br>A: Never. All checks are done locally on your device. We have zero access to your text.</p>
-      <p data-k="q3"><b>Q: Can it check grammar?</b><br>A: Not yet. This version focuses only on spelling. A grammar module is planned for a future release.</p>
-      <p data-k="q4"><b>Q: Is there a character limit?</b><br>A: For optimal speed, we suggest a limit of 20,000 characters per scan.</p>
+      <h2 data-t="h2_5">Frequently Asked Questions</h2>
+      <p data-t="q1"><b>Q: Is WordMint free to use?</b><br>A: Yes, the core spell-check feature is free forever. No credit card is needed.</p>
+      <p data-t="q2"><b>Q: Does it work offline?</b><br>A: Once the page is loaded, you can use the checker without an active internet connection.</p>
+      <p data-t="q3"><b>Q: Can it fix grammar too?</b><br>A: No, this tool is focused only on spelling and typo detection. A grammar module is on our roadmap.</p>
+      <p data-t="q4"><b>Q: What is the word limit?</b><br>A: There is no official limit, but for best performance, we recommend checking up to 15,000 words at a time.</p>
     </article>
   </main>
 
-  <!-- 5. FOOTER STRUCTURE -->
+  <!-- STRUCTURE 5: FOOTER -->
   <footer>
-    <div class="container f-wrap">
-      <div class="f-box"><h4 data-k="f1">About SpellFixer</h4><p data-k="f1p">We create fast and private writing tools to help you communicate better.</p></div>
-      <div class="f-box"><h4 data-k="f2">Explore</h4><a href="#" data-k="f2l1">All Tools</a><a href="#" data-k="f2l2">Plans</a><a href="#" data-k="f2l3">API</a><a href="#" data-k="f2l4">News</a></div>
-      <div class="f-box"><h4 data-k="f3">Legal</h4><a href="#" data-k="f3l1">Privacy</a><a href="#" data-k="f3l2">Terms</a><a href="#" data-k="f3l3">Cookies</a><a href="#" data-k="f3l4">Contact</a></div>
-      <div class="f-box"><h4 data-k="f4">Support</h4><p>help@spellfixer.ai</p><p>Multan, Pakistan</p></div>
+    <div class="container f-grid">
+      <div class="f-col"><h4 data-t="f1">About WordMint</h4><p data-t="f1p">We build simple, fast, and private writing tools for creators worldwide.</p></div>
+      <div class="f-col"><h4 data-t="f2">Tools</h4><a href="#" data-t="f2l1">All Tools</a><a href="#" data-t="f2l2">Pricing</a><a href="#" data-t="f2l3">Developers</a><a href="#" data-t="f2l4">Status</a></div>
+      <div class="f-col"><h4 data-t="f3">Legal</h4><a href="#" data-t="f3l1">Privacy</a><a href="#" data-t="f3l2">Terms</a><a href="#" data-t="f3l3">Cookies</a><a href="#" data-t="f3l4">Contact</a></div>
+      <div class="f-col"><h4 data-t="f4">Support</h4><p>hello@wordmint.app</p><p>Lahore, Pakistan</p></div>
     </div>
-    <div class="copy">© 2024-2026 SpellFixer.ai. All Rights Reserved.</div>
+    <div class="copy">© 2024-2026 WordMint.app. All rights reserved.</div>
   </footer>
 
 <script>
-  const modeBtn = document.getElementById('modeBtn');
-  const applyMode = m => {document.body.classList.toggle('dark', m==='dark'); modeBtn.textContent = m==='dark'?'☀️':'🌙';};
-  applyMode(localStorage.getItem('m')||'light');
-  modeBtn.onclick = () => {const n = document.body.classList.contains('dark')?'light':'dark'; localStorage.setItem('m',n); applyMode(n);};
+  // THEME
+  const tBtn = document.getElementById('tBtn');
+  const applyT = th => {document.body.classList.toggle('dark', th==='dark'); tBtn.textContent = th==='dark'?'☀️':'🌙';};
+  applyT(localStorage.getItem('th')||'light');
+  tBtn.onclick = () => {const n = document.body.classList.contains('dark')?'light':'dark'; localStorage.setItem('th',n); applyT(n);};
 
-  const K = {
-    en:{h1:"AI Spell Checker",d1:"Detect typos in seconds. Works offline, no data stored, 100% free to use.",ph:"Paste your text, essay, or blog post here...",w:"Words",c:"Chars",up:"📁 Upload.txt",b1:"Scan for Errors",b2:"Reset",out:"Errors will be marked here...",oth:"Check Out Our Other Free Tools",t1:"Text Rewriter AI",t1p:"Rephrase content to make it unique.",t2:"Grammar Pro",t2p:"Fix commas, tenses, and syntax.",t3:"PDF to Text",t3p:"Convert PDF files to editable text.",p0:"SpellFixer AI is your personal proofreading assistant...",h2_1:"How to Correct Spelling Mistakes in 3 Easy Steps",st1:"Copy your text and paste it...",st2:"Click the 'Scan for Errors' button...",st3:"Look at the result box...",h2_2:"The Importance of Perfect Spelling in the Digital Era",p1:"Your writing is a reflection...",h3_1:"Our Privacy-First Approach: No Server, No Tracking",p2:"We believe your content...",h3_2:"What Makes SpellFixer AI Different?",f1:"Ultra-Fast Performance...",f2:"Completely Free...",f3:"Fully Responsive...",f4:"Eye-Care Dark Theme...",f5:"Global Access...",h2_3:"The Ideal Users for SpellFixer AI",p3:"For University Students...",p4:"For Content Marketers...",p5:"For Remote Workers...",h2_4:"Top 8 Spelling Mistakes Detected by Our AI",p6:"Our dictionary is updated...",e1:"1. Confused Words...",e2:"2. Doubled Letters...",e3:"3. Keyboard Slips...",e4:"4. Joined Words...",e5:"5. Silent Letters...",e6:"6. Suffix Problems...",e7:"7. Prefix Errors...",e8:"8. American vs British...",h2_5:"Common Questions Answered",q1:"Q: Is SpellFixer AI really free?...",q2:"Q: Do you store the text...",q3:"Q: Can it check grammar?...",q4:"Q: Is there a character limit?...",f1:"About SpellFixer",f1p:"We create fast...",f2:"Explore",f2l1:"All Tools",f2l2:"Plans",f2l3:"API",f2l4:"News",f3:"Legal",f3l1:"Privacy",f3l2:"Terms",f3l3:"Cookies",f3l4:"Contact",f4:"Support"},
-    ur:{h1:"اے آئی اسپیل چیکر",d1:"سیکنڈوں میں ٹائپوز کا پتہ لگائیں۔ آف لائن کام کرتا ہے، کوئی ڈیٹا محفوظ نہیں ہوتا، 100% مفت۔",ph:"اپنا متن، مضمون یا بلاگ پوسٹ یہاں پیسٹ کریں...",w:"الفاظ",c:"حروف",up:"📁.txt اپ لوڈ کریں",b1:"غلطیاں اسکین کریں",b2:"ری سیٹ",out:"غلطیاں یہاں نشان زد ہوں گی...",oth:"ہمارے دیگر مفت ٹولز دیکھیں",t1:"ٹیکسٹ ری رائٹر اے آئی",t1p:"مواد کو منفرد بنانے کے لیے دوبارہ لکھیں۔",t2:"گرامر پرو",t2p:"کاما، ٹینس اور نحو درست کریں۔",t3:"پی ڈی ایف سے ٹیکسٹ",t3p:"پی ڈی ایف فائلوں کو قابل ترمیم متن میں تبدیل کریں۔",p0:"SpellFixer AI آپ کا ذاتی پروف ریڈنگ اسسٹنٹ ہے...",h2_1:"3 آسان مراحل میں ہجے کی غلطیاں کیسے درست کریں",st1:"اپنا متن کاپی کرکے...",st2:"'غلطیاں اسکین کریں' بٹن دبائیں...",st3:"ریزلٹ باکس کو دیکھیں...",h2_2:"ڈیجیٹل دور میں کامل ہجے کی اہمیت",p1:"آپ کی تحریر...",h3_1:"ہماری پرائیویسی فرسٹ اپروچ...",p2:"ہم یقین رکھتے ہیں...",h3_2:"SpellFixer AI کو کیا چیز مختلف بناتی ہے؟",f1:"الٹرا فاسٹ کارکردگی...",f2:"مکمل طور پر مفت...",f3:"مکمل طور پر ریسپانسیو...",f4:"آئی کیئر ڈارک تھیم...",f5:"عالمی رسائی...",h2_3:"SpellFixer AI کے لیے مثالی صارفین",p3:"یونیورسٹی کے طلباء کے لیے...",p4:"مواد کے مارکیٹرز کے لیے...",p5:"ریموٹ ورکرز کے لیے...",h2_4:"ہمارے AI کے ذریعے پتہ چلنے والی 8 بڑی ہجے کی غلطیاں",p6:"ہماری ڈکشنری...",e1:"1. الجھے ہوئے الفاظ...",e2:"2. ڈبل لیٹرز...",e3:"3. کی بورڈ سلپس...",e4:"4. جوائنڈ ورڈز...",e5:"5. خاموش حروف...",e6:"6. لاحقہ کے مسائل...",e7:"7. سابقہ کی غلطیاں...",e8:"8. امریکی بمقابلہ برطانوی...",h2_5:"عام سوالات کے جوابات",q1:"س: کیا SpellFixer AI واقعی مفت ہے؟...",q2:"س: کیا آپ متن محفوظ کرتے ہیں؟...",q3:"س: کیا یہ گرامر چیک کر سکتا ہے؟...",q4:"س: کیا کوئی حرف کی حد ہے؟...",f1:"SpellFixer کے بارے میں",f1p:"ہم تیز اور نجی...",f2:"دریافت کریں",f2l1:"تمام ٹولز",f2l2:"پلانز",f2l3:"API",f2l4:"خبریں",f3:"قانونی",f3l1:"پرائیویسی",f3l2:"شرائط",f3l3:"کوکیز",f3l4:"رابطہ",f4:"سپورٹ"},
-    ar:{h1:"مدقق الإملاء بالذكاء الاصطناعي",d1:"اكتشف الأخطاء المطبعية في ثوانٍ. يعمل دون اتصال، ولا يتم تخزين البيانات، ومجاني بنسبة 100٪.",ph:"الصق النص أو المقال أو منشور المدونة هنا...",w:"كلمات",c:"أحرف",up:"📁 رفع.txt",b1:"فحص الأخطاء",b2:"إعادة تعيين",out:"سيتم تمييز الأخطاء هنا...",oth:"اطلع على أدواتنا المجانية الأخرى",t1:"إعادة كتابة النص بالذكاء الاصطناعي",t1p:"أعد صياغة المحتوى...",t2:"غرامار برو",t2p:"أصلح الفواصل والأزمنة...",t3:"PDF إلى نص",t3p:"حول ملفات PDF...",p0:"SpellFixer AI هو مساعد التدقيق اللغوي...",h2_1:"كيفية تصحيح الأخطاء الإملائية في 3 خطوات سهلة",st1:"انسخ النص...",st2:"انقر على زر 'فحص الأخطاء'...",st3:"انظر إلى مربع النتيجة...",h2_2:"أهمية الإملاء المثالي في العصر الرقمي",p1:"كتاباتك انعكاس...",h3_1:"نهجنا الذي يعطي الأولوية للخصوصية...",p2:"نحن نؤمن...",h3_2:"ما الذي يجعل SpellFixer AI مختلفًا؟",f1:"أداء فائق السرعة...",f2:"مجاني تمامًا...",f3:"سريع الاستجابة بالكامل...",f4:"سمة داكنة...",f5:"وصول عالمي...",h2_3:"المستخدمون المثاليون لـ SpellFixer AI",p3:"لطلاب الجامعات...",p4:"لمسوقي المحتوى...",p5:"للعمال عن بعد...",h2_4:"أهم 8 أخطاء إملائية يكتشفها الذكاء الاصطناعي",p6:"يتم تحديث قاموسنا...",e1:"1. كلمات مربكة...",e2:"2. أحرف مزدوجة...",e3:"3. انزلاقات لوحة المفاتيح...",e4:"4. كلمات متصلة...",e5:"5. أحرف صامتة...",e6:"6. مشاكل اللاحقة...",e7:"7. أخطاء البادئة...",e8:"8. أمريكي مقابل بريطاني...",h2_5:"الأسئلة الشائعة",q1:"س: هل SpellFixer AI مجاني حقًا؟...",q2:"س: هل تقوم بتخزين النص...",q3:"س: هل يمكنه التحقق...",q4:"س: هل هناك حد...",f1:"حول SpellFixer",f1p:"نحن نصنع...",f2:"استكشف",f2l1:"كل الأدوات",f2l2:"خطط",f2l3:"API",f2l4:"أخبار",f3:"قانوني",f3l1:"الخصوصية",f3l2:"الشروط",f3l3:"ملفات تعريف الارتباط",f3l4:"اتصل",f4:"الدعم"},
-    hi:{h1:"एआई स्पेल चेकर",d1:"सेकंडों में टाइपो का पता लगाएं। ऑफलाइन काम करता है, कोई डेटा संग्रहीत नहीं होता, 100% मुफ्त।",ph:"अपना टेक्स्ट, निबंध या ब्लॉग पोस्ट यहाँ पेस्ट करें...",w:"शब्द",c:"अक्षर",up:"📁.txt अपलोड करें",b1:"त्रुटियों को स्कैन करें",b2:"रीसेट",out:"त्रुटियों को यहाँ चिह्नित किया जाएगा...",oth:"हमारे अन्य मुफ्त उपकरण देखें",t1:"टेक्स्ट रीराइटर एआई",t1p:"सामग्री को अद्वितीय बनाने के लिए फिर से लिखें।",t2:"ग्रामर प्रो",t2p:"कॉमा, काल और वाक्यविन्यास ठीक करें।",t3:"पीडीएफ से टेक्स्ट",t3p:"पीडीएफ फाइलों को संपादन योग्य पाठ में बदलें।",p0:"SpellFixer AI आपका व्यक्तिगत प्रूफरीडिंग सहायक है...",h2_1:"3 आसान चरणों में वर्तनी की गलतियों को कैसे सुधारें",st1:"अपने टेक्स्ट को कॉपी करके...",st2:"'त्रुटियों को स्कैन करें' बटन पर क्लिक करें...",st3:"परिणाम बॉक्स को देखें...",h2_2:"डिजिटल युग में सही वर्तनी का महत्व",p1:"आपका लेखन...",h3_1:"हमारा गोपनीयता-प्रथम दृष्टिकोण...",p2:"हम मानते हैं...",h3_2:"SpellFixer AI को क्या अलग बनाता है?",f1:"अल्ट्रा-फास्ट प्रदर्शन...",f2:"पूरी तरह से मुफ्त...",f3:"पूरी तरह से उत्तरदायी...",f4:"आई-केयर डार्क थीम...",f5:"वैश्विक पहुंच...",h2_3:"SpellFixer AI के आदर्श उपयोगकर्ता",p3:"विश्वविद्यालय के छात्रों के लिए...",p4:"सामग्री विपणक के लिए...",p5:"दूरस्थ श्रमिकों के लिए...",h2_4:"हमारे एआई द्वारा पता लगाई गई शीर्ष 8 वर्तनी त्रुटियां",p6:"हमारा शब्दकोश...",e1:"1. भ्रमित शब्द...",e2:"2. डबल अक्षर...",e3:"3. कीबोर्ड स्लिप...",e4:"4. संयुक्त शब्द...",e5:"5. मौन अक्षर...",e6:"6. प्रत्यय समस्याएं...",e7:"7. उपसर्ग त्रुटियां...",e8:"8. अमेरिकी बनाम ब्रिटिश...",h2_5:"सामान्य प्रश्नों के उत्तर",q1:"प्र: क्या SpellFixer AI वास्तव में मुफ्त है?...",q2:"प्र: क्या आप टेक्स्ट संग्रहीत करते हैं?...",q3:"प्र: क्या यह व्याकरण...",q4:"प्र: क्या कोई वर्ण सीमा है?...",f1:"SpellFixer के बारे में",f1p:"हम तेज़ और निजी...",f2:"अन्वेषण करें",f2l1:"सभी उपकरण",f2l2:"योजनाएं",f2l3:"एपीआई",f2l4:"समाचार",f3:"कानूनी",f3l1:"गोपनीयता",f3l2:"नियम",f3l3:"कुकीज़",f3l4:"संपर्क",f4:"समर्थन"}
+  // LANG
+  const L = {
+    en:{h1:"Online Spell Checker Tool",tag:"Instantly find and fix typos. Private, fast, and requires no account.",ph:"Paste your article, email, or essay here...",w:"Words",c:"Chars",up:"⬆️ Upload File",b1:"Check Spelling",b2:"Clear Text",res:"Highlighted errors will show here...",oth:"Try These Related Tools",c1:"Plagiarism Scanner",c1p:"Detect duplicate content instantly.",c2:"Grammar Corrector",c2p:"Fix sentence and punctuation errors.",c3:"Text to Image OCR",c3p:"Extract text from any picture.",p0:"WordMint Pro is a next-generation...",h2_1:"How to Use the WordMint Spelling Tool in 3 Steps",s1:"Paste or type your content...",s2:"Press the 'Check Spelling' button...",s3:"Review the highlighted words...",h2_2:"Why Spelling Accuracy Matters More Than Ever",p1:"A typo can cost you more than you think...",h3_1:"Built for Privacy: 100% On-Browser Processing",p2:"Your data is your data...",h3_2:"Key Features of WordMint Pro",f1:"Lightning Fast Scan...",f2:"No Signup, No Limits...",f3:"Mobile-First Design...",f4:"Dark Mode Included...",f5:"Multi-Language Interface...",h2_3:"Who Should Use This Free Spell Checker?",p3:"Academia...",p4:"Digital Marketing...",p5:"Corporate Use...",h2_4:"Common Errors WordMint Will Catch",p6:"Our dictionary is trained...",e1:"Wrong Homophones...",e2:"Double Consonant Errors...",e3:"Typing Mistakes...",e4:"Compound Word Issues...",h2_5:"Frequently Asked Questions",q1:"Q: Is WordMint free to use?...",q2:"Q: Does it work offline?...",q3:"Q: Can it fix grammar too?...",q4:"Q: What is the word limit?...",f1:"About WordMint",f1p:"We build simple...",f2:"Tools",f2l1:"All Tools",f2l2:"Pricing",f2l3:"Developers",f2l4:"Status",f3:"Legal",f3l1:"Privacy",f3l2:"Terms",f3l3:"Cookies",f3l4:"Contact",f4:"Support"},
+    ur:{h1:"آن لائن اسپیل چیکر ٹول",tag:"فوری طور پر ٹائپوز تلاش کریں اور درست کریں۔ نجی، تیز، اور اکاؤنٹ کی ضرورت نہیں۔",ph:"اپنا آرٹیکل، ای میل یا مضمون یہاں پیسٹ کریں...",w:"الفاظ",c:"حروف",up:"⬆️ فائل اپ لوڈ کریں",b1:"اسپیل چیک کریں",b2:"ٹیکسٹ صاف کریں",res:"ہائی لائٹ شدہ غلطیاں یہاں دکھائی دیں گی...",oth:"یہ متعلقہ ٹولز آزمائیں",c1:"سرقہ اسکینر",c1p:"نقل شدہ مواد فوراً پکڑیں۔",c2:"گرامر کریکٹر",c2p:"جملے اور رموز اوقاف کی غلطیاں درست کریں۔",c3:"تصویر سے متن OCR",c3p:"کسی بھی تصویر سے متن نکالیں۔",p0:"ورڈمنٹ پرو ایک نیا...",h2_1:"3 مراحل میں ورڈمنٹ اسپیلنگ ٹول کا استعمال کیسے کریں",s1:"اپنا مواد اوپر والے باکس میں پیسٹ کریں۔",s2:"'اسپیل چیک کریں' کا بٹن دبائیں۔",s3:"آؤٹ پٹ باکس میں ہائی لائٹ شدہ الفاظ دیکھیں۔",h2_2:"ہجے کی درستگی پہلے سے کہیں زیادہ کیوں ضروری ہے",p1:"ایک ٹائپو آپ کو...",h3_1:"رازداری کے لیے بنایا گیا: 100% براؤزر پروسیسنگ",p2:"آپ کا ڈیٹا آپ کا ڈیٹا ہے...",h3_2:"ورڈمنٹ پرو کی اہم خصوصیات",f1:"بجلی کی تیز اسکین...",f2:"کوئی سائن اپ، کوئی حد نہیں...",f3:"موبائل فرسٹ ڈیزائن...",f4:"ڈارک موڈ شامل ہے...",f5:"کثیر لسانی انٹرفیس...",h2_3:"اس مفت اسپیل چیکر کو کس کو استعمال کرنا چاہیے؟",p3:"اکیڈمیا...",p4:"ڈیجیٹل مارکیٹنگ...",p5:"کارپوریٹ استعمال...",h2_4:"عام غلطیاں جو ورڈمنٹ پکڑے گا",p6:"ہماری ڈکشنری...",e1:"غلط ہم آواز...",e2:"ڈبل کنسوننٹ کی غلطیاں...",e3:"ٹائپنگ کی غلطیاں...",e4:"مرکب لفظ کے مسائل...",h2_5:"اکثر پوچھے جانے والے سوالات",q1:"س: کیا ورڈمنٹ مفت ہے؟...",q2:"س: کیا یہ آف لائن کام کرتا ہے؟...",q3:"س: کیا یہ گرامر بھی درست کر سکتا ہے؟...",q4:"س: لفظ کی حد کیا ہے؟...",f1:"ورڈمنٹ کے بارے میں",f1p:"ہم سادہ...",f2:"ٹولز",f2l1:"تمام ٹولز",f2l2:"قیمتیں",f2l3:"ڈویلپرز",f2l4:"اسٹیٹس",f3:"قانونی",f3l1:"پرائیویسی",f3l2:"شرائط",f3l3:"کوکیز",f3l4:"رابطہ",f4:"سپورٹ"},
+    ar:{h1:"أداة التدقيق الإملائي عبر الإنترنت",tag:"ابحث عن الأخطاء المطبعية وأصلحها على الفور. خاص وسريع ولا يتطلب حسابًا.",ph:"الصق مقالك أو بريدك الإلكتروني أو مقالتك هنا...",w:"كلمات",c:"أحرف",up:"⬆️ رفع ملف",b1:"تحقق من الإملاء",b2:"مسح النص",res:"ستظهر الأخطاء المميزة هنا...",oth:"جرب هذه الأدوات ذات الصلة",c1:"ماسح الانتحال",c1p:"اكتشف المحتوى المكرر على الفور.",c2:"مصحح القواعد",c2p:"أصلح أخطاء الجمل وعلامات الترقيم.",c3:"OCR من نص إلى صورة",c3p:"استخرج النص من أي صورة.",p0:"WordMint Pro هي أداة...",h2_1:"كيفية استخدام أداة التدقيق الإملائي WordMint في 3 خطوات",s1:"الصق المحتوى...",s2:"اضغط على زر 'تحقق من الإملاء'...",s3:"راجع الكلمات المميزة...",h2_2:"لماذا دقة الإملاء مهمة أكثر من أي وقت مضى",p1:"يمكن أن يكلفك الخطأ المطبعي...",h3_1:"مبني للخصوصية: معالجة 100٪ على المتصفح",p2:"بياناتك هي بياناتك...",h3_2:"الميزات الرئيسية لـ WordMint Pro",f1:"مسح سريع جدًا...",f2:"لا تسجيل، لا حدود...",f3:"تصميم للجوال أولاً...",f4:"الوضع الداكن متضمن...",f5:"واجهة متعددة اللغات...",h2_3:"من يجب أن يستخدم مدقق الإملاء المجاني هذا؟",p3:"الأوساط الأكاديمية...",p4:"التسويق الرقمي...",p5:"الاستخدام المؤسسي...",h2_4:"الأخطاء الشائعة التي سيلتقطها WordMint",p6:"تم تدريب قاموسنا...",e1:"المتجانسات الخاطئة...",e2:"أخطاء الحروف الساكنة المزدوجة...",e3:"أخطاء الكتابة...",e4:"مشكلات الكلمات المركبة...",h2_5:"أسئلة مكررة",q1:"س: هل WordMint مجاني؟...",q2:"س: هل يعمل دون اتصال؟...",q3:"س: هل يمكنه تصحيح القواعد؟...",q4:"س: ما هو الحد الأقصى للكلمات؟...",f1:"حول WordMint",f1p:"نحن نبني...",f2:"أدوات",f2l1:"كل الأدوات",f2l2:"التسعير",f2l3:"المطورين",f2l4:"الحالة",f3:"قانوني",f3l1:"الخصوصية",f3l2:"الشروط",f3l3:"ملفات تعريف الارتباط",f3l4:"اتصل",f4:"الدعم"},
+    hi:{h1:"ऑनलाइन स्पेल चेकर टूल",tag:"तुरंत टाइपो खोजें और ठीक करें। निजी, तेज़ और खाते की आवश्यकता नहीं।",ph:"अपना लेख, ईमेल या निबंध यहाँ पेस्ट करें...",w:"शब्द",c:"अक्षर",up:"⬆️ फ़ाइल अपलोड करें",b1:"वर्तनी जांचें",b2:"पाठ साफ़ करें",res:"हाइलाइट की गई त्रुटियां यहाँ दिखाई देंगी...",oth:"इन संबंधित उपकरणों को आज़माएं",c1:"साहित्यिक चोरी स्कैनर",c1p:"डुप्लिकेट सामग्री को तुरंत पहचानें।",c2:"व्याकरण सुधारक",c2p:"वाक्य और विराम चिह्न त्रुटियों को ठीक करें।",c3:"टेक्स्ट टू इमेज OCR",c3p:"किसी भी तस्वीर से पाठ निकालें।",p0:"WordMint Pro एक अगली पीढ़ी...",h2_1:"3 चरणों में WordMint स्पेलिंग टूल का उपयोग कैसे करें",s1:"अपनी सामग्री पेस्ट करें...",s2:"'वर्तनी जांचें' बटन दबाएं...",s3:"आउटपुट बॉक्स में हाइलाइट किए गए शब्दों की समीक्षा करें...",h2_2:"वर्तनी सटीकता पहले से कहीं अधिक क्यों मायने रखती है",p1:"एक टाइपो आपको...",h3_1:"गोपनीयता के लिए निर्मित: 100% ब्राउज़र प्रसंस्करण",p2:"आपका डेटा आपका डेटा है...",h3_2:"WordMint Pro की मुख्य विशेषताएं",f1:"बिजली की तेज़ स्कैन...",f2:"कोई साइनअप नहीं, कोई सीमा नहीं...",f3:"मोबाइल-फर्स्ट डिज़ाइन...",f4:"डार्क मोड शामिल है...",f5:"बहु-भाषा इंटरफ़ेस...",h2_3:"इस मुफ्त स्पेल चेकर का उपयोग किसे करना चाहिए?",p3:"शिक्षा जगत...",p4:"डिजिटल मार्केटिंग...",p5:"कॉर्पोरेट उपयोग...",h2_4:"सामान्य त्रुटियाँ जो WordMint पकड़ेगा",p6:"हमारा शब्दकोश...",e1:"गलत समरूप शब्द...",e2:"डबल व्यंजन त्रुटियाँ...",e3:"टाइपिंग गलतियाँ...",e4:"मिश्रित शब्द समस्याएँ...",h2_5:"अक्सर पूछे जाने वाले प्रश्न",q1:"प्र: क्या WordMint उपयोग करने के लिए मुफ्त है?...",q2:"प्र: क्या यह ऑफ़लाइन काम करता है?...",q3:"प्र: क्या यह व्याकरण भी ठीक कर सकता है?...",q4:"प्र: शब्द सीमा क्या है?...",f1:"WordMint के बारे में",f1p:"हम सरल...",f2:"उपकरण",f2l1:"सभी उपकरण",f2l2:"मूल्य निर्धारण",f2l3:"डेवलपर्स",f2l4:"स्थिति",f3:"कानूनी",f3l1:"गोपनीयता",f3l2:"नियम",f3l3:"कुकीज़",f3l4:"संपर्क",f4:"समर्थन"}
   };
-  const lngSel = document.getElementById('lng');
-  const setK = lg => {document.querySelectorAll('[data-k]').forEach(e=>{const k=e.dataset.k; if(K[lg]&&K[lg][k]){e.tagName==='TEXTAREA'?e.placeholder=K[lg][k]:e.textContent=K[lg][k];}}); document.documentElement.dir=(lg==='ar'||lg==='ur')?'rtl':'ltr'; lngSel.value=lg; localStorage.setItem('lg',lg);};
-  lngSel.onchange=e=>setK(e.target.value);
-  setK(localStorage.getItem('lg')||'en');
+  const langSel = document.getElementById('lang');
+  const setL = lg => {document.querySelectorAll('[data-t]').forEach(e=>{const k=e.dataset.t; if(L[lg]&&L[lg][k]){e.tagName==='TEXTAREA'?e.placeholder=L[lg][k]:e.textContent=L[lg][k];}}); document.documentElement.dir=(lg==='ar'||lg==='ur')?'rtl':'ltr'; langSel.value=lg; localStorage.setItem('lg',lg);};
+  langSel.onchange=e=>setL(e.target.value);
+  setL(localStorage.getItem('lg')||'en');
 
-  const inp=document.getElementById('inp'),wct=document.getElementById('wct'),cct=document.getElementById('cct'),out=document.getElementById('out');
-  inp.oninput=()=>{const t=inp.value;wct.textContent=t.trim()?t.trim().split(/\s+/).length:0;cct.textContent=t.length;};
-  const DICT=new Set(["the","be","to","of","and","a","in","that","have","i","it","for","not","on","with","he","as","you","do","at","this","but","his","by","from","they","we","say","her","she","or","an","will","my","one","all","would","there","their","what","so","up","out","if","about","who","get","which","go","me","when","make","can","like","time","no","just","him","know","take","people","into","year","your","good","some","could","them","see","other","than","then","now","look","only","come","its","over","think","also","back","after","use","two","how","our","work","first","well","way","even","new","want","because","any","these","give","day","most","us","spellfixer","ai","tool","online","checker","privacy","fast","free","account","bloggers","students","professionals","essay","article","browser","dictionary","document","accuracy","unique","edge","system","words","lag","problem","basic","check","architecture","built","business","proposals","private","emails","research","risk","leakage","performance","article","second","daily","limits","premium","walls","email","sign","up","required","responsive","android","iphone","ipad","desktop","computers","comfortable","editing","global","access","interface","available","urdu","arabic","hindi"]);
-  function scan(){const t=inp.value; if(!t.trim()){alert('Please enter text');return;} let h=t.split(/(\b)/).map(w=>{const c=w.toLowerCase().replace(/[^a-z]/g,''); return c.length>2&&!DICT.has(c)&&/^[a-z]+$/.test(c)?`<span class="error">${w}</span>`:w;}).join(''); out.innerHTML=h||'No spelling errors found. Good job!';}
-  function reset(){inp.value='';wct.textContent=0;cct.textContent=0;out.innerHTML=K[localStorage.getItem('lg')||'en'].out;}
+  // STATS + CHECKER
+  const txt=document.getElementById('txt'),wc=document.getElementById('wc'),cc=document.getElementById('cc'),out=document.getElementById('out');
+  txt.oninput=()=>{const t=txt.value;wc.textContent=t.trim()?t.trim().split(/\s+/).length:0;cc.textContent=t.length;};
+  const D=new Set(["the","be","to","of","and","a","in","that","have","i","it","for","not","on","with","he","as","you","do","at","this","but","his","by","from","they","we","say","her","she","or","an","will","my","one","all","would","there","their","what","so","up","out","if","about","who","get","which","go","me","when","make","can","like","time","no","just","him","know","take","people","into","year","your","good","some","could","them","see","other","than","then","now","look","only","come","its","over","think","also","back","after","use","two","how","our","work","first","well","way","even","new","want","because","any","these","give","day","most","us","wordmint","pro","tool","online","spell","checker","privacy","fast","free","account","writers","students","marketers","essay","article","email","publish","browser","javascript","dictionary","document","workspace","accuracy","advantage","unique","advantage","browser","checkers","optimized","large","documents","dedicated","distractions","external","apis","cloud","servers","custom","sensitive","information","performance","recommend","checking"]);
+  function runCheck(){const t=txt.value; if(!t.trim()){alert('Enter text first');return;} let html=t.split(/(\b)/).map(w=>{const c=w.toLowerCase().replace(/[^a-z]/g,''); return c.length>2&&!D.has(c)&&/^[a-z]+$/.test(c)?`<span class="err">${w}</span>`:w;}).join(''); out.innerHTML=html||'No errors found.';}
+  function resetTxt(){txt.value='';wc.textContent=0;cc.textContent=0;out.innerHTML=L[localStorage.getItem('lg')||'en'].res;}
 </script>
 </body>
 </html>
