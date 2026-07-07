@@ -1,72 +1,96 @@
-
 <!DOCTYPE html>
 <html lang="en">
 <head>
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
-<title>Free Online Spell Checker Tool | Check Spelling & Grammar Mistakes</title>
-<meta name="description" content="Best free online spell checker tool 2026. Check spelling mistakes, grammar errors and typos instantly. 100% free, no signup, mobile friendly and 100% private.">
-<link href="https://fonts.googleapis.com/css2?family=Poppins:wght@400;600;700&display=swap" rel="stylesheet">
+<title>Free Online Spell Checker Tool | Smart Tools Hub</title>
+<meta name="description" content="Best free online spell checker 2026. Check spelling mistakes instantly. 100% free, no signup, mobile friendly.">
+<link href="https://fonts.googleapis.com/css2?family=Poppins:wght@400;500;600;700&display=swap" rel="stylesheet">
 <style>
-:root{--blue:#0d6efd;--black:#1a1a1a;--bg:#f7f9fc;--card:#ffffff}
-body{font-family:'Poppins',Arial,sans-serif;margin:0;background:var(--bg);color:var(--black);line-height:1.9;font-size:17px}
-.header{background:var(--blue);color:#fff;padding:20px;text-align:center}
-.header .logo{font-size:28px;font-weight:700; letter-spacing:1px}
-.nav{background:var(--card);box-shadow:0 2px 5px rgba(0,0,0,.05);padding:12px;text-align:center;position:sticky;top:0;z-index:10}
-.nav a{margin:0 18px;color:var(--black);text-decoration:none;font-weight:600; transition:color .3s}
-.nav a:hover{color:var(--blue)}
-.container{max-width:1200px;margin:30px auto;display:grid;grid-template-columns:1fr 320px;gap:40px;padding:0 20px}
-.main-card{background:var(--card);padding:40px;border-radius:12px;box-shadow:0 8px 25px rgba(0,0,0,.08)}
-h1{color:var(--black);font-size:32px;margin-top:0;font-weight:700;text-align:center;border-bottom:3px solid var(--blue);padding-bottom:15px;}
-h2{color:var(--black);font-size:24px;margin-top:30px;font-weight:600; display:inline-block; position:relative; padding-bottom:5px}
-h2::after{content:''; position:absolute; left:0; bottom:0; width:0; height:3px; background:var(--blue); transition:width .3s}
-h2:hover::after{width:100%}
-p{transition:transform .2s}
-p:hover{transform:translateX(5px)}
-.sidebar{background:var(--card);padding:25px;border-radius:12px;box-shadow:0 8px 25px rgba(0,0,0,.08); border:1px solid #e9ecef; height:fit-content; position:sticky; top:100px; text-align:center}
-.sidebar h3{margin-top:0;color:var(--black);border-bottom:2px solid var(--blue);padding-bottom:10px; text-align:center}
-.digital-clock{background:#0d6efd;color:#fff;font-size:28px;font-weight:700;padding:15px 10px;border-radius:10px;margin:0 auto;letter-spacing:2px;font-family:'Courier New', monospace;box-shadow:inset 0 0 15px rgba(0,0,0,.3)}
-.footer{background:var(--blue);color:#fff;padding:20px;text-align:center;margin-top:40px}
-.highlight{background:#e9f5ff; padding:20px; border-left:5px solid var(--blue); border-radius:5px; margin:20px 0; font-size:18px;}
+:root{--blue:#0d6efd;--black:#212529;--bg:#f8f9fa;--card:#ffffff;--border:#dee2e6; --text:#212529}
+body.dark{--black:#f8f9fa; --bg:#121212; --card:#1e1e1e; --border:#333; --text:#e9ecef}
+body{font-family:'Poppins',Arial,sans-serif;margin:0;background:var(--bg);color:var(--text);line-height:1.8;font-size:16px; transition:0.3s}
 
-/* TOOL CSS */
-.tool-box textarea{width:100%; min-height:250px; padding:15px; border:2px solid #e9ecef; border-radius:8px; font-size:16px; font-family:'Poppins'; margin-bottom:15px}
+/* HEADER - PRO STYLE */
+.top-header{background:var(--card); border-bottom:1px solid var(--border); position:sticky; top:0; z-index:999; box-shadow:0 2px 4px rgba(0,0,0,.05)}
+.header-container{max-width:1300px; margin:0 auto; padding:0 20px; display:flex; justify-content:space-between; align-items:center; height:75px}
+.logo{font-size:28px; font-weight:700; color:var(--text); text-decoration:none;}
+.logo span{color:var(--blue)}
+.logo b{color:#ff5722}
+.nav-menu{display:flex; align-items:center; gap:25px}
+.nav-menu a{color:var(--text); text-decoration:none; font-weight:500; font-size:15px}
+.nav-menu a:hover{color:var(--blue)}
+.theme-btn{background:var(--blue); color:#fff; border:none; padding:8px 15px; border-radius:6px; cursor:pointer; font-size:18px}
+
+/* MAIN */
+.container{max-width:1300px;margin:30px auto;display:grid;grid-template-columns:1fr 320px;gap:40px;padding:0 20px}
+.main-card{background:var(--card);padding:0;border-radius:12px;box-shadow:0 8px 25px rgba(0,0,0,.08); overflow:hidden; border:1px solid var(--border)}
+
+/* TOOL BOX - PRO STYLE */
+.tool-header{background:var(--bg); padding:15px 25px; border-bottom:1px solid var(--border)}
+.tool-header p{margin:0; font-size:15px; color:#6c757d}
+.tool-body{padding:30px 25px}
+.tool-body h1{color:var(--text);font-size:30px;margin:0 0 20px 0;font-weight:700;text-align:left;}
+.tool-box textarea{width:100%; min-height:280px; padding:15px; border:2px solid var(--border); border-radius:8px; font-size:15px; font-family:'Poppins'; margin-bottom:15px; resize:vertical; background:var(--bg); color:var(--text)}
 .tool-box textarea:focus{outline:none; border-color:var(--blue)}
-.btn{background:var(--blue); color:#fff; padding:12px 30px; border:none; border-radius:8px; font-size:16px; font-weight:600; cursor:pointer; margin-right:10px}
+.btn{background:var(--blue); color:#fff; padding:12px 30px; border:none; border-radius:6px; font-size:16px; font-weight:600; cursor:pointer; margin-right:10px}
 .btn:hover{background:#004aad}
-.stats{margin:15px 0; font-weight:600}
+.btn-secondary{background:#6c757d}
+.stats{margin:15px 0; font-weight:600; font-size:14px; color:#6c757d}
 .miss{background:#ffdddd; border-bottom:2px wavy red; padding:0 2px}
-.result{margin-top:20px; padding:20px; border:2px dashed #e9ecef; border-radius:8px; min-height:120px; background:#f7f9fc}
+body.dark .miss{background:#5c2a2a}
+.result{margin-top:20px; padding:20px; border:2px dashed var(--border); border-radius:8px; min-height:120px; background:var(--bg)}
 
-@media(max-width:900px){.container{grid-template-columns:1fr} .sidebar{position:static}}
+.sidebar{background:var(--card);padding:25px;border-radius:12px;box-shadow:0 8px 25px rgba(0,0,0,.08); border:1px solid var(--border); height:fit-content; position:sticky; top:100px; text-align:center}
+.sidebar h3{margin-top:0;color:var(--text);border-bottom:2px solid var(--blue);padding-bottom:10px; text-align:center}
+.digital-clock{background:#0d6efd;color:#fff;font-size:28px;font-weight:700;padding:15px 10px;border-radius:10px;margin:0 auto;letter-spacing:2px;font-family:'Courier New', monospace;}
+.footer{background:var(--blue);color:#fff;padding:20px;text-align:center;margin-top:40px}
+.article{padding:0 25px 30px 25px}
+.article h2{color:var(--text);font-size:24px;margin-top:30px;font-weight:600;}
+
+@media(max-width:992px){.container{grid-template-columns:1fr} .nav-menu{display:none}}
 </style>
 </head>
 <body>
-<div class="header"><div class="logo">🔧 SMART TOOL HUB</div></div>
-<div class="nav"><a href="/">Home</a><a href="/about-us.html">About Us</a><a href="/contact-us.html">Contact</a><a href="/privacy-policy.html">Privacy</a></div>
+
+<!-- HEADER -->
+<header class="top-header">
+  <div class="header-container">
+    <a href="/" class="logo">Smart<span>S</span><b>E</b>o<span>Tools</span></a>
+    
+    <nav class="nav-menu">
+      <a href="/">Home</a>
+      <a href="/plagiarism-checker/">Plagiarism Checker</a>
+      <a href="/spell-checker/">Spell Checker</a>
+      <a href="/grammar-checker/">Grammar Checker</a>
+      <a href="/about-us.html">About Us</a>
+      <a href="/contact-us.html">Contact</a>
+      <button class="theme-btn" id="themeBtn">🌙</button>
+    </nav>
+  </div>
+</header>
 
 <div class="container">
   <div class="main-card">
-    <h1>Free Online Spell Checker Tool</h1>
     
-    <!-- TOOL START -->
-    <div class="tool-box">
-      <p>Check spelling mistakes and grammar errors instantly. Paste your text below and click the button.</p>
-      <textarea id="text" placeholder="Enter your text here for spell checking..."></textarea>
-      <div class="stats">
-        <span>Total Words: <b id="wc">0</b></span> | 
-        <span>Total Characters: <b id="cc">0</b></span>
+    <!-- TOOL BOX START -->
+    <div class="tool-header">
+      <p>Type or paste your text here for spell checking</p>
+    </div>
+    <div class="tool-body">
+      <h1>Online Spell Checker Tool</h1>
+      <div class="tool-box">
+        <textarea id="text" placeholder="Enter your text here for spell checking..."></textarea>
+        <div class="stats">
+          <span>Total Words: <b id="wc">0</b></span> | 
+          <span>Total Characters: <b id="cc">0</b></span>
+        </div>
+        <button class="btn" onclick="checkSpell()">Check Spelling</button>
+        <button class="btn btn-secondary" onclick="clearText()">Clear Text</button>
+        <div id="result" class="result">Misspelled words will be highlighted here...</div>
       </div>
-      <button class="btn" onclick="checkSpell()">Check Spelling</button>
-      <button class="btn" onclick="clearText()" style="background:#6c757d">Clear Text</button>
-      <div id="result" class="result">Your corrected text with errors highlighted will appear here...</div>
     </div>
-    <!-- TOOL END -->
 
-    <div class="highlight">
-    <p><b>100% Free & Private</b><br>
-    No signup required. All processing happens in your browser. We never store your data.</p>
-    </div>
 
     <!-- 900+ WORDS SEO CONTENT START -->
     <h2>Best Free Online Spell Checker Tool 2026</h2>
@@ -131,6 +155,24 @@ p:hover{transform:translateX(5px)}
 <footer class="footer"><p>© 2026 Smart Tools Hub</p></footer>
 
 <script>
+// DARK / LIGHT MODE
+const themeBtn = document.getElementById('themeBtn');
+function setTheme(theme){
+  if(theme === 'dark'){
+    document.body.classList.add('dark');
+    themeBtn.innerHTML = '☀️';
+  } else {
+    document.body.classList.remove('dark');
+    themeBtn.innerHTML = '🌙';
+  }
+}
+setTheme(localStorage.getItem('theme') || 'light');
+themeBtn.onclick = () => {
+  let newTheme = document.body.classList.contains('dark') ? 'light' : 'dark';
+  localStorage.setItem('theme', newTheme);
+  setTheme(newTheme);
+};
+
 // DIGITAL CLOCK
 function updateDigitalClock() {
     const now = new Date();
@@ -141,6 +183,33 @@ function updateDigitalClock() {
 }
 setInterval(updateDigitalClock, 1000);
 updateDigitalClock();
+
+// SPELL CHECKER JS
+const textEl = document.getElementById('text');
+textEl.oninput = () => {
+  const t = textEl.value;
+  document.getElementById('wc').innerText = t.trim() ? t.trim().split(/\s+/).length : 0;
+  document.getElementById('cc').innerText = t.length;
+}
+const dict = new Set(["the","be","to","of","and","a","in","that","have","i","it","for","not","on","with","he","as","you","do","at","this","but","his","by","from","they","we","say","her","she","or","an","will","my","one","all","would","there","their","what","so","up","out","if","about","who","get","which","go","me","when","make","can","like","time","no","just","him","know","take","people","into","year","your","good","some","could","them","see","other","than","then","now","look","only","come","its","over","think","also","back","after","use","two","how","our","work","first","well","way","even","new","want","because","any","these","give","day","most","us"]);
+function checkSpell(){
+  const t = textEl.value;
+  if(!t.trim()){alert('Please enter some text first'); return;}
+  let html = t.split(/(\b)/).map(w=>{
+    const c = w.toLowerCase().replace(/[^a-z]/g,'');
+    return c.length > 2 && !dict.has(c) && /^[a-z]+$/.test(c) ? `<span class="miss">${w}</span>` : w;
+  }).join('');
+  document.getElementById('result').innerHTML = html || 'No errors found. Great job!';
+}
+function clearText(){
+  textEl.value = '';
+  document.getElementById('wc').innerText = 0;
+  document.getElementById('cc').innerText = 0;
+  document.getElementById('result').innerHTML = 'Misspelled words will be highlighted here...';
+}
+</script>
+</body>
+</html>
 
 // SPELL CHECKER JS
 const textEl = document.getElementById('text');
