@@ -61,11 +61,11 @@ p:hover{transform:translateX(5px)}
 .tool-links a{display:block; padding:12px 15px; background:var(--bg); color:var(--text); text-decoration:none; border-radius:8px; border:1px solid #e9ecef; font-weight:500; transition:0.2s} 
 .tool-links a:hover{background:var(--purple); color:#fff; transform:translateX(5px)}
 /* PRO LOGO FOR HEADER */
-.pro-logo {
+header .pro-logo {
   display: flex;
   align-items: center;
   gap: 8px;
-  font-size: 22px; /* Header کے لیے */
+  font-size: 22px;
   font-weight: 800;
   letter-spacing: 1px;
   color: white;
@@ -73,8 +73,27 @@ p:hover{transform:translateX(5px)}
   white-space: nowrap;
 }
 
-.pro-logo .logo-icon {
-  font-size: 26px; /* Header icon */
+header .pro-logo .logo-icon {
+  font-size: 26px;
+  filter: drop-shadow(0 0 6px rgba(255,255,255,0.6));
+  animation: rotate 3s linear infinite;
+}
+
+/* PRO LOGO FOR FOOTER - CHOTA */
+footer .pro-logo {
+  display: flex;
+  align-items: center;
+  gap: 5px;
+  font-size: 16px;
+  font-weight: 800;
+  letter-spacing: 1px;
+  color: white;
+  text-transform: uppercase;
+  white-space: nowrap;
+}
+
+footer .pro-logo .logo-icon {
+  font-size: 18px;
   filter: drop-shadow(0 0 6px rgba(255,255,255,0.6));
   animation: rotate 3s linear infinite;
 }
@@ -83,16 +102,6 @@ p:hover{transform:translateX(5px)}
   background: linear-gradient(90deg, #fff, #E0E0FF);
   -webkit-background-clip: text;
   -webkit-text-fill-color: transparent;
-}
-
-/* FOOTER LOGO - CHOTA */
-.footer-logo.pro-logo {
-  font-size: 16px !important; /* Footer چھوٹا */
-  gap: 5px !important;
-}
-
-.footer-logo.pro-logo .logo-icon {
-  font-size: 18px !important; /* Footer icon چھوٹا */
 }
 
 @keyframes rotate {
