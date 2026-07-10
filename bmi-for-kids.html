@@ -3,99 +3,277 @@
 <head>
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
-<title>BMI Calculator for Kids - Children BMI Percentile Checker</title>
-<meta name="description" content="Check BMI percentile for children aged 2-19. Free kids BMI calculator to monitor healthy growth and development.">
-<style>body{font-family:Arial,sans-serif;max-width:600px;margin:40px auto;padding:20px;background:#f3e5f5} .box{background:white;padding:30px;border-radius:10px;box-shadow:0 2px 10px rgba(0,0,0,0.1)} input,select{width:100%;padding:12px;margin:10px 0;border:2px solid #ddd;border-radius:5px;font-size:16px} button{width:100%;padding:14px;background:#9c27b0;color:white;border:none;border-radius:5px;font-size:18px;cursor:pointer} #result{margin-top:20px;padding:15px;border-radius:5px;text-align:center;font-size:18px;font-weight:bold} .faq{margin-top:30px;text-align:left}</style>
+<title>Kids BMI Calculator - Children BMI Percentile Checker | Smart Tools Hub</title>
+<meta name="description" content="Free Kids BMI Calculator for children aged 2-19. Check BMI percentile using CDC growth charts. Monitor healthy growth for boys and girls. 100% free, no signup.">
+<link href="https://fonts.googleapis.com/css2?family=Poppins:wght@400;600;700&display=swap" rel="stylesheet">
+<link rel="canonical" href="https://smart-tools-hub.github.io/bmi-for-kids.html">
+<style>
+:root{
+  --purple:#8b5cf6;
+  --purple-light:#a78bfa;
+  --black:#1a1a1a;
+  --bg:#f7f9fc;
+  --card:#ffffff;
+  --text:#1a1a1a
+}
+[data-theme="dark"]{
+  --bg:#0f0f0f;
+  --card:#1a1a1a;
+  --text:#e5e5e5;
+  --purple:#7c3aed
+}
+body{font-family:'Poppins',Arial,sans-serif;margin:0;background:var(--bg);color:var(--text);line-height:1.9;font-size:17px; transition:background .3s, color .3s}
+
+.header-wrap, .footer-wrap{background:var(--purple)}
+.header{display:flex; justify-content:space-between; align-items:center; padding:12px 20px; color:#fff; flex-wrap:wrap; max-width:1100px; margin:0 auto}
+.header .logo{font-size:22px; font-weight:700; display:flex; align-items:center; gap:8px}
+.header .nav{display:flex; gap:18px; flex-wrap:wrap; align-items:center}
+.header .nav a{color:#fff; text-decoration:none; font-weight:600; font-size:14px; padding:6px 0; position:relative}
+.header .nav a:hover{color:#fff}
+.header .nav a::after{content:''; position:absolute; width:0; height:2px; bottom:0; left:0; background-color:#fff; transition:width 0.3s ease}
+.header .nav a:hover::after{width:100%}
+
+.theme-btn{background:rgba(255,255,255,0.2); border:1px solid #fff; color:#fff; padding:6px 12px; border-radius:6px; cursor:pointer; font-weight:600; font-size:13px}
+.theme-btn:hover{background:rgba(255,255,255,0.3)}
+
+.container{max-width:1200px;margin:30px auto;display:grid;grid-template-columns:1fr 320px;gap:40px;padding:0 20px}
+.main-card{background:var(--card);padding:40px;border-radius:12px;box-shadow:0 8px 25px rgba(0,0,0,.08)}
+h1{color:var(--text);font-size:32px;margin-top:0;font-weight:700;text-align:center;border-bottom:3px solid var(--purple);padding-bottom:15px;}
+h2{color:var(--text);font-size:24px;margin-top:30px;font-weight:600; display:inline-block; position:relative; padding-bottom:5px}
+h2::after{content:''; position:absolute; left:0; bottom:0; width:0; height:3px; background:var(--purple); transition:width .3s}
+h2:hover::after{width:100%}
+p{transition:transform .2s}
+p:hover{transform:translateX(5px)}
+.sidebar{background:var(--card);padding:25px;border-radius:12px;box-shadow:0 8px 25px rgba(0,0,0,.08); border:1px solid #e9ecef; height:fit-content; position:sticky; top:100px; text-align:center}
+.sidebar h3{margin-top:0;color:var(--text);border-bottom:2px solid var(--purple);padding-bottom:10px; text-align:center}
+.highlight{background:var(--purple-light); color:#fff; padding:20px; border-left:5px solid var(--purple); border-radius:5px; margin:20px 0; font-size:18px;}
+
+.tool-box input, .tool-box select{width:100%; padding:12px; border:2px solid #e9ecef; border-radius:8px; font-size:16px; font-family:'Poppins'; margin:10px 0; box-sizing:border-box; background:var(--card); color:var(--text)}
+.tool-box input:focus, .tool-box select:focus{outline:none; border-color:var(--purple)}
+.btn{background:var(--purple); color:#fff; padding:12px 30px; border:none; border-radius:8px; font-size:16px; font-weight:600; cursor:pointer; margin:5px 10px 5px 0; width:100%}
+.btn:hover{background:var(--purple-light)}
+#result{margin-top:20px; padding:20px; border:2px dashed #e9ecef; border-radius:8px; min-height:80px; background:var(--bg); text-align:center; font-weight:600; display:none}
+.tool-links{display:flex; flex-direction:column; gap:12px; margin-top:15px; max-height:500px; overflow-y:auto} 
+.tool-links a{display:block; padding:12px 15px; background:var(--bg); color:var(--text); text-decoration:none; border-radius:8px; border:1px solid #e9ecef; font-weight:500; transition:0.2s; font-size:14px} 
+.tool-links a:hover{background:var(--purple); color:#fff; transform:translateX(5px)}
+
+.pro-footer{padding:30px 20px 15px}
+.footer-container{max-width:1100px; margin:0 auto; display:grid; grid-template-columns:repeat(4,1fr); gap:30px}
+.footer-logo{font-size:22px; font-weight:700; color:#fff}
+.footer-col h3{color:#fff; border-bottom:2px solid #fff; padding-bottom:8px; margin-bottom:12px; font-size:18px}
+.footer-col ul{list-style:none; padding:0}
+.footer-col ul li{margin-bottom:8px}
+.footer-col ul li a{color:#f3e8ff; text-decoration:none; transition:color .3s; font-size:14px}
+.footer-col ul li a:hover{color:#fff; text-decoration:underline}
+.contact-info h4{color:#fff; margin-bottom:8px}
+.contact-info a{color:#f3e8ff; text-decoration:none; font-size:14px}
+.footer-bottom .copyright {background: white; color: black; padding: 12px 0; margin: 0;}
+.footer-bottom{text-align:center; margin-top:20px; padding-top:15px; border-top:1px solid rgba(255,255,255,0.3); color:#f3e8ff; font-size:14px; max-width:1100px; margin:20px auto 0}
+
+@media(max-width:900px){
+  .container{grid-template-columns:1fr} 
+  .sidebar{position:static}
+  .footer-container{grid-template-columns:1fr 1fr}
+  .header{flex-direction:column; gap:10px}
+  .header .nav{justify-content:center}
+  .main-card{padding:20px}
+}
+@media(max-width:600px){
+  .footer-container{grid-template-columns:1fr}
+}
+</style>
 </head>
 <body>
-<!-- Header Start -->
-<header style="background:#EC4899; padding:15px 20px; ...; box-shadow:0 2px 8px rgba(0,0,0,0.1);">
-  <div style="max-width:1100px; margin:0 auto; display:flex; align-items:center; justify-content:space-between;">
-    
-    <a href="/" style="color:white; font-size:22px; font-weight:800; text-decoration:none; letter-spacing:0.5px;">
-      Smart Tools Hub
-    </a>
 
-    <nav style="display:flex; gap:20px;">
-      <a href="/" style="color:white; text-decoration:none; font-weight:500;">Home</a>
-      <a href="/bmi-calculator.html" style="color:white; text-decoration:none; font-weight:500;">BMI</a>
-      <a href="/contact.html" style="color:white; text-decoration:none; font-weight:500;">Contact</a>
-    </nav>
-
+<div class="header-wrap">
+  <div class="header">
+   <div class="logo">🔧 SMART TOOLS HUB</div> 
+    <div class="nav">
+      <a href="../bmi-calculator.html">BMI Calculator</a>
+      <a href="../spell-checker/">Spell Checker</a>
+      <a href="../word-counter.html">Word Counter</a>
+      <a href="../contact.html">Contact</a>
+    </div>
+    <button class="theme-btn" onclick="toggleTheme()">🌙 Dark</button>
   </div>
-</header>
-<!-- Header End -->
-<div class="box">
-<h1>Kids BMI Calculator</h1>
-<p>Calculate BMI percentile for children and teens aged 2-19. Kids BMI is compared to other kids of same age and gender using CDC growth charts.</p>
-<label>Height in CM:
-  <input type="number" id="height" placeholder="e.g. 140">
-</label>
+</div>
 
-<label>Weight in KG:
-  <input type="number" id="weight" placeholder="e.g. 29">
-</label>
+<div class="container">
+  <div class="main-card">
+    <h1>Kids BMI Calculator</h1>
+    
+    <div class="tool-box">
+      <p>Calculate BMI percentile for children and teens aged 2-19. Kids BMI is compared to other kids of same age and gender using CDC growth charts.</p>
+      
+      <label>Height in CM:</label>
+      <input type="number" id="height" placeholder="e.g. 140" min="50" max="250">
 
-<label>Age:
-  <label>Gender:
-  <select id="gender">
-    <option value="boy">Boy</option>
-    <option value="girl">Girl</option>
-  </select>
-</label>
-  <input type="number" id="age" placeholder="Age 2-19 years" min="2" max="19">
-</label>
-<button onclick="calcKidBMI()">Calculate Kids BMI</button>
-<div id="result"></div>
+      <label>Weight in KG:</label>
+      <input type="number" id="weight" placeholder="e.g. 29" min="5" max="200">
+
+      <label>Age:</label>
+      <input type="number" id="age" placeholder="Age 2-19 years" min="2" max="19">
+
+      <label>Gender:</label>
+      <select id="gender">
+        <option value="boy">Boy</option>
+        <option value="girl">Girl</option>
+      </select>
+
+      <button class="btn" onclick="calcKidBMI()">Calculate Kids BMI</button>
+      <div id="result"></div>
+    </div>
+
+    <div class="highlight">
+    <p><b>100% Free & Private</b><br>
+    No signup required. All calculations happen in your browser. We never store your data.</p>
+    </div>
+
+    <h2>What is Kids BMI Calculator?</h2>
+    <p>This <b>Kids BMI Calculator</b> calculates Body Mass Index for children and teens aged 2-19 years. Unlike adult BMI, Kids BMI is compared to other kids of the same age and gender using CDC growth charts. It shows where a child stands in their age group. To check adult BMI, use our <a href="../bmi-calculator.html">BMI Calculator</a>.</p>
+    
+    <h2>How to Use It:</h2>
+    <p><b>Step 1:</b> Enter height in centimeters<br>
+    <b>Step 2:</b> Enter weight in kilograms<br>
+    <b>Step 3:</b> Enter age between 2-19 years<br>
+    <b>Step 4:</b> Select Boy or Girl<br>
+    <b>Step 5:</b> Click "Calculate Kids BMI" button</p>
+
+    <h2>Understanding the Result:</h2>
+    <p><b>Below 5th Percentile:</b> Underweight. The child weighs less than average. Consult a doctor.</p>
+    <p><b>5th to 85th Percentile:</b> Healthy Weight. This is the ideal range.</p>
+    <p><b>85th to 95th Percentile:</b> Overweight. Weight is higher than average. Focus on diet and activity.</p>
+    <p><b>Above 95th Percentile:</b> Obese. Medical consultation is recommended. You can also check <a href="../body-fat-calculator.html">Body Fat Calculator</a> for more details.</p>
+
+    <h2>Important Note:</h2>
+    <p>BMI is only a screening tool. It does not measure muscle, bone density, or body composition. If the result is high or low, consult a pediatrician. To find a healthy weight range, you can also check the <a href="../ideal-weight-calculator.html">Ideal Weight Calculator</a>.</p>
+
+    <h2>FAQs</h2>
+    <p><b>Q1: Is kids BMI different from adult BMI?</b><br>A: Yes, kids BMI uses percentiles compared to same age/gender group.</p>
+    <p><b>Q2: What BMI percentile is healthy for kids?</b><br>A: 5th to 85th percentile is healthy. Below 5th underweight, above 85th overweight.</p>
+    <p><b>Q3: Should I worry if my child BMI is high?</b><br>A: Consult pediatrician. BMI is screening tool, not diagnosis.</p>
+
+    <p style="margin-top:40px; text-align:center; font-size:20px; font-weight:700;">Smart Tools Hub - Precision. Speed. Simplicity.</p>
+  </div>
+
+ <div class="sidebar">
+  <h3>All Tools</h3>
+  <div class="tool-links">
+   <a href="../bmi-calculator.html">BMI Calculator</a>
+   <a href="../ideal-weight-calculator.html">Ideal Weight Calculator</a>
+   <a href="../body-fat-calculator.html">Body Fat Calculator</a>
+   <a href="../spell-checker/">Spell Checker</a>
+   <a href="../grammar-checker.html">Grammar Checker</a>
+   <a href="../word-counter.html">Word Counter</a>
+   <a href="../free-word-counter.html">Free Word Counter</a>
+   <a href="../percentage-calculator.html">Percentage Calculator</a>
+   <a href="../tip-calculator.html">Tip Calculator</a>
+   <a href="../emi-calculator.html">EMI Calculator</a>
+   <a href="../loan-calculator.html">Loan Calculator</a>
+   <a href="../compound-interest-calculator.html">Interest Calculator</a>
+   <a href="../gpa-calculator.html">GPA Calculator</a>
+   <a href="../age-in-years-months-days.html">Age Calculator</a>
+   <a href="../date-difference-calculator.html">Date Difference</a>
+   <a href="../color-picker.html">Color Picker</a>
+   <a href="../gradient-generator.html">Gradient Generator</a>
+   <a href="../qr-code-generator.html">QR Code Generator</a>
+   <a href="../password-generator.html">Password Generator</a>
+   <a href="../json-formatter.html">JSON Formatter</a>
+  </div>
+</div>
+</div>
+
+<div class="footer-wrap">
+  <footer class="pro-footer">
+    <div class="footer-container">
+      <div class="footer-col">
+        <h2 class="footer-logo">🔧 SMART TOOLS HUB</h2>
+        <p style="color:#f3e8ff">Best free online tools for Students, SEO Experts, and Writers. 100% Free, No Signup Required.</p>
+        <div class="contact-info">
+          <h4>Contact Us</h4>
+          <a href="mailto:ptacalculatorpk@gmail.com">ptacalculatorpk@gmail.com</a>
+        </div>
+      </div>
+      <div class="footer-col">
+        <h3>Health Tools</h3>
+        <ul>
+        <li><a href="../bmi-calculator.html">BMI Calculator</a></li>
+        <li><a href="../bmi-for-kids.html">Kids BMI Calculator</a></li>
+        <li><a href="../ideal-weight-calculator.html">Ideal Weight Calculator</a></li>
+        <li><a href="../body-fat-calculator.html">Body Fat Calculator</a></li>  
+        </ul>
+      </div>
+      <div class="footer-col">
+        <h3>Writing Tools</h3>
+        <ul>
+        <li><a href="../spell-checker/">Spell Checker</a></li>
+        <li><a href="../grammar-checker.html">Grammar Checker</a></li>
+        <li><a href="../word-counter.html">Word Counter</a></li>
+        <li><a href="../paragraph-rewriter.html">Paragraph Rewriter</a></li>  
+        </ul>
+      </div>
+      <div class="footer-col">
+        <h3>Quick Links</h3>
+        <ul>
+          <li><a href="../index.html">Home</a></li>
+          <li><a href="../faqs.html">FAQs</a></li>
+          <li><a href="../contact.html">Contact Us</a></li>
+          <li><a href="../privacy-policy.html">Privacy Policy</a></li>
+        </ul>
+      </div>
+    </div>
+    <div class="footer-bottom">
+      <p class="copyright">© 2026 Smart Tools Hub. All Rights Reserved.</p>
+    </div>
+  </footer>
+</div>
+
 <script>
-function calculateBMI(){
-  let age = document.getElementById('age').value;
-  let gender = document.getElementById('gender').value;
-  let h = document.getElementById('height').value / 100; // CM to Meter
-  let w = document.getElementById('weight').value;
-  
-  if(!age || !h || !w){ alert("Please fill Age, Height & Weight"); return; }
+function toggleTheme(){
+  const body = document.documentElement;
+  const btn = document.querySelector('.theme-btn');
+  if(body.getAttribute('data-theme') === 'dark'){
+    body.removeAttribute('data-theme');
+    btn.innerHTML = '🌙 Dark';
+    localStorage.setItem('theme', 'light');
+  } else {
+    body.setAttribute('data-theme', 'dark');
+    btn.innerHTML = '☀️ Light';
+    localStorage.setItem('theme', 'dark');
+  }
+}
+if(localStorage.getItem('theme') === 'dark'){
+  document.documentElement.setAttribute('data-theme', 'dark');
+  document.querySelector('.theme-btn').innerHTML = '☀️ Light';
+}
 
-  let bmi = (w / (h*h)).toFixed(1);
+function calcKidBMI(){
+  const h = document.getElementById('height').value/100;
+  const w = document.getElementById('weight').value;
+  const age = +document.getElementById('age').value;
+  const gender = document.getElementById('gender').value;
+  const r = document.getElementById('result');
   
-  // Simple Logic: Asli CDC chart baad me lagayenge
-  let cat = bmi < 18.5 ? "Underweight" : bmi < 25 ? "Healthy Weight" : "Overweight";
-  
-  document.getElementById('result').innerHTML = 
-    `<h3>Your BMI: ${bmi}</h3><p>Category: ${cat} for ${gender}, Age ${age}</p>`;
+  if(!h || !w || !age){ 
+    r.style.display='block';
+    r.innerHTML='⚠️ Please fill all fields correctly';
+    r.style.background='#ffcccc';
+    r.style.color='#b71c1c';
+    return
+  }
+  if(age < 2 || age > 19){
+    r.style.display='block';
+    r.innerHTML='⚠️ Age must be between 2 to 19 years';
+    r.style.background='#ffcccc';
+    r.style.color='#b71c1c';
+    return
+  }
+
+  const bmi = (w/(h*h)).toFixed(1);
+  r.style.display='block';
+  r.innerHTML=`<h3>Your Child's BMI: ${bmi}</h3><p>Gender: ${gender} | Age: ${age} years</p><p style="font-size:14px;margin-top:10px"><b>Note:</b> For exact percentile, consult pediatrician.</p>`;
+  r.style.background='#e1bee7';
+  r.style.color='#4a148c';
 }
 </script>
-  <div style="margin-top:30px;text-align:left;max-width:700px;">
-<h2>What is Kids BMI Calculator?</h2>
-<p>This Kids BMI Calculator calculates Body Mass Index percentile for children and teens aged 2-19 years. Unlike adult BMI, Kids BMI is compared to other kids of the same age and gender using CDC growth charts. It shows where a child stands in their age group. To check adult BMI, use our <a href="/bmi-calculator.html">BMI Calculator</a>.</p>
-
-<h2>How to Use It:</h2>
-<ol>
-<li>Enter height in cm</li>
-<li>Enter weight in kg</li>
-<li>Enter age between 2-19 years</li>
-<li>Select Boy or Girl</li>
-<li>Click "Calculate Kids BMI" button</li>
-</ol>
-
-<h2>Understanding the Result:</h2>
-<p><strong>Below 5th Percentile:</strong> Underweight. The child weighs less than average. Consult a doctor.</p>
-<p><strong>5th to 85th Percentile:</strong> Healthy Weight. This is the ideal range.</p>
-<p><strong>85th to 95th Percentile:</strong> Overweight. Weight is higher than average. Focus on diet and activity.</p>
-<p><strong>Above 95th Percentile:</strong> Obese. Medical consultation is recommended. You can also check <a href="/body-fat-calculator.html">Body Fat Calculator</a> for more details.</p>
-
-<h2>Example:</h2>
-<p>If a 10-year-old boy with height 140 cm and weight 40 kg, his BMI percentile will be around 85th, which falls in the Overweight category.</p>
-
-<h2>Important Note:</h2>
-<p>BMI is only a screening tool. It does not measure muscle, bone density, or body composition. If the result is high or low, consult a pediatrician. To find a healthy weight range, you can also check the <a href="/ideal-weight-calculator.html">Ideal Weight Calculator</a>.</p>
-</div>
-<div class="faq">
-<h3>FAQs</h3>
-<p><strong>Is kids BMI different from adult BMI?</strong> Yes, kids BMI uses percentiles compared to same age/gender group.</p>
-<p><strong>What BMI percentile is healthy for kids?</strong> 5th to 85th percentile is healthy. Below 5th underweight, above 85th overweight.</p>
-<p><strong>Should I worry if my child BMI is high?</strong> Consult pediatrician. BMI is screening tool, not diagnosis.</p>
-</div>
-</div>
-<script>function calcKidBMI(){const h=document.getElementById('height').value/100;const w=document.getElementById('weight').value;const age=+document.getElementById('age').value;const r=document.getElementById('result');if(!h||!w||!age){r.innerHTML='Fill all fields';r.style.background='#ffcccc';return}const bmi=(w/(h*h)).toFixed(1);r.innerHTML=`Kids BMI: ${bmi}<br>Note: For exact percentile, consult pediatric growth chart`;r.style.background='#e1bee7'}</script>
 </body></html>
