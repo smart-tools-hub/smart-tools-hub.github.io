@@ -9,7 +9,7 @@
 <style>
 :root{
   --purple:#8b5cf6;
-  --purple-light:8b5cf6;
+  --purple-light:#8b5cf6; /* # LAGA DIYA */
   --bg:#f7f9fc;
   --card:#ffffff;
   --text:#1a1a1a
@@ -18,30 +18,66 @@
   --bg:#0f0f0f;
   --card:#1a1a1a;
   --text:#e5e5e5;
-  --purple:#7c3aed
+  --purple:#8b5cf6 /* DARK MEIN BHI SAME */
 }
 body{
   margin:0;
-  font-family:system-ui,-apple-system,Segoe UI,Roboto,Arial,sans-serif;
+  font-family:'Poppins', system-ui,-apple-system,Segoe UI,Roboto,Arial,sans-serif; /* POPPINS ADD */
   background:var(--bg);
   color:var(--text);
   line-height:1.6;
 }
 
+/* ===== SPELL CHECKER WALA HEADER ===== */
 .header-wrap{
-  background:#8b5cf6 !important;
+  background:var(--purple);
   color:#fff;
-  padding:18px 20px;
+  padding:14px 20px;
+  box-shadow:0 2px 10px rgba(0,0,0,.1);
+  width:100%;
+}
+.header{
+  max-width:1200px;
+  margin:0 auto;
   display:flex;
   align-items:center;
   justify-content:space-between;
-  box-shadow:0 2px 10px rgba(0,0,0,.1);
-  width:100vw; /* PURA SCREEN */
-  margin-left:calc(-50vw + 50%); /* CENTER MEIN CHIPKA DO */
-  box-sizing:border-box;
+  gap:20px
 }
-.theme-btn{background:rgba(255,255,255,0.2); border:1px solid #fff; color:#fff; padding:8px 16px; border-radius:6px; cursor:pointer; font-weight:600; font-size:14px}
-.theme-btn:hover{background:rgba(255,255,255,0.3)}
+.brand{
+  font-weight:800;
+  font-size:18px;
+  color:#fff;
+  text-decoration:none;
+  white-space:nowrap;
+  display:flex;
+  align-items:center;
+  gap:8px
+}
+.nav{
+  display:flex;
+  gap:24px;
+  flex:1;
+  justify-content:center
+}
+.nav a{
+  color:#fff;
+  text-decoration:none;
+  font-weight:500;
+  font-size:14px
+}
+.nav a:hover{opacity:.8}
+.theme-toggle{
+  background:rgba(255,255,255,.2);
+  border:1px solid rgba(255,255,255,.3);
+  color:#fff;
+  padding:6px 12px;
+  border-radius:8px;
+  cursor:pointer;
+  font-size:13px;
+  font-weight:600
+}
+.theme-toggle:hover{background:rgba(255,255,255,.3)}
 
 .container{max-width:1200px;margin:30px auto;display:grid;grid-template-columns:1fr 320px;gap:40px;padding:0 20px}
 .main-card{background:var(--card);padding:40px;border-radius:12px;box-shadow:0 8px 25px rgba(0,0,0,.08)}
@@ -73,61 +109,50 @@ a:hover{text-decoration:underline}
 .tool-links{display:flex; flex-direction:column; gap:12px; margin-top:15px}
 .tool-links a{display:block; padding:12px 15px; background:var(--bg); color:var(--text); text-decoration:none; border-radius:8px; border:1px solid #e9ecef; font-weight:500; transition:0.2s}
 .tool-links a:hover{background:var(--purple); color:#fff; transform:translateX(5px)}
-  
-.pro-footer{padding:50px 20px 20px}
+
+.pro-footer{background:var(--purple); padding:50px 20px 20px} /* FOOTER BHI PURPLE */
 .footer-container{max-width:1200px; margin:0 auto; display:grid; grid-template-columns:repeat(3,1fr); gap:40px}
 .footer-logo{font-size:24px; font-weight:700; color:#fff; display:flex; align-items:center; gap:10px}
 .footer-col h3{color:#fff; font-size:20px; border-bottom:2px solid #fff; padding-bottom:12px; margin-bottom:20px; font-weight:600}
 .footer-col ul{list-style:none; padding:0}
 .footer-col ul li{margin-bottom:12px}
-.footer-col ul li a{color:#f3e8ff; text-decoration:none; transition:all .3s; font-size:15px}
+.footer-col ul li a{color:#f3e8ff; text-decoration:none; transition:all.3s; font-size:15px}
 .footer-col ul li a:hover{color:#fff; padding-left:5px}
 .contact-info{margin-top:20px}
 .contact-info h4{color:#fff; margin-bottom:10px; font-size:16px}
 .contact-info a{color:#f3e8ff; text-decoration:none; font-size:15px}
 .contact-info a:hover{color:#fff; text-decoration:underline}
-.footer-bottom{
-  background: white;
-  width: 100%;
-  margin: 40px 0 0 0;
-  padding: 0;
-  border-top: none;
-}
-
-.footer-bottom .copyright{
-  background: white; 
-  color: black; 
-  padding: 15px 0; 
-  margin: 0; 
-  text-align:center; 
-  font-weight:600;
-  font-size:14px;
-}
+.footer-bottom{background:white; width:100%; margin:40px 0 0 0; padding:0; border-top:none}
+.footer-bottom.copyright{background:white; color:black; padding:15px 0; margin:0; text-align:center; font-weight:600; font-size:14px}
 
 @media(max-width:900px){
 .container{grid-template-columns:1fr}
 .sidebar{position:static}
 .footer-container{grid-template-columns:1fr}
 .header{flex-direction:column; gap:15px}
-.header.nav{justify-content:center; gap:15px}
+.nav{justify-content:center; gap:15px; flex-wrap:wrap}
 .main-card{padding:20px}
 .stats{flex-direction:column; gap:10px}
+}
 </style>
 </head>
 <body>
 
-<div class="header-wrap">
+<!-- ===== NEW HEADER ===== -->
+<header class="header-wrap">
   <div class="header">
-   <div class="logo">🔧 SMART TOOLS HUB</div>
-    <div class="nav">
+    <a href="/" class="brand">🔧 SMART TOOLS HUB</a>
+
+    <nav class="nav">
       <a href="/spell-checker/">Spell Checker</a>
-      <a href="/keyword-rank-checker.html">Rank Checker</a>
+      <a href="/keyword-density-checker.html">Keyword Density</a>
       <a href="/free-word-counter.html">Word Counter</a>
       <a href="/grammar-checker.html">Grammar Checker</a>
-    </div>
-    <button class="theme-btn" onclick="toggleTheme()">🌙 Dark</button>
+    </nav>
+
+    <button id="themeToggle" class="theme-toggle">🌙 Dark</button>
   </div>
-</div>
+</header>
 
 <div class="container">
   <div class="main-card">
@@ -152,54 +177,15 @@ a:hover{text-decoration:underline}
 
     <h2>Best Free Online Keyword Density Checker Tool 2026</h2>
     <p>If you are looking for the <b>best free online keyword density checker tool</b> to optimize your website content for Google ranking, you have come to the right place. Smart Tools Hub provides a lightning fast and 100% free keyword density analyzer that works directly in your browser without any signup or login requirement.</p>
-    <p>In 2026, SEO has become more competitive than ever before. Google's AI algorithms and Helpful Content Update can easily detect keyword stuffing and low-quality content. One of the most important on-page SEO factors is maintaining the perfect keyword density in your articles. If you use too few keywords, Google won't understand your topic. If you use too many, you risk getting penalized. That is why using a professional <b>online keyword density checker for SEO content</b> is essential for every blogger, content writer and digital marketer.</p>
-    <p>Our tool analyzes your content in real-time and tells you the exact percentage. No more guessing or manual counting. This <b>online keyword density percentage calculator</b> is trusted by 10,000+ bloggers worldwide. The <b>best keyword density checker for bloggers and SEO experts</b> helps you maintain 1% to 2% density which is perfect for Google ranking.</p>
 
     <h2>What Is Keyword Density and Why Does It Matter For SEO?</h2>
     <p>Keyword density is the percentage of times a specific keyword or keyphrase appears in your content compared to the total number of words. The formula is very simple: <b>(Number of times keyword appears / Total number of words) x 100 = Keyword Density %</b></p>
-    <p>For example, if you write a 1000 word article about "free keyword density checker" and you use that phrase 15 times, your keyword density will be 1.5%. This falls perfectly in the ideal range recommended by top SEO experts worldwide. Google uses keyword density as one of the 200+ ranking factors to understand what your page is about and to avoid spam.</p>
-
-    <h2>What Is The Ideal Keyword Density Percentage For Google Ranking?</h2>
-    <p>After analyzing thousands of top ranking websites, SEO experts agree that <b>1% to 2%</b> is the ideal keyword density range for 2026. Here is the complete breakdown:</p>
-    <p><b>Below 0.5%:</b> Your content is under-optimized. Google may not rank you for that keyword because it cannot understand the topic clearly.<br>
-    <b>1% to 1.5%:</b> Perfect sweet spot. Natural reading experience and strong SEO signals to Google.<br>
-    <b>1.5% to 2%:</b> Still safe but you should start using LSI keywords and synonyms to avoid repetition.<br>
-    <b>2% to 3%:</b> Danger zone. High risk of keyword stuffing penalty from Google.<br>
-    <b>Above 3%:</b> Spam. Your page will likely be ignored or penalized by search engines.</p>
-    <p>Pro Tip: For a 2000 word blog post, use your main keyword 20 to 40 times. Also include related terms like <a href="/keyword-rank-checker.html">keyword rank tracker</a> and <a href="/free-seo-tools.html">free SEO tools</a> to make your content look natural and avoid over-optimization.</p>
 
     <h2>Key Features Of Our Free Keyword Density Analyzer Tool</h2>
-    <p>We built this <b>free keyword density checker tool for bloggers and SEO experts</b> with simplicity and accuracy in mind. Unlike other paid tools, our tool is completely free and works instantly without any limits.</p>
-    <p><b>Instant Real-Time Results:</b> As you type, the word count and density update automatically. No need to click check button every time.<br>
-    <b>Accurate Keyword Counting:</b> Counts exact match keywords only. No false positives or wrong calculations.<br>
-    <b>Top 10 Keywords Report:</b> Automatically shows which words are used most in your article. Great for finding LSI keywords and content gaps.<br>
-    <b>Mobile Friendly Design:</b> Our tool is 100% responsive. It works perfectly on Android phones, iPhones, iPads and desktop computers.<br>
-    <b>100% Private & Secure:</b> All processing happens in your browser. We never send your content to any server or store your data.<br>
-    <b>Unlimited Free Usage:</b> There is no daily word limit. Check 100 words or 50000 words, it's completely free forever.</p>
-
-    <h2>How To Use Our Keyword Density Checker Tool Step By Step</h2>
-    <p>Using the <b>best keyword density checker for SEO optimization</b> is super easy. Follow these 3 simple steps:</p>
-    <p><b>Step 1:</b> Write your article in Google Docs, Word, or any text editor first.<br>
-    <b>Step 2:</b> Decide your main target keyword. Example: "free keyword density checker tool"<br>
-    <b>Step 3:</b> Paste the keyword in the input box and your full article in the text area above. Click "Check Keyword Density" button and review the results.</p>
-
-    <h2>Common SEO Mistakes This Tool Helps You Avoid</h2>
-    <p><b>Keyword Stuffing:</b> Repeating "buy cheap shoes online" 50 times in 500 words will kill your ranking. Our tool shows red warning if density is too high.<br>
-    <b>Under Optimization:</b> Writing 3000 words about "digital marketing" but only using it 5 times. Google gets confused about the main topic.<br>
-    <b>Ignoring LSI Keywords:</b> The top keywords table helps you find related terms to include naturally in your content.<br>
-    <b>Poor Readability:</b> When you focus only on density, content sounds robotic. This tool helps you balance SEO and human reading experience.</p>
-
-    <h2>Who Can Benefit From This Free Online Tool?</h2>
-    <p><b>For Bloggers:</b> Before publishing any blog post on WordPress, check density to ensure your post can rank on page 1 of Google.<br>
-    <b>For SEO Agencies:</b> Audit client content and competitor articles to see why they are ranking higher than you.<br>
-    <b>For Freelance Writers:</b> Deliver SEO-optimized articles to clients and charge premium rates for your services.<br>
-    <b>For E-commerce Stores:</b> Product descriptions need perfect keyword density to rank on Google Shopping and organic search.<br>
-    <b>For Students:</b> Academic SEO and content marketing assignments become 10x easier with this free tool.</p>
+    <p>We built this <b>free keyword density checker tool for bloggers and SEO experts</b> with simplicity and accuracy in mind.</p>
 
     <h2>Frequently Asked Questions - FAQ</h2>
     <p><b>Q1: What is a good keyword density percentage for SEO in 2026?</b><br>A: 1% to 2% is considered ideal. For every 1000 words, use your main keyword 10 to 20 times naturally.</p>
-    <p><b>Q2: Does keyword density still matter with Google AI and ChatGPT?</b><br>A: Yes. While content quality and E-E-A-T matter more, proper keyword density still helps Google understand topic relevance faster.</p>
-    <p><b>Q3: Is this keyword density checker tool really 100% free?</b><br>A: Yes. It is 100% free forever. No signup, no credit card, no premium version, no hidden charges.</p>
     <p style="margin-top:40px; text-align:center; font-size:20px; font-weight:700;">Smart Tools Hub - Optimize. Rank. Grow.</p>
   </div>
 
@@ -216,8 +202,7 @@ a:hover{text-decoration:underline}
 </div>
 </div>
 
-<div class="footer-wrap">
-  <footer class="pro-footer">
+<footer class="pro-footer">
     <div class="footer-container">
       <div class="footer-col">
         <h2 class="footer-logo">🔧 SMART TOOLS HUB</h2>
@@ -250,26 +235,26 @@ a:hover{text-decoration:underline}
     <div class="footer-bottom">
       <p class="copyright">© 2026 Smart Tools Hub. All Rights Reserved.</p>
     </div>
-  </footer>
-</div>
+</footer>
 
 <script>
+const themeBtn = document.getElementById('themeToggle');
 function toggleTheme(){
   const body = document.documentElement;
-  const btn = document.querySelector('.theme-btn');
   if(body.getAttribute('data-theme') === 'dark'){
     body.removeAttribute('data-theme');
-    btn.innerHTML = '🌙 Dark';
+    themeBtn.innerHTML = '🌙 Dark';
     localStorage.setItem('theme', 'light');
   } else {
     body.setAttribute('data-theme', 'dark');
-    btn.innerHTML = '☀️ Light';
+    themeBtn.innerHTML = '☀️ Light';
     localStorage.setItem('theme', 'dark');
   }
 }
+themeBtn.onclick = toggleTheme;
 if(localStorage.getItem('theme') === 'dark'){
   document.documentElement.setAttribute('data-theme', 'dark');
-  document.querySelector('.theme-btn').innerHTML = '☀️ Light';
+  themeBtn.innerHTML = '☀️ Light';
 }
 
 const contentEl = document.getElementById('content');
@@ -293,13 +278,11 @@ function checkDensity(){
   const keyword = keywordEl.value.toLowerCase().trim();
   const content = contentEl.value.toLowerCase().trim();
   if(!keyword ||!content){ alert('Please enter Target Keyword and Content'); return; }
-
   const words = content.split(/\s+/).filter(w => w.length > 0);
   const totalWords = words.length;
   const keywordCount = (content.match(new RegExp(keyword.replace(/[.*+?^${}()|[\]\\]/g, '\\$&'), 'g')) || []).length;
   const density = ((keywordCount / totalWords) * 100).toFixed(2);
   let status = density >= 1 && density <= 2? '<span class="keyword-good">Perfect SEO Density</span>' : '<span class="keyword-bad">Needs Optimization</span>';
-
   let wordFreq = {};
   words.forEach(w => {
     let clean = w.replace(/[^a-z0-9]/g,'');
@@ -307,7 +290,6 @@ function checkDensity(){
   });
   let topKeywords = Object.entries(wordFreq).sort((a,b) => b[1]-a[1]).slice(0,10);
   let tableRows = topKeywords.map(([w,c]) => `<tr><td>${w}</td><td>${c}</td><td>${((c/totalWords)*100).toFixed(2)}%</td></tr>`).join('');
-
   document.getElementById('result').style.display = 'block';
   document.getElementById('result').innerHTML = `<h3>SEO Analysis Report</h3><p><b>Target Keyword:</b> ${keyword}</p><p><b>Status:</b> ${status}</p><h4>Top 10 Keywords Found</h4><table class="keyword-table"><tr><th>Keyword</th><th>Count</th><th>Density</th></tr>${tableRows}</table>`;
 }
@@ -323,4 +305,3 @@ function clearText(){
 </script>
 </body>
 </html>
- 
