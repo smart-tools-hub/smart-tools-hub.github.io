@@ -9,7 +9,7 @@
 <style>
 :root{
   --purple:#8b5cf6;
-  --purple-light:#8b5cf6; /* # LAGA DIYA */
+  --purple-light:#a78bfa;
   --bg:#f7f9fc;
   --card:#ffffff;
   --text:#1a1a1a
@@ -18,66 +18,19 @@
   --bg:#0f0f0f;
   --card:#1a1a1a;
   --text:#e5e5e5;
-  --purple:#8b5cf6 /* DARK MEIN BHI SAME */
+  --purple:#7c3aed
 }
-body{
-  margin:0;
-  font-family:'Poppins', system-ui,-apple-system,Segoe UI,Roboto,Arial,sans-serif; /* POPPINS ADD */
-  background:var(--bg);
-  color:var(--text);
-  line-height:1.6;
-}
+body{font-family:'Poppins',Arial,sans-serif;margin:0;background:var(--bg);color:var(--text);line-height:1.9;font-size:17px; transition:background.3s, color.3s}
 
-/* ===== SPELL CHECKER WALA HEADER ===== */
-.header-wrap{
-  background:var(--purple);
-  color:#fff;
-  padding:14px 20px;
-  box-shadow:0 2px 10px rgba(0,0,0,.1);
-  width:100%;
-}
-.header{
-  max-width:1200px;
-  margin:0 auto;
-  display:flex;
-  align-items:center;
-  justify-content:space-between;
-  gap:20px
-}
-.brand{
-  font-weight:800;
-  font-size:18px;
-  color:#fff;
-  text-decoration:none;
-  white-space:nowrap;
-  display:flex;
-  align-items:center;
-  gap:8px
-}
-.nav{
-  display:flex;
-  gap:24px;
-  flex:1;
-  justify-content:center
-}
-.nav a{
-  color:#fff;
-  text-decoration:none;
-  font-weight:500;
-  font-size:14px
-}
-.nav a:hover{opacity:.8}
-.theme-toggle{
-  background:rgba(255,255,255,.2);
-  border:1px solid rgba(255,255,255,.3);
-  color:#fff;
-  padding:6px 12px;
-  border-radius:8px;
-  cursor:pointer;
-  font-size:13px;
-  font-weight:600
-}
-.theme-toggle:hover{background:rgba(255,255,255,.3)}
+.header-wrap,.footer-wrap{background:var(--purple)}
+.header{display:flex; justify-content:space-between; align-items:center; padding:18px 20px; color:#fff; flex-wrap:wrap; max-width:1200px; margin:0 auto}
+.header.logo{font-size:24px; font-weight:700; display:flex; align-items:center; gap:10px}
+.header.nav{display:flex; gap:25px; flex-wrap:wrap; align-items:center}
+.header.nav a{color:#fff; text-decoration:none; font-weight:600; font-size:15px; padding:8px 0; position:relative}
+.header.nav a::after{content:''; position:absolute; width:0; height:2px; bottom:0; left:0; background-color:#fff; transition:width 0.3s ease}
+.header.nav a:hover::after{width:100%}
+.theme-btn{background:rgba(255,255,255,0.2); border:1px solid #fff; color:#fff; padding:8px 16px; border-radius:6px; cursor:pointer; font-weight:600; font-size:14px}
+.theme-btn:hover{background:rgba(255,255,255,0.3)}
 
 .container{max-width:1200px;margin:30px auto;display:grid;grid-template-columns:1fr 320px;gap:40px;padding:0 20px}
 .main-card{background:var(--card);padding:40px;border-radius:12px;box-shadow:0 8px 25px rgba(0,0,0,.08)}
@@ -110,7 +63,7 @@ a:hover{text-decoration:underline}
 .tool-links a{display:block; padding:12px 15px; background:var(--bg); color:var(--text); text-decoration:none; border-radius:8px; border:1px solid #e9ecef; font-weight:500; transition:0.2s}
 .tool-links a:hover{background:var(--purple); color:#fff; transform:translateX(5px)}
 
-.pro-footer{background:var(--purple); padding:50px 20px 20px} /* FOOTER BHI PURPLE */
+.pro-footer{padding:50px 20px 20px}
 .footer-container{max-width:1200px; margin:0 auto; display:grid; grid-template-columns:repeat(3,1fr); gap:40px}
 .footer-logo{font-size:24px; font-weight:700; color:#fff; display:flex; align-items:center; gap:10px}
 .footer-col h3{color:#fff; font-size:20px; border-bottom:2px solid #fff; padding-bottom:12px; margin-bottom:20px; font-weight:600}
@@ -118,19 +71,16 @@ a:hover{text-decoration:underline}
 .footer-col ul li{margin-bottom:12px}
 .footer-col ul li a{color:#f3e8ff; text-decoration:none; transition:all.3s; font-size:15px}
 .footer-col ul li a:hover{color:#fff; padding-left:5px}
-.contact-info{margin-top:20px}
-.contact-info h4{color:#fff; margin-bottom:10px; font-size:16px}
-.contact-info a{color:#f3e8ff; text-decoration:none; font-size:15px}
-.contact-info a:hover{color:#fff; text-decoration:underline}
-.footer-bottom{background:white; width:100%; margin:40px 0 0 0; padding:0; border-top:none}
-.footer-bottom.copyright{background:white; color:black; padding:15px 0; margin:0; text-align:center; font-weight:600; font-size:14px}
+.footer-bottom{background: white; margin-top: 40px; padding-top: 0; border-top: none;}
+.footer-bottom.copyright{color: black; font-weight: 600; text-align: center; padding: 15px 0; margin: 0;}
 
+/* MOBILE FRIENDLY */
 @media(max-width:900px){
 .container{grid-template-columns:1fr}
 .sidebar{position:static}
 .footer-container{grid-template-columns:1fr}
 .header{flex-direction:column; gap:15px}
-.nav{justify-content:center; gap:15px; flex-wrap:wrap}
+.header.nav{justify-content:center; gap:15px}
 .main-card{padding:20px}
 .stats{flex-direction:column; gap:10px}
 }
@@ -138,27 +88,25 @@ a:hover{text-decoration:underline}
 </head>
 <body>
 
-<!-- ===== NEW HEADER ===== -->
-<header class="header-wrap">
+<div class="header-wrap">
   <div class="header">
-    <a href="/" class="brand">🔧 SMART TOOLS HUB</a>
-
-    <nav class="nav">
+   <div class="logo">🔧 SMART TOOLS HUB</div>
+    <div class="nav">
       <a href="/spell-checker/">Spell Checker</a>
       <a href="/keyword-density-checker.html">Keyword Density</a>
       <a href="/free-word-counter.html">Word Counter</a>
       <a href="/grammar-checker.html">Grammar Checker</a>
-    </nav>
-
-    <button id="themeToggle" class="theme-toggle">🌙 Dark</button>
+    </div>
+    <button class="theme-btn" onclick="toggleTheme()">🌙 Dark</button>
   </div>
-</header>
+</div>
 
 <div class="container">
   <div class="main-card">
     <h1>Free Online Keyword Density Checker Tool</h1>
+    <p style="text-align:center; font-size:18px">Analyze your content for SEO. Check keyword density percentage instantly</p>
+
     <div class="tool-box">
-      <p>Analyze your content for SEO. Enter target keyword and paste your article below to check keyword density percentage instantly.</p>
       <input type="text" id="targetKeyword" placeholder="Enter Target Keyword: best keyword density checker tool online">
       <textarea id="content" placeholder="Paste your article content here for keyword density analysis... Minimum 100 words recommended."></textarea>
       <div class="stats">
@@ -170,6 +118,7 @@ a:hover{text-decoration:underline}
       <button class="btn" onclick="clearText()" style="background:#6c757d">Clear Text</button>
       <div id="result" class="result"></div>
     </div>
+
     <div class="highlight">
     <p><b>100% Free & SEO Optimized</b><br>
     Check keyword density instantly without signup. Perfect for bloggers, content writers and SEO experts to avoid keyword stuffing.</p>
@@ -177,15 +126,27 @@ a:hover{text-decoration:underline}
 
     <h2>Best Free Online Keyword Density Checker Tool 2026</h2>
     <p>If you are looking for the <b>best free online keyword density checker tool</b> to optimize your website content for Google ranking, you have come to the right place. Smart Tools Hub provides a lightning fast and 100% free keyword density analyzer that works directly in your browser without any signup or login requirement.</p>
+    <p>In 2026, SEO has become more competitive than ever before. Google's AI algorithms and Helpful Content Update can easily detect keyword stuffing and low-quality content. One of the most important on-page SEO factors is maintaining the perfect keyword density in your articles. If you use too few keywords, Google won't understand your topic. If you use too many, you risk getting penalized. That is why using a professional <b>online keyword density checker for SEO content</b> is essential for every blogger, content writer and digital marketer.</p>
 
     <h2>What Is Keyword Density and Why Does It Matter For SEO?</h2>
     <p>Keyword density is the percentage of times a specific keyword or keyphrase appears in your content compared to the total number of words. The formula is very simple: <b>(Number of times keyword appears / Total number of words) x 100 = Keyword Density %</b></p>
 
+    <h2>What Is The Ideal Keyword Density Percentage For Google Ranking?</h2>
+    <p>After analyzing thousands of top ranking websites, SEO experts agree that <b>1% to 2%</b> is the ideal keyword density range for 2026. Here is the complete breakdown:</p>
+    <p><b>Below 0.5%:</b> Your content is under-optimized. Google may not rank you for that keyword because it cannot understand the topic clearly.<br>
+    <b>1% to 1.5%:</b> Perfect sweet spot. Natural reading experience and strong SEO signals to Google.<br>
+    <b>1.5% to 2%:</b> Still safe but you should start using LSI keywords and synonyms to avoid repetition.<br>
+    <b>2% to 3%:</b> Danger zone. High risk of keyword stuffing penalty from Google.<br>
+    <b>Above 3%:</b> Spam. Your page will likely be ignored or penalized by search engines.</p>
+
     <h2>Key Features Of Our Free Keyword Density Analyzer Tool</h2>
-    <p>We built this <b>free keyword density checker tool for bloggers and SEO experts</b> with simplicity and accuracy in mind.</p>
+    <p>We built this <b>free keyword density checker tool for bloggers and SEO experts</b> with simplicity and accuracy in mind. Unlike other paid tools, our tool is completely free and works instantly without any limits.</p>
 
     <h2>Frequently Asked Questions - FAQ</h2>
     <p><b>Q1: What is a good keyword density percentage for SEO in 2026?</b><br>A: 1% to 2% is considered ideal. For every 1000 words, use your main keyword 10 to 20 times naturally.</p>
+    <p><b>Q2: Does keyword density still matter with Google AI and ChatGPT?</b><br>A: Yes. While content quality and E-E-A-T matter more, proper keyword density still helps Google understand topic relevance faster.</p>
+    <p><b>Q3: Is this keyword density checker tool really 100% free?</b><br>A: Yes. It is 100% free forever. No signup, no credit card, no premium version, no hidden charges.</p>
+
     <p style="margin-top:40px; text-align:center; font-size:20px; font-weight:700;">Smart Tools Hub - Optimize. Rank. Grow.</p>
   </div>
 
@@ -202,21 +163,18 @@ a:hover{text-decoration:underline}
 </div>
 </div>
 
-<footer class="pro-footer">
+<div class="footer-wrap">
+  <footer class="pro-footer">
     <div class="footer-container">
       <div class="footer-col">
         <h2 class="footer-logo">🔧 SMART TOOLS HUB</h2>
         <p style="color:#f3e8ff; margin-top:15px; line-height:1.8">Best free online tools for Students, SEO Experts, and Writers. 100% Free, No Signup Required.</p>
-        <div class="contact-info">
-          <h4>Contact Us</h4>
-          <a href="mailto:ptacalculatorpk@gmail.com">ptacalculatorpk@gmail.com</a>
-        </div>
       </div>
       <div class="footer-col">
         <h3>Popular Tools</h3>
         <ul>
         <li><a href="/spell-checker/">Spell Checker</a></li>
-        <li><a href="/keyword-rank-checker.html">Rank Checker</a></li>
+        <li><a href="/keyword-density-checker.html">Keyword Density</a></li>
         <li><a href="/free-word-counter.html">Word Counter</a></li>
         <li><a href="/grammar-checker.html">Grammar Checker</a></li>
         </ul>
@@ -231,35 +189,36 @@ a:hover{text-decoration:underline}
           <li><a href="/terms-of-service/">Terms of Service</a></li>
         </ul>
       </div>
-    </div>
-    <div class="footer-bottom">
-      <p class="copyright">© 2026 Smart Tools Hub. All Rights Reserved.</p>
-    </div>
-</footer>
+</div>
+
+<div class="footer-bottom">
+  <p class="copyright">© 2026 SMART TOOLS HUB. All Rights Reserved.</p>
+</div>
+
+  </footer>
+</div>
 
 <script>
-const themeBtn = document.getElementById('themeToggle');
 function toggleTheme(){
   const body = document.documentElement;
+  const btn = document.querySelector('.theme-btn');
   if(body.getAttribute('data-theme') === 'dark'){
     body.removeAttribute('data-theme');
-    themeBtn.innerHTML = '🌙 Dark';
+    btn.innerHTML = '🌙 Dark';
     localStorage.setItem('theme', 'light');
   } else {
     body.setAttribute('data-theme', 'dark');
-    themeBtn.innerHTML = '☀️ Light';
+    btn.innerHTML = '☀️ Light';
     localStorage.setItem('theme', 'dark');
   }
 }
-themeBtn.onclick = toggleTheme;
 if(localStorage.getItem('theme') === 'dark'){
   document.documentElement.setAttribute('data-theme', 'dark');
-  themeBtn.innerHTML = '☀️ Light';
+  document.querySelector('.theme-btn').innerHTML = '☀️ Light';
 }
 
 const contentEl = document.getElementById('content');
 const keywordEl = document.getElementById('targetKeyword');
-
 function updateStats(){
   const content = contentEl.value.toLowerCase();
   const keyword = keywordEl.value.toLowerCase().trim();
@@ -273,7 +232,6 @@ function updateStats(){
 }
 contentEl.oninput = updateStats;
 keywordEl.oninput = updateStats;
-
 function checkDensity(){
   const keyword = keywordEl.value.toLowerCase().trim();
   const content = contentEl.value.toLowerCase().trim();
@@ -293,7 +251,6 @@ function checkDensity(){
   document.getElementById('result').style.display = 'block';
   document.getElementById('result').innerHTML = `<h3>SEO Analysis Report</h3><p><b>Target Keyword:</b> ${keyword}</p><p><b>Status:</b> ${status}</p><h4>Top 10 Keywords Found</h4><table class="keyword-table"><tr><th>Keyword</th><th>Count</th><th>Density</th></tr>${tableRows}</table>`;
 }
-
 function clearText(){
   keywordEl.value = '';
   contentEl.value = '';
