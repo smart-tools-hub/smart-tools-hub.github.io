@@ -3,124 +3,239 @@
 <head>
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
-<title>20% Tip Calculator 2026 - Free + Split Bill Instantly</title>
-<meta name="description" content="Calculate 20% tip in 1 second. $50 bill = $10 tip. Free tip calculator with split bill + quick chart. No ads, mobile friendly.">
-<meta name="keywords" content="20 percent tip calculator, 20% tip calculator, tip calculator USA, calculate tip, restaurant tip calculator">
-<meta name="robots" content="index, follow">
-<link rel="canonical" href="https://smart-tools-hub.github.io/20-percent-tip-calculator.html">
+<title>20% Tip Calculator | Calculate Tip Instantly for USA Restaurants 2026</title>
+<meta name="description" content="Free 20% tip calculator for USA 2026. Calculate 20% tip instantly for restaurants, bills, and cafes. Mobile friendly, no signup, accurate results for USD and standard tipping.">
+<link href="https://fonts.googleapis.com/css2?family=Poppins:wght@400;600;700&display=swap" rel="stylesheet">
 <style>
-* { margin: 0; padding: 0; box-sizing: border-box; }
-body { font-family: 'Segoe UI', Arial, sans-serif; background: #f5f7fa; padding: 20px; color: #333; }
-.container { max-width: 480px; margin: 40px auto; background: white; padding: 35px; border-radius: 12px; box-shadow: 0 4px 20px rgba(0,0,0,0.08); }
-h1 { color: #667eea; font-size: 26px; margin-bottom: 10px; text-align: center; }
-<p style="text-align:center; color:#666; margin-bottom:20px;">$50 bill = $10 tip. 2 second me calculate karo, no signup</p> 
-.subtitle { text-align: center; color: #666; margin-bottom: 25px; font-size: 15px; }
-label { display: block; margin: 15px 0 8px; font-weight: 600; color: #333; }
-input { width: 100%; padding: 14px; font-size: 18px; border: 2px solid #ddd; border-radius: 8px; text-align: center; transition: 0.3s; }
-input:focus { outline: none; border-color: #667eea; }
-.result { margin-top: 25px; padding: 20px; background: #f8f9ff; border-radius: 8px; display: none; }
-.result p { margin: 12px 0; font-size: 18px; }
-.result strong { color: #667eea; font-size: 24px; }
-.info-section { margin-top: 40px; text-align: left; }
-.info-section h2 { color: #667eea; font-size: 20px; margin: 20px 0 10px; }
-.info-section p, .info-section li { color: #555; line-height: 1.6; margin-bottom: 10px; }
-.info-section ul { padding-left: 20px; }
-footer { text-align: center; margin-top: 30px; color: #888; font-size: 13px; }
-  table tr:nth-child(even) { background: #f9f9f9; }
-table tr:nth-child(odd) { background: #fff; }
-  table th { background: #f0f4ff; color: #667eea; padding: 12px; font-weight: 600; }
+:root{
+  --purple:#8b5cf6;
+  --purple-light:#a78bfa;
+  --bg:#f7f9fc;
+  --card:#ffffff;
+  --text:#1a1a1a
+}
+[data-theme="dark"]{
+  --bg:#0f0f0f;
+  --card:#1a1a1a;
+  --text:#e5e5e5;
+  --purple:#7c3aed
+}
+body{font-family:'Poppins',Arial,sans-serif;margin:0;background:var(--bg);color:var(--text);line-height:1.9;font-size:17px; transition:background.3s, color.3s}
+
+.header-wrap,.footer-wrap{background:var(--purple)}
+.header{display:flex; justify-content:space-between; align-items:center; padding:18px 20px; color:#fff; flex-wrap:wrap; max-width:1200px; margin:0 auto}
+.header .logo{font-size:24px; font-weight:700; display:flex; align-items:center; gap:10px}
+.header .nav{display:flex; gap:25px; flex-wrap:wrap; align-items:center}
+.header .nav a{color:#fff; text-decoration:none; font-weight:600; font-size:15px; padding:8px 0; position:relative}
+.header .nav a::after{content:''; position:absolute; width:0; height:2px; bottom:0; left:0; background-color:#fff; transition:width 0.3s ease}
+.header .nav a:hover::after{width:100%}
+.theme-btn{background:rgba(255,255,255,0.2); border:1px solid #fff; color:#fff; padding:8px 16px; border-radius:6px; cursor:pointer; font-weight:600; font-size:14px}
+.theme-btn:hover{background:rgba(255,255,255,0.3)}
+
+.container{max-width:1200px;margin:30px auto;display:grid;grid-template-columns:1fr 320px;gap:40px;padding:0 20px}
+.main-card{background:var(--card);padding:40px;border-radius:12px;box-shadow:0 8px 25px rgba(0,0,0,.08)}
+h1{color:var(--text);font-size:32px;margin-top:0;font-weight:700;text-align:center;border-bottom:3px solid var(--purple);padding-bottom:15px;}
+h2{color:var(--text);font-size:24px;margin-top:30px;font-weight:600; display:inline-block; position:relative; padding-bottom:5px}
+h2::after{content:''; position:absolute; left:0; bottom:0; width:0; height:3px; background:var(--purple); transition:width.3s}
+h2:hover::after{width:100%}
+p{transition:transform.2s}
+p:hover{transform:translateX(5px)}
+a{color:var(--purple); font-weight:600; text-decoration:none}
+a:hover{text-decoration:underline}
+.sidebar{background:var(--card);padding:25px;border-radius:12px;box-shadow:0 8px 25px rgba(0,0,0,.08); border:1px solid #e9ecef; height:fit-content; position:sticky; top:100px; text-align:center}
+.sidebar h3{margin-top:0;color:var(--text);border-bottom:2px solid var(--purple);padding-bottom:10px; text-align:center}
+.highlight{background:var(--purple-light); color:#fff; padding:20px; border-left:5px solid var(--purple); border-radius:5px; margin:20px 0; font-size:18px;}
+
+.tool-box input{width:100%; padding:18px; border:2px solid #e9ecef; border-radius:8px; font-size:22px; font-family:'Poppins'; margin-bottom:15px; box-sizing:border-box; background:var(--card); color:var(--text); text-align:center; font-weight:600}
+.tool-box input:focus{outline:none; border-color:var(--purple)}
+.result-box{background:var(--purple); color:#fff; padding:25px; border-radius:10px; text-align:center; font-size:26px; font-weight:700; margin:20px 0}
+.result-box span{font-size:34px}
+.tool-links{display:flex; flex-direction:column; gap:12px; margin-top:15px}
+.tool-links a{display:block; padding:12px 15px; background:var(--bg); color:var(--text); text-decoration:none; border-radius:8px; border:1px solid #e9ecef; font-weight:500; transition:0.2s}
+.tool-links a:hover{background:var(--purple); color:#fff; transform:translateX(5px)}
+.tip-table{width:100%; border-collapse:collapse; margin:20px 0}
+.tip-table th{background:var(--purple); color:#fff; padding:12px; text-align:center}
+.tip-table td{padding:12px; border-bottom:1px solid #e9ecef; text-align:center}
+
+.pro-footer{padding:50px 20px 20px}
+.footer-container{max-width:1200px; margin:0 auto; display:grid; grid-template-columns:repeat(3,1fr); gap:40px}
+.footer-logo{font-size:24px; font-weight:700; color:#fff; display:flex; align-items:center; gap:10px}
+.footer-col h3{color:#fff; font-size:20px; border-bottom:2px solid #fff; padding-bottom:12px; margin-bottom:20px; font-weight:600}
+.footer-col ul{list-style:none; padding:0}
+.footer-col ul li{margin-bottom:12px}
+.footer-col ul li a{color:#f3e8ff; text-decoration:none; transition:all.3s; font-size:15px}
+.footer-col ul li a:hover{color:#fff; padding-left:5px}
+.footer-bottom.copyright {background: white; color: black; padding: 15px 0; margin: 0; text-align:center; font-weight:600}
+.footer-bottom{text-align:center; margin-top:40px; padding-top:20px; border-top:1px solid rgba(255,255,255,0.3); color:#f3e8ff; font-size:14px; max-width:1200px; margin:40px auto 0}
+
+/* MOBILE FRIENDLY */
+@media(max-width:900px){
+.container{grid-template-columns:1fr}
+.sidebar{position:static}
+.footer-container{grid-template-columns:1fr}
+.header{flex-direction:column; gap:15px}
+.header .nav{justify-content:center; gap:15px}
+.main-card{padding:20px}
 </style>
 </head>
 <body>
-<div class="container">
-  <h1>20% Tip Calculator</h1>
-  <p class="subtitle">Calculate 20% tip instantly for restaurants & bills</p>
-  
-  <label for="bill">Enter Bill Amount ($)</label>
-  <input type="number" id="bill" placeholder="0.00" step="0.01" min="0" oninput="calculateTip()">
 
-  <select id="tipPercent" onchange="calculateTip()">
-  <option value="0.15">15% Tip</option>
-  <option value="0.18">18% Tip</option>
-  <option value="0.20" selected>20% Tip</option>
-  <option value="0.25">25% Tip</option>
-</select>
-  <div class="result" id="result">
-    <p>20% Tip Amount: <strong id="tip">$0.00</strong></p>
-    <p>Total Bill with Tip: <strong id="total">$0.00</strong></p>
-    <p style="font-size: 14px; color: #666;">20% is the standard tip rate in the USA</p>
+<div class="header-wrap">
+  <div class="header">
+   <div class="logo">🔧 SMART TOOLS HUB</div>
+    <div class="nav">
+      <a href="/spell-checker/">Spell Checker</a>
+      <a href="/keyword-density-checker.html">Keyword Density</a>
+      <a href="/free-word-counter.html">Word Counter</a>
+      <a href="/grammar-checker.html">Grammar Checker</a>
+    </div>
+    <button class="theme-btn" onclick="toggleTheme()">🌙 Dark</button>
   </div>
+</div>
 
-  <div class="info-section">
-    <h2>How to Calculate 20% Tip in the USA</h2>
-    <p>In the United States, 20% is considered the standard tip for good service at restaurants, bars, and cafes. Our free 20% tip calculator helps you figure out the exact amount in seconds without doing math manually.</p>
+<div class="container">
+  <div class="main-card">
+    <h1>20% Tip Calculator</h1>
+    <p style="text-align:center; font-size:18px">Calculate 20% tip instantly for restaurants & bills</p>
     
-    <h2>Why Use This Free Tip Calculator?</h2>
-    <ul>
-      <li><strong>Fast & Accurate:</strong> Get instant results as you type</li>
-      <li><strong>No Signup Required:</strong> 100% free to use, no registration</li>
-      <li><strong>Mobile Friendly:</strong> Works perfectly on phones and tablets</li>
-      <li><strong>USA Focused:</strong> Designed for USD and standard 20% tipping culture</li>
-      <li><strong>No Ads or Popups:</strong> Clean and simple experience</li>
-    </ul>
+    <div class="tool-box">
+      <label><b>Enter Bill Amount ($)</b></label>
+      <input type="number" id="bill" placeholder="0.00" oninput="calculateTip()">
+      <div class="result-box">
+        20% Tip: $<span id="tip">0.00</span><br>
+        Total Bill: $<span id="total">0.00</span>
+      </div>
+    </div>
+
+    <div class="highlight">
+    <p><b>100% Free & Mobile Friendly</b><br>
+    No signup required. Works perfectly on Android, iPhone and Desktop. Instant results for USA tipping culture.</p>
+    </div>
+
+    <h2>How to Calculate 20% Tip in the USA</h2>
+    <p>In the United States, <b>20% is considered the standard tip</b> for good service at restaurants, bars, and cafes. Our free <b>20% tip calculator</b> helps you figure out the exact amount in seconds without doing math manually. Simply enter your bill amount and get instant results for your dining experience.</p>
+    <p>Tipping culture in USA is very important for service workers. Servers rely on tips as a major part of their income. A 20% tip shows appreciation for good service and is the most commonly accepted rate in 2026. Whether you are dining at a fancy restaurant in New York or a casual cafe in California, this <b>free tip calculator</b> makes it easy to calculate the right amount every time.</p>
+
+    <h2>Why Use This Free 20% Tip Calculator?</h2>
+    <p>We built the <b>best free 20% tip calculator for USA</b> with speed and accuracy in mind. Unlike other calculators, ours is completely free and works instantly without any limits.</p>
+    <p><b>Fast & Accurate:</b> Get instant results as you type. No need to click any button. Perfect for quick restaurant bills.<br>
+    <b>No Signup Required:</b> 100% free to use, no registration, no login, no personal data collected.<br>
+    <b>Mobile Friendly:</b> Works perfectly on phones, tablets and desktop computers. Responsive design for all devices.<br>
+    <b>USA Focused:</b> Designed for USD and standard 20% tipping culture across all 50 states.<br>
+    <b>No Ads or Popups:</b> Clean and simple experience for quick calculations without distractions.<br>
+    <b>Dark Mode:</b> Easy on eyes for night time use with one-click theme toggle.</p>
 
     <h2>Common Bill Amounts with 20% Tip</h2>
-    <p>For quick reference, here are common calculations:</p>
-    <ul>
-      <li>$20 bill → $4.00 tip → $24.00 total</li>
-      <li>$50 bill → $10.00 tip → $60.00 total</li>
-      <li>$100 bill → $20.00 tip → $120.00 total</li>
-    </ul>
+    <p>For quick reference, here are common calculations you will use at restaurants daily:</p>
+    <p>$20 bill → $4.00 tip → $24.00 total<br>
+    $50 bill → $10.00 tip → $60.00 total<br>
+    $100 bill → $20.00 tip → $120.00 total</p>
+
+    <h2>20% Tip Chart - Quick Reference</h2>
+    <table class="tip-table">
+      <tr><th>Bill Amount $</th><th>20% Tip $</th><th>Total Bill $</th></tr>
+      <tr><td>25</td><td>5.00</td><td>30.00</td></tr>
+      <tr><td>50</td><td>10.00</td><td>60.00</td></tr>
+      <tr><td>100</td><td>20.00</td><td>120.00</td></tr>
+      <tr><td>200</td><td>40.00</td><td>240.00</td></tr>
+    </table>
+
+    <h2>How Much Should You Tip in Different Situations?</h2>
+    <p><b>Restaurants:</b> 20% for good service, 25% for excellent service<br>
+    <b>Bars:</b> $1-$2 per drink or 20% of total bill<br>
+    <b>Coffee Shops:</b> $1 or 20% if table service<br>
+    <b>Delivery:</b> 20% of food total, minimum $5<br>
+    <b>Hotel Staff:</b> $2-$5 per day for housekeeping</p>
+    <p>Remember, 20% is the new standard in 2026. 15% was old standard but now 20% is expected for good service across USA. This <b>tip calculator</b> helps you tip correctly and avoid confusion.</p>
+
+    <h2>FAQ - 20% Tip Calculator</h2>
+    <p><b>Q: How do I calculate 20% tip manually?</b><br>
+    A: Multiply bill × 0.20. Example: $100 bill = $20 tip. Our calculator does this instantly for you.</p>
+    
+    <p><b>Q: Is 20% tip standard in USA?</b><br>
+    A: Yes, 20% is standard tip rate in most restaurants worldwide and especially in USA for 2026.</p>
+    
+    <p><b>Q: Does this calculator work for groups?</b><br>
+    A: Yes. Calculate total tip, then divide by number of people for split bill. Perfect for group dining.</p>
+    
+    <p><b>Q: Can I calculate tips other than 20%?</b><br>
+    A: This tool is specifically for 20%. For other percentages use our Bill Tip Calculator or Percentage Calculator.</p>
+
+    <p style="margin-top:40px; text-align:center; font-size:20px; font-weight:700;">Smart Tools Hub - Calculate Smart. Tip Right.</p>
   </div>
 
-<h2 style="color: #667eea; margin-top:30px;">20% Tip Chart - Quick Reference</h2>
-<table border="1" style="width:100%; margin:20px 0; border-collapse:collapse;">
-<tr style="background:#f0f0f0;"><th style="padding:10px;">Bill Amount $</th><th style="padding:10px;">20% Tip $</th><th style="padding:10px;">Total Bill $</th></tr>
-<tr><td style="padding:8px; text-align:center;">25</td><td style="padding:8px; text-align:center;">5.00</td><td style="padding:8px; text-align:center;">30.00</td></tr>
-<tr><td style="padding:8px; text-align:center;">50</td><td style="padding:8px; text-align:center;">10.00</td><td style="padding:8px; text-align:center;">60.00</td></tr>
-<tr><td style="padding:8px; text-align:center;">100</td><td style="padding:8px; text-align:center;">20.00</td><td style="padding:8px; text-align:center;">120.00</td></tr>
-<tr><td style="padding:8px; text-align:center;">200</td><td style="padding:8px; text-align:center;">40.00</td><td style="padding:8px; text-align:center;">240.00</td></tr>
-</table>
+ <div class="sidebar">
+  <h3>Popular Calculators</h3>
+  <div class="tool-links">
+   <a href="/bill-tip-calculator.html">Bill Tip Calculator</a>
+   <a href="/quick-tip-calculator.html">Quick Tip Calculator</a>
+   <a href="/percentage-calculator.html">Percentage Calculator</a>
+   <a href="/tax-calculator.html">Tax Calculator</a>
+   <a href="/spell-checker/">Spell Checker</a>
+   <a href="/keyword-density-checker.html">Keyword Density</a>
+  </div>
+</div>
+</div>
 
-<h2 style="color: #667eea;">FAQ - 20% Tip Calculator</h2>
-  
+<div class="footer-wrap">
+  <footer class="pro-footer">
+    <div class="footer-container">
+      <div class="footer-col">
+        <h2 class="footer-logo">🔧 SMART TOOLS HUB</h2>
+        <p style="color:#f3e8ff; margin-top:15px; line-height:1.8">Best free online tools for Students, SEO Experts, and Writers. 100% Free, No Signup Required.</p>
+      </div>
+      <div class="footer-col">
+        <h3>Popular Tools</h3>
+        <ul>
+        <li><a href="/spell-checker/">Spell Checker</a></li>
+        <li><a href="/keyword-density-checker.html">Keyword Density</a></li>
+        <li><a href="/free-word-counter.html">Word Counter</a></li>
+        <li><a href="/grammar-checker.html">Grammar Checker</a></li>
+        </ul>
+      </div>
+      <div class="footer-col">
+        <h3>Quick Links</h3>
+        <ul>
+          <li><a href="/">Home</a></li>
+          <li><a href="/about-us/">About Us</a></li>
+          <li><a href="/contact-us/">Contact Us</a></li>
+          <li><a href="/privacy-policy/">Privacy Policy</a></li>
+          <li><a href="/terms-of-service/">Terms of Service</a></li>
+        </ul>
+      </div>
+    </div>
+    <div class="footer-bottom">
+      <p class="copyright">© 2026 Smart Tools Hub | Free Online Tools</p>
+    </div>
+  </footer>
+</div>
 
-<p><b>Q: How do I calculate 20% tip?</b><br>
-A: Multiply bill × 0.20. $100 bill = $20 tip.</p>
-
-<p><b>Q: Is 20% tip standard?</b><br>
-A: Yes, 20% is standard tip rate in most restaurants worldwide.</p>
-
-<p><b>Q: Does this calculator work for groups?</b><br>
-A: Yes. Calculate total tip, then divide by number of people.</p>
-
-<p style="margin-top:20px;"><b>Try More Calculators:</b> 
-<a href="/bill-tip-calculator.html" style="color: #667eea;">Bill Tip Calculator</a> | 
-<a href="/quick-tip-calculator.html" style="color: #667eea;">Quick Tip Calculator</a> | 
-<a href="/percentage-calculator.html" style="color: #667eea;">Percentage Calculator</a>
-</p>
-  
-  
-                        © 2026 Smart Tools Hub | Free Online Tools 
-  
 <script>
-function calculateTip() {
-  let bill = parseFloat(document.getElementById('bill').value);
-  let percent = document.getElementById('tipPercent').value;
-  let resultDiv = document.getElementById('result');
-  
-  if(!bill || bill <= 0) {
-    resultDiv.style.display = 'none';
-    return;
+function toggleTheme(){
+  const body = document.documentElement;
+  const btn = document.querySelector('.theme-btn');
+  if(body.getAttribute('data-theme') === 'dark'){
+    body.removeAttribute('data-theme');
+    btn.innerHTML = '🌙 Dark';
+    localStorage.setItem('theme', 'light');
+  } else {
+    body.setAttribute('data-theme', 'dark');
+    btn.innerHTML = '☀️ Light';
+    localStorage.setItem('theme', 'dark');
   }
-  
-  let tip = bill * percent;
-  let total = bill + tip;
-  
-  resultDiv.innerHTML = `Tip: $${tip.toFixed(2)}<br>Total: $${total.toFixed(2)}`;
-  resultDiv.style.display = 'block';
 }
-</script>
+if(localStorage.getItem('theme') === 'dark'){
+  document.documentElement.setAttribute('data-theme', 'dark');
+  document.querySelector('.theme-btn').innerHTML = '☀️ Light';
+}
+
+function calculateTip(){
+  let bill = parseFloat(document.getElementById('bill').value) || 0;
+  let tip = bill * 0.20;
+  let total = bill + tip;
+  document.getElementById('tip').innerText = tip.toFixed(2);
+  document.getElementById('total').innerText = total.toFixed(2);
+}
 </script>
 </body>
 </html>
