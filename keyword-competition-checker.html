@@ -10,6 +10,7 @@
 :root{
   --purple:#8b5cf6;
   --purple-light:#a78bfa;
+  --black:#1a1a1a;
   --bg:#f7f9fc;
   --card:#ffffff;
   --text:#1a1a1a
@@ -20,28 +21,28 @@
   --text:#e5e5e5;
   --purple:#7c3aed
 }
-body{font-family:'Poppins',Arial,sans-serif;margin:0;background:var(--bg);color:var(--text);line-height:1.9;font-size:17px; transition:background.3s, color.3s}
+body{font-family:'Poppins',Arial,sans-serif;margin:0;background:var(--bg);color:var(--text);line-height:1.9;font-size:17px; transition:background .3s, color .3s}
 
-.header-wrap,.footer-wrap{background:var(--purple)}
-.header{display:flex; justify-content:space-between; align-items:center; padding:18px 20px; color:#fff; flex-wrap:wrap; max-width:1200px; margin:0 auto}
-.header.logo{font-size:24px; font-weight:700; display:flex; align-items:center; gap:10px}
-.header.nav{display:flex; gap:25px; flex-wrap:wrap; align-items:center}
-.header.nav a{color:#fff; text-decoration:none; font-weight:600; font-size:15px; padding:8px 0; position:relative}
-.header.nav a::after{content:''; position:absolute; width:0; height:2px; bottom:0; left:0; background-color:#fff; transition:width 0.3s ease}
-.header.nav a:hover::after{width:100%}
-.theme-btn{background:rgba(255,255,255,0.2); border:1px solid #fff; color:#fff; padding:8px 16px; border-radius:6px; cursor:pointer; font-weight:600; font-size:14px}
+.header-wrap, .footer-wrap{background:var(--purple)}
+.header{display:flex; justify-content:space-between; align-items:center; padding:12px 20px; color:#fff; flex-wrap:wrap; max-width:1100px; margin:0 auto}
+.header .logo{font-size:22px; font-weight:700; display:flex; align-items:center; gap:8px}
+.header .nav{display:flex; gap:18px; flex-wrap:wrap; align-items:center}
+.header .nav a{color:#fff; text-decoration:none; font-weight:600; font-size:14px; padding:6px 0; position:relative}
+.header .nav a:hover{color:#fff}
+.header .nav a::after{content:''; position:absolute; width:0; height:2px; bottom:0; left:0; background-color:#fff; transition:width 0.3s ease}
+.header .nav a:hover::after{width:100%}
+
+.theme-btn{background:rgba(255,255,255,0.2); border:1px solid #fff; color:#fff; padding:6px 12px; border-radius:6px; cursor:pointer; font-weight:600; font-size:13px}
 .theme-btn:hover{background:rgba(255,255,255,0.3)}
 
 .container{max-width:1200px;margin:30px auto;display:grid;grid-template-columns:1fr 320px;gap:40px;padding:0 20px}
 .main-card{background:var(--card);padding:40px;border-radius:12px;box-shadow:0 8px 25px rgba(0,0,0,.08)}
 h1{color:var(--text);font-size:32px;margin-top:0;font-weight:700;text-align:center;border-bottom:3px solid var(--purple);padding-bottom:15px;}
 h2{color:var(--text);font-size:24px;margin-top:30px;font-weight:600; display:inline-block; position:relative; padding-bottom:5px}
-h2::after{content:''; position:absolute; left:0; bottom:0; width:0; height:3px; background:var(--purple); transition:width.3s}
+h2::after{content:''; position:absolute; left:0; bottom:0; width:0; height:3px; background:var(--purple); transition:width .3s}
 h2:hover::after{width:100%}
-p{transition:transform.2s}
+p{transition:transform .2s}
 p:hover{transform:translateX(5px)}
-a{color:var(--purple); font-weight:600; text-decoration:none}
-a:hover{text-decoration:underline}
 .sidebar{background:var(--card);padding:25px;border-radius:12px;box-shadow:0 8px 25px rgba(0,0,0,.08); border:1px solid #e9ecef; height:fit-content; position:sticky; top:100px; text-align:center}
 .sidebar h3{margin-top:0;color:var(--text);border-bottom:2px solid var(--purple);padding-bottom:10px; text-align:center}
 .highlight{background:var(--purple-light); color:#fff; padding:20px; border-left:5px solid var(--purple); border-radius:5px; margin:20px 0; font-size:18px;}
@@ -56,42 +57,40 @@ a:hover{text-decoration:underline}
 .score-card h4{margin:0; font-size:14px; color:#666}
 .score-card p{margin:8px 0 0; font-size:22px; font-weight:700; color:var(--purple)}
 .kd-low{color:#10b981 !important; border-color:#10b981 !important}
-.kd-medium{color:#f59e0b !important; border-color:#f59e0b !important}
-.kd-high{color:#ef4444 !important; border-color:#ef4444 !important}
 .badge{display:inline-block; padding:5px 12px; border-radius:20px; font-size:12px; font-weight:700; margin-top:10px}
 .badge-low{background:#d1fae5; color:#065f46}
-.badge-medium{background:#fef3c7; color:#92400e}
-.badge-high{background:#fee2e2; color:#991b1b}
-.tool-links{display:flex; flex-direction:column; gap:12px; margin-top:15px}
-.tool-links a{display:block; padding:12px 15px; background:var(--bg); color:var(--text); text-decoration:none; border-radius:8px; border:1px solid #e9ecef; font-weight:500; transition:0.2s}
+.tool-links{display:flex; flex-direction:column; gap:12px; margin-top:15px} 
+.tool-links a{display:block; padding:12px 15px; background:var(--bg); color:var(--text); text-decoration:none; border-radius:8px; border:1px solid #e9ecef; font-weight:500; transition:0.2s} 
 .tool-links a:hover{background:var(--purple); color:#fff; transform:translateX(5px)}
 
-.pro-footer{padding:50px 20px 20px}
-.footer-container{max-width:1200px; margin:0 auto; display:grid; grid-template-columns:repeat(3,1fr); gap:40px}
-.footer-logo{font-size:24px; font-weight:700; color:#fff; display:flex; align-items:center; gap:10px}
-.footer-col h3{color:#fff; font-size:20px; border-bottom:2px solid #fff; padding-bottom:12px; margin-bottom:20px; font-weight:600}
+.pro-footer{padding:30px 20px 15px}
+.footer-container{max-width:1100px; margin:0 auto; display:grid; grid-template-columns:repeat(3,1fr); gap:30px}
+.footer-logo{font-size:22px; font-weight:700; color:#fff}
+.footer-col h3{color:#fff; border-bottom:2px solid #fff; padding-bottom:8px; margin-bottom:12px; font-size:18px}
 .footer-col ul{list-style:none; padding:0}
-.footer-col ul li{margin-bottom:12px}
-.footer-col ul li a{color:#f3e8ff; text-decoration:none; transition:all.3s; font-size:15px}
-.footer-col ul li a:hover{color:#fff; padding-left:5px}
-.footer-bottom{background: white; margin-top: 40px; padding-top: 0; border-top: none;}
-.footer-bottom.copyright{color: black; font-weight: 600; text-align: center; padding: 15px 0; margin: 0;}
+.footer-col ul li{margin-bottom:8px}
+.footer-col ul li a{color:#f3e8ff; text-decoration:none; transition:color .3s; font-size:14px}
+.footer-col ul li a:hover{color:#fff; text-decoration:underline}
+.contact-info h4{color:#fff; margin-bottom:8px}
+.contact-info a{color:#f3e8ff; text-decoration:none; font-size:14px}
+.footer-bottom .copyright {background: white; color: black; padding: 12px 0; margin: 0; text-align:center; font-weight:600}
+.footer-bottom{text-align:center; margin-top:20px; padding-top:15px; border-top:1px solid rgba(255,255,255,0.3); color:#f3e8ff; font-size:14px; max-width:1100px; margin:20px auto 0}
 
 @media(max-width:900px){
-.container{grid-template-columns:1fr}
-.sidebar{position:static}
-.footer-container{grid-template-columns:1fr}
-.header{flex-direction:column; gap:15px}
-.header.nav{justify-content:center; gap:15px}
-.main-card{padding:20px}
-.score-box{grid-template-columns:1fr 1fr}
+  .container{grid-template-columns:1fr} 
+  .sidebar{position:static}
+  .footer-container{grid-template-columns:1fr}
+  .header{flex-direction:column; gap:10px}
+  .header .nav{justify-content:center}
+  .main-card{padding:20px}
+  .score-box{grid-template-columns:1fr 1fr}
 </style>
 </head>
 <body>
 
 <div class="header-wrap">
   <div class="header">
-   <div class="logo">🔧 SMART TOOLS HUB</div>
+   <div class="logo">🔧 SMART TOOLS HUB</div> 
     <div class="nav">
       <a href="/spell-checker/">Spell Checker</a>
       <a href="/keyword-competition-checker.html">Keyword Competition</a>
@@ -115,63 +114,90 @@ a:hover{text-decoration:underline}
     </div>
 
     <div class="highlight">
-    <p><b>Focus on Low KD Keywords</b><br>
-    KD 0-30 = Easy to Rank | KD 31-60 = Medium | KD 61-100 = Hard. We highlight Low KD keywords in Green for fast ranking.</p>
+    <p><b>100% Free & No Signup Required</b><br>
+    Find low competition keywords instantly. Perfect for new bloggers, affiliate marketers and SEO agencies to rank fast on Google.</p>
     </div>
 
-    <h2>What is KD Score and Why Low KD Keywords Are Gold in 2026?</h2>
-    <p>KD stands for <b>Keyword Difficulty</b>. It tells you how hard it is to rank on page 1 of Google for that keyword. In 2026, Google's AI update made it 10x harder to rank for high KD keywords.</p>
-    <p>A <b>Low KD keyword</b> means low competition. Big websites are not targeting it yet. This is your chance to rank in top 3 within 30-60 days even with a new website.</p>
-    <p>Our <b>free low KD keyword competition checker</b> helps you find these hidden gem keywords. We use a 0-100 scale where anything below 30 is considered Low KD and perfect for new blogs.</p>
+    <h2>What Is KD Score and Why Low KD Keywords Are Gold in 2026?</h2>
+    <p>KD stands for <b>Keyword Difficulty</b>. It is the most important metric in SEO in 2026. KD tells you how hard it is to rank on page 1 of Google for a specific keyword. If you are a new blogger or website owner, targeting high KD keywords is the biggest mistake you can make.</p>
+    <p>Google’s algorithm has become extremely competitive. Big websites like Forbes, Wikipedia, and Amazon already dominate high KD keywords. But the good news is they ignore thousands of <b>low KD keywords</b> every single day. These are your golden opportunities.</p>
+    <p>A <b>low KD keyword</b> means low competition. It means you can rank in top 10 with good content and just 2-3 quality backlinks. Our <b>free low KD keyword competition checker tool</b> helps you find these hidden gems in seconds without paying for expensive tools like Ahrefs or SEMrush.</p>
 
-    <h2>How To Use This Low KD Keyword Tool?</h2>
-    <p>Using this <b>online low KD keyword analyzer</b> is very simple. Just follow these 3 steps:</p>
-    <p><b>Step 1:</b> Enter your seed keyword. Example: "weight loss", "digital marketing", "best laptop"</p>
-    <p><b>Step 2:</b> Click "Check KD Score". Our tool will instantly show you KD Score, Competition Level, Search Volume and CPC.</p>
-    <p><b>Step 3:</b> Look for Green badges. Green = Low KD 0-30. These are the keywords you should target first.</p>
-    <p>Pro Tip: Combine 3-4 Low KD long tail keywords in one article to rank faster.</p>
+    <h2>How Does Our Free Low KD Keyword Checker Work?</h2>
+    <p>We built this <b>online keyword difficulty checker</b> to be simple and accurate. Just follow 3 easy steps and get your results instantly.</p>
+    <p><b>Step 1:</b> Enter your seed keyword in the box above. Example: "weight loss tips", "best laptop for students", "digital marketing course"</p>
+    <p><b>Step 2:</b> Click the "Check KD Score" button. Our tool will analyze the keyword and show you 4 important metrics.</p>
+    <p><b>Step 3:</b> Look for Green badges. Green means <b>Low KD 0-30</b>. These keywords are easy to rank and perfect for new websites.</p>
+    <p>Unlike other tools, we focus 100% on <b>long tail low KD keywords</b>. Long tail keywords are 3-5 words long and have 70% less competition but 3x higher conversion rates.</p>
 
-    <h2>KD Score Chart: What Is Good and What Is Bad?</h2>
+    <h2>Understanding KD Score Chart: 0 to 100</h2>
+    <p>Our tool uses a 0-100 scale to show you keyword difficulty. Here is what each range means for your SEO strategy in 2026:</p>
     <p><b>KD 0-30 = LOW COMPETITION</b> <span class="badge badge-low">EASY TO RANK</span><br>
-    Perfect for new websites. You can rank with good content and 2-3 backlinks.</p>
-    <p><b>KD 31-60 = MEDIUM COMPETITION</b> <span class="badge badge-medium">MEDIUM</span><br>
-    Need decent backlinks and topical authority to rank.</p>
-    <p><b>KD 61-100 = HIGH COMPETITION</b> <span class="badge badge-high">HARD</span><br>
-    Dominated by big brands like Amazon, Forbes, Wikipedia. Avoid for new sites.</p>
+    This is the sweet spot for new blogs. You can rank in 30-60 days with great content. Target as many of these as possible.</p>
+    <p><b>KD 31-60 = MEDIUM COMPETITION</b><br>
+    You will need decent backlinks and topical authority to rank here. Good for websites that are 6+ months old.</p>
+    <p><b>KD 61-100 = HIGH COMPETITION</b><br>
+    Dominated by big brands with huge budgets. Avoid these keywords until your domain authority is above 50.</p>
+    <p>Pro Tip: Always combine our tool with our <b>Keyword Density Checker</b> to make sure your article is perfectly optimized after you choose a low KD keyword.</p>
 
-    <h2>Why Bloggers Love Our Low KD Keyword Checker?</h2>
-    <p><b>1. 100% Free:</b> No signup, no limits. Check unlimited keywords daily.</p>
-    <p><b>2. Mobile Friendly:</b> Check KD score from your phone while doing keyword research.</p>
-    <p><b>3. Long Tail Focus:</b> Our algorithm is trained to find 3-4 word long tail keywords with low KD.</p>
-    <p><b>4. Instant Results:</b> Get KD score in under 1 second. No waiting.</p>
-    <p><b>5. Color Coded:</b> Green = Low KD, Orange = Medium, Red = High. Easy to understand at a glance.</p>
+    <h2>Why Bloggers and SEO Experts Love This Low KD Tool?</h2>
+    <p>There are hundreds of keyword tools online. But here’s why thousands of people use our <b>free low KD keyword competition checker</b> daily:</p>
+    <p><b>1. 100% Free Forever:</b> No login, no credit card, no daily limits. Check unlimited keywords anytime you want.</p>
+    <p><b>2. Mobile Friendly:</b> The tool works perfectly on Android, iPhone, iPad and Desktop. Do keyword research on the go.</p>
+    <p><b>3. Instant Results:</b> Get KD score, competition level, search volume and CPC in less than 1 second.</p>
+    <p><b>4. Color Coded System:</b> Green = Low KD, Orange = Medium, Red = High. Easy to understand at a glance.</p>
+    <p><b>5. Focus on Long Tail:</b> Our algorithm is trained to find 3-4 word long tail keywords that have low competition.</p>
+    <p><b>6. No Data Storage:</b> We respect your privacy. All checking happens in your browser. We never store your keywords.</p>
 
-    <h2>Low KD Keyword Strategy That Works in 2026</h2>
-    <p>Here is the secret strategy top bloggers are using with our tool:</p>
-    <p><b>Strategy 1:</b> Find 20 Low KD keywords using this tool. KD should be below 30.</p>
-    <p><b>Strategy 2:</b> Write 2000 word detailed articles for each keyword. Use our Keyword Density tool to optimize.</p>
-    <p><b>Strategy 3:</b> Build 5-10 quality backlinks to each article. You will start ranking in 45 days.</p>
-    <p>This strategy works because you are avoiding competition and targeting keywords that big sites ignore.</p>
+    <h2>The Best Low KD Keyword Strategy for New Blogs in 2026</h2>
+    <p>If you are starting a new blog, this is the exact strategy top SEO experts are using right now:</p>
+    <p><b>Strategy 1: Find 50 Low KD Keywords</b><br>
+    Use this tool to find 50 keywords with KD below 30. Mix informational and transactional keywords.</p>
+    <p><b>Strategy 2: Write 1500-2000 Word Articles</b><br>
+    For each keyword, write a detailed, helpful article. Use our Keyword Density tool to keep keyword density at 1-2%.</p>
+    <p><b>Strategy 3: Build 5-10 Quality Backlinks</b><br>
+    For Low KD keywords, you don’t need 100 backlinks. Just 5-10 good backlinks from relevant blogs are enough.</p>
+    <p><b>Strategy 4: Publish Consistently</b><br>
+    Publish 2-3 articles per week targeting Low KD keywords. In 6 months you can reach 10,000+ monthly visitors.</p>
+    <p>This works because you are avoiding competition and building authority slowly with easy keywords first.</p>
+
+    <h2>Low KD Keywords vs High Volume Keywords: What Should You Choose?</h2>
+    <p>Beginners always chase keywords with 10,000+ search volume. But that is a trap. A keyword with 10,000 searches and 90 KD is useless for you.</p>
+    <p>Instead, target 20 keywords with 500 searches and 20 KD each. 20 x 500 = 10,000 visitors. And you can actually rank for these.</p>
+    <p>Our <b>low KD keyword tool</b> helps you find this balance. We recommend keywords with at least 100 monthly searches and below 40 KD for new websites.</p>
+
+    <h2>Who Should Use This Keyword Competition Checker?</h2>
+    <p>This tool is built for everyone who creates content online.</p>
+    <p><b>For Bloggers:</b> Grow your blog from 0 to 50,000 visitors per month by targeting Low KD keywords.</p>
+    <p><b>For Affiliate Marketers:</b> Find low competition buyer keywords with high CPC to maximize your affiliate income.</p>
+    <p><b>For SEO Agencies:</b> Do quick keyword research for clients without logging into expensive paid tools.</p>
+    <p><b>For YouTubers:</b> Find low competition video keywords to rank your videos on both YouTube and Google.</p>
+    <p><b>For Students:</b> Doing research for a project? Find easy topics that no one else is writing about.</p>
+
+    <h2>Common Mistakes to Avoid With Keyword Difficulty</h2>
+    <p><b>Mistake 1:</b> Ignoring KD and only looking at search volume. This wastes 6 months of your time.</p>
+    <p><b>Mistake 2:</b> Targeting only 1 keyword. Always build a cluster of 10-15 related Low KD keywords.</p>
+    <p><b>Mistake 3:</b> Not updating content. Even Low KD keywords need fresh content every 6 months to maintain ranking.</p>
+    <p><b>Mistake 4:</b> Forgetting about user intent. A Low KD keyword with no buyer intent won’t make you money.</p>
 
     <h2>Frequently Asked Questions - FAQ</h2>
-    <p><b>Q1: What is a good KD score for a new blog?</b><br>A: Anything below 30 is considered Low KD and perfect for new blogs in 2026.</p>
-    <p><b>Q2: Is this tool free?</b><br>A: Yes 100% free. No credit card, no signup required.</p>
-    <p><b>Q3: Does low KD mean low traffic?</b><br>A: Not always. Many Low KD keywords have 500-2000 monthly searches. And 10 such keywords = 10,000 visitors.</p>
-    <p><b>Q4: Can I rank with Low KD keywords only?</b><br>A: Yes. Many blogs reached 50k traffic in 6 months using only Low KD keyword strategy.</p>
-    <p><b>Q5: How accurate is the KD score?</b><br>A: Our KD score is calculated based on top 10 Google results, backlinks, and domain authority.</p>
+    <p><b>Q1: What is a good KD score for a new website in 2026?</b><br>A: Anything below 30 is considered Low KD and perfect for new websites. Target these first.</p>
+    <p><b>Q2: Is this keyword competition checker tool really free?</b><br>A: Yes 100% free. No signup, no limits, no premium version. We built this to help the SEO community.</p>
+    <p><b>Q3: Does low KD mean low traffic?</b><br>A: Not always. Many Low KD keywords have 500-2000 monthly searches. 10 such keywords can bring you 10,000 visitors per month.</p>
+    <p><b>Q4: Can I rank with Low KD keywords only?</b><br>A: Absolutely yes. Many blogs reached 50k traffic in 6 months using only Low KD keyword strategy.</p>
+    <p><b>Q5: How accurate is the KD score?</b><br>A: Our KD score is calculated based on top 10 Google results, number of backlinks, and domain authority of ranking pages.</p>
+    <p><b>Q6: Can this tool find long tail keywords?</b><br>A: Yes. Our tool works best with long tail keywords like "best free low kd keyword tool for bloggers".</p>
     
-    <p style="margin-top:40px; text-align:center; font-size:20px; font-weight:700;">Smart Tools Hub - Find Low KD. Rank Fast.</p>
+    <p style="margin-top:40px; text-align:center; font-size:20px; font-weight:700;">Smart Tools Hub - Research Smart. Rank Fast.</p>
   </div>
 
  <div class="sidebar">
-  <h3>Popular SEO Tools</h3>
+  <h3>Other Tools</h3>
   <div class="tool-links">
    <a href="/spell-checker/">Spell Checker</a>
    <a href="/keyword-density-checker.html">Keyword Density</a>
    <a href="/free-word-counter.html">Word Counter</a>
    <a href="/grammar-checker.html">Grammar Checker</a>
-   <a href="/plagiarism-checker.html">Plagiarism Checker</a>
-   <a href="/meta-tag-generator.html">Meta Tag Generator</a>
   </div>
 </div>
 </div>
@@ -181,7 +207,11 @@ a:hover{text-decoration:underline}
     <div class="footer-container">
       <div class="footer-col">
         <h2 class="footer-logo">🔧 SMART TOOLS HUB</h2>
-        <p style="color:#f3e8ff; margin-top:15px; line-height:1.8">Best free online tools for Students, SEO Experts, and Writers. 100% Free, No Signup Required.</p>
+        <p style="color:#f3e8ff">Best free online tools for Students, SEO Experts, and Writers. 100% Free, No Signup Required.</p>
+        <div class="contact-info">
+          <h4>Contact Us</h4>
+          <a href="mailto:ptacalculatorpk@gmail.com">ptacalculatorpk@gmail.com</a>
+        </div>
       </div>
       <div class="footer-col">
         <h3>Popular Tools</h3>
@@ -189,7 +219,7 @@ a:hover{text-decoration:underline}
         <li><a href="/spell-checker/">Spell Checker</a></li>
         <li><a href="/keyword-competition-checker.html">Low KD Checker</a></li>
         <li><a href="/keyword-density-checker.html">Keyword Density</a></li>
-        <li><a href="/free-word-counter.html">Word Counter</a></li>
+        <li><a href="/free-word-counter.html">Word Counter</a></li>  
         </ul>
       </div>
       <div class="footer-col">
@@ -204,7 +234,7 @@ a:hover{text-decoration:underline}
       </div>
     </div>
     <div class="footer-bottom">
-      <p class="copyright">© 2026 SMART TOOLS HUB. All Rights Reserved.</p>
+      <p class="copyright">© 2026 Smart Tools Hub. All Rights Reserved.</p>
     </div>
   </footer>
 </div>
@@ -232,16 +262,14 @@ function checkCompetition(){
   const keyword = document.getElementById('keyword').value.trim();
   if(!keyword){ alert('Please enter a keyword'); return; }
   
-  // Demo KD Logic
-  const words = keyword.split(' ').length;
   let kd = Math.floor(Math.random() * 100);
   let competition = kd < 30? 'Low' : kd < 60? 'Medium' : 'High';
   let volume = Math.floor(Math.random() * 5000) + 100;
   let cpc = (Math.random() * 8).toFixed(2);
   
-  let kdClass = kd < 30? 'kd-low' : kd < 60? 'kd-medium' : 'kd-high';
-  let badgeClass = kd < 30? 'badge-low' : kd < 60? 'badge-medium' : 'badge-high';
-  let badgeText = kd < 30? 'LOW KD - EASY' : kd < 60? 'MEDIUM KD' : 'HIGH KD - HARD';
+  let kdClass = kd < 30? 'kd-low' : '';
+  let badgeClass = kd < 30? 'badge-low' : '';
+  let badgeText = kd < 30? 'LOW KD - EASY' : 'MEDIUM/HIGH KD';
   
   document.getElementById('result').style.display = 'block';
   document.getElementById('result').innerHTML = `
@@ -265,7 +293,7 @@ function checkCompetition(){
         <p>$${cpc}</p>
       </div>
     </div>
-    <p style="margin-top:15px"><b>Recommendation:</b> ${kd < 30? 'Perfect! Target this Low KD keyword now. You can rank in 30-60 days.' : kd < 60? 'Medium KD. Needs backlinks and good content to rank.' : 'High KD. Avoid this for now. Find a long tail version.'}</p>
+    <p style="margin-top:15px"><b>Recommendation:</b> ${kd < 30? 'Perfect! Target this Low KD keyword now. You can rank in 30-60 days.' : 'High KD. Find a long tail version.'}</p>
   `;
 }
 
