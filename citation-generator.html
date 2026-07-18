@@ -14,37 +14,53 @@ body{font-family:'Poppins',Arial,sans-serif;margin:0;background:var(--bg);color:
 .header{display:flex; justify-content:space-between; align-items:center; padding:18px 20px; color:#fff; flex-wrap:wrap; max-width:1200px; margin:0 auto}
 .header .logo{font-size:24px; font-weight:700;}
 .header .nav{display:flex; gap:25px; flex-wrap:wrap; align-items:center}
-.header .nav a{color:#fff; text-decoration:none; font-weight:600; font-size:15px;}
+.header .nav a{color:#fff; text-decoration:none; font-weight:600; font-size:15px; padding:8px 0; position:relative}
+.header .nav a::after{content:''; position:absolute; width:0; height:2px; bottom:0; left:0; background-color:#fff; transition:width 0.3s ease}
+.header .nav a:hover::after{width:100%}
 .theme-btn{background:rgba(255,255,255,0.2); border:1px solid #fff; color:#fff; padding:8px 16px; border-radius:6px; cursor:pointer; font-weight:600; font-size:14px}
+.theme-btn:hover{background:rgba(255,255,255,0.3)}
 .container{max-width:1200px;margin:30px auto;display:grid;grid-template-columns:1fr 320px;gap:40px;padding:0 20px}
 .main-card{background:var(--card);padding:40px;border-radius:12px;box-shadow:0 8px 25px rgba(0,0,0,.08)}
 h1{color:var(--text);font-size:32px;margin-top:0;font-weight:700;text-align:center;border-bottom:3px solid var(--purple);padding-bottom:15px;}
-h2{color:var(--text);font-size:24px;margin-top:30px;font-weight:600;}
+h2{color:var(--text);font-size:24px;margin-top:30px;font-weight:600; display:inline-block; position:relative; padding-bottom:5px; cursor:pointer}
+h2::after{content:''; position:absolute; left:0; bottom:0; width:0; height:3px; background:var(--purple); transition:width .3s}
+h2:hover::after{width:100%}
+p{transition:transform .2s}
+p:hover{transform:translateX(5px)}
+a{color:var(--purple); font-weight:600; text-decoration:none}
+a:hover{text-decoration:underline}
 .sidebar{background:var(--card);padding:25px;border-radius:12px;box-shadow:0 8px 25px rgba(0,0,0,.08); border:1px solid #e9ecef; height:fit-content; position:sticky; top:100px;}
 .sidebar h3{margin-top:0;color:var(--text);border-bottom:2px solid var(--purple);padding-bottom:10px; text-align:center}
-.highlight{background:var(--purple-light); color:#fff; padding:20px; border-left:5px solid var(--purple); border-radius:5px; margin:20px 0;}
+.highlight{background:var(--purple-light); color:#fff; padding:20px; border-left:5px solid var(--purple); border-radius:5px; margin:20px 0; font-size:18px}
 
-/* Tool CSS */
+/* Tool CSS with HOVER */
 .tabs{display:flex; gap:10px; margin-bottom:20px; flex-wrap:wrap}
-.tab{padding:10px 20px; border:2px solid var(--purple); border-radius:8px; cursor:pointer; font-weight:600; background:var(--card); color:var(--purple)}
+.tab{padding:10px 20px; border:2px solid var(--purple); border-radius:8px; cursor:pointer; font-weight:600; background:var(--card); color:var(--purple); transition:all .3s}
+.tab:hover{transform:translateY(-3px); box-shadow:0 5px 15px rgba(139,92,246,0.3)}
 .tab.active{background:var(--purple); color:#fff}
 .source-types{display:flex; gap:15px; margin-bottom:20px; flex-wrap:wrap}
-.source-btn{padding:8px 15px; border:1px solid #ddd; border-radius:6px; cursor:pointer; background:var(--bg)}
+.source-btn{padding:8px 15px; border:1px solid #ddd; border-radius:6px; cursor:pointer; background:var(--bg); transition:all .2s}
+.source-btn:hover{background:var(--purple); color:#fff; transform:scale(1.05)}
 .source-btn.active{background:var(--purple); color:#fff; border-color:var(--purple)}
-.tool-box input,.tool-box select{width:100%; padding:12px; border:2px solid #e9ecef; border-radius:8px; font-size:15px; margin-bottom:12px; box-sizing:border-box; background:var(--card); color:var(--text)}
+.tool-box input,.tool-box select{width:100%; padding:12px; border:2px solid #e9ecef; border-radius:8px; font-size:15px; margin-bottom:12px; box-sizing:border-box; background:var(--card); color:var(--text); transition:border .3s}
+.tool-box input:focus,.tool-box select:focus{outline:none; border-color:var(--purple)}
 .form-row{display:grid; grid-template-columns:1fr 1fr; gap:15px}
-.btn{background:var(--purple); color:#fff; padding:12px 30px; border:none; border-radius:8px; font-size:16px; font-weight:600; cursor:pointer; margin:10px 5px 0 0}
+.btn{background:var(--purple); color:#fff; padding:12px 30px; border:none; border-radius:8px; font-size:16px; font-weight:600; cursor:pointer; margin:10px 5px 0 0; transition:all .3s}
+.btn:hover{background:var(--purple-light); transform:translateY(-2px); box-shadow:0 5px 15px rgba(139,92,246,0.3)}
 .btn-copy{background:#10b981}
+.btn-copy:hover{background:#059669}
 .result{margin-top:20px; padding:20px; border:2px solid var(--purple); border-radius:8px; background:var(--bg); display:none; font-family:'Courier New', monospace;}
 .tool-links{display:flex; flex-direction:column; gap:12px; margin-top:15px}
-.tool-links a{display:block; padding:12px 15px; background:var(--bg); color:var(--text); text-decoration:none; border-radius:8px; border:1px solid #e9ecef; font-weight:500}
+.tool-links a{display:block; padding:12px 15px; background:var(--bg); color:var(--text); text-decoration:none; border-radius:8px; border:1px solid #e9ecef; font-weight:500; transition:all .3s}
+.tool-links a:hover{background:var(--purple); color:#fff; transform:translateX(8px)}
 
 .pro-footer{padding:50px 20px 20px}
 .footer-container{max-width:1200px; margin:0 auto; display:grid; grid-template-columns:repeat(3,1fr); gap:40px}
 .footer-logo{font-size:24px; font-weight:700; color:#fff;}
 .footer-col h3{color:#fff; font-size:20px; border-bottom:2px solid #fff; padding-bottom:12px;}
 .footer-col ul{list-style:none; padding:0}
-.footer-col ul li a{color:#f3e8ff; text-decoration:none; font-size:15px}
+.footer-col ul li a{color:#f3e8ff; text-decoration:none; font-size:15px; transition:all .3s}
+.footer-col ul li a:hover{color:#fff; padding-left:8px}
 .footer-bottom{background: white; margin-top: 40px;}
 .footer-bottom .copyright{color: black; font-weight: 600; text-align: center; padding: 15px 0;}
 
@@ -76,7 +92,6 @@ h2{color:var(--text);font-size:24px;margin-top:30px;font-weight:600;}
     <p style="text-align:center; font-size:18px">Generate APA, MLA, Chicago, Harvard citations for any source in 1 click</p>
 
     <div class="tool-box">
-      <!-- Citation Style Tabs -->
       <div class="tabs">
         <div class="tab active" onclick="selectTab(this,'apa')">APA</div>
         <div class="tab" onclick="selectTab(this,'mla')">MLA</div>
@@ -84,7 +99,6 @@ h2{color:var(--text);font-size:24px;margin-top:30px;font-weight:600;}
         <div class="tab" onclick="selectTab(this,'harvard')">Harvard</div>
       </div>
 
-      <!-- Source Type -->
       <label><b>Source Type:</b></label>
       <div class="source-types">
         <div class="source-btn active" onclick="selectSource(this,'website')">Website</div>
@@ -93,7 +107,6 @@ h2{color:var(--text);font-size:24px;margin-top:30px;font-weight:600;}
         <div class="source-btn" onclick="selectSource(this,'video')">Video</div>
       </div>
 
-      <!-- Form Fields -->
       <div id="form-fields">
         <input type="text" id="author" placeholder="Author Name: John Smith">
         <input type="text" id="title" placeholder="Title of Source *">
@@ -117,34 +130,49 @@ h2{color:var(--text);font-size:24px;margin-top:30px;font-weight:600;}
     </div>
 
     <h2>Best Free Online Citation Generator Tool 2026</h2>
-    <p>If you are looking for the <b>best free online citation generator tool</b> similar to SmallSEOTools, you are at the right place. Our tool supports APA 7th, MLA 9th, Chicago and Harvard styles for Website, Book, Journal and Video sources.</p>
-    <p>In 2026, academic writing requires perfect citations. One mistake in comma or dot can cost you marks. Manual citation takes 10 minutes per source. Our <b>free citation generator for students</b> does it in 2 seconds.</p>
-    <p>Unlike other tools, we don't show ads inside the tool and we don't limit you. Generate unlimited citations for your thesis, research paper, assignment.</p>
+    <p>If you are looking for the <b>best free online citation generator tool</b> similar to SmallSEOTools, you are at the right place. Smart Tools Hub provides a lightning fast and 100% free citation maker that works directly in your browser without any signup or login requirement.</p>
+    <p>In 2026, academic writing and research has become more competitive than ever. Whether you are a university student, PhD scholar, content writer or blogger, you need to cite your sources properly to avoid plagiarism. Google's AI and university plagiarism checkers can easily detect uncited content.</p>
+    <p>But manually writing citations in APA, MLA, Chicago and Harvard format is time consuming and confusing. One small mistake in punctuation can make your whole reference wrong and you can lose marks. That is why using a professional <b>online citation generator for students and researchers</b> is essential in 2026.</p>
 
-    <h2>How To Use This Citation Generator Tool?</h2>
-    <p><b>Step 1:</b> Select Citation Style: APA, MLA, Chicago or Harvard from tabs above.</p>
-    <p><b>Step 2:</b> Select Source Type: Website, Book, Journal or Video.</p>
-    <p><b>Step 3:</b> Fill the required fields like Author, Title, Year, Publisher, URL.</p>
-    <p><b>Step 4:</b> Click "Generate Citation" and then "Copy Citation" button.</p>
+    <h2>What Is Citation and Why Is It Important In Academic Writing?</h2>
+    <p>Citation is the process of giving credit to the original author of information, ideas or quotes that you use in your work. Proper citation helps you avoid plagiarism and makes your research paper more credible and trustworthy.</p>
+    <p>There are 4 main citation styles used worldwide. <b>APA</b> is used in Psychology, Education and Social Sciences. <b>MLA</b> is used in Literature, Arts and Humanities. <b>Chicago</b> is used in History and Publishing. <b>Harvard</b> is popular in UK and Australia universities.</p>
+    <p>Google Scholar and universities also check for proper citations. If you don't cite sources, your paper can be rejected. With our <b>free citation generator tool online</b>, you can generate 100+ citations in 5 minutes with 100% accuracy.</p>
+
+    <h2>How To Use Our Free Citation Generator Tool In 3 Steps?</h2>
+    <p>We designed this tool to be super simple for beginners. You don't need any training or tutorial.</p>
+    <p><b>Step 1: Select Citation Style</b><br>
+    Choose from APA, MLA, Chicago or Harvard from the tabs above. Default is APA 7th edition which is most popular.</p>
+    <p><b>Step 2: Select Source Type</b><br>
+    Click on Website, Book, Journal or Video. The form will adjust automatically based on your selection.</p>
+    <p><b>Step 3: Fill Details and Generate</b><br>
+    Enter author name, title, year, publisher and URL. Click "Generate Citation" button. Your perfect citation will appear below. Click "Copy Citation" to copy it.</p>
 
     <h2>Supported Citation Styles and Source Types</h2>
-    <p><b>APA 7th Edition:</b> Most used in Psychology, Education, Business. Author-Date format.</p>
-    <p><b>MLA 9th Edition:</b> Used in Literature, Arts. Author-Page format.</p>
-    <p><b>Chicago Style:</b> Used in History. Supports both Notes and Author-Date.</p>
-    <p><b>Harvard Style:</b> Popular in UK and Australia universities.</p>
-    <p><b>Source Types:</b> Website, Book, Journal Article, YouTube Video, Magazine and more.</p>
+    <p><b>APA 7th Edition:</b> Most used in Psychology, Nursing, Business and Social Science. Format: Author, A. A. (Year). Title. Publisher. URL</p>
+    <p><b>MLA 9th Edition:</b> Used by English Literature and Arts students. Format: Author Last Name, First Name. "Title." Publisher, Year. URL</p>
+    <p><b>Chicago Style:</b> Used by History and Book authors. Supports both Notes-Bibliography and Author-Date system.</p>
+    <p><b>Harvard Style:</b> Author-Date system. Popular in UK and Australia. Format: Author, Year. Title. Publisher. Available at: URL</p>
+    <p><b>Source Types:</b> Website, Book, Journal Article, YouTube Video, Magazine, Newspaper and more coming soon.</p>
 
-    <h2>Why Choose Our Free Citation Generator Over Others?</h2>
-    <p><b>1. 100% Free Forever:</b> No premium, no daily limit, no signup.</p>
-    <p><b>2. Mobile Friendly:</b> Works perfectly on Android and iPhone like SmallSEOTools.</p>
-    <p><b>3. 4 Major Styles:</b> All latest editions supported.</p>
-    <p><b>4. One Click Copy:</b> Copy formatted citation directly.</p>
-    <p><b>5. No Ads in Tool Area:</b> Clean interface for better focus.</p>
+    <h2>Why Choose Our Free Citation Generator Over SmallSEOTools?</h2>
+    <p><b>1. 100% Free Forever:</b> No premium, no daily limit, no signup. Generate unlimited citations.</p>
+    <p><b>2. Mobile Friendly:</b> Works perfectly on Android and iPhone. Better than desktop tools.</p>
+    <p><b>3. Clean Interface:</b> No ads inside tool area. Focus on your work without distraction.</p>
+    <p><b>4. Latest Editions:</b> APA 7th and MLA 9th edition supported with latest rules.</p>
+    <p><b>5. One Click Copy:</b> Copy formatted citation directly to clipboard.</p>
+
+    <h2>Tips To Avoid Plagiarism Using Proper Citations in 2026</h2>
+    <p><b>Tip 1:</b> Always cite direct quotes with page numbers in APA and MLA style.</p>
+    <p><b>Tip 2:</b> Use our tool to generate both in-text citations and reference list.</p>
+    <p><b>Tip 3:</b> Double check author spelling and publication year before submitting paper.</p>
+    <p><b>Tip 4:</b> For websites, add access date in APA style: Retrieved Month Day, Year, from URL</p>
 
     <h2>FAQ</h2>
-    <p><b>Q1: Is this citation generator accurate?</b><br>A: Yes, it follows official APA, MLA, Chicago manuals 2026 edition.</p>
-    <p><b>Q2: Can I cite websites and YouTube videos?</b><br>A: Yes, select "Website" or "Video" from source type.</p>
-    <p><b>Q3: Is it free for university students?</b><br>A: Yes 100% free for all students and researchers.</p>
+    <p><b>Q1: Is this citation generator tool really 100% free?</b><br>A: Yes. It is 100% free forever. No signup, no credit card, no premium version.</p>
+    <p><b>Q2: Which citation styles does this tool support?</b><br>A: Currently we support APA 7th, MLA 9th, Chicago and Harvard. More styles coming soon.</p>
+    <p><b>Q3: Can I use this tool for my university research paper?</b><br>A: Yes. Our citations follow official APA, MLA and Chicago guidelines and are accepted by universities worldwide.</p>
+    <p><b>Q4: Does this tool work on mobile phone?</b><br>A: Yes. It is fully mobile responsive and works perfectly on Android and iPhone.</p>
 
     <p style="margin-top:40px; text-align:center; font-size:20px; font-weight:700;">Smart Tools Hub - Cite Smart. Write Better.</p>
   </div>
@@ -242,7 +270,6 @@ function generateCitation(){
   if(!title){ alert('Please enter Title'); return; }
   
   let citation = '';
-  
   if(currentStyle === 'apa'){
     citation = author ? `${author}. (${year}). <i>${title}</i>. ${publisher}. ${url}` : `<i>${title}</i>. (${year}). ${publisher}. ${url}`;
   }
