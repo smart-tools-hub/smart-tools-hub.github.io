@@ -5,70 +5,63 @@
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
 <title>Free Online Favicon Generator Tool | Convert JPG PNG to ICO 2026</title>
 <meta name="description" content="Best free online favicon generator tool 2026. Upload JPG, PNG, JPEG, GIF and convert to favicon.ico. 100% free, no signup, mobile friendly tool for websites.">
-<link href="https://fonts.googleapis.com/css2?family=Poppins:wght@400;600;700;800&display=swap" rel="stylesheet">
+<link href="https://fonts.googleapis.com/css2?family=Poppins:wght@400;600;700&display=swap" rel="stylesheet">
 <style>
 :root{ --purple:#8b5cf6; --purple-light:#a78bfa; --bg:#f7f9fc; --card:#ffffff; --text:#1a1a1a }
 [data-theme="dark"]{ --bg:#0f0f0f; --card:#1a1a1a; --text:#e5e5e5; --purple:#7c3aed }
-*{box-sizing:border-box}
 body{font-family:'Poppins',Arial,sans-serif;margin:0;background:var(--bg);color:var(--text);line-height:1.9;font-size:17px; transition:background.3s, color.3s}
-
-/* HEADER FIX - FULL WIDTH + BOLD */
-.header-wrap{background:#8b5cf6; width:100%}
-.header{max-width:1400px; margin:0 auto; display:flex; justify-content:space-between; align-items:center; padding:20px 40px; color:#fff; flex-wrap:wrap}
-.header.logo{font-size:26px; font-weight:800; color:#fff}
-.header.nav{display:flex; gap:30px; flex-wrap:wrap; align-items:center}
-.header.nav a{color:#fff; text-decoration:none; font-weight:700; font-size:16px; padding:8px 0; position:relative}
+.header-wrap,.footer-wrap{background:var(--purple)}
+.header{display:flex; justify-content:space-between; align-items:center; padding:18px 20px; color:#fff; flex-wrap:wrap; max-width:1200px; margin:0 auto}
+.header.logo{font-size:24px; font-weight:700;}
+.header.nav{display:flex; gap:25px; flex-wrap:wrap; align-items:center}
+.header.nav a{color:#fff; text-decoration:none; font-weight:600; font-size:15px; padding:8px 0; position:relative}
 .header.nav a::after{content:''; position:absolute; width:0; height:2px; bottom:0; left:0; background-color:#fff; transition:width 0.3s ease}
 .header.nav a:hover::after{width:100%}
-.theme-btn{background:rgba(255,255,255,0.2); border:1px solid #fff; color:#fff; padding:10px 18px; border-radius:8px; cursor:pointer; font-weight:700; font-size:15px}
-
-.container{max-width:1400px;margin:30px auto;display:grid;grid-template-columns:1fr 320px;gap:40px;padding:0 40px}
-.main-card{background:var(--card);padding:40px;border-radius:12px;box-shadow:0 8px 25px rgba(0,0,0,.08); text-align:left}
-h1{color:var(--text);font-size:32px;margin-top:0;font-weight:800;text-align:left;border-bottom:3px solid var(--purple);padding-bottom:15px;}
-h2{color:var(--text);font-size:24px;margin-top:30px;font-weight:700; display:block; position:relative; padding-bottom:5px}
+.theme-btn{background:rgba(255,255,255,0.2); border:1px solid #fff; color:#fff; padding:8px 16px; border-radius:6px; cursor:pointer; font-weight:600; font-size:14px}
+.theme-btn:hover{background:rgba(255,255,255,0.3)}
+.container{max-width:1200px;margin:30px auto;display:grid;grid-template-columns:1fr 320px;gap:40px;padding:0 20px}
+.main-card{background:var(--card);padding:40px;border-radius:12px;box-shadow:0 8px 25px rgba(0,0,0,.08)}
+h1{color:var(--text);font-size:32px;margin-top:0;font-weight:700;text-align:center;border-bottom:3px solid var(--purple);padding-bottom:15px;}
+h2{color:var(--text);font-size:24px;margin-top:30px;font-weight:600; display:inline-block; position:relative; padding-bottom:5px; cursor:pointer}
 h2::after{content:''; position:absolute; left:0; bottom:0; width:0; height:3px; background:var(--purple); transition:width.3s}
 h2:hover::after{width:100%}
-p{transition:transform.2s; text-align:left}
+p{transition:transform.2s}
 p:hover{transform:translateX(5px)}
 a{color:var(--purple); font-weight:600; text-decoration:none}
 a:hover{text-decoration:underline}
 .sidebar{background:var(--card);padding:25px;border-radius:12px;box-shadow:0 8px 25px rgba(0,0,0,.08); border:1px solid #e9ecef; height:fit-content; position:sticky; top:100px;}
-.sidebar h3{margin-top:0;color:var(--text);border-bottom:2px solid var(--purple);padding-bottom:10px; text-align:center; font-weight:700}
-.highlight{background:var(--purple-light); color:#fff; padding:20px; border-left:5px solid var(--purple); border-radius:5px; margin:20px 0; font-size:18px; text-align:left}
+.sidebar h3{margin-top:0;color:var(--text);border-bottom:2px solid var(--purple);padding-bottom:10px; text-align:center}
+.highlight{background:var(--purple-light); color:#fff; padding:20px; border-left:5px solid var(--purple); border-radius:5px; margin:20px 0; font-size:18px}
 
-/* TOOL CSS - آپ والا ہی ہے */
-.upload-box{border:3px dashed #e9ecef; border-radius:12px; padding:50px 20px; background:var(--bg); margin:20px 0; transition:all.3s}
+/* FAVICON TOOL CSS */
+.upload-box{border:3px dashed #e9ecef; border-radius:12px; padding:50px 20px; background:var(--bg); margin:20px 0; text-align:center; transition:all.3s}
 .upload-box:hover{border-color:var(--purple)}
 .upload-icon{font-size:60px; margin-bottom:15px}
 .file-types{display:flex; gap:10px; justify-content:center; margin:15px 0; flex-wrap:wrap}
 .file-types span{background:var(--card); padding:5px 12px; border-radius:6px; border:1px solid #ddd; font-weight:600; font-size:14px}
-.btn{background:var(--purple); color:#fff; padding:14px 40px; border:none; border-radius:8px; font-size:16px; font-weight:700; cursor:pointer; margin:10px 5px; transition:all.3s}
-.btn:hover{background:var(--purple-light); transform:translateY(-2px)}
+.btn{background:var(--purple); color:#fff; padding:12px 30px; border:none; border-radius:8px; font-size:16px; font-weight:600; cursor:pointer; margin:10px 5px 0 0; transition:all.3s}
+.btn:hover{background:var(--purple-light); transform:translateY(-2px); box-shadow:0 5px 15px rgba(139,92,246,0.3)}
 .btn-generate{background:#2563eb; display:none}
-.preview-section{display:none; margin:20px 0}
+.preview-section{display:none; margin:20px 0; text-align:center}
 .preview-section img{max-width:100px; border-radius:8px; border:2px solid var(--purple)}
 .tool-links{display:flex; flex-direction:column; gap:12px; margin-top:15px}
 .tool-links a{display:block; padding:12px 15px; background:var(--bg); color:var(--text); text-decoration:none; border-radius:8px; border:1px solid #e9ecef; font-weight:500; transition:all.3s}
 .tool-links a:hover{background:var(--purple); color:#fff; transform:translateX(8px)}
 
-/* FOOTER FIX - CENTER + BOLD */
-.footer-wrap{background:#8b5cf6; width:100%}
-.pro-footer{padding:50px 40px 0 40px}
-.footer-container{max-width:1400px; margin:0 auto; display:grid; grid-template-columns:repeat(3,1fr); gap:40px}
-.footer-logo{font-size:26px; font-weight:800; color:#fff;}
-.footer-col h3{color:#fff; font-size:20px; font-weight:700; border-bottom:2px solid #fff; padding-bottom:12px;}
+.pro-footer{padding:50px 20px 20px}
+.footer-container{max-width:1200px; margin:0 auto; display:grid; grid-template-columns:repeat(3,1fr); gap:40px}
+.footer-logo{font-size:24px; font-weight:700; color:#fff;}
+.footer-col h3{color:#fff; font-size:20px; border-bottom:2px solid #fff; padding-bottom:12px;}
 .footer-col ul{list-style:none; padding:0}
-.footer-col ul li{margin-bottom:10px}
-.footer-col ul li a{color:#f3e8ff; text-decoration:none; font-size:15px; font-weight:600; transition:all.3s}
+.footer-col ul li a{color:#f3e8ff; text-decoration:none; font-size:15px; transition:all.3s}
 .footer-col ul li a:hover{color:#fff; padding-left:8px}
-.footer-bottom{background: #ffffff; width:100%; margin-top:40px}
-.footer-bottom.copyright{color: #000; font-weight: 800; text-align: center; padding: 18px 0; margin:0; font-size:16px}
+.footer-bottom{background: white; margin-top: 40px;}
+.footer-bottom.copyright{color: black; font-weight: 600; text-align: center; padding: 15px 0;}
 
 @media(max-width:900px){
-.container{grid-template-columns:1fr; padding:0 20px}
+.container{grid-template-columns:1fr}
 .sidebar{position:static}
 .footer-container{grid-template-columns:1fr}
-.header{flex-direction:column; gap:15px}
 </style>
 </head>
 <body>
@@ -91,7 +84,7 @@ a:hover{text-decoration:underline}
     <h1>Free Online Favicon Generator Tool</h1>
     <p style="text-align:center; font-size:18px">Upload JPG, PNG, JPEG, GIF and convert to favicon.ico in seconds</p>
 
-    <!-- TOOL START - آپ کا پورا tool -->
+    <!-- TOOL START -->
     <div class="upload-box" id="dropArea">
       <div class="upload-icon">📁</div>
       <div class="file-types">
@@ -162,7 +155,7 @@ a:hover{text-decoration:underline}
     <p><b>Q2: Is this favicon generator tool free?</b><br>A: Yes 100% free forever. No limit, no premium version.</p>
     <p><b>Q3: Can I use logo with text as favicon?</b><br>A: Yes but keep text big. Small text becomes unreadable at 16x16 size.</p>
 
-    <p style="margin-top:40px; text-align:center; font-size:20px; font-weight:800;">Smart Tools Hub - Brand Smart. Rank Better.</p>
+    <p style="margin-top:40px; text-align:center; font-size:20px; font-weight:700;">Smart Tools Hub - Brand Smart. Rank Better.</p>
   </div>
 
  <div class="sidebar">
