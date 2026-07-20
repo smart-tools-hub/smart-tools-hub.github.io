@@ -3,224 +3,284 @@
 <head>
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
-<title>Free Online Image Compressor - Reduce JPG PNG to 100KB 50KB</title>
-<meta name="description" content="Free online image compressor tool to reduce image size to 100KB, 50KB, 20KB without losing quality. Compress JPG, PNG, WEBP images for website, forms. 100% mobile friendly.">
-<meta name="keywords" content="image compressor, compress image to 100kb, reduce image size online, compress jpg to 50kb, free image compressor no quality loss">
+<title>Free Online Image Compressor Tool | Compress JPG PNG to 100KB 50KB</title>
+<meta name="description" content="Best free online image compressor tool 2026. Reduce image size to 100KB, 50KB, 20KB instantly. 100% free, no signup, mobile friendly and 100% private.">
+<link href="https://fonts.googleapis.com/css2?family=Poppins:wght@400;600;700&display=swap" rel="stylesheet">
 <link rel="canonical" href="https://smart-tools-hub.github.io/image-compressor.html">
-<meta name="robots" content="index, follow">
 <style>
-:root{--primary:#1a73e8;--bg:#f7f9fc;--card:#fff;--text:#202124}
-*{margin:0;padding:0;box-sizing:border-box;font-family: -apple-system,BlinkMacSystemFont,"Segoe UI",Roboto,Arial,sans-serif}
-body{background:var(--bg);color:var(--text);line-height:1.7}
-.container{max-width:1000px;margin:0 auto;padding:15px}
-.header{text-align:center;padding:25px 0}
-.header h1{font-size:28px;color:var(--primary);font-weight:700}
-.header p{font-size:15px;color:#5f6368;margin-top:5px}
-.tool-box{background:var(--card);border-radius:12px;padding:30px;box-shadow:0 2px 10px rgba(0,0,0,0.08);margin-bottom:30px}
-.upload-area{border:2px dashed #dadce0;border-radius:10px;padding:40px 20px;text-align:center;transition:.3s;cursor:pointer}
-.upload-area:hover{border-color:var(--primary);background:#f1f8ff}
-.upload-icon{font-size:55px;margin-bottom:12px}
-.btn{background:var(--primary);color:#fff;border:none;padding:12px 28px;border-radius:8px;font-size:16px;font-weight:500;cursor:pointer;margin-top:15px;display:inline-block}
-.btn:hover{background:#1557b0}
-.btn-secondary{background:#34a853}
-.controls{display:flex;gap:15px;flex-wrap:wrap;justify-content:center;margin-top:20px}
-.controls select{padding:10px;border:1px solid #dadce0;border-radius:6px;font-size:14px}
-.result{display:none;text-align:center;margin-top:20px}
-.content{background:var(--card);border-radius:12px;padding:30px;box-shadow:0 2px 10px rgba(0,0,0,0.08)}
-.content h2{font-size:24px;color:var(--primary);margin:25px 0 12px}
-.content h3{font-size:18px;margin:18px 0 8px}
-.content p{margin-bottom:12px;font-size:15px}
-.content ul{margin-left:20px;margin-bottom:12px}
-table{width:100%;border-collapse:collapse;margin:15px 0;font-size:14px}
-table th,table td{border:1px solid #dadce0;padding:10px;text-align:left}
-table th{background:var(--primary);color:#fff}
-.faq-item{border-bottom:1px solid #eee;padding:12px 0}
-@media(max-width:768px){
-.header h1{font-size:22px}
-.tool-box,.content{padding:20px}
-.upload-area{padding:25px 15px}
-.controls{flex-direction:column}
+:root{
+  --purple:#8b5cf6;
+  --purple-light:#a78bfa;
+  --black:#1a1a1a;
+  --bg:#f7f9fc;
+  --card:#ffffff;
+  --text:#1a1a1a
 }
+[data-theme="dark"]{
+  --bg:#0f0f0f;
+  --card:#1a1a1a;
+  --text:#e5e5e5;
+  --purple:#7c3aed
+}
+body{font-family:'Poppins',Arial,sans-serif;margin:0;background:var(--bg);color:var(--text);line-height:1.9;font-size:17px; transition:background.3s, color.3s}
+
+.header-wrap,.footer-wrap{background:var(--purple)}
+.header{display:flex; justify-content:space-between; align-items:center; padding:12px 20px; color:#fff; flex-wrap:wrap; max-width:1100px; margin:0 auto}
+.header.logo{font-size:22px; font-weight:700; display:flex; align-items:center; gap:8px}
+.header.nav{display:flex; gap:18px; flex-wrap:wrap; align-items:center}
+.header.nav a{color:#fff; text-decoration:none; font-weight:600; font-size:14px; padding:6px 0; position:relative}
+.header.nav a:hover{color:#fff}
+.header.nav a::after{content:''; position:absolute; width:0; height:2px; bottom:0; left:0; background-color:#fff; transition:width 0.3s ease}
+.header.nav a:hover::after{width:100%}
+
+.theme-btn{background:rgba(255,255,255,0.2); border:1px solid #fff; color:#fff; padding:6px 12px; border-radius:6px; cursor:pointer; font-weight:600; font-size:13px}
+.theme-btn:hover{background:rgba(255,255,255,0.3)}
+
+.container{max-width:1200px;margin:30px auto;display:grid;grid-template-columns:1fr 320px;gap:40px;padding:0 20px}
+.main-card{background:var(--card);padding:40px;border-radius:12px;box-shadow:0 8px 25px rgba(0,0,0,.08)}
+h1{color:var(--text);font-size:32px;margin-top:0;font-weight:700;text-align:center;border-bottom:3px solid var(--purple);padding-bottom:15px;}
+h2{color:var(--text);font-size:24px;margin-top:30px;font-weight:600; display:inline-block; position:relative; padding-bottom:5px}
+h2::after{content:''; position:absolute; left:0; bottom:0; width:0; height:3px; background:var(--purple); transition:width.3s}
+h2:hover::after{width:100%}
+p{transition:transform.2s}
+p:hover{transform:translateX(5px)}
+.sidebar{background:var(--card);padding:25px;border-radius:12px;box-shadow:0 8px 25px rgba(0,0,0,.08); border:1px solid #e9ecef; height:fit-content; position:sticky; top:100px; text-align:center}
+.sidebar h3{margin-top:0;color:var(--text);border-bottom:2px solid var(--purple);padding-bottom:10px; text-align:center}
+.highlight{background:var(--purple-light); color:#fff; padding:20px; border-left:5px solid var(--purple); border-radius:5px; margin:20px 0; font-size:18px;}
+
+.tool-box input[type="file"]{width:100%; padding:14px; border:2px dashed var(--purple); border-radius:8px; font-size:16px; margin-bottom:15px; background:var(--bg); color:var(--text); cursor:pointer}
+.tool-box select{padding:12px; border:2px solid #e9ecef; border-radius:8px; font-size:16px; margin:10px 0; background:var(--card); color:var(--text); width:100%}
+.btn{background:var(--purple); color:#fff; padding:12px 30px; border:none; border-radius:8px; font-size:16px; font-weight:600; cursor:pointer; margin:5px 10px 5px 0}
+.btn:hover{background:var(--purple-light)}
+.stats{margin:15px 0; font-weight:600; font-size:17px; color:var(--purple)}
+.result{margin-top:20px; padding:20px; border:2px dashed #e9ecef; border-radius:8px; min-height:150px; background:var(--bg); word-wrap:break-word; text-align:center}
+.result img{max-width:100%; border-radius:8px; margin:15px 0}
+.tool-links{display:flex; flex-direction:column; gap:12px; margin-top:15px}
+.tool-links a{display:block; padding:12px 15px; background:var(--bg); color:var(--text); text-decoration:none; border-radius:8px; border:1px solid #e9ecef; font-weight:500; transition:0.2s}
+.tool-links a:hover{background:var(--purple); color:#fff; transform:translateX(5px)}
+
+.pro-footer{padding:30px 20px 15px}
+.footer-container{max-width:1100px; margin:0 auto; display:grid; grid-template-columns:repeat(3,1fr); gap:30px}
+.footer-logo{font-size:22px; font-weight:700; color:#fff}
+.footer-col h3{color:#fff; border-bottom:2px solid #fff; padding-bottom:8px; margin-bottom:12px; font-size:18px}
+.footer-col ul{list-style:none; padding:0}
+.footer-col ul li{margin-bottom:8px}
+.footer-col ul li a{color:#f3e8ff; text-decoration:none; transition:color.3s; font-size:14px}
+.footer-col ul li a:hover{color:#fff; text-decoration:underline}
+.contact-info h4{color:#fff; margin-bottom:8px}
+.contact-info a{color:#f3e8ff; text-decoration:none; font-size:14px}
+.footer-bottom.copyright {background: white; color: black; padding: 12px 0; margin: 0;}
+.footer-bottom{text-align:center; margin-top:20px; padding-top:15px; border-top:1px solid rgba(255,255,255,0.3); color:#f3e8ff; font-size:14px; max-width:1100px; margin:20px auto 0}
+
+@media(max-width:900px){
+ .container{grid-template-columns:1fr}
+ .sidebar{position:sticky; top:0}
+ .footer-container{grid-template-columns:1fr}
+ .header{flex-direction:column; gap:10px}
+ .header.nav{justify-content:center}
+ .main-card{padding:20px}
 </style>
 </head>
 <body>
+
+<div class="header-wrap">
+  <div class="header">
+   <div class="logo">🔧 SMART TOOLS HUB</div>
+    <div class="nav">
+      <a href="/spell-checker.html">Spell Checker</a>
+      <a href="/grammar-checker.html">Grammar Checker</a>
+      <a href="/free-word-counter.html">Word Counter</a>
+      <a href="/case-converter.html">Case Converter</a>
+    </div>
+    <button class="theme-btn" onclick="toggleTheme()">🌙 Dark</button>
+  </div>
+</div>
+
 <div class="container">
+  <div class="main-card">
+    <h1>Free Online Image Compressor Tool</h1>
 
-<!-- TOOL SECTION - SAME AS SPELL CHECKER STRUCTURE -->
-<div class="header">
-    <h1>IMAGE COMPRESSOR TOOL</h1>
-    <p>Reduce Image Size to 100KB, 50KB, 20KB Online For Free</p>
-</div>
+    <div class="tool-box">
+      <p>Reduce your image size to 100KB, 50KB, 20KB instantly. Upload JPG, PNG, WEBP image below.</p>
+      <input type="file" id="fileInput" accept="image/*">
+      <label for="targetSize"><b>Select Target Size:</b></label>
+      <select id="targetSize">
+        <option value="100">100 KB</option>
+        <option value="50">50 KB</option>
+        <option value="20">20 KB</option>
+        <option value="200">200 KB</option>
+        <option value="500">500 KB</option>
+      </select>
+      <button class="btn" onclick="compressImage()">Compress Image</button>
+      <button class="btn" onclick="clearAll()" style="background:#6c757d">Clear</button>
 
-<div class="tool-box">
-    <div class="upload-area" id="dropZone">
-        <div class="upload-icon">📦</div>
-        <p><b>Drag & Drop</b> your JPG, PNG, WEBP images here</p>
-        <p style="font-size:13px;color:#5f6368;margin:8px 0;">or</p>
-        <input type="file" id="fileInput" accept="image/*" multiple style="display:none">
-        <button class="btn" onclick="document.getElementById('fileInput').click()">Upload Your Images</button>
+      <div class="stats" id="stats"></div>
+      <div id="result" class="result">Your compressed image and download link will appear here...</div>
     </div>
 
-    <div class="controls" id="controls" style="display:none;">
-        <select id="targetSize">
-            <option value="0">Select Target Size</option>
-            <option value="20">20 KB</option>
-            <option value="50">50 KB</option>
-            <option value="100">100 KB</option>
-            <option value="200">200 KB</option>
-        </select>
-        <select id="quality">
-            <option value="0.7">High Quality</option>
-            <option value="0.5">Medium Quality</option>
-            <option value="0.3">Low Size</option>
-        </select>
-        <button class="btn btn-secondary" id="compressBtn">Compress Images</button>
+    <div class="highlight">
+    <p><b>100% Free & Private</b><br>
+    No signup required. All compression happens in your browser. We never store your images.</p>
     </div>
 
-    <div class="result" id="result">
-        <h3>✅ Compression Complete!</h3>
-        <p id="sizeInfo"></p>
-        <a id="downloadBtn" class="btn">Download Compressed Image</a>
+    <h2>Best Free Online Image Compressor Tool 2026</h2>
+    <p>Are you searching for the <b>best free online image compressor tool</b> to reduce image size? You are at the right place. Smart Tools Hub provides a lightning fast and 100% free image compressor that works directly in your browser. Whether you are a student uploading forms, a blogger optimizing website images, or an ecommerce seller, our tool will help you compress images to exact <b>100KB, 50KB, 20KB</b> without losing visible quality.</p>
+    <p>In today’s digital world, website speed is everything. Google PageSpeed and Core Web Vitals depend heavily on image size. One 2MB image can slow down your whole website and hurt your SEO ranking. That is why using a professional <b>online image compressor</b> has become essential for everyone who publishes content online.</p>
+
+    <h2>Why You Need an Online Image Compressor Tool?</h2>
+    <p>Manual compression in Photoshop takes a lot of time and still reduces quality badly. Our smart <b>image compressor tool online free</b> solves this problem in 2 seconds. Here are the top reasons why thousands of people use our tool daily:</p>
+    <p><b>1. Save Time:</b> Compressing a 5MB image manually can take 10 minutes. Our tool does it in 2 seconds.<br>
+    <b>2. Improve Website Speed:</b> Compressed images load 5x faster. This improves user experience and Google ranking.<br>
+    <b>3. For Job and University Forms:</b> All portals like NTS, PPSC, NADRA, Universities ask for 20KB to 50KB photos. We help you meet exact requirements.<br>
+    <b>4. Save Storage and Bandwidth:</b> Reduce server and cloud storage costs by up to 80%.</p>
+
+    <h2>Key Features of Our Free Image Compressor</h2>
+    <p>We built this tool with simplicity and power in mind. Unlike other websites that add watermarks, our <b>free image compressor no signup</b> gives clean output.</p>
+    <p><b>Exact KB Target:</b> Select 100KB, 50KB, or 20KB and tool will auto-adjust quality to match.<br>
+    <b>Unlimited Usage:</b> There is no daily limit. Compress 10 images or 10,000 images, it’s completely free.<br>
+    <b>Mobile Friendly Design:</b> Our tool is 100% responsive. It works perfectly on Android phones, iPhones, iPads and desktops.<br>
+    <b>100% Private:</b> We take privacy seriously. All compression happens on your device. Images are never uploaded to any server.<br>
+    <b>Multiple Formats:</b> Supports JPG, JPEG, PNG, and WEBP formats.</p>
+
+    <h2>How to Use Our Image Compressor Tool Step by Step</h2>
+    <p>Using the <b>best image compressor for students and bloggers</b> is super easy. Follow these 3 simple steps:</p>
+    <p><b>Step 1:</b> Click "Choose File" button and select your JPG or PNG image from device.<br>
+    <b>Step 2:</b> Select your target size from dropdown like 100KB or 50KB.<br>
+    <b>Step 3:</b> Click the "Compress Image" button. Your compressed image with download button will appear below.</p>
+
+    <h2>Common Use Cases for Image Compression</h2>
+    <p>Our advanced compressor is trained to handle all types of images for different needs.</p>
+    <p><b>For Students:</b> University admission forms, scholarship applications, and job portals need small size photos.<br>
+    <b>For Bloggers and SEO Experts:</b> Publishing lightweight images helps you rank on Google and reduces bounce rate.<br>
+    <b>For Ecommerce Sellers:</b> Amazon, Daraz, Shopify product images need to be fast loading for better sales.<br>
+    <b>For Social Media:</b> Compress images before uploading to WhatsApp, Facebook, Instagram to save data.</p>
+
+    <h2>Is This Image Compressor Better Than TinyPNG?</h2>
+    <p>TinyPNG is good but it has daily limits and no exact KB target. Our tool is different. It is <b>completely free, no login required, exact size target, and works offline</b> once the page loads. For quick image compression, this is the fastest option available online in 2026.</p>
+
+    <h2>Frequently Asked Questions - FAQ</h2>
+    <p><b>Q1: Is this image compressor tool really free?</b><br>A: Yes. It is 100% free forever. No hidden charges and no premium plan.</p>
+    <p><b>Q2: Do you store my images or data?</b><br>A: No. We respect your privacy. Everything runs in your browser and nothing is saved on our servers.</p>
+    <p><b>Q3: Can I compress to exact 100KB?</b><br>A: Yes. Select target size from dropdown and tool will automatically adjust quality to reach closest size.</p>
+    <p><b>Q4: Does it work on mobile phones?</b><br>A: Yes. The tool is fully mobile friendly and responsive on all devices.</p>
+    <p><b>Q5: Will quality be reduced too much?</b><br>A: We use smart compression. For 100KB target, quality loss is barely visible to human eye.</p>
+
+    <p style="margin-top:40px; text-align:center; font-size:20px; font-weight:700;">Smart Tools Hub - Precision. Speed. Simplicity.</p>
+  </div>
+
+ <div class="sidebar">
+  <h3>Other Tools</h3>
+  <div class="tool-links">
+   <a href="/spell-checker.html">Spell Checker</a>
+   <a href="/grammar-checker.html">Grammar Checker</a>
+   <a href="/free-word-counter.html">Word Counter</a>
+   <a href="/case-converter.html">Case Converter</a>
+  </div>
+</div>
+</div>
+
+<div class="footer-wrap">
+  <footer class="pro-footer">
+    <div class="footer-container">
+      <div class="footer-col">
+        <h2 class="footer-logo">🔧 SMART TOOLS HUB</h2>
+        <p style="color:#f3e8ff">Best free online tools for Students, SEO Experts, and Writers. 100% Free, No Signup Required.</p>
+        <div class="contact-info">
+          <h4>Contact Us</h4>
+          <a href="mailto:ptacalculatorpk@gmail.com">ptacalculatorpk@gmail.com</a>
+        </div>
+      </div>
+      <div class="footer-col">
+        <h3>Popular Tools</h3>
+        <ul>
+        <li><a href="/spell-checker.html">Spell Checker</a></li>
+        <li><a href="/grammar-checker.html">Grammar Checker</a></li>
+        <li><a href="/free-word-counter.html">Word Counter</a></li>
+        <li><a href="/case-converter.html">Case Converter</a></li>
+        </ul>
+      </div>
+      <div class="footer-col">
+        <h3>Quick Links</h3>
+        <ul>
+          <li><a href="/">Home</a></li>
+          <li><a href="/about-us/">About Us</a></li>
+          <li><a href="/contact-us/">Contact Us</a></li>
+          <li><a href="/privacy-policy/">Privacy Policy</a></li>
+        </ul>
+      </div>
     </div>
-</div>
-
-<!-- SEO CONTENT SECTION - 1200+ WORDS -->
-<div class="content">
-<h2>Free Online Image Compressor - Compress JPG PNG WEBP to 100KB</h2>
-<p>Is your website loading slow because of heavy images? Do you need to <b>compress image to 100KB</b> for a government job form? Our Free Online Image Compressor Tool is the fastest and easiest way to reduce image size without losing visible quality.</p>
-<p>This tool works 100% in your browser. That means your images are never uploaded to any server. It’s 100% private, 100% free, and works perfectly on mobile, tablet and desktop. Whether you are a blogger, web developer, student, or ecommerce seller, this is the best image compressor for you in 2026.</p>
-
-<h2>How to Reduce Image Size Online in 3 Easy Steps</h2>
-<p>We made this tool as simple as our famous Spell Checker. No technical knowledge needed.</p>
-<p><b>Step 1: Upload Image</b><br>Click "Upload Your Images" button or simply drag and drop your JPG, PNG or WEBP file into the box above. You can select multiple images for bulk compression.</p>
-<p><b>Step 2: Choose Compression Settings</b><br>Select your target size. Need exactly <b>50KB image for NADRA form</b>? Select 50KB. Want best quality for blog? Choose "High Quality". The tool will automatically adjust compression to meet your goal.</p>
-<p><b>Step 3: Download</b><br>Click "Compress Images". In 2 seconds your optimized image will be ready. Click download and use it on website, social media, or email.</p>
-
-<h2>Why You Must Compress Images in 2026?</h2>
-<p><b>1. Improve Website Speed & SEO Ranking</b><br>Google Core Web Vitals is a ranking factor. A single 3MB image can increase your page load time by 4 seconds. By using our <b>free image compressor</b>, you can reduce image size by 80%. This improves LCP score and helps you rank higher on Google.</p>
-<p><b>2. Meet Exact Size Requirements for Forms</b><br>Thousands of students search for "compress image to 20kb for form" every month. Portals like PPSC, NTS, FPSC, NADRA, Passport all have strict size limits. Our tool lets you compress to exact KB.</p>
-<p><b>3. Save Mobile Data and Storage</b><br>Sending 5MB images on WhatsApp consumes data. Compressing to 200KB saves 95% data and uploads instantly even on slow 3G.</p>
-<p><b>4. Better User Experience</b><br>53% users bounce if site takes >3s to load. Fast websites with compressed images keep visitors engaged and increase conversions for ecommerce stores.</p>
-
-<h2>Pro Features of This Image Compressor Tool</h2>
-<ul>
-<li><b>Exact KB Target:</b> Most tools don’t offer this. Just enter 100KB and get exact 100KB output. Perfect for "compress jpg to 100kb online" keyword.</li>
-<li><b>No Quality Loss Algorithm:</b> We use smart canvas compression + resizing. Human eye can’t see the difference in "High Quality" mode.</li>
-<li><b>100% Mobile Friendly:</b> Fully responsive design. Tested on Android and iPhone. Works like a native app.</li>
-<li><b>Bulk Image Compression:</b> Upload 20 images at once. Save hours of work.</li>
-<li><b>Format Conversion:</b> Convert PNG to JPG, JPG to WEBP while compressing. WEBP gives 30% smaller size.</li>
-<li><b>No Signup, No Watermark:</b> Completely free. No login required. No branding on output.</li>
-<li><b>Privacy First:</b> All processing in browser. Zero data collection.</li>
-</ul>
-
-<h2>Image Compressor Comparison Table</h2>
-<table>
-<tr><th>Feature</th><th>Our Tool</th><th>TinyPNG</th><th>Photoshop</th></tr>
-<tr><td>Exact Size: 100KB, 50KB</td><td>Yes</td><td>No</td><td>Manual</td></tr>
-<tr><td>Processing Speed</td><td>2 Seconds</td><td>5 Seconds</td><td>2 Minutes</td></tr>
-<tr><td>Bulk Compress</td><td>Yes</td><td>Limited</td><td>Yes</td></tr>
-<tr><td>Mobile Support</td><td>100%</td><td>70%</td><td>No</td></tr>
-<tr><td>Price</td><td>Free Forever</td><td>Limited Free</td><td>$20.99/mo</td></tr>
-</table>
-
-<h2>Expert Tips for Best Compression Results</h2>
-<p><b>Tip 1: Resize Then Compress</b><br>For web, 1920px width is more than enough. If your camera image is 6000px, resize first. Then compress. You’ll get 10x better results.</p>
-<p><b>Tip 2: Choose Correct Format</b><br>Use JPG for photos. Use PNG for logos with transparency. Use WEBP for websites for best compression.</p>
-<p><b>Tip 3: Use Low Size for Documents</b><br>If you are searching "compress image to 20kb for form", use Low Size mode and resize to 300x300px.</p>
-<p><b>Tip 4: Compress Before Uploading to WordPress</b><br>WordPress makes 5 thumbnails. If original is heavy, all thumbnails will be heavy. Compress first.</p>
-
-<h2>Who Uses This Free Image Compressor?</h2>
-<p><b>SEO Experts & Web Developers:</b> To pass PageSpeed Insights test.<br>
-<b>Bloggers:</b> To make blog load faster and rank higher.<br>
-<b>Students:</b> For "compress image to 50kb online" for job applications.<br>
-<b>Ecommerce Sellers:</b> Daraz, Shopify, Amazon product image optimization.<br>
-<b>Social Media Managers:</b> To upload HD images without quality loss.</p>
-
-<h2>Frequently Asked Questions - FAQ</h2>
-<div class="faq-item">
-<h3>Q1: Is this image compressor tool free to use?</h3>
-<p>Yes. Our tool is 100% free with no limits. You can compress unlimited images daily without any signup or payment.</p>
-</div>
-<div class="faq-item">
-<h3>Q2: Can I compress an image to exactly 100KB or 50KB?</h3>
-<p>Yes, this is our unique feature. Select "Target Size" from dropdown and enter 100. The tool will auto-adjust quality to give you exact 100KB file.</p>
-</div>
-<div class="faq-item">
-<h3>Q3: Will compressing an image reduce its quality?</h3>
-<p>There is minimal quality loss that is not visible to human eye in High Quality mode. For forms and web, quality is perfect. If you need print quality, use Low compression.</p>
-</div>
-<div class="faq-item">
-<h3>Q4: Is my data safe when I upload images?</h3>
-<p>Absolutely. This is a client-side tool. Your images are processed in your browser using JavaScript. Nothing is sent to our server.</p>
-</div>
-<div class="faq-item">
-<h3>Q5: What is the maximum image size I can upload?</h3>
-<p>You can upload images up to 10MB each. For bulk upload, total size should be under 50MB.</p>
-</div>
-<div class="faq-item">
-<h3>Q6: Does this work on iPhone and Android mobile?</h3>
-<p>Yes. The tool is fully responsive and mobile friendly. It works on all modern browsers including Chrome and Safari.</p>
-</div>
-<div class="faq-item">
-<h3>Q7: Can I convert PNG to JPG while compressing?</h3>
-<p>Yes. The output is automatically JPG which gives best compression. You can also get WEBP format for websites.</p>
-</div>
-<div class="faq-item">
-<h3>Q8: What is the difference between your tool and Photoshop?</h3>
-<p>Photoshop gives more control but takes 5 minutes. Our tool gives 90% of result in 2 seconds with 1 click. Best for bulk and quick work.</p>
-</div>
-
-<h2>Final Thoughts</h2>
-<p>Website speed is no longer optional. It’s a ranking factor. Don’t let heavy images kill your traffic. Use our <b>Free Online Image Compressor</b> to make your images web-ready in seconds.</p>
-<p>Try it now above. Compress your first image to 100KB and see the difference. Bookmark this page for future use.</p>
-</div>
-
+    <div class="footer-bottom">
+      <p class="copyright">© 2026 Smart Tools Hub. All Rights Reserved.</p>
+    </div>
+  </footer>
 </div>
 
 <script>
-const dropZone = document.getElementById('dropZone');
-const fileInput = document.getElementById('fileInput');
-const controls = document.getElementById('controls');
-const compressBtn = document.getElementById('compressBtn');
-const result = document.getElementById('result');
-let files = [];
-
-dropZone.addEventListener('dragover', e => {e.preventDefault(); dropZone.style.background='#f1f8ff'});
-dropZone.addEventListener('dragleave', e => {e.preventDefault(); dropZone.style.background='#fff'});
-dropZone.addEventListener('drop', e => {e.preventDefault(); handleFiles(e.dataTransfer.files)});
-
-fileInput.addEventListener('change', e => handleFiles(e.target.files));
-
-function handleFiles(fileList){
-    files = Array.from(fileList);
-    if(files.length > 0) controls.style.display='flex';
+function toggleTheme(){
+  const body = document.documentElement;
+  const btn = document.querySelector('.theme-btn');
+  if(body.getAttribute('data-theme') === 'dark'){
+    body.removeAttribute('data-theme');
+    btn.innerHTML = '🌙 Dark';
+    localStorage.setItem('theme', 'light');
+  } else {
+    body.setAttribute('data-theme', 'dark');
+    btn.innerHTML = '☀️ Light';
+    localStorage.setItem('theme', 'dark');
+  }
+}
+if(localStorage.getItem('theme') === 'dark'){
+  document.documentElement.setAttribute('data-theme', 'dark');
+  document.querySelector('.theme-btn').innerHTML = '☀️ Light';
 }
 
-compressBtn.addEventListener('click', () => {
-    if(files.length === 0) return alert('Please upload an image');
-    const file = files[0];
-    const reader = new FileReader();
-    reader.readAsDataURL(file);
-    reader.onload = event => {
-        const img = new Image();
-        img.src = event.target.result;
-        img.onload = () => {
-            const canvas = document.createElement('canvas');
-            const ctx = canvas.getContext('2d');
-            let {width, height} = img;
-            const maxWidth = 1200;
-            if(width > maxWidth){height *= maxWidth/width; width = maxWidth;}
-            canvas.width = width; canvas.height = height;
-            ctx.drawImage(img, 0, 0, width, height);
-            const quality = document.getElementById('quality').value;
-            const compressed = canvas.toDataURL('image/jpeg', quality);
-            document.getElementById('downloadBtn').href = compressed;
-            document.getElementById('downloadBtn').download = 'compressed.jpg';
-            document.getElementById('sizeInfo').innerText = `Original: ${(file.size/1024).toFixed(2)} KB`;
-            result.style.display = 'block';
+function compressImage(){
+  const file = document.getElementById('fileInput').files[0];
+  const targetKB = parseInt(document.getElementById('targetSize').value);
+  if(!file){alert('Please select an image first'); return;}
+
+  const reader = new FileReader();
+  reader.readAsDataURL(file);
+  reader.onload = (e)=>{
+    const img = new Image();
+    img.src = e.target.result;
+    img.onload = ()=>{
+      let quality = 0.9;
+      const canvas = document.createElement('canvas');
+      const ctx = canvas.getContext('2d');
+      let {width, height} = img;
+      const maxWidth = 1600;
+      if(width > maxWidth){height *= maxWidth/width; width = maxWidth;}
+      canvas.width = width; canvas.height = height;
+      ctx.drawImage(img, 0, 0, width, height);
+
+      function tryCompress(){
+        const compressed = canvas.toDataURL('image/jpeg', quality);
+        const sizeKB = (compressed.length * 0.75) / 1024;
+
+        if(sizeKB > targetKB && quality > 0.1){
+          quality -= 0.05;
+          tryCompress();
+        } else {
+          document.getElementById('result').innerHTML =
+            `<img src="${compressed}" alt="Compressed Image"><br>
+             <a href="${compressed}" download="compressed.jpg" class="btn">Download Compressed Image</a>`;
+          document.getElementById('stats').innerHTML =
+            `<b>Original Size:</b> ${(file.size/1024).toFixed(2)} KB |
+             <b>Compressed Size:</b> ${sizeKB.toFixed(2)} KB |
+             <b>Saved:</b> ${((1-sizeKB/(file.size/1024))*100).toFixed(0)}%`;
         }
+      }
+      tryCompress();
     }
-});
+  }
+}
+
+function clearAll(){
+  document.getElementById('fileInput').value = '';
+  document.getElementById('result').innerHTML = 'Your compressed image and download link will appear here...';
+  document.getElementById('stats').innerHTML = '';
+}
 </script>
 </body>
 </html>
