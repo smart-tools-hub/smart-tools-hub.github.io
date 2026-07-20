@@ -47,6 +47,7 @@ p:hover{transform:translateX(5px)}
 .sidebar{background:var(--card);padding:25px;border-radius:12px;box-shadow:0 8px 25px rgba(0,0,0,.08); border:1px solid #e9ecef; height:fit-content; position:sticky; top:100px; text-align:center}
 .sidebar h3{margin-top:0;color:var(--text);border-bottom:2px solid var(--purple);padding-bottom:10px; text-align:center}
 .highlight{background:var(--purple-light); color:#fff; padding:20px; border-left:5px solid var(--purple); border-radius:5px; margin:20px 0; font-size:18px;}
+  
 .tool-box input[type="file"]{width:100%; padding:14px; border:2px dashed var(--purple); border-radius:8px; font-size:16px; margin-bottom:15px; background:var(--bg); color:var(--text); cursor:pointer}
 .tool-box select{padding:12px; border:2px solid #e9ecef; border-radius:8px; font-size:16px; margin:10px 0; background:var(--card); color:var(--text); width:100%}
 .btn{background:var(--purple); color:#fff; padding:12px 30px; border:none; border-radius:8px; font-size:16px; font-weight:600; cursor:pointer; margin:5px 10px 5px 0}
@@ -70,6 +71,19 @@ p:hover{transform:translateX(5px)}
 .contact-info a{color:#f3e8ff; text-decoration:none; font-size:14px}
 .footer-bottom .copyright {background: white; color: black; padding: 12px 0; margin: 0;}
 .footer-bottom{text-align:center; margin-top:20px; padding-top:15px; border-top:1px solid rgba(255,255,255,0.3); color:#f3e8ff; font-size:14px; max-width:1100px; margin:20px auto 0}
+
+  
+@media(max-width:900px){
+  .container{grid-template-columns:1fr} 
+  .sidebar{position:static}
+  .footer-container{grid-template-columns:1fr}
+  .header{flex-direction:column; gap:10px}
+  .header .nav{justify-content:center}
+  .main-card{padding:20px}
+}
+</style>
+</head>
+<body>
 
  .container{grid-template-columns:1fr}
  .sidebar{position:sticky; top:0}
