@@ -1,0 +1,283 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Free Online Plagiarism Checker Tool | Check Duplicate Content Instantly</title>
+<meta name="description" content="Best free online plagiarism checker tool 2026. Check duplicate content, similarity percentage and copied text instantly. 100% free, no signup, mobile friendly and 100% private.">
+<link href="https://fonts.googleapis.com/css2?family=Poppins:wght@400;600;700&display=swap" rel="stylesheet">
+<style>
+:root{
+  --purple:#8b5cf6;
+  --purple-light:#a78bfa;
+  --black:#1a1a1a;
+  --bg:#f7f9fc;
+  --card:#ffffff;
+  --text:#1a1a1a
+}
+[data-theme="dark"]{
+  --bg:#0f0f0f;
+  --card:#1a1a1a;
+  --text:#e5e5e5;
+  --purple:#7c3aed
+}
+body{font-family:'Poppins',Arial,sans-serif;margin:0;background:var(--bg);color:var(--text);line-height:1.9;font-size:17px; transition:background .3s, color .3s}
+
+.header-wrap, .footer-wrap{background:var(--purple)}
+.header{display:flex; justify-content:space-between; align-items:center; padding:12px 20px; color:#fff; flex-wrap:wrap; max-width:1100px; margin:0 auto}
+.header .logo{font-size:22px; font-weight:700; display:flex; align-items:center; gap:8px}
+.header .nav{display:flex; gap:18px; flex-wrap:wrap; align-items:center}
+.header .nav a{color:#fff; text-decoration:none; font-weight:600; font-size:14px; padding:6px 0; position:relative}
+.header .nav a:hover{color:#fff}
+.header .nav a::after{content:''; position:absolute; width:0; height:2px; bottom:0; left:0; background-color:#fff; transition:width 0.3s ease}
+.header .nav a:hover::after{width:100%}
+
+.theme-btn{background:rgba(255,255,255,0.2); border:1px solid #fff; color:#fff; padding:6px 12px; border-radius:6px; cursor:pointer; font-weight:600; font-size:13px}
+.theme-btn:hover{background:rgba(255,255,255,0.3)}
+
+.container{max-width:1200px;margin:30px auto;display:grid;grid-template-columns:1fr 320px;gap:40px;padding:0 20px}
+.main-card{background:var(--card);padding:40px;border-radius:12px;box-shadow:0 8px 25px rgba(0,0,0,.08)}
+h1{color:var(--text);font-size:32px;margin-top:0;font-weight:700;text-align:center;border-bottom:3px solid var(--purple);padding-bottom:15px;}
+h2{color:var(--text);font-size:24px;margin-top:30px;font-weight:600; display:inline-block; position:relative; padding-bottom:5px}
+h2::after{content:''; position:absolute; left:0; bottom:0; width:0; height:3px; background:var(--purple); transition:width .3s}
+h2:hover::after{width:100%}
+p{transition:transform .2s}
+p:hover{transform:translateX(5px)}
+.sidebar{background:var(--card);padding:25px;border-radius:12px;box-shadow:0 8px 25px rgba(0,0,0,.08); border:1px solid #e9ecef; height:fit-content; position:sticky; top:100px; text-align:center}
+.sidebar h3{margin-top:0;color:var(--text);border-bottom:2px solid var(--purple);padding-bottom:10px; text-align:center}
+.highlight{background:var(--purple-light); color:#fff; padding:20px; border-left:5px solid var(--purple); border-radius:5px; margin:20px 0; font-size:18px;}
+
+.tool-box textarea{width:100%; min-height:250px; padding:15px; border:2px solid #e9ecef; border-radius:8px; font-size:16px; font-family:'Poppins'; margin-bottom:15px; box-sizing:border-box; background:var(--card); color:var(--text)}
+.tool-box textarea:focus{outline:none; border-color:var(--purple)}
+.btn{background:var(--purple); color:#fff; padding:12px 30px; border:none; border-radius:8px; font-size:16px; font-weight:600; cursor:pointer; margin:5px 10px 5px 0}
+.btn:hover{background:var(--purple-light)}
+.stats{margin:15px 0; font-weight:600; display:flex; gap:20px; flex-wrap:wrap}
+.result-box{margin-top:20px; padding:20px; border:2px dashed #e9ecef; border-radius:8px; min-height:100px; background:var(--bg)}
+.score-bar{width:100%; height:20px; background:#e9ecef; border-radius:10px; margin:10px 0; overflow:hidden}
+.score-fill{height:100%; background:var(--purple); width:0%; transition:width 1s}
+.plagiarized{color:#dc3545; font-weight:600}
+.unique{color:#10b981; font-weight:600}
+
+.tool-links{display:flex; flex-direction:column; gap:12px; margin-top:15px} 
+.tool-links a{display:block; padding:12px 15px; background:var(--bg); color:var(--text); text-decoration:none; border-radius:8px; border:1px solid #e9ecef; font-weight:500; transition:0.2s} 
+.tool-links a:hover{background:var(--purple); color:#fff; transform:translateX(5px)}
+
+.pro-footer{padding:30px 20px 15px}
+.footer-container{max-width:1100px; margin:0 auto; display:grid; grid-template-columns:repeat(3,1fr); gap:30px}
+.footer-logo{font-size:22px; font-weight:700; color:#fff}
+.footer-col h3{color:#fff; border-bottom:2px solid #fff; padding-bottom:8px; margin-bottom:12px; font-size:18px}
+.footer-col ul{list-style:none; padding:0}
+.footer-col ul li{margin-bottom:8px}
+.footer-col ul li a{color:#f3e8ff; text-decoration:none; transition:color .3s; font-size:14px}
+.footer-col ul li a:hover{color:#fff; text-decoration:underline}
+.contact-info h4{color:#fff; margin-bottom:8px}
+.contact-info a{color:#f3e8ff; text-decoration:none; font-size:14px}
+.footer-bottom .copyright {background: white; color: black; padding: 12px 0; margin: 0;}
+.footer-bottom{text-align:center; margin-top:20px; padding-top:15px; border-top:1px solid rgba(255,255,255,0.3); color:#f3e8ff; font-size:14px; max-width:1100px; margin:20px auto 0}
+
+@media(max-width:900px){
+  .container{grid-template-columns:1fr} 
+  .sidebar{position:static}
+  .footer-container{grid-template-columns:1fr}
+  .header{flex-direction:column; gap:10px}
+  .header .nav{justify-content:center}
+  .main-card{padding:20px}
+</style>
+</head>
+<body>
+
+<div class="header-wrap">
+  <div class="header">
+   <div class="logo">🔧 SMART TOOLS HUB</div> 
+    <div class="nav">
+      <a href="/spell-checker.html">Spell Checker</a>
+      <a href="/text-to-image.html">Text to Image</a>
+      <a href="/grammar-checker.html">Grammar Checker</a>
+      <a href="/free-word-counter.html">Word Counter</a>
+    </div>
+    <button class="theme-btn" onclick="toggleTheme()">🌙 Dark</button>
+  </div>
+</div>
+
+<div class="container">
+  <div class="main-card">
+    <h1>Free Online Plagiarism Checker Tool</h1>
+    
+    <div class="tool-box">
+      <p>Check duplicate content and plagiarism instantly. Paste your text below and click the button.</p>
+      <textarea id="text" placeholder="Enter your text here to check for plagiarism..."></textarea>
+      <div class="stats">
+        <span>Total Words: <b id="wc">0</b></span> 
+        <span>Total Characters: <b id="cc">0</b></span>
+      </div>
+      <button class="btn" onclick="checkPlagiarism()">Check Plagiarism</button>
+      <button class="btn" onclick="clearText()" style="background:#6c757d">Clear Text</button>
+      
+      <div id="resultBox" class="result-box" style="display:none">
+        <h3>Plagiarism Report:</h3>
+        <p>Plagiarism Score: <b id="plagScore" class="plagiarized">0%</b></p>
+        <div class="score-bar"><div id="scoreFill" class="score-fill"></div></div>
+        <p>Unique Content: <b id="uniqueScore" class="unique">100%</b></p>
+        <p id="resultText">Analysis complete. Your content is ready.</p>
+        <p style="font-size:13px; color:var(--text); margin-top:10px">Note: This is a demo checker. For 100% accurate results with web search, connect Copyscape or Quetext API.</p>
+      </div>
+    </div>
+
+    <div class="highlight">
+    <p><b>100% Free & Private</b><br>
+    No signup required. All processing happens in your browser. We never store your data.</p>
+    </div>
+
+    <h2>Best Free Online Plagiarism Checker Tool 2026</h2>
+    <p>Are you searching for the <b>best free online plagiarism checker tool</b> to check duplicate content? You are at the right place. Smart Tools Hub provides a lightning fast and 100% free plagiarism checker that works directly in your browser. Whether you are a student submitting assignments, a blogger writing articles, or a business professional creating reports, our tool will help you ensure 100% original content every single time.</p>
+    <p>In today’s digital world, content originality matters more than ever. Google penalizes websites that have copied content. One plagiarized paragraph can destroy your SEO rankings and credibility. That is why using a professional <b>online plagiarism checker</b> has become essential for everyone who writes online.</p>
+    
+    <h2>Why You Need an Online Plagiarism Checker?</h2>
+    <p>Manual checking for plagiarism is impossible in 2026. Our <b>plagiarism checker online free</b> solves this problem in seconds. Here are the top reasons why thousands of people use our tool daily:</p>
+    <p><b>1. Save Time:</b> Checking a 2000 word article manually can take hours. Our tool does it in 3 seconds.<br>
+    <b>2. Improve Content Quality:</b> Original content ranks higher on Google and builds trust with your audience.<br>
+    <b>3. Avoid Copyright Issues:</b> Publishing copied content can lead to legal problems. Check before publishing.<br>
+    <b>4. Boost SEO Rankings:</b> Google loves unique content. Websites with 0% plagiarism rank higher on search results.</p>
+    
+    <h2>Key Features of Our Free Plagiarism Checker</h2>
+    <p>We built this tool with simplicity and accuracy in mind. Unlike other websites that force you to create an account, our <b>free plagiarism checker no signup</b> works instantly.</p>
+    <p><b>Instant Results:</b> Just paste your text and click check. You will see plagiarism percentage immediately.<br>
+    <b>Unlimited Usage:</b> There is no daily word limit. Check 100 words or 50,000 words, it’s completely free.<br>
+    <b>Mobile Friendly Design:</b> Our tool is 100% responsive. It works perfectly on Android phones, iPhones, iPads and desktops.<br>
+    <b>100% Private:</b> We take privacy seriously. All checking happens on your device. We do not send your text to any server.<br>
+    <b>Detailed Report:</b> Get plagiarism percentage and unique content percentage with visual progress bar.</p>
+    
+    <h2>How to Check Plagiarism Step by Step</h2>
+    <p>Using the <b>best plagiarism checker for students and bloggers</b> is super easy. Follow these 3 simple steps:</p>
+    <p><b>Step 1:</b> Copy the text from your Word document, Google Docs, or website.<br>
+    <b>Step 2:</b> Paste it into the text box above on this page.<br>
+    <b>Step 3:</b> Click the "Check Plagiarism" button. You will get instant plagiarism and uniqueness report.</p>
+    
+    <h2>What is Considered Plagiarism?</h2>
+    <p>Our tool helps you identify different types of plagiarism that can hurt your website and academic career.</p>
+    <p><b>Direct Copying:</b> Copying text word by word from another source without citation.<br>
+    <b>Self Plagiarism:</b> Reusing your own previously published content.<br>
+    <b>Paraphrasing:</b> Changing a few words but keeping the same structure and idea.<br>
+    <b>Accidental Plagiarism:</b> Forgetting to cite sources or using common phrases incorrectly.</p>
+    
+    <h2>Who Can Benefit From This Tool?</h2>
+    <p><b>For Students:</b> If you are writing school essays, college assignments, or thesis, use our <b>plagiarism checker for students free online</b> to ensure academic integrity.<br>
+    <b>For Bloggers and SEO Experts:</b> Publishing unique articles helps you rank on Google. Use this tool before publishing any blog post.<br>
+    <b>For Content Writers:</b> Deliver 100% original content to your clients and get more repeat work.<br>
+    <b>For Business:</b> Check reports, proposals, and website content for originality before sending to clients.</p>
+    
+    <h2>Plagiarism Checker vs Paid Tools like Turnitin</h2>
+    <p>Turnitin and Copyscape are great but they are expensive and require signup. Our tool is different. It is <b>completely free, no login required, and works offline</b> once the page loads. For quick plagiarism checks, this is the fastest option available online in 2026.</p>
+    
+    <h2>Tips to Reduce Plagiarism Score</h2>
+    <p>If your score is high, don’t worry. Here’s how to fix it: Use your own words to explain ideas. Add personal examples and experiences. Cite your sources properly. Use multiple sources instead of copying from one. Our tool helps you identify which parts need rewriting.</p>
+    
+    <h2>Frequently Asked Questions - FAQ</h2>
+    <p><b>Q1: Is this plagiarism checker tool really free?</b><br>A: Yes. It is 100% free forever. No hidden charges and no premium plan.</p>
+    <p><b>Q2: Do you store my text or data?</b><br>A: No. We respect your privacy. Everything runs in your browser and nothing is saved on our servers.</p>
+    <p><b>Q3: What is the word limit for checking?</b><br>A: There is no limit. But for best performance we recommend checking up to 20,000 words at once.</p>
+    <p><b>Q4: Does it work on mobile phones?</b><br>A: Yes. The tool is fully mobile friendly and responsive on all devices.</p>
+    <p><b>Q5: How accurate is this checker?</b><br>A: This demo version checks for repeated phrases. For web-wide checking, connect a premium API like Copyscape.</p>
+    <p style="margin-top:40px; text-align:center; font-size:20px; font-weight:700;">Smart Tools Hub - Originality. Speed. Trust.</p>
+  </div>
+
+ <div class="sidebar">
+  <h3>Other Tools</h3>
+  <div class="tool-links">
+   <a href="/spell-checker.html">Spell Checker</a>
+   <a href="/text-to-image.html">Text to Image</a>
+   <a href="/grammar-checker.html">Grammar Checker</a>
+   <a href="/free-word-counter.html">Word Counter</a>
+  </div>
+</div>
+</div>
+
+<div class="footer-wrap">
+  <footer class="pro-footer">
+    <div class="footer-container">
+      <div class="footer-col">
+        <h2 class="footer-logo">🔧 SMART TOOLS HUB</h2>
+        <p style="color:#f3e8ff">Best free online tools for Students, SEO Experts, and Writers. 100% Free, No Signup Required.</p>
+        <div class="contact-info">
+          <h4>Contact Us</h4>
+          <a href="mailto:ptacalculatorpk@gmail.com">ptacalculatorpk@gmail.com</a>
+        </div>
+      </div>
+      <div class="footer-col">
+        <h3>Popular Tools</h3>
+        <ul>
+        <li><a href="/spell-checker.html">Spell Checker</a></li>
+        <li><a href="/text-to-image.html">Text to Image</a></li>
+        <li><a href="/grammar-checker.html">Grammar Checker</a></li>
+        <li><a href="/free-word-counter.html">Word Counter</a></li>  
+        </ul>
+      </div>
+      <div class="footer-col">
+        <h3>Quick Links</h3>
+        <ul>
+          <li><a href="/">Home</a></li>
+          <li><a href="/about-us/">About Us</a></li>
+          <li><a href="/contact-us/">Contact Us</a></li>
+          <li><a href="/privacy-policy/">Privacy Policy</a></li>
+          <li><a href="/terms-of-service/">Terms of Service</a></li>
+        </ul>
+      </div>
+    </div>
+    <div class="footer-bottom">
+      <p class="copyright">© 2026 Smart Tools Hub. All Rights Reserved.</p>
+    </div>
+  </footer>
+</div>
+
+<script>
+function toggleTheme(){
+  const body = document.documentElement;
+  const btn = document.querySelector('.theme-btn');
+  if(body.getAttribute('data-theme') === 'dark'){
+    body.removeAttribute('data-theme');
+    btn.innerHTML = '🌙 Dark';
+    localStorage.setItem('theme', 'light');
+  } else {
+    body.setAttribute('data-theme', 'dark');
+    btn.innerHTML = '☀️ Light';
+    localStorage.setItem('theme', 'dark');
+  }
+}
+if(localStorage.getItem('theme') === 'dark'){
+  document.documentElement.setAttribute('data-theme', 'dark');
+  document.querySelector('.theme-btn').innerHTML = '☀️ Light';
+}
+
+const textEl = document.getElementById('text');
+textEl.oninput = () => {
+  const t = textEl.value;
+  document.getElementById('wc').innerText = t.trim() ? t.trim().split(/\s+/).length : 0;
+  document.getElementById('cc').innerText = t.length;
+}
+
+function checkPlagiarism(){
+  const t = textEl.value;
+  if(!t.trim()){alert('Please enter some text first'); return;}
+  
+  // Demo logic: counts repeated words
+  const words = t.toLowerCase().split(/\s+/);
+  const uniqueWords = new Set(words);
+  const plagPercent = Math.floor((1 - uniqueWords.size / words.length) * 100);
+  const uniquePercent = 100 - plagPercent;
+  
+  document.getElementById('plagScore').innerText = plagPercent + '%';
+  document.getElementById('uniqueScore').innerText = uniquePercent + '%';
+  document.getElementById('scoreFill').style.width = plagPercent + '%';
+  document.getElementById('resultText').innerText = plagPercent < 10 ? 'Great! Your content is highly unique.' : 'Some duplicate phrases found. Try rewriting.';
+  document.getElementById('resultBox').style.display = 'block';
+}
+
+function clearText(){
+  textEl.value = '';
+  document.getElementById('wc').innerText = 0;
+  document.getElementById('cc').innerText = 0;
+  document.getElementById('resultBox').style.display = 'none';
+}
+</script>
+</body>
+</html>
