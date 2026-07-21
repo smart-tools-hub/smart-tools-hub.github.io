@@ -1,0 +1,299 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Free Online Text to Image Converter | Type Text and Download as PNG</title>
+<meta name="description" content="Best free online text to image converter 2026. Type any text and convert to beautiful image. Choose font, color, background. 100% free, no signup, mobile friendly.">
+<link href="https://fonts.googleapis.com/css2?family=Poppins:wght@400;600;700&display=swap" rel="stylesheet">
+<style>
+:root{
+  --purple:#8b5cf6;
+  --purple-light:#a78bfa;
+  --black:#1a1a1a;
+  --bg:#f7f9fc;
+  --card:#ffffff;
+  --text:#1a1a1a
+}
+[data-theme="dark"]{
+  --bg:#0f0f0f;
+  --card:#1a1a1a;
+  --text:#e5e5e5;
+  --purple:#7c3aed
+}
+body{font-family:'Poppins',Arial,sans-serif;margin:0;background:var(--bg);color:var(--text);line-height:1.9;font-size:17px; transition:background .3s, color .3s}
+
+.header-wrap, .footer-wrap{background:var(--purple)}
+.header{display:flex; justify-content:space-between; align-items:center; padding:12px 20px; color:#fff; flex-wrap:wrap; max-width:1100px; margin:0 auto}
+.header .logo{font-size:22px; font-weight:700; display:flex; align-items:center; gap:8px}
+.header .nav{display:flex; gap:18px; flex-wrap:wrap; align-items:center}
+.header .nav a{color:#fff; text-decoration:none; font-weight:600; font-size:14px; padding:6px 0; position:relative}
+.header .nav a:hover{color:#fff}
+.header .nav a::after{content:''; position:absolute; width:0; height:2px; bottom:0; left:0; background-color:#fff; transition:width 0.3s ease}
+.header .nav a:hover::after{width:100%}
+
+.theme-btn{background:rgba(255,255,255,0.2); border:1px solid #fff; color:#fff; padding:6px 12px; border-radius:6px; cursor:pointer; font-weight:600; font-size:13px}
+.theme-btn:hover{background:rgba(255,255,255,0.3)}
+
+.container{max-width:1200px;margin:30px auto;display:grid;grid-template-columns:1fr 320px;gap:40px;padding:0 20px}
+.main-card{background:var(--card);padding:40px;border-radius:12px;box-shadow:0 8px 25px rgba(0,0,0,.08)}
+h1{color:var(--text);font-size:32px;margin-top:0;font-weight:700;text-align:center;border-bottom:3px solid var(--purple);padding-bottom:15px;}
+h2{color:var(--text);font-size:24px;margin-top:30px;font-weight:600; display:inline-block; position:relative; padding-bottom:5px}
+h2::after{content:''; position:absolute; left:0; bottom:0; width:0; height:3px; background:var(--purple); transition:width .3s}
+h2:hover::after{width:100%}
+p{transition:transform .2s}
+p:hover{transform:translateX(5px)}
+.sidebar{background:var(--card);padding:25px;border-radius:12px;box-shadow:0 8px 25px rgba(0,0,0,.08); border:1px solid #e9ecef; height:fit-content; position:sticky; top:100px; text-align:center}
+.sidebar h3{margin-top:0;color:var(--text);border-bottom:2px solid var(--purple);padding-bottom:10px; text-align:center}
+.highlight{background:var(--purple-light); color:#fff; padding:20px; border-left:5px solid var(--purple); border-radius:5px; margin:20px 0; font-size:18px;}
+
+.tool-box{margin-bottom:20px}
+.tool-box label{display:block; font-weight:600; margin-bottom:8px}
+.tool-box textarea{width:100%; min-height:180px; padding:15px; border:2px solid #e9ecef; border-radius:8px; font-size:16px; font-family:'Poppins'; margin-bottom:15px; box-sizing:border-box; background:var(--card); color:var(--text)}
+.tool-box textarea:focus{outline:none; border-color:var(--purple)}
+.controls-grid{display:grid; grid-template-columns:repeat(4,1fr); gap:15px; margin-bottom:15px}
+.control-group label{font-size:14px; font-weight:600; display:block; margin-bottom:5px}
+.control-group select, .control-group input{width:100%; padding:10px; border:2px solid #e9ecef; border-radius:8px; background:var(--card); color:var(--text)}
+.btn{background:var(--purple); color:#fff; padding:12px 30px; border:none; border-radius:8px; font-size:16px; font-weight:600; cursor:pointer; margin:5px 10px 5px 0}
+.btn:hover{background:var(--purple-light)}
+.result-area{margin-top:20px; padding:20px; border:2px dashed #e9ecef; border-radius:8px; text-align:center; background:var(--bg); display:none}
+.result-area canvas{max-width:100%; border-radius:8px; margin-bottom:15px}
+.download-btn{background:#10b981; color:#fff; padding:12px 30px; border:none; border-radius:8px; font-size:16px; font-weight:600; cursor:pointer; text-decoration:none; display:inline-block}
+
+.tool-links{display:flex; flex-direction:column; gap:12px; margin-top:15px} 
+.tool-links a{display:block; padding:12px 15px; background:var(--bg); color:var(--text); text-decoration:none; border-radius:8px; border:1px solid #e9ecef; font-weight:500; transition:0.2s} 
+.tool-links a:hover{background:var(--purple); color:#fff; transform:translateX(5px)}
+
+.pro-footer{padding:30px 20px 15px}
+.footer-container{max-width:1100px; margin:0 auto; display:grid; grid-template-columns:repeat(3,1fr); gap:30px}
+.footer-logo{font-size:22px; font-weight:700; color:#fff}
+.footer-col h3{color:#fff; border-bottom:2px solid #fff; padding-bottom:8px; margin-bottom:12px; font-size:18px}
+.footer-col ul{list-style:none; padding:0}
+.footer-col ul li{margin-bottom:8px}
+.footer-col ul li a{color:#f3e8ff; text-decoration:none; transition:color .3s; font-size:14px}
+.footer-col ul li a:hover{color:#fff; text-decoration:underline}
+.contact-info h4{color:#fff; margin-bottom:8px}
+.contact-info a{color:#f3e8ff; text-decoration:none; font-size:14px}
+.footer-bottom .copyright {background: white; color: black; padding: 12px 0; margin: 0;}
+.footer-bottom{text-align:center; margin-top:20px; padding-top:15px; border-top:1px solid rgba(255,255,255,0.3); color:#f3e8ff; font-size:14px; max-width:1100px; margin:20px auto 0}
+
+@media(max-width:900px){
+  .container{grid-template-columns:1fr} 
+  .sidebar{position:static}
+  .footer-container{grid-template-columns:1fr}
+  .header{flex-direction:column; gap:10px}
+  .header .nav{justify-content:center}
+  .main-card{padding:20px}
+  .controls-grid{grid-template-columns:1fr 1fr}
+}
+</style>
+</head>
+<body>
+
+<div class="header-wrap">
+  <div class="header">
+   <div class="logo">🔧 SMART TOOLS HUB</div> 
+    <div class="nav">
+      <a href="/spell-checker.html">Spell Checker</a>
+      <a href="/grammar-checker.html">Grammar Checker</a>
+      <a href="/free-word-counter.html">Word Counter</a>
+      <a href="/image-compressor.html">Image Compressor</a>
+    </div>
+    <button class="theme-btn" onclick="toggleTheme()">🌙 Dark</button>
+  </div>
+</div>
+
+<div class="container">
+  <div class="main-card">
+    <h1>Free Online Text to Image Converter</h1>
+    
+    <div class="tool-box">
+      <p>Type your text and convert it into a beautiful image instantly. Customize font, color and download.</p>
+      
+      <label>Enter Your Text:</label>
+      <textarea id="textInput" placeholder="Type your text to put in image here...">Welcome to Smart Tools Hub</textarea>
+      
+      <div class="controls-grid">
+        <div class="control-group">
+          <label>Font Family</label>
+          <select id="fontFamily">
+            <option value="Poppins">Poppins</option>
+            <option value="Arial">Arial</option>
+            <option value="Georgia">Georgia</option>
+            <option value="Verdana">Verdana</option>
+          </select>
+        </div>
+        <div class="control-group">
+          <label>Font Size</label>
+          <select id="fontSize">
+            <option value="20">14</option>
+            <option value="24">18</option>
+            <option value="32">24</option>
+            <option value="40">32</option>
+          </select>
+        </div>
+        <div class="control-group">
+          <label>Text Color</label>
+          <input type="color" id="textColor" value="#000">
+        </div>
+        <div class="control-group">
+          <label>Background</label>
+          <input type="color" id="bgColor" value="#ffffff">
+        </div>
+      </div>
+      
+      <button class="btn" onclick="generateImage()">Generate Image</button>
+      <button class="btn" onclick="clearAll()" style="background:#6c757d">Clear</button>
+      
+      <div id="resultArea" class="result-area">
+        <h3>Your Image Preview:</h3>
+        <canvas id="outputCanvas"></canvas><br>
+        <a id="downloadBtn" class="download-btn" download="text-image.png">Download Image</a>
+      </div>
+    </div>
+
+    <div class="highlight">
+    <p><b>100% Free & Mobile Friendly</b><br>
+    No signup required. Works perfectly on Android, iPhone and Desktop.</p>
+    </div>
+
+    <h2>Best Free Text to Image Converter Tool 2026</h2>
+    <p>Are you searching for the <b>best free text to image converter</b> to create beautiful images from text? You are at the right place. Smart Tools Hub provides a lightning fast and 100% free text to image tool that works directly in your browser. Whether you are a blogger creating featured images, a social media manager designing posts, or a student making presentations, our tool will help you create stunning visuals in seconds.</p>
+    <p>In today's digital world, visual content is king. Google and social media platforms prefer posts with unique images. Using stock photos is boring and can cause copyright issues. That is why using a professional <b>online text to image converter</b> has become essential for everyone who creates content online.</p>
+    
+    <h2>Why Use Our Text to Image Tool?</h2>
+    <p>Designing in Photoshop takes time and skill. Our <b>text to image generator online free</b> solves this problem instantly. Here are the top reasons why thousands of people use our tool daily:</p>
+    <p><b>1. Save Time:</b> Creating a social media post image manually can take 20 minutes. Our tool does it in 2 seconds.<br>
+    <b>2. No Design Skills Needed:</b> Just type and click. Anyone can create professional images.<br>
+    <b>3. Better SEO:</b> Google loves unique images. Use these for blog posts to rank higher.<br>
+    <b>4. 100% Unique:</b> Every image you create is unique and copyright free for commercial use.</p>
+    
+    <h2>Key Features of Our Free Text to Image Converter</h2>
+    <p>We built this tool with simplicity and power in mind. Unlike other websites, our <b>text to image tool no signup</b> works instantly.</p>
+    <p><b>Instant Results:</b> Type text and click generate. You will see image preview immediately.<br>
+    <b>Full Customization:</b> Choose from 4+ fonts, any font size, any text and background color.<br>
+    <b>Mobile Friendly Design:</b> Our tool is 100% responsive. Works perfectly on all screen sizes.<br>
+    <b>High Quality Download:</b> Get crystal clear PNG images for your projects.<br>
+    <b>100% Private:</b> All processing happens in your browser. We never store your text.</p>
+    
+    <h2>How to Convert Text to Image Step by Step</h2>
+    <p>Using the <b>best text to image converter for bloggers</b> is super easy. Follow these 3 simple steps:</p>
+    <p><b>Step 1:</b> Type or paste your text in the box above.<br>
+    <b>Step 2:</b> Select font family, size and colors from the options.<br>
+    <b>Step 3:</b> Click "Generate Image" button and then "Download Image" to save.</p>
+    
+    <h2>Best Use Cases for Text to Image Tool</h2>
+    <p><b>For Bloggers:</b> Create featured images with your blog post title.<br>
+    <b>For Social Media:</b> Design quote images, motivational posts for Instagram and Facebook.<br>
+    <b>For YouTubers:</b> Create thumbnail text and channel banners.<br>
+    <b>For Students:</b> Convert notes and formulas into images for presentations.<br>
+    <b>For Marketers:</b> Design ad creatives and promotional banners quickly.</p>
+    
+    <h2>Frequently Asked Questions - FAQ</h2>
+    <p><b>Q1: Is this text to image tool really free?</b><br>A: Yes. It is 100% free forever. No limits.</p>
+    <p><b>Q2: What format do I get?</b><br>A: You will get high quality PNG image.</p>
+    <p><b>Q3: Can I use images for commercial use?</b><br>A: Yes. All images generated are 100% yours.</p>
+    <p><b>Q4: Does it work on mobile?</b><br>A: Yes. Fully responsive and touch friendly.</p>
+    <p style="margin-top:40px; text-align:center; font-size:20px; font-weight:700;">Smart Tools Hub - Create. Convert. Download.</p>
+  </div>
+
+ <div class="sidebar">
+  <h3>Other Tools</h3>
+  <div class="tool-links">
+   <a href="/spell-checker.html">Spell Checker</a>
+   <a href="/grammar-checker.html">Grammar Checker</a>
+   <a href="/free-word-counter.html">Word Counter</a>
+   <a href="/image-compressor.html">Image Compressor</a>
+  </div>
+</div>
+</div>
+
+<div class="footer-wrap">
+  <footer class="pro-footer">
+    <div class="footer-container">
+      <div class="footer-col">
+        <h2 class="footer-logo">🔧 SMART TOOLS HUB</h2>
+        <p style="color:#f3e8ff">Best free online tools for Students, SEO Experts, and Writers. 100% Free, No Signup Required.</p>
+        <div class="contact-info">
+          <h4>Contact Us</h4>
+          <a href="mailto:ptacalculatorpk@gmail.com">ptacalculatorpk@gmail.com</a>
+        </div>
+      </div>
+      <div class="footer-col">
+        <h3>Popular Tools</h3>
+        <ul>
+        <li><a href="/spell-checker.html">Spell Checker</a></li>
+        <li><a href="/grammar-checker.html">Grammar Checker</a></li>
+        <li><a href="/free-word-counter.html">Word Counter</a></li>
+        <li><a href="/image-compressor.html">Image Compressor</a></li>  
+        </ul>
+      </div>
+      <div class="footer-col">
+        <h3>Quick Links</h3>
+        <ul>
+          <li><a href="/">Home</a></li>
+          <li><a href="/about-us/">About Us</a></li>
+          <li><a href="/contact-us/">Contact Us</a></li>
+          <li><a href="/privacy-policy/">Privacy Policy</a></li>
+          <li><a href="/terms-of-service/">Terms of Service</a></li>
+        </ul>
+      </div>
+    </div>
+    <div class="footer-bottom">
+      <p class="copyright">© 2026 Smart Tools Hub. All Rights Reserved.</p>
+    </div>
+  </footer>
+</div>
+
+<script>
+function toggleTheme(){
+  const body = document.documentElement;
+  const btn = document.querySelector('.theme-btn');
+  if(body.getAttribute('data-theme') === 'dark'){
+    body.removeAttribute('data-theme');
+    btn.innerHTML = '🌙 Dark';
+    localStorage.setItem('theme', 'light');
+  } else {
+    body.setAttribute('data-theme', 'dark');
+    btn.innerHTML = '☀️ Light';
+    localStorage.setItem('theme', 'dark');
+  }
+}
+if(localStorage.getItem('theme') === 'dark'){
+  document.documentElement.setAttribute('data-theme', 'dark');
+  document.querySelector('.theme-btn').innerHTML = '☀️ Light';
+}
+
+function generateImage(){
+  const text = document.getElementById('textInput').value;
+  const font = document.getElementById('fontFamily').value;
+  const size = document.getElementById('fontSize').value;
+  const tColor = document.getElementById('textColor').value;
+  const bColor = document.getElementById('bgColor').value;
+  
+  if(!text.trim()){alert('Please enter some text'); return;}
+  
+  const canvas = document.getElementById('outputCanvas');
+  const ctx = canvas.getContext('2d');
+  canvas.width = 800;
+  canvas.height = 400;
+  
+  ctx.fillStyle = bColor;
+  ctx.fillRect(0,0,canvas.width,canvas.height);
+  ctx.fillStyle = tColor;
+  ctx.font = size+'px '+font;
+  ctx.textAlign = 'center';
+  ctx.textBaseline = 'middle';
+  ctx.fillText(text, canvas.width/2, canvas.height/2);
+  
+  document.getElementById('resultArea').style.display = 'block';
+  document.getElementById('downloadBtn').href = canvas.toDataURL('image/png');
+}
+
+function clearAll(){
+  document.getElementById('textInput').value = '';
+  document.getElementById('resultArea').style.display = 'none';
+}
+</script>
+</body>
+</html>
