@@ -35,8 +35,13 @@ body{font-family:'Poppins',Arial,sans-serif;margin:0;background:var(--bg);color:
 .theme-btn{background:rgba(255,255,255,0.2); border:1px solid #fff; color:#fff; padding:6px 12px; border-radius:6px; cursor:pointer; font-weight:600; font-size:13px}
 .theme-btn:hover{background:rgba(255,255,255,0.3)}
 
-.container{max-width:1200px;margin:30px auto;display:grid;grid-template-columns:1fr 320px;gap:40px;padding:0 20px}
+/* CHANGED: Tool full width */
+.tool-wrapper{max-width:1200px;margin:30px auto;padding:0 20px}
+.tool-full{background:var(--card);padding:40px;border-radius:12px;box-shadow:0 8px 25px rgba(0,0,0,.08);margin-bottom:30px}
+
+.container{max-width:1200px;margin:0 auto 30px;display:grid;grid-template-columns:1fr 320px;gap:40px;padding:0 20px}
 .main-card{background:var(--card);padding:40px;border-radius:12px;box-shadow:0 8px 25px rgba(0,0,0,.08)}
+
 h1{color:var(--text);font-size:32px;margin-top:0;font-weight:700;text-align:center;border-bottom:3px solid var(--purple);padding-bottom:15px;}
 h2{color:var(--text);font-size:24px;margin-top:30px;font-weight:600; display:inline-block; position:relative; padding-bottom:5px}
 h2::after{content:''; position:absolute; left:0; bottom:0; width:0; height:3px; background:var(--purple); transition:width .3s}
@@ -47,7 +52,7 @@ p:hover{transform:translateX(5px)}
 .sidebar h3{margin-top:0;color:var(--text);border-bottom:2px solid var(--purple);padding-bottom:10px; text-align:center}
 .highlight{background:var(--purple-light); color:#fff; padding:20px; border-left:5px solid var(--purple); border-radius:5px; margin:20px 0; font-size:18px;}
 
-.tool-box textarea{width:100%; min-height:250px; padding:15px; border:2px solid #e9ecef; border-radius:8px; font-size:16px; font-family:'Poppins'; margin-bottom:15px; box-sizing:border-box; background:var(--card); color:var(--text)}
+.tool-box textarea{width:100%; min-height:300px; padding:15px; border:2px solid #e9ecef; border-radius:8px; font-size:16px; font-family:'Poppins'; margin-bottom:15px; box-sizing:border-box; background:var(--card); color:var(--text)}
 .tool-box textarea:focus{outline:none; border-color:var(--purple)}
 .btn{background:var(--purple); color:#fff; padding:12px 30px; border:none; border-radius:8px; font-size:16px; font-weight:600; cursor:pointer; margin:5px 10px 5px 0}
 .btn:hover{background:var(--purple-light)}
@@ -81,7 +86,7 @@ p:hover{transform:translateX(5px)}
   .footer-container{grid-template-columns:1fr}
   .header{flex-direction:column; gap:10px}
   .header .nav{justify-content:center}
-  .main-card{padding:20px}
+  .main-card, .tool-full{padding:20px}
 </style>
 </head>
 <body>
@@ -99,10 +104,10 @@ p:hover{transform:translateX(5px)}
   </div>
 </div>
 
-<div class="container">
-  <div class="main-card">
+<!-- TOOL FULL WIDTH UPAR -->
+<div class="tool-wrapper">
+  <div class="tool-full">
     <h1>Free Online Plagiarism Checker Tool</h1>
-    
     <div class="tool-box">
       <p>Check duplicate content and plagiarism instantly. Paste your text below and click the button.</p>
       <textarea id="text" placeholder="Enter your text here to check for plagiarism..."></textarea>
@@ -122,6 +127,12 @@ p:hover{transform:translateX(5px)}
         <p style="font-size:13px; color:var(--text); margin-top:10px">Note: This is a demo checker. For 100% accurate results with web search, connect Copyscape or Quetext API.</p>
       </div>
     </div>
+  </div>
+</div>
+
+<!-- CONTENT + SIDEBAR NEECHE -->
+<div class="container">
+  <div class="main-card">
 
     <div class="highlight">
     <p><b>100% Free & Private</b><br>
@@ -259,7 +270,6 @@ function checkPlagiarism(){
   const t = textEl.value;
   if(!t.trim()){alert('Please enter some text first'); return;}
   
-  // Demo logic: counts repeated words
   const words = t.toLowerCase().split(/\s+/);
   const uniqueWords = new Set(words);
   const plagPercent = Math.floor((1 - uniqueWords.size / words.length) * 100);
