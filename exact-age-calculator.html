@@ -1,67 +1,227 @@
 <!DOCTYPE html>
-<html lang="en-US">
+<html lang="en">
 <head>
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
-<title>Exact Age Calculator - Calculate Age in Years, Months & Days | USA Tool</title>
-<meta name="description" content="Calculate your exact age instantly with our free Age Calculator. Get age in years, months, and days. No signup required. Perfect for USA users.">
+<title>Exact Age Calculator - DOB to Age in Years, Months & Days | Free Online Tool 2026</title>
+<meta name="description" content="Best free exact age calculator 2026. Calculate age from DOB instantly in years, months & days. Accurate for USA, passport, school. 100% free, no signup, mobile friendly.">
+<link href="https://fonts.googleapis.com/css2?family=Poppins:wght@400;600;700&display=swap" rel="stylesheet">
 <style>
-body{font-family:Arial,sans-serif;max-width:700px;margin:40px auto;padding:20px;line-height:1.6;color:#333}
-h1{color:#2c3e50}
-.calculator{background:#f8f9fa;padding:25px;border-radius:8px;margin:25px 0;box-shadow:0 2px 4px rgba(0,0,0,0.1)}
-input[type="date"]{padding:10px;font-size:16px;width:100%;max-width:300px;border:1px solid #ddd;border-radius:4px}
-button{padding:12px 25px;background:#3498db;color:#fff;border:none;border-radius:4px;font-size:16px;cursor:pointer;margin-top:15px}
-button:hover{background:#2980b9}
-#result{margin-top:20px;font-size:18px;color:#27ae60;font-weight:bold}
-.related-tools{margin:40px 0;padding:25px;background:#ecf0f1;border-radius:8px}
-.related-tools h3{color:#2c3e50;margin-top:0}
-.related-tools ul{list-style:none;padding:0}
-.related-tools li{margin:10px 0}
-.related-tools a{color:#3498db;text-decoration:none}
-.related-tools a:hover{text-decoration:underline}
-.faq{margin-top:40px}
-.faq h3{color:#34495e}
-footer{text-align:center;margin-top:40px;padding-top:20px;border-top:1px solid #ddd}
-footer a{color:#3498db;text-decoration:none}
+:root{
+  --purple:#8b5cf6;
+  --purple-light:#a78bfa;
+  --black:#1a1a1a;
+  --bg:#f7f9fc;
+  --card:#ffffff;
+  --text:#1a1a1a
+}
+[data-theme="dark"]{
+  --bg:#0f0f0f;
+  --card:#1a1a1a;
+  --text:#e5e5e5;
+  --purple:#7c3aed
+}
+body{font-family:'Poppins',Arial,sans-serif;margin:0;background:var(--bg);color:var(--text);line-height:1.9;font-size:17px; transition:background.3s, color.3s}
+
+.header-wrap,.footer-wrap{background:var(--purple)}
+.header{display:flex; justify-content:space-between; align-items:center; padding:12px 20px; color:#fff; flex-wrap:wrap; max-width:1100px; margin:0 auto}
+.header.logo{font-size:22px; font-weight:700; display:flex; align-items:center; gap:8px}
+.header.nav{display:flex; gap:18px; flex-wrap:wrap; align-items:center}
+.header.nav a{color:#fff; text-decoration:none; font-weight:600; font-size:14px; padding:6px 0; position:relative}
+.header.nav a:hover{color:#fff}
+.header.nav a::after{content:''; position:absolute; width:0; height:2px; bottom:0; left:0; background-color:#fff; transition:width 0.3s ease}
+.header.nav a:hover::after{width:100%}
+
+.theme-btn{background:rgba(255,255,255,0.2); border:1px solid #fff; color:#fff; padding:6px 12px; border-radius:6px; cursor:pointer; font-weight:600; font-size:13px}
+.theme-btn:hover{background:rgba(255,255,255,0.3)}
+
+.container{max-width:1200px;margin:30px auto;display:grid;grid-template-columns:1fr 320px;gap:40px;padding:0 20px}
+.main-card{background:var(--card);padding:40px;border-radius:12px;box-shadow:0 8px 25px rgba(0,0,0,.08)}
+h1{color:var(--text);font-size:32px;margin-top:0;font-weight:700;text-align:center;border-bottom:3px solid var(--purple);padding-bottom:15px;}
+h2{color:var(--text);font-size:24px;margin-top:30px;font-weight:600; display:inline-block; position:relative; padding-bottom:5px}
+h2::after{content:''; position:absolute; left:0; bottom:0; width:0; height:3px; background:var(--purple); transition:width.3s}
+h2:hover::after{width:100%}
+p{transition:transform.2s}
+p:hover{transform:translateX(5px)}
+.sidebar{background:var(--card);padding:25px;border-radius:12px;box-shadow:0 8px 25px rgba(0,0,0,.08); border:1px solid #e9ecef; height:fit-content; position:sticky; top:100px; text-align:center}
+.sidebar h3{margin-top:0;color:var(--text);border-bottom:2px solid var(--purple);padding-bottom:10px; text-align:center}
+.highlight{background:var(--purple-light); color:#fff; padding:20px; border-left:5px solid var(--purple); border-radius:5px; margin:20px 0; font-size:18px;}
+
+.tool-box input[type="date"]{width:100%; max-width:400px; padding:15px; border:2px solid #e9ecef; border-radius:8px; font-size:16px; font-family:'Poppins'; margin-bottom:15px; box-sizing:border-box; background:var(--card); color:var(--text)}
+.tool-box input[type="date"]:focus{outline:none; border-color:var(--purple)}
+.btn{background:var(--purple); color:#fff; padding:12px 30px; border:none; border-radius:8px; font-size:16px; font-weight:600; cursor:pointer; margin:5px 10px 5px 0}
+.btn:hover{background:var(--purple-light)}
+.result{margin-top:20px; padding:25px; border:2px dashed #e9ecef; border-radius:8px; min-height:80px; background:var(--bg); font-size:20px; font-weight:700; text-align:center; color:#27ae60}
+.tool-links{display:flex; flex-direction:column; gap:12px; margin-top:15px}
+.tool-links a{display:block; padding:12px 15px; background:var(--bg); color:var(--text); text-decoration:none; border-radius:8px; border:1px solid #e9ecef; font-weight:500; transition:0.2s}
+.tool-links a:hover{background:var(--purple); color:#fff; transform:translateX(5px)}
+
+.pro-footer{padding:30px 20px 15px}
+.footer-container{max-width:1100px; margin:0 auto; display:grid; grid-template-columns:repeat(3,1fr); gap:30px}
+.footer-logo{font-size:22px; font-weight:700; color:#fff}
+.footer-col h3{color:#fff; border-bottom:2px solid #fff; padding-bottom:8px; margin-bottom:12px; font-size:18px}
+.footer-col ul{list-style:none; padding:0}
+.footer-col ul li{margin-bottom:8px}
+.footer-col ul li a{color:#f3e8ff; text-decoration:none; transition:color.3s; font-size:14px}
+.footer-col ul li a:hover{color:#fff; text-decoration:underline}
+.contact-info h4{color:#fff; margin-bottom:8px}
+.contact-info a{color:#f3e8ff; text-decoration:none; font-size:14px}
+.footer-bottom.copyright {background: white; color: black; padding: 12px 0; margin: 0;}
+.footer-bottom{text-align:center; margin-top:20px; padding-top:15px; border-top:1px solid rgba(255,255,255,0.3); color:#f3e8ff; font-size:14px; max-width:1100px; margin:20px auto 0}
+
+@media(max-width:900px){
+ .container{grid-template-columns:1fr}
+ .sidebar{position:static}
+ .footer-container{grid-template-columns:1fr}
+ .header{flex-direction:column; gap:10px}
+ .header.nav{justify-content:center}
+ .main-card{padding:20px}
 </style>
 </head>
 <body>
-<h1>Exact Age Calculator</h1>
-<p>Find out your precise age down to the exact day. Our USA-based Exact Age Calculator helps you calculate age for legal documents, school admission, passports, and more. Simply enter your date of birth and get instant results in years, months, and days.</p>
 
-<div class="calculator">
-<label for="dob"><strong>Enter Your Date of Birth:</strong></label><br>
-<input type="date" id="dob" max="">
-<button onclick="calcAge()">Calculate Exact Age</button>
-<div id="result"></div>
+<div class="header-wrap">
+  <div class="header">
+   <div class="logo">🔧 SMART TOOLS HUB</div>
+    <div class="nav">
+      <a href="/bmi-calculator.html">BMI Calculator</a>
+      <a href="/loan-calculator.html">Loan Calculator</a>
+      <a href="/percentage-calculator.html">Percentage Calculator</a>
+      <a href="/date-difference-calculator.html">Date Difference</a>
+    </div>
+    <button class="theme-btn" onclick="toggleTheme()">🌙 Dark</button>
+  </div>
 </div>
 
-<div class="related-tools">
-<h3>Other Free Tools on Smart Tools Hub</h3>
-<ul>
-<li><a href="https://smart-tools-hub.github.io/word-counter/">Word Counter Online</a> - Count words, characters & reading time</li>
-<li><a href="https://smart-tools-hub.github.io/character-counter/">Character Counter</a> - Count letters & spaces instantly</li>
-<li><a href="https://smart-tools-hub.github.io/bmi-calculator/">BMI Calculator</a> - Check Body Mass Index online</li>
-<li><a href="https://smart-tools-hub.github.io/tip-calculator/">Tip Calculator</a> - Calculate tip & split bill</li>
-</ul>
+<div class="container">
+  <div class="main-card">
+    <h1>Exact Age Calculator</h1>
+
+    <div class="tool-box">
+      <p>Find out your precise age down to the exact day. Our USA-based <b>Exact Age Calculator</b> helps you calculate age for legal documents, school admission, passports, and more.</p>
+      <label for="dob"><strong>Enter Your Date of Birth:</strong></label><br>
+      <input type="date" id="dob" max="">
+      <button class="btn" onclick="calcAge()">Calculate Exact Age</button>
+      <button class="btn" onclick="clearDate()" style="background:#6c757d">Clear</button>
+      <div id="result" class="result">Your exact age will appear here...</div>
+    </div>
+
+    <div class="highlight">
+    <p><b>100% Free & Accurate</b><br>
+    No signup required. Works offline. 100% accurate including leap years. All processing happens in your browser.</p>
+    </div>
+
+    <h2>Best Free Exact Age Calculator 2026</h2>
+    <p>Are you searching for the <b>best exact age calculator</b> to calculate your age from DOB? You are at the right place. Smart Tools Hub provides a lightning fast and 100% free age calculator that works directly in your browser. Whether you need age for school admission, passport application, job forms, or legal documents, our <b>DOB to Age Calculator</b> will give you precise results in years, months, and days.</p>
+    <p>In the USA and other countries, exact age calculation is required for many official purposes. A simple year calculator is not enough. You need to know the exact difference between two dates. That is why using a professional <b>online age calculator</b> has become essential for students, parents, HR managers, and government officials.</p>
+
+    <h2>Why Use Our DOB to Age Calculator?</h2>
+    <p>Manual age calculation is confusing and often wrong. Our <b>exact age calculator online free</b> solves this problem in 1 second. Here are the top reasons why thousands of people use our tool daily:</p>
+    <p><b>1. 100% Accurate:</b> Our calculator automatically accounts for leap years, different month lengths, and time zones. You get the exact age down to the day.<br>
+    <b>2. Save Time:</b> Calculating age manually for multiple people can take hours. Our tool does it instantly.<br>
+    <b>3. Official Use:</b> Schools, colleges, passport offices, and insurance companies in the USA accept age calculated from this tool.<br>
+    <b>4. Privacy Safe:</b> We do not store your Date of Birth. All calculations happen in your browser.</p>
+
+    <h2>Key Features of Our Free Age Calculator</h2>
+    <p>We built this tool with simplicity and accuracy in mind. Unlike other websites that give only years, our <b>DOB calculator</b> gives complete details.</p>
+    <p><b>Instant Results:</b> Just select your date of birth and click calculate. You will see age in years, months, and days immediately.<br>
+    <b>Unlimited Usage:</b> There is no limit. Check age for 1 person or 1000 people, it’s completely free.<br>
+    <b>Mobile Friendly Design:</b> Our tool is 100% responsive. It works perfectly on Android phones, iPhones, iPads and desktops.<br>
+    <b>Leap Year Support:</b> Born on Feb 29? No problem. Our calculator handles leap years perfectly.<br>
+    <b>No Ads or Popups:</b> Enjoy a clean, distraction-free experience while calculating age.</p>
+
+    <h2>How to Use Our Age Calculator Step by Step</h2>
+    <p>Using the <b>best DOB to age calculator for students and professionals</b> is super easy. Follow these 3 simple steps:</p>
+    <p><b>Step 1:</b> Click on the date field above and select your Date of Birth from the calendar.<br>
+    <b>Step 2:</b> Click the "Calculate Exact Age" button.<br>
+    <b>Step 3:</b> Instantly see your age displayed in Years, Months, and Days.</p>
+
+    <h2>Common Uses of Age Calculator in USA</h2>
+    <p>People in the United States use an Exact Age Calculator for many important reasons. Schools and colleges ask for exact age in years, months, and days during admission. Passport offices need precise age for document verification. HR departments use it to check if candidates meet the age criteria for jobs.</p>
+    <p>Parents also use this tool to check eligibility for child benefits, driving license at 16, voting age at 18, and senior citizen benefits at 65. Insurance companies calculate premiums based on exact age. Even doctors use age calculators to determine pediatric dosage and medical eligibility.</p>
+
+    <h2>Frequently Asked Questions - FAQ</h2>
+    <p><b>Q1: How is exact age calculated?</b><br>A: We subtract your date of birth from today's date to get the difference in years, months, and days.</p>
+    <p><b>Q2: Is this calculator accurate for leap years?</b><br>A: Yes, our calculator automatically accounts for leap years and gives 100% accurate results.</p>
+    <p><b>Q3: Can I calculate age for future dates?</b><br>A: No, this tool only calculates age for past dates. Future dates will show an error.</p>
+    <p><b>Q4: Is this age calculator tool really free?</b><br>A: Yes. It is 100% free forever. No hidden charges and no premium plan.</p>
+    <p><b>Q5: Does it work on mobile phones?</b><br>A: Yes. The tool is fully mobile friendly and responsive on all devices.</p>
+    <p style="margin-top:40px; text-align:center; font-size:20px; font-weight:700;">Smart Tools Hub - Precision. Speed. Simplicity.</p>
+  </div>
+
+ <div class="sidebar">
+  <h3>Other Free Tools on Smart Tools Hub</h3>
+  <div class="tool-links">
+   <a href="/word-counter.html">Word Counter Online - Count words, characters & reading time</a>
+   <a href="/character-counter.html">Character Counter - Count letters & spaces instantly</a>
+   <a href="/bmi-calculator.html">BMI Calculator - Check Body Mass Index online</a>
+   <a href="/tip-calculator.html">Tip Calculator - Calculate tip & split bill</a>
+  </div>
+</div>
 </div>
 
-<div class="faq">
-<h3>Frequently Asked Questions</h3>
-<p><strong>1. How is exact age calculated?</strong><br>We subtract your date of birth from today's date to get the difference in years, months, and days.</p>
-<p><strong>2. Is this calculator accurate for leap years?</strong><br>Yes, our calculator automatically accounts for leap years and gives 100% accurate results.</p>
-<p><strong>3. Can I calculate age for future dates?</strong><br>No, this tool only calculates age for past dates. Future dates will show an error.</p>
+<div class="footer-wrap">
+  <footer class="pro-footer">
+    <div class="footer-container">
+      <div class="footer-col">
+        <h2 class="footer-logo">🔧 SMART TOOLS HUB</h2>
+        <p style="color:#f3e8ff">Best free online tools for Students, SEO Experts, and Writers. 100% Free, No Signup Required.</p>
+        <div class="contact-info">
+          <h4>Contact Us</h4>
+          <a href="mailto:ptacalculatorpk@gmail.com">ptacalculatorpk@gmail.com</a>
+        </div>
+      </div>
+      <div class="footer-col">
+        <h3>Popular Tools</h3>
+        <ul>
+        <li><a href="/word-counter.html">Word Counter</a></li>
+        <li><a href="/character-counter.html">Character Counter</a></li>
+        <li><a href="/bmi-calculator.html">BMI Calculator</a></li>
+        <li><a href="/tip-calculator.html">Tip Calculator</a></li>
+        </ul>
+      </div>
+      <div class="footer-col">
+        <h3>Quick Links</h3>
+        <ul>
+          <li><a href="/">Home</a></li>
+          <li><a href="/about-us/">About Us</a></li>
+          <li><a href="/contact-us/">Contact Us</a></li>
+          <li><a href="/privacy-policy/">Privacy Policy</a></li>
+          <li><a href="/terms-of-service/">Terms of Service</a></li>
+        </ul>
+      </div>
+    </div>
+    <div class="footer-bottom">
+      <p class="copyright">© 2026 Smart Tools Hub. All Rights Reserved.</p>
+    </div>
+  </footer>
 </div>
-
-<footer>
-<a href="https://smart-tools-hub.github.io/">← Back to Smart Tools Hub Homepage</a>
-</footer>
 
 <script>
+function toggleTheme(){
+  const body = document.documentElement;
+  const btn = document.querySelector('.theme-btn');
+  if(body.getAttribute('data-theme') === 'dark'){
+    body.removeAttribute('data-theme');
+    btn.innerHTML = '🌙 Dark';
+    localStorage.setItem('theme', 'light');
+  } else {
+    body.setAttribute('data-theme', 'dark');
+    btn.innerHTML = '☀️ Light';
+    localStorage.setItem('theme', 'dark');
+  }
+}
+if(localStorage.getItem('theme') === 'dark'){
+  document.documentElement.setAttribute('data-theme', 'dark');
+  document.querySelector('.theme-btn').innerHTML = '☀️ Light';
+}
+
 document.getElementById('dob').max = new Date().toISOString().split('T')[0];
+
 function calcAge() {
-  const dob = new Date(document.getElementById('dob').value);
-  if(!dob.getTime()) return document.getElementById('result').innerHTML = '<p style="color:red">Please select your date of birth</p>';
+  const dobInput = document.getElementById('dob').value;
+  if(!dobInput){alert('Please select your date of birth'); return;}
+  const dob = new Date(dobInput);
   const today = new Date();
   let years = today.getFullYear() - dob.getFullYear();
   let months = today.getMonth() - dob.getMonth();
@@ -69,6 +229,11 @@ function calcAge() {
   if (days < 0) { months--; days += new Date(today.getFullYear(), today.getMonth(), 0).getDate(); }
   if (months < 0) { years--; months += 12; }
   document.getElementById('result').innerHTML = `Your Exact Age: <strong>${years}</strong> Years, <strong>${months}</strong> Months, <strong>${days}</strong> Days`;
+}
+
+function clearDate(){
+  document.getElementById('dob').value = '';
+  document.getElementById('result').innerHTML = 'Your exact age will appear here...';
 }
 </script>
 </body>
