@@ -1,143 +1,258 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-  <meta charset="UTF-8">
-  <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>Tip Calculator | Calculate 15% 18% 20% Tip & Split Bill Online</title>
-  <meta name="description" content="Free online tip calculator. Calculate restaurant tip 15%, 18%, 20% instantly. Split bill between people. USA, Canada, UK tip calculator with tax. No ads.">
-  <link rel="canonical" href="https://smart-tools-hub.github.io/tip-calculator.html" />
-  <style>
-    body{font-family:system-ui,Arial,sans-serif;background:#f8f9fa;margin:0;padding:0;color:#333;line-height:1.6}
-    .container{max-width:800px;margin:20px auto;padding:20px;background:#fff;border-radius:12px;box-shadow:0 2px 10px rgba(0,0,0,0.1)}
-    h1,h2,h3{color:#1a73e8}
-    .calculator{background:#e8f0fe;padding:20px;border-radius:8px;margin:20px 0}
-    input,button,select{width:100%;padding:12px;margin:8px 0;border:1px solid #ddd;border-radius:6px;font-size:16px;box-sizing:border-box}
-    button{background:#1a73e8;color:#fff;border:none;font-weight:bold;cursor:pointer}
-    button:hover{background:#1557b0}
-    .result{font-size:18px;font-weight:bold;color:#1a73e8;margin-top:15px}
-    .faq{margin-top:30px}
-    .faq h3{margin-bottom:5px}
-    @media(max-width:600px){.container{margin:10px;padding:15px}}
-  </style>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Free Online Tip Calculator | Calculate 15% 18% 20% Tip & Split Bill</title>
+<meta name="description" content="Best free online tip calculator 2026. Calculate restaurant tip 15%, 18%, 20% instantly. Split bill between people. 100% free, no signup, mobile friendly.">
+<link href="https://fonts.googleapis.com/css2?family=Poppins:wght@400;600;700&display=swap" rel="stylesheet">
+<style>
+:root{
+  --purple:#8b5cf6;
+  --purple-light:#a78bfa;
+  --black:#1a1a1a;
+  --bg:#f7f9fc;
+  --card:#ffffff;
+  --text:#1a1a1a
+}
+[data-theme="dark"]{
+  --bg:#0f0f0f;
+  --card:#1a1a1a;
+  --text:#e5e5e5;
+  --purple:#7c3aed
+}
+body{font-family:'Poppins',Arial,sans-serif;margin:0;background:var(--bg);color:var(--text);line-height:1.9;font-size:17px; transition:background .3s, color .3s}
+
+.header-wrap, .footer-wrap{background:var(--purple)}
+.header{display:flex; justify-content:space-between; align-items:center; padding:12px 20px; color:#fff; flex-wrap:wrap; max-width:1100px; margin:0 auto}
+.header .logo{font-size:22px; font-weight:700; display:flex; align-items:center; gap:8px}
+.header .nav{display:flex; gap:18px; flex-wrap:wrap; align-items:center}
+.header .nav a{color:#fff; text-decoration:none; font-weight:600; font-size:14px; padding:6px 0; position:relative}
+.header .nav a:hover{color:#fff}
+.header .nav a::after{content:''; position:absolute; width:0; height:2px; bottom:0; left:0; background-color:#fff; transition:width 0.3s ease}
+.header .nav a:hover::after{width:100%}
+
+.theme-btn{background:rgba(255,255,255,0.2); border:1px solid #fff; color:#fff; padding:6px 12px; border-radius:6px; cursor:pointer; font-weight:600; font-size:13px}
+.theme-btn:hover{background:rgba(255,255,255,0.3)}
+
+.container{max-width:1200px;margin:30px auto;display:grid;grid-template-columns:1fr 320px;gap:40px;padding:0 20px}
+.main-card{background:var(--card);padding:40px;border-radius:12px;box-shadow:0 8px 25px rgba(0,0,0,.08)}
+h1{color:var(--text);font-size:32px;margin-top:0;font-weight:700;text-align:center;border-bottom:3px solid var(--purple);padding-bottom:15px;}
+h2{color:var(--text);font-size:24px;margin-top:30px;font-weight:600; display:inline-block; position:relative; padding-bottom:5px}
+h2::after{content:''; position:absolute; left:0; bottom:0; width:0; height:3px; background:var(--purple); transition:width .3s}
+h2:hover::after{width:100%}
+p{transition:transform .2s}
+p:hover{transform:translateX(5px)}
+.sidebar{background:var(--card);padding:25px;border-radius:12px;box-shadow:0 8px 25px rgba(0,0,0,.08); border:1px solid #e9ecef; height:fit-content; position:sticky; top:100px; text-align:center}
+.sidebar h3{margin-top:0;color:var(--text);border-bottom:2px solid var(--purple);padding-bottom:10px; text-align:center}
+.highlight{background:var(--purple-light); color:#fff; padding:20px; border-left:5px solid var(--purple); border-radius:5px; margin:20px 0; font-size:18px;}
+
+.tool-box input, .tool-box select{width:100%; padding:15px; border:2px solid #e9ecef; border-radius:8px; font-size:16px; font-family:'Poppins'; margin-bottom:15px; box-sizing:border-box; background:var(--card); color:var(--text)}
+.tool-box input:focus, .tool-box select:focus{outline:none; border-color:var(--purple)}
+.btn{background:var(--purple); color:#fff; padding:12px 30px; border:none; border-radius:8px; font-size:16px; font-weight:600; cursor:pointer; margin:5px 10px 5px 0}
+.btn:hover{background:var(--purple-light)}
+.stats{margin:15px 0; font-weight:600}
+.result{margin-top:20px; padding:20px; border:2px dashed #e9ecef; border-radius:8px; min-height:60px; background:var(--bg); font-size:18px; font-weight:600; color:var(--purple)}
+.tool-links{display:flex; flex-direction:column; gap:12px; margin-top:15px} 
+.tool-links a{display:block; padding:12px 15px; background:var(--bg); color:var(--text); text-decoration:none; border-radius:8px; border:1px solid #e9ecef; font-weight:500; transition:0.2s} 
+.tool-links a:hover{background:var(--purple); color:#fff; transform:translateX(5px)}
+
+.pro-footer{padding:30px 20px 15px}
+.footer-container{max-width:1100px; margin:0 auto; display:grid; grid-template-columns:repeat(3,1fr); gap:30px}
+.footer-logo{font-size:22px; font-weight:700; color:#fff}
+.footer-col h3{color:#fff; border-bottom:2px solid #fff; padding-bottom:8px; margin-bottom:12px; font-size:18px}
+.footer-col ul{list-style:none; padding:0}
+.footer-col ul li{margin-bottom:8px}
+.footer-col ul li a{color:#f3e8ff; text-decoration:none; transition:color .3s; font-size:14px}
+.footer-col ul li a:hover{color:#fff; text-decoration:underline}
+.contact-info h4{color:#fff; margin-bottom:8px}
+.contact-info a{color:#f3e8ff; text-decoration:none; font-size:14px}
+.footer-bottom .copyright {background: white; color: black; padding: 12px 0; margin: 0;}
+.footer-bottom{text-align:center; margin-top:20px; padding-top:15px; border-top:1px solid rgba(255,255,255,0.3); color:#f3e8ff; font-size:14px; max-width:1100px; margin:20px auto 0}
+
+@media(max-width:900px){
+  .container{grid-template-columns:1fr} 
+  .sidebar{position:static}
+  .footer-container{grid-template-columns:1fr}
+  .header{flex-direction:column; gap:10px}
+  .header .nav{justify-content:center}
+  .main-card{padding:20px}
+</style>
 </head>
 <body>
+
+<div class="header-wrap">
+  <div class="header">
+   <div class="logo">🔧 SMART TOOLS HUB</div> 
+    <div class="nav">
+      <a href="/grammar-checker.html">Grammar Checker</a>
+      <a href="/word-counter.html">Word Counter</a>
+      <a href="/bmi-calculator.html">BMI Calculator</a>
+      <a href="/age-calculator.html">Age Calculator</a>
+    </div>
+    <button class="theme-btn" onclick="toggleTheme()">🌙 Dark</button>
+  </div>
+</div>
+
 <div class="container">
-  <h1>Free Online Tip Calculator</h1>
-  <p>Calculate restaurant tip quickly and accurately. Our tip calculator helps you figure out 15%, 18%, 20% tip and split the bill with friends. Works for USA, Canada, UK and worldwide.</p>
-
-  <!-- CALCULATOR TOOL -->
-  <div class="calculator">
-    <h2>Tip Calculator Tool</h2>
-    <label>Bill Amount ($)</label>
-    <input type="number" id="bill" placeholder="Enter bill amount">
+  <div class="main-card">
+    <h1>Free Online Tip Calculator</h1>
     
-    <label>Tip Percentage</label>
-    <select id="tip">
-      <option value="15">15% - Good Service</option>
-      <option value="18">18% - Great Service</option>
-      <option value="20">20% - Excellent Service</option>
-      <option value="25">25% - Outstanding</option>
-      <option value="custom">Custom %</option>
-    </select>
-    <input type="number" id="customTip" placeholder="Enter custom %" style="display:none">
+    <div class="tool-box">
+      <p>Calculate restaurant tip and split bill instantly. Enter bill amount and get tip for 15%, 18%, 20%.</p>
+      <input type="number" id="bill" placeholder="Enter Bill Amount $" step="0.01">
+      <select id="tipPercent">
+        <option value="15">15% - Good Service</option>
+        <option value="18">18% - Great Service</option>
+        <option value="20" selected>20% - Excellent Service</option>
+        <option value="25">25% - Outstanding</option>
+      </select>
+      <input type="number" id="people" placeholder="Number of People" value="1" min="1">
+      
+      <button class="btn" onclick="calcTip()">Calculate Tip</button>
+      <button class="btn" onclick="clearTip()" style="background:#6c757d">Clear</button>
+      <div id="result" class="result">Your tip calculation will appear here...</div>
+    </div>
 
-    <label>Number of People</label>
-    <input type="number" id="people" value="1" min="1">
+    <div class="highlight">
+    <p><b>100% Free & Mobile Friendly</b><br>
+    No signup required. Works perfectly on iPhone, Android and Desktop. Split bill with friends in 1 click.</p>
+    </div>
 
-    <button onclick="calculateTip()">Calculate Tip</button>
+    <h2>Best Free Online Tip Calculator 2026</h2>
+    <p>Are you searching for the <b>best free online tip calculator</b> to calculate restaurant tip? You are at the right place. Smart Tools Hub provides a lightning fast and 100% free tip calculator that works directly in your browser. Whether you are dining in USA, Canada, UK or anywhere in the world, our tool will help you calculate exact tip amount in seconds.</p>
+    <p>In 2026, tipping culture is more important than ever. The standard tip in USA is now 18% to 20%. Our <b>restaurant tip calculator</b> helps you avoid confusion and calculate tip for any bill amount instantly without doing any math.</p>
     
-    <div class="result" id="result"></div>
+    <h2>Why You Need an Online Tip Calculator?</h2>
+    <p>Manual calculation wastes time and you might calculate wrong. Our <b>tip calculator with split bill</b> solves this problem in 1 second. Here are the top reasons:</p>
+    <p><b>1. Save Time:</b> No need to use phone calculator. Get results instantly.<br>
+    <b>2. Avoid Mistakes:</b> 20% of $47.50 is not easy to calculate in head. We do it for you.<br>
+    <b>3. Split Bill Easily:</b> Going with friends? Divide total including tip equally.<br>
+    <b>4. Standard Guide:</b> We follow USA 2026 tipping standards: 15%, 18%, 20%.</p>
+    
+    <h2>Key Features of Our Free Tip Calculator</h2>
+    <p>We built this tool with simplicity and power in mind. Unlike other websites that are full of ads, our <b>free tip calculator no signup</b> works instantly.</p>
+    <p><b>Instant Results:</b> Enter bill and click calculate. Tip and total appear immediately.<br>
+    <b>Split Bill Option:</b> Enter number of people and we calculate per person amount.<br>
+    <b>Mobile Friendly Design:</b> Our tool is 100% responsive. Works perfectly on all phones and tablets.<br>
+    <b>100% Free:</b> No ads, no popups, no premium plan. Use it unlimited times.<br>
+    <b>Multiple Tip Options:</b> 15%, 18%, 20%, 25% and custom percentage support.</p>
+    
+    <h2>How to Use Our Tip Calculator Step by Step</h2>
+    <p>Using the <b>best tip calculator for restaurants</b> is super easy. Follow these 3 simple steps:</p>
+    <p><b>Step 1:</b> Enter your total bill amount in the box above.<br>
+    <b>Step 2:</b> Select tip percentage. 15% for good, 18% for great, 20% for excellent service.<br>
+    <b>Step 3:</b> Enter number of people if splitting bill. Click "Calculate Tip" button.</p>
+    
+    <h2>Standard Tipping Guide in USA 2026</h2>
+    <p>Here is the official tipping guide for United States:</p>
+    <p><b>Restaurants:</b> 18% to 20% of pre-tax bill is now standard<br>
+    <b>Food Delivery:</b> $3 to $5 or 15% to 20%<br>
+    <b>Taxi/Uber:</b> 15% to 20%<br>
+    <b>Bar/Barista:</b> $1 to $2 per drink<br>
+    <b>Hotel Staff:</b> $2 to $5 per bag</p>
+    <p>In cities like New York, Florida, California, 20% tip is expected for good service.</p>
+    
+    <h2>Frequently Asked Questions - FAQ</h2>
+    <p><b>Q1: What is 20% tip on $100?</b><br>A: 20% tip on $100 is $20. Total bill will be $120.</p>
+    <p><b>Q2: What is 20% tip on $20?</b><br>A: 20% tip on $20 is $4. Total bill will be $24.</p>
+    <p><b>Q3: How to calculate 20 percent tip?</b><br>A: Multiply bill amount by 0.20. Example: $50 x 0.20 = $10 tip.</p>
+    <p><b>Q4: Is 20% a good tip in 2026?</b><br>A: Yes. 20% is considered excellent tip for great service in USA.</p>
+    <p><b>Q5: Do I tip on pre-tax or post-tax amount?</b><br>A: Most experts recommend tipping on pre-tax amount.</p>
+    
+    <p style="margin-top:40px; text-align:center; font-size:20px; font-weight:700;">Smart Tools Hub - Precision. Speed. Simplicity.</p>
   </div>
 
-  <!-- 1000 WORD CONTENT FOR SEO -->
-  <h2>What is a Tip Calculator?</h2>
-  <p>A tip calculator is an online tool that helps you calculate how much tip to leave at restaurants, cafes, bars, and for delivery services. Instead of doing math on your phone, just enter your bill amount and get instant tip amounts for 15%, 18%, and 20%.</p>
-
-  <h2>How to Use This Tip Calculator</h2>
-  <p>Using our free tip calculator is very simple. Follow these 3 steps:</p>
-  <ol>
-    <li><b>Enter Bill Amount:</b> Type the total amount from your restaurant bill before tax.</li>
-    <li><b>Select Tip Percentage:</b> Choose 15% for good service, 18% for great service, or 20% for excellent service. You can also enter a custom tip percentage.</li>
-    <li><b>Split the Bill:</b> If you are dining with friends, enter the number of people to split the tip and total amount equally.</li>
-  </ol>
-
-  <h2>How Much Tip Should You Leave in USA?</h2>
-  <p>In the United States, tipping culture is very common. Here is the standard guide:</p>
-  <ul>
-    <li><b>15%:</b> Standard for average service at restaurants</li>
-    <li><b>18%:</b> For good service</li>
-    <li><b>20%:</b> For excellent service</li>
-    <li><b>25%+:</b> For outstanding service</li>
-  </ul>
-  <p>For delivery drivers, taxi drivers, and barbers, 15-20% tip is also recommended.</p>
-
-  <h2>Tip Calculator with Tax</h2>
-  <p>Should you calculate tip before tax or after tax? Most experts recommend calculating tip on the pre-tax amount. This tool uses the bill amount you enter, so you can decide to enter amount before or after tax.</p>
-
-  <h2>Split Bill Calculator</h2>
-  <p>Going out with friends? Our calculator also splits the total bill including tip. Just enter the number of people and we will show how much each person should pay. Perfect for group dinners and parties.</p>
-
-  <h2>Restaurant Tip Calculator by State</h2>
-  <p>While tip percentage is similar across USA, some cities like New York, Florida, California, and Texas have higher expectations. This calculator works for all states and cities.</p>
-
-  <h2>Benefits of Using Our Tip Calculator</h2>
-  <ul>
-    <li>✅ 100% Free - No ads, no signup</li>
-    <li>✅ Mobile Friendly - Works perfectly on iPhone and Android</li>
-    <li>✅ Instant Results - No page reload</li>
-    <li>✅ Split Bill Option - Divide among friends</li>
-    <li>✅ Custom Tip % - Set any percentage you want</li>
-  </ul>
-
-  <!-- FAQ FOR LONG TAIL -->
-  <div class="faq">
-    <h2>Frequently Asked Questions</h2>
-    <h3>What is 20% tip on $100?</h3>
-    <p>20% tip on $100 bill is $20. Total amount with tip will be $120.</p>
-    
-    <h3>What is 20% tip on $20?</h3>
-    <p>20% tip on $20 bill is $4. Total amount with tip will be $24.</p>
-
-    <h3>How to calculate 20 percent tip?</h3>
-    <p>To calculate 20% tip, multiply your bill amount by 0.20. For example: $50 x 0.20 = $10 tip.</p>
-
-    <h3>Is 20 percent a good tip?</h3>
-    <p>Yes, 20% is considered an excellent tip in the USA for great restaurant service.</p>
-
-    <h3>New York tip calculator</h3>
-    <p>In New York City, 18-20% tip is standard. Use our calculator above to calculate exact tip amount.</p>
+ <div class="sidebar">
+  <h3>Other Tools</h3>
+  <div class="tool-links">
+   <a href="/bmi-calculator.html">BMI Calculator</a>
+   <a href="/word-counter.html">Word Counter</a>
+   <a href="/age-calculator.html">Age Calculator</a>
+   <a href="/qr-code-generator.html">QR Code Generator</a>
   </div>
+</div>
+</div>
 
-  <h2>Related Tools</h2>
-  <p>Check out other free tools: <a href="/bmi-calculator.html">BMI Calculator</a>, <a href="/word-counter.html">Word Counter</a>, <a href="/qr-code-generator.html">QR Code Generator</a></p>
-
+<div class="footer-wrap">
+  <footer class="pro-footer">
+    <div class="footer-container">
+      <div class="footer-col">
+        <h2 class="footer-logo">🔧 SMART TOOLS HUB</h2>
+        <p style="color:#f3e8ff">Best free online tools for Students, SEO Experts, and Writers. 100% Free, No Signup Required.</p>
+        <div class="contact-info">
+          <h4>Contact Us</h4>
+          <a href="mailto:ptacalculatorpk@gmail.com">ptacalculatorpk@gmail.com</a>
+        </div>
+      </div>
+      <div class="footer-col">
+        <h3>Popular Tools</h3>
+        <ul>
+        <li><a href="/bmi-calculator.html">BMI Calculator</a></li>
+        <li><a href="/word-counter.html">Word Counter</a></li>
+        <li><a href="/age-calculator.html">Age Calculator</a></li>
+        <li><a href="/qr-code-generator.html">QR Code Generator</a></li>  
+        </ul>
+      </div>
+      <div class="footer-col">
+        <h3>Quick Links</h3>
+        <ul>
+          <li><a href="/">Home</a></li>
+          <li><a href="/about-us/">About Us</a></li>
+          <li><a href="/contact-us/">Contact Us</a></li>
+          <li><a href="/privacy-policy/">Privacy Policy</a></li>
+          <li><a href="/terms-of-service/">Terms of Service</a></li>
+        </ul>
+      </div>
+    </div>
+    <div class="footer-bottom">
+      <p class="copyright">© 2026 Smart Tools Hub. All Rights Reserved.</p>
+    </div>
+  </footer>
 </div>
 
 <script>
-function calculateTip(){
-  let bill = parseFloat(document.getElementById('bill').value);
-  let tipSelect = document.getElementById('tip').value;
-  let tip = tipSelect === 'custom' ? parseFloat(document.getElementById('customTip').value) : parseFloat(tipSelect);
-  let people = parseInt(document.getElementById('people').value);
-  
-  if(isNaN(bill) || isNaN(tip) || isNaN(people)){
-    document.getElementById('result').innerHTML = "Please enter all values";
-    return;
+function toggleTheme(){
+  const body = document.documentElement;
+  const btn = document.querySelector('.theme-btn');
+  if(body.getAttribute('data-theme') === 'dark'){
+    body.removeAttribute('data-theme');
+    btn.innerHTML = '🌙 Dark';
+    localStorage.setItem('theme', 'light');
+  } else {
+    body.setAttribute('data-theme', 'dark');
+    btn.innerHTML = '☀️ Light';
+    localStorage.setItem('theme', 'dark');
   }
+}
+if(localStorage.getItem('theme') === 'dark'){
+  document.documentElement.setAttribute('data-theme', 'dark');
+  document.querySelector('.theme-btn').innerHTML = '☀️ Light';
+}
+
+function calcTip(){
+  let bill = parseFloat(document.getElementById('bill').value);
+  let tip = parseFloat(document.getElementById('tipPercent').value);
+  let people = parseInt(document.getElementById('people').value);
+  let resultDiv = document.getElementById('result');
+  
+  if(!bill || bill <= 0){alert('Please enter bill amount'); return;}
+  if(!people || people < 1){people = 1}
   
   let tipAmount = bill * (tip/100);
   let total = bill + tipAmount;
   let perPerson = total / people;
   
-  document.getElementById('result').innerHTML = 
-    `Tip Amount: $${tipAmount.toFixed(2)}<br>
-     Total Bill: $${total.toFixed(2)}<br>
-     Per Person: $${perPerson.toFixed(2)}`;
+  resultDiv.innerHTML = `<b>Tip Amount:</b> $${tipAmount.toFixed(2)} <br>
+                         <b>Total Bill:</b> $${total.toFixed(2)} <br>
+                         <b>Per Person:</b> $${perPerson.toFixed(2)}`;
 }
 
-document.getElementById('tip').addEventListener('change', function(){
-  document.getElementById('customTip').style.display = this.value === 'custom' ? 'block' : 'none';
-});
+function clearTip(){
+  document.getElementById('bill').value = '';
+  document.getElementById('people').value = '1';
+  document.getElementById('result').innerHTML = 'Your tip calculation will appear here...';
+}
 </script>
 </body>
 </html>
