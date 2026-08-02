@@ -74,7 +74,8 @@ p:hover{transform:translateX(5px)}
   .main-card{padding:20px}
 }
 </style>
-</head>
+<script src="https://cdnjs.cloudflare.com/ajax/libs/qrcodejs/1.0.0/qrcode.min.js"></script> 
+</head>E
 <body>
 
 <div class="header-wrap">
@@ -231,14 +232,19 @@ textEl.oninput = () => {
 function generateQR(){
   const t = textEl.value;
   if(!t.trim()){alert('Please enter your contact details first'); return;}
-  document.getElementById('result').innerHTML = '<p style="color:green; font-weight:600">QR Code Generated! [Connect your QR library here]</p><p>Note: Connect a QR library like qrcode.js to generate real QR image from this text.</p>';
+  
+  const lines = t.split('\n');
+  let vcard = "BEGIN:VCARD\nVERSION:3.0\n";
+  lines.forEach(line => {
+    if(line.toLowerCase().includes('name:')) vcard += "FN:" + line.split(':')[1].trim() + "\n";
+    if(line.toLowerCase().includes('phone:')) vcard += "TEL:" + line.split(':')[1].trim() + "\n";
+    if(line.toLowerCase().includes('email:')) vcard += "EMAIL:" + line.split(':')[1].trim() + "\n";
+    if(line.toLowerCase().includes('address:')) vcard += "ADR:" + line.split(':')[1].trim() + "\n";
+  });
+  vcard += "END:VCARD";
+  
+  document.getElementById('result').innerHTML = "";
+  new QRCode(document.getElementById("result"), {
+    text: vcard, width: 200, height: 200, colorDark : "#8b5cf6", colorLight : "#ffffff",
+  });
 }
-
-function clearText(){
-  textEl.value = '';
-  document.getElementById('wc').innerText = 0;
-  document.getElementById('result').innerHTML = 'Your Contact QR Code will appear here...';
-}
-</script>
-</body>
-</html>
