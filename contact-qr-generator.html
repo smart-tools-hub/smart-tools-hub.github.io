@@ -7,71 +7,34 @@
 <meta name="description" content="Generate free contact QR code online. Create vCard QR to share phone, email, address. Scan to save contact instantly on iPhone & Android. 100% free, no signup, mobile friendly.">
 <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@400;600;700&display=swap" rel="stylesheet">
 <style>
-:root{
-  --purple:#8b5cf6;
-  --purple-light:#a78bfa;
-  --black:#1a1a1a;
-  --bg:#f7f9fc;
-  --card:#ffffff;
-  --text:#1a1a1a
-}
-[data-theme="dark"]{
-  --bg:#0f0f0f;
-  --card:#1a1a1a;
-  --text:#e5e5e5;
-  --purple:#7c3aed
-}
+:root{--purple:#8b5cf6;--purple-light:#a78bfa;--bg:#f7f9fc;--card:#ffffff;--text:#1a1a1a}
+[data-theme="dark"]{--bg:#0f0f0f;--card:#1a1a1a;--text:#e5e5e5;--purple:#7c3aed}
 body{font-family:'Poppins',Arial,sans-serif;margin:0;background:var(--bg);color:var(--text);line-height:1.9;font-size:17px; transition:background.3s, color.3s}
 .header-wrap,.footer-wrap{background:var(--purple)}
 .header{display:flex; justify-content:space-between; align-items:center; padding:12px 20px; color:#fff; flex-wrap:wrap; max-width:1100px; margin:0 auto}
 .header.logo{font-size:22px; font-weight:700; display:flex; align-items:center; gap:8px}
 .header.nav{display:flex; gap:18px; flex-wrap:wrap; align-items:center}
-.header.nav a{color:#fff; text-decoration:none; font-weight:600; font-size:14px; padding:6px 0; position:relative}
-.header.nav a:hover{color:#fff}
-.header.nav a::after{content:''; position:absolute; width:0; height:2px; bottom:0; left:0; background-color:#fff; transition:width 0.3s ease}
-.header.nav a:hover::after{width:100%}
+.header.nav a{color:#fff; text-decoration:none; font-weight:600; font-size:14px}
 .theme-btn{background:rgba(255,255,255,0.2); border:1px solid #fff; color:#fff; padding:6px 12px; border-radius:6px; cursor:pointer; font-weight:600; font-size:13px}
-.theme-btn:hover{background:rgba(255,255,255,0.3)}
 .container{max-width:1200px;margin:30px auto;display:grid;grid-template-columns:1fr 320px;gap:40px;padding:0 20px}
 .main-card{background:var(--card);padding:40px;border-radius:12px;box-shadow:0 8px 25px rgba(0,0,0,.08)}
 h1{color:var(--text);font-size:32px;margin-top:0;font-weight:700;text-align:center;border-bottom:3px solid var(--purple);padding-bottom:15px;}
-h2{color:var(--text);font-size:24px;margin-top:30px;font-weight:600; display:inline-block; position:relative; padding-bottom:5px}
-h2::after{content:''; position:absolute; left:0; bottom:0; width:0; height:3px; background:var(--purple); transition:width.3s}
-h2:hover::after{width:100%}
-p{transition:transform.2s}
-p:hover{transform:translateX(5px)}
+h2{color:var(--text);font-size:24px;margin-top:30px;font-weight:600;}
 .sidebar{background:var(--card);padding:25px;border-radius:12px;box-shadow:0 8px 25px rgba(0,0,0,.08); border:1px solid #e9ecef; height:fit-content; position:sticky; top:100px; text-align:center}
 .sidebar h3{margin-top:0;color:var(--text);border-bottom:2px solid var(--purple);padding-bottom:10px; text-align:center}
 .highlight{background:var(--purple-light); color:#fff; padding:20px; border-left:5px solid var(--purple); border-radius:5px; margin:20px 0; font-size:18px;}
 .tool-box textarea{width:100%; min-height:250px; padding:15px; border:2px solid #e9ecef; border-radius:8px; font-size:16px; font-family:'Poppins'; margin-bottom:15px; box-sizing:border-box; background:var(--card); color:var(--text)}
-.tool-box textarea:focus{outline:none; border-color:var(--purple)}
 .btn{background:var(--purple); color:#fff; padding:12px 30px; border:none; border-radius:8px; font-size:16px; font-weight:600; cursor:pointer; margin:5px 10px 5px 0}
-.btn:hover{background:var(--purple-light)}
 .stats{margin:15px 0; font-weight:600}
 .result{margin-top:20px; padding:20px; border:2px dashed #e9ecef; border-radius:8px; min-height:100px; background:var(--bg); word-wrap:break-word; text-align:center}
 .tool-links{display:flex; flex-direction:column; gap:12px; margin-top:15px}
-.tool-links a{display:block; padding:12px 15px; background:var(--bg); color:var(--text); text-decoration:none; border-radius:8px; border:1px solid #e9ecef; font-weight:500; transition:0.2s}
-.tool-links a:hover{background:var(--purple); color:#fff; transform:translateX(5px)}
-.pro-footer{padding:30px 20px 15px}
-.footer-container{max-width:1100px; margin:0 auto; display:grid; grid-template-columns:repeat(3,1fr); gap:30px}
-.footer-logo{font-size:22px; font-weight:700; color:#fff}
+.tool-links a{display:block; padding:12px 15px; background:var(--bg); color:var(--text); text-decoration:none; border-radius:8px; border:1px solid #e9ecef; font-weight:500;}
+.footer-container{max-width:1100px; margin:0 auto; display:grid; grid-template-columns:repeat(3,1fr); gap:30px; padding:30px 20px}
 .footer-col h3{color:#fff; border-bottom:2px solid #fff; padding-bottom:8px; margin-bottom:12px; font-size:18px}
 .footer-col ul{list-style:none; padding:0}
-.footer-col ul li{margin-bottom:8px}
-.footer-col ul li a{color:#f3e8ff; text-decoration:none; transition:color.3s; font-size:14px}
-.footer-col ul li a:hover{color:#fff; text-decoration:underline}
-.contact-info h4{color:#fff; margin-bottom:8px}
-.contact-info a{color:#f3e8ff; text-decoration:none; font-size:14px}
-.footer-bottom.copyright {background: white; color: black; padding: 12px 0; margin: 0;}
-.footer-bottom{text-align:center; margin-top:20px; padding-top:15px; border-top:1px solid rgba(255,255,255,0.3); color:#f3e8ff; font-size:14px; max-width:1100px; margin:20px auto 0}
-@media(max-width:900px){
- .container{grid-template-columns:1fr}
- .sidebar{position:static}
- .footer-container{grid-template-columns:1fr}
- .header{flex-direction:column; gap:10px}
- .header.nav{justify-content:center}
- .main-card{padding:20px}
-}
+.footer-col ul li a{color:#f3e8ff; text-decoration:none; font-size:14px}
+.footer-bottom{text-align:center; padding:15px; border-top:1px solid rgba(255,255,255,0.3); color:#f3e8ff; font-size:14px}
+@media(max-width:900px){.container{grid-template-columns:1fr}.sidebar{position:static}}
 </style>
 <script src="https://cdnjs.cloudflare.com/ajax/libs/qrcodejs/1.0.0/qrcode.min.js"></script>
 </head>
@@ -96,28 +59,57 @@ p:hover{transform:translateX(5px)}
 
     <div class="tool-box">
       <p>Create your digital business card QR code. Enter your contact details below and click generate.</p>
-      <textarea id="text" placeholder="Enter Name, Phone, Email, Address here...&#10;Example:&#10;Name: John Doe&#10;Phone: +92 300 1234567&#10;Email: john@email.com&#10;Address: Lahore, Pakistan"></textarea>
-      <div class="stats">
-        <span>Fields Filled: <b id="wc">0</b></span>
-      </div>
+      <textarea id="text" placeholder="Name: Your Name&#10;Phone: +92 300 1234567&#10;Email: you@email.com&#10;Address: Lahore, Pakistan"></textarea>
+      <div class="stats"><span>Fields Filled: <b id="wc">0</b></span></div>
       <button class="btn" onclick="generateQR()">Generate QR Code</button>
       <button class="btn" onclick="clearText()" style="background:#6c757d">Clear</button>
       <div id="result" class="result">Your Contact QR Code will appear here...</div>
     </div>
 
     <div class="highlight">
-    <p><b>100% Free & Private</b><br>
-    No signup required. All processing happens in your browser. We never store your data.</p>
+    <p><b>100% Free & Private</b><br>No signup required. All processing happens in your browser. We never store your data.</p>
     </div>
 
     <h2>What is a Contact QR Code Generator?</h2>
     <p>A <b>Contact QR Code Generator</b> is a free online tool that turns your contact information into a scannable QR code. This is also called a <b>vCard QR Code</b>. When someone scans this QR with their iPhone or Android camera, your name, phone number, email and address are saved to their phone automatically. No typing needed.</p>
+    <p>In 2026, sharing paper business cards is old. A digital contact QR code is faster, professional, and eco-friendly. It is perfect for freelancers, doctors, real estate agents, and small businesses in Pakistan and USA.</p>
+
+    <h2>Why Use a vCard QR Code for Your Contact Information?</h2>
+    <p><b>1. Save Time:</b> No more spelling mistakes. 1 scan and all details are saved to contacts in 2 seconds.<br>
+    <b>2. Professional Branding:</b> Add this QR to your website, Instagram bio, LinkedIn profile, or print it on business cards.<br>
+    <b>3. Works on All Devices:</b> 100% compatible with iPhone iOS, Samsung, Oppo, Vivo, and all Android phones.<br>
+    <b>4. Update Anytime:</b> Unlike paper cards, you can regenerate a new QR if your number or address changes.</p>
 
     <h2>How to Create a Contact QR Code for iPhone and Android - 3 Steps</h2>
-    <p><b>Step 1: Enter Your Details</b> - Fill in your Full Name, Mobile Number, Email Address.<br>
-    <b>Step 2: Click Generate QR Code</b> - Our tool will instantly create a vCard 3.0 QR code.<br>
-    <b>Step 3: Download and Share</b> - Download the QR as PNG and share it.</p>
+    <p><b>Step 1: Enter Your Details</b> - Fill in your Full Name, Mobile Number, Email Address, Company Name, Job Title, and Website.<br>
+    <b>Step 2: Click Generate QR Code</b> - Our tool will instantly create a vCard 3.0 QR code for you.<br>
+    <b>Step 3: Download and Share</b> - Download the QR as PNG. Share it on WhatsApp, add to email signature, or print it.</p>
 
+    <h2>What Information Can You Add to a Contact QR Code?</h2>
+    <p>This is called vCard format. You can add: First Name, Last Name, Mobile Phone, Work Phone, Email Address, Company Name, Job Title, Website URL, Street Address, City, State, Country, Zip Code. The more details you add, the more professional your digital business card looks.</p>
+
+    <h2>Contact QR Code vs Traditional Business Card</h2>
+    <p>Paper cards get lost or damaged. Digital QR codes never expire. They are also better for the environment. For SEO experts and bloggers, adding a contact QR to your "About Us" page increases trust and makes it easy for clients to reach you.</p>
+
+    <h2>Key Features of Our Free Contact QR Generator</h2>
+    <p><b>100% Free:</b> No signup, no watermark, no daily limit. Generate unlimited QR codes.<br>
+    <b>Mobile Friendly:</b> Works perfectly on Android and iPhone. The QR size automatically adjusts.<br>
+    <b>100% Private:</b> We do not store your contact data. Everything is generated in your browser.<br>
+    <b>vCard Format:</b> Uses standard vCard 3.0 so it works with Google Contacts, iPhone Contacts, and Outlook.</p>
+
+    <h2>Who Should Use a Contact QR Code?</h2>
+    <p><b>For Students:</b> Add to your CV or portfolio website so recruiters can save your contact easily.<br>
+    <b>For Business Owners:</b> Put on shop banners, visiting cards, and invoices.<br>
+    <b>For Freelancers:</b> Add to Fiverr, Upwork profiles to look more professional.<br>
+    <b>For Event Organizers:</b> Print on event passes so people can connect instantly.</p>
+
+    <h2>Frequently Asked Questions - FAQ</h2>
+    <p><b>Q1: Is this contact QR code generator free?</b><br>A: Yes. It is 100% free forever. No hidden charges.</p>
+    <p><b>Q2: Does it work on iPhone to save contact?</b><br>A: Yes. Just open iPhone Camera, scan the QR, and tap "Add to Contacts".</p>
+    <p><b>Q3: Do you store my phone number and email?</b><br>A: No. We respect privacy. All data stays on your device.</p>
+    <p><b>Q4: Can I add a photo to the contact QR?</b><br>A: Current vCard standard does not support photos. Only text details.</p>
+
+    <p style="margin-top:40px; text-align:center; font-size:20px; font-weight:700;">Smart Tools Hub - Create Professional Contact QR Codes in 5 Seconds.</p>
   </div>
 
  <div class="sidebar">
@@ -132,15 +124,11 @@ p:hover{transform:translateX(5px)}
 </div>
 
 <div class="footer-wrap">
-  <footer class="pro-footer">
+  <footer>
     <div class="footer-container">
       <div class="footer-col">
-        <h2 class="footer-logo">🔧 SMART TOOLS HUB</h2>
-        <p style="color:#f3e8ff">Best free online tools for Students, SEO Experts, and Writers.</p>
-        <div class="contact-info">
-          <h4>Contact Us</h4>
-          <a href="mailto:ptacalculatorpk@gmail.com">ptacalculatorpk@gmail.com</a>
-        </div>
+        <h3>🔧 SMART TOOLS HUB</h3>
+        <p style="color:#f3e8ff">Best free online tools for Students, SEO Experts, and Writers. 100% Free, No Signup Required.</p>
       </div>
       <div class="footer-col">
         <h3>Popular Tools</h3>
@@ -162,7 +150,7 @@ p:hover{transform:translateX(5px)}
       </div>
     </div>
     <div class="footer-bottom">
-      <p class="copyright">© 2026 Smart Tools Hub. All Rights Reserved.</p>
+      <p>© 2026 Smart Tools Hub. All Rights Reserved.</p>
     </div>
   </footer>
 </div>
@@ -211,7 +199,6 @@ function generateQR(){
     text: vcard, width: 200, height: 200, colorDark : "#8b5cf6", colorLight : "#ffffff",
   });
 }
-
 function clearText(){
   textEl.value = '';
   document.getElementById('wc').innerText = 0;
@@ -220,3 +207,6 @@ function clearText(){
 </script>
 </body>
 </html>
+ 
+
+
