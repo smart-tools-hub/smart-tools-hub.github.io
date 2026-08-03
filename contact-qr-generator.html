@@ -49,6 +49,7 @@ p:hover{transform:translateX(5px)}
 .footer-col ul li a:hover{color:#fff; text-decoration:underline}
 .contact-info h4{color:#fff; margin-bottom:8px}
 .contact-info a{color:#f3e8ff; text-decoration:none; font-size:14px}
+.footer-wrap {padding-bottom: 0 !important;}
 .footer-bottom {background: white !important; color: black !important; text-align:center; margin: 0; padding: 12px 0; border-top: 1px solid #e9ecef;}
 .footer-bottom p {color: black !important; margin: 0;}
 [data-theme="dark"] .footer-bottom {background: #1a1a1a !important; color: #e5e5e5 !important; border-top: 1px solid #333;}
@@ -245,6 +246,7 @@ function downloadQR(){
   link.href = canvas.toDataURL("image/png");
   link.click();
 }
+<script src="https://cdn.jsdelivr.net/npm/qrcodejs@1.0.0/qrcode.min.js"></script> 
 </script>
 </body>
 </html>
