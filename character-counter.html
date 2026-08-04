@@ -3,53 +3,262 @@
 <head>
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
-<title>Character Counter Online - Count Letters & Spaces Free</title>
-<meta name="description" content="Free character counter tool. Count characters with and without spaces instantly. Perfect for Twitter, SMS, SEO meta descriptions, and social media posts.">
+<title>Character Counter with Spaces | Word & Letter Counter Online Free</title>
+<meta name="description" content="Best free online character counter tool 2026. Count characters with and without spaces, words instantly. 100% free, no signup, mobile friendly and 100% private.">
+<link rel="canonical" href="https://smart-tools-hub.github.io/character-counter.html" />
+<meta name="robots" content="index, follow">
+<link href="https://fonts.googleapis.com/css2?family=Poppins:wght@400;600;700&display=swap" rel="stylesheet">
 <style>
-<link rel="canonical" href="https://smart-tools-hub.github.io/word-counter.html" />
- <meta name="robots" content="noindex, follow">
-body {font-family: Arial, sans-serif; max-width: 800px; margin: 40px auto; padding: 20px; background: #f5f7fa;}
-h1 {text-align: center; color: #222;}
-.box {background: white; padding: 30px; border-radius: 12px; box-shadow: 0 4px 12px rgba(0,0,0,0.1);}
-textarea {width: 100%; height: 150px; padding: 12px; font-size: 16px; border-radius: 8px; border: 1px solid #ccc; resize: vertical;}
-.stats {display: grid; grid-template-columns: repeat(auto-fit, minmax(150px, 1fr)); gap: 15px; margin-top: 20px;}
+:root{
+  --purple:#8b5cf6;
+  --purple-light:#a78bfa;
+  --black:#1a1a1a;
+  --bg:#f7f9fc;
+  --card:#ffffff;
+  --text:#1a1a1a
+}
+[data-theme="dark"]{
+  --bg:#0f0f0f;
+  --card:#1a1a1a;
+  --text:#e5e5e5;
+  --purple:#7c3aed
+}
+body{font-family:'Poppins',Arial,sans-serif;margin:0;background:var(--bg);color:var(--text);line-height:1.9;font-size:17px; transition:background .3s, color .3s}
+.header-wrap, .footer-wrap{background:var(--purple)}
+.header{display:flex; justify-content:space-between; align-items:center; padding:12px 20px; color:#fff; flex-wrap:wrap; max-width:1100px; margin:0 auto}
+.header .logo{font-size:22px; font-weight:700; display:flex; align-items:center; gap:8px}
+.header .nav{display:flex; gap:18px; flex-wrap:wrap; align-items:center}
+.header .nav a{color:#fff; text-decoration:none; font-weight:600; font-size:14px; padding:6px 0; position:relative}
+.header .nav a:hover{color:#fff}
+.header .nav a::after{content:''; position:absolute; width:0; height:2px; bottom:0; left:0; background-color:#fff; transition:width 0.3s ease}
+.header .nav a:hover::after{width:100%}
+.theme-btn{background:rgba(255,255,255,0.2); border:1px solid #fff; color:#fff; padding:6px 12px; border-radius:6px; cursor:pointer; font-weight:600; font-size:13px}
+.theme-btn:hover{background:rgba(255,255,255,0.3)}
+.container{max-width:1200px;margin:30px auto;display:grid;grid-template-columns:1fr 320px;gap:40px;padding:0 20px}
+.main-card{background:var(--card);padding:40px;border-radius:12px;box-shadow:0 8px 25px rgba(0,0,0,.08)}
+h1{color:var(--text);font-size:32px;margin-top:0;font-weight:700;text-align:center;border-bottom:3px solid var(--purple);padding-bottom:15px;}
+h2{color:var(--text);font-size:24px;margin-top:30px;font-weight:600; display:inline-block; position:relative; padding-bottom:5px}
+h2::after{content:''; position:absolute; left:0; bottom:0; width:0; height:3px; background:var(--purple); transition:width .3s}
+h2:hover::after{width:100%}
+p{transition:transform .2s}
+p:hover{transform:translateX(5px)}
+.sidebar{background:var(--card);padding:25px;border-radius:12px;box-shadow:0 8px 25px rgba(0,0,0,.08); border:1px solid #e9ecef; height:fit-content; position:sticky; top:100px; text-align:center}
+.sidebar h3{margin-top:0;color:var(--text);border-bottom:2px solid var(--purple);padding-bottom:10px; text-align:center}
+.highlight{background:var(--purple-light); color:#fff; padding:20px; border-left:5px solid var(--purple); border-radius:5px; margin:20px 0; font-size:18px;}
+.tool-box textarea{width:100%; min-height:250px; padding:15px; border:2px solid #e9ecef; border-radius:8px; font-size:16px; font-family:'Poppins'; margin-bottom:15px; box-sizing:border-box; background:var(--card); color:var(--text)}
+.tool-box textarea:focus{outline:none; border-color:var(--purple)}
+.btn{background:var(--purple); color:#fff; padding:12px 30px; border:none; border-radius:8px; font-size:16px; font-weight:600; cursor:pointer; margin:5px 10px 5px 0}
+.btn:hover{background:var(--purple-light)}
+.stats{display: grid; grid-template-columns: repeat(auto-fit, minmax(150px, 1fr)); gap: 15px; margin-top: 20px;}
 .stat {background: #e0f2fe; padding: 15px; border-radius: 8px; text-align: center;}
 .stat b {font-size: 24px; color: #0369a1;}
+[data-theme="dark"] .stat{background:#1e293b}
+[data-theme="dark"] .stat b{color:#38bdf8}
+.tool-links{display:flex; flex-direction:column; gap:12px; margin-top:15px} 
+.tool-links a{display:block; padding:12px 15px; background:var(--bg); color:var(--text); text-decoration:none; border-radius:8px; border:1px solid #e9ecef; font-weight:500; transition:0.2s} 
+.tool-links a:hover{background:var(--purple); color:#fff; transform:translateX(5px)}
+.pro-footer{padding:30px 20px 15px}
+.footer-container{max-width:1100px; margin:0 auto; display:grid; grid-template-columns:repeat(3,1fr); gap:30px}
+.footer-logo{font-size:22px; font-weight:700; color:#fff}
+.footer-col h3{color:#fff; border-bottom:2px solid #fff; padding-bottom:8px; margin-bottom:12px; font-size:18px}
+.footer-col ul{list-style:none; padding:0}
+.footer-col ul li{margin-bottom:8px}
+.footer-col ul li a{color:#f3e8ff; text-decoration:none; transition:color .3s; font-size:14px}
+.footer-col ul li a:hover{color:#fff; text-decoration:underline}
+.contact-info h4{color:#fff; margin-bottom:8px}
+.contact-info a{color:#f3e8ff; text-decoration:none; font-size:14px}
+.footer-bottom .copyright {background: white; color: black; padding: 12px 0; margin: 0;}
+[data-theme="dark"] .footer-bottom .copyright {background: #1a1a1a; color: #e5e5e5;}
+.footer-bottom{text-align:center; margin-top:20px; padding-top:15px; border-top:1px solid rgba(255,255,255,0.3); color:#f3e8ff; font-size:14px; max-width:1100px; margin:20px auto 0}
+table{width:100%; border-collapse:collapse; margin:20px 0}
+table, th, td{border:1px solid #e9ecef}
+th, td{padding:12px; text-align:left}
+th{background:var(--purple); color:#fff}
+@media(max-width:900px){
+  .container{grid-template-columns:1fr} 
+  .sidebar{position:static}
+  .footer-container{grid-template-columns:1fr}
+  .header{flex-direction:column; gap:10px}
+  .header .nav{justify-content:center}
+  .main-card{padding:20px}
+}
 </style>
 </head>
 <body>
-<h1>Character Counter Online - Free Tool</h1>
 
-<div class="box">
-<p>Type or paste your text below to count characters with spaces and without spaces instantly.</p>
-<textarea id="text" placeholder="Start typing or paste your text here..."></textarea>
-<div class="stats">
-<div class="stat"><b id="charsWithSpaces">0</b><br>Characters with Spaces</div>
-<div class="stat"><b id="charsNoSpaces">0</b><br>Characters without Spaces</div>
-<div class="stat"><b id="words">0</b><br>Words</div>
+<div class="header-wrap">
+  <div class="header">
+   <div class="logo">🔧 SMART TOOLS HUB</div> 
+    <div class="nav">
+      <a href="/grammar-checker.html">Grammar Checker</a>
+      <a href="/spell-checker.html">Spell Checker</a>
+      <a href="/case-converter.html">Case Converter</a>
+      <a href="/character-counter.html">Character Counter</a>
+    </div>
+    <button class="theme-btn" onclick="toggleTheme()">🌙 Dark</button>
+  </div>
 </div>
+
+<div class="container">
+  <div class="main-card">
+    <h1>Free Online Character & Word Counter Tool</h1>
+    
+    <div class="tool-box">
+      <p>Type or paste your text below to count characters with spaces, without spaces, and words instantly.</p>
+      <textarea id="text" placeholder="Start typing or paste your text here..."></textarea>
+      <div class="stats">
+        <div class="stat"><b id="charsWithSpaces">0</b><br>Characters with Spaces</div>
+        <div class="stat"><b id="charsNoSpaces">0</b><br>Characters without Spaces</div>
+        <div class="stat"><b id="words">0</b><br>Total Words</div>
+      </div>
+      <button class="btn" onclick="clearText()" style="background:#6c757d">Clear Text</button>
+    </div>
+
+    <div class="highlight">
+    <p><b>100% Free & Private</b><br>
+    No signup required. All processing happens in your browser. We never store your data.</p>
+    </div>
+
+    <h2>What is a Character Counter Tool?</h2>
+    <p>A <b>character counter tool</b> is a simple online utility that helps you count the number of characters, words, and sentences in a piece of text. Unlike Microsoft Word or Google Docs, our tool gives you real-time results without any delay. The moment you type or paste text, you instantly see the total characters with spaces, characters without spaces, and total words.</p>
+    <p>This tool is essential for anyone who works with text on a daily basis. From students writing essays to marketers creating social media posts, everyone needs to keep track of their character and word limits. In 2026, most platforms have strict limits. Twitter allows 280 characters, LinkedIn posts perform best under 1300 characters, and Google meta descriptions should be between 150-160 characters. Our <b>free online character counter</b> ensures you never go over the limit.</p>
+
+    <h2>Why Character Count Matters in 2026?</h2>
+    <p>In the digital age, every character counts. Here is why tracking your character and word count is more important than ever:</p>
+    <p><b>1. SEO and Google Ranking:</b> Google typically displays the first 155-160 characters of your meta description in search results. If your description is too long, it gets cut off. If it is too short, you waste valuable space to convince users to click. Our tool helps you write the perfect length every time.</p>
+    <p><b>2. Social Media Marketing:</b> Each platform has its own rules. Twitter: 280 characters. Instagram captions: 2,200 characters but only first 125 show. Facebook: 63,206 characters but engagement drops after 80. Using a <b>character counter with spaces</b> helps you optimize for each platform.</p>
+    <p><b>3. Academic and Professional Writing:</b> Schools and universities often have strict word limits for essays, applications, and assignments. Going over by even 10 words can lead to rejection. Our <b>word and letter counter</b> ensures you stay within the required limit.</p>
+    <p><b>4. SMS and Messaging:</b> A standard SMS is 160 characters. If you go over, it splits into 2 messages and costs double. Businesses sending bulk SMS must track this to save money.</p>
+
+    <h2>Key Features of Our Free Character Counter</h2>
+    <p>We built this tool with simplicity and power in mind. Unlike other websites that force you to create an account, our <b>free character counter no signup</b> works instantly.</p>
+    <p><b>Real-Time Counting:</b> No need to click a button. As soon as you type, all stats update live. See characters with spaces, without spaces, and word count simultaneously.</p>
+    <p><b>Unlimited Text:</b> There is no character or word limit. Check 50 characters or 500,000 characters. It works smoothly on any size of text because everything runs in your browser.</p>
+    <p><b>Mobile Friendly Design:</b> Our tool is 100% responsive. The text box and stats cards automatically adjust for Android phones, iPhones, iPads and desktops. Count characters on the go.</p>
+    <p><b>100% Private and Secure:</b> We take privacy seriously. All counting happens on your device using JavaScript. We do not send your text to any server. No data is stored or tracked.</p>
+    <p><b>No Ads or Distractions:</b> Unlike other free tools filled with popups, our interface is clean. You can focus 100% on your writing without interruptions.</p>
+
+    <h2>Character Limits Cheat Sheet for Popular Platforms</h2>
+    <p>Use this table to know exactly how many characters you can use on each platform:</p>
+    <table>
+      <tr><th>Platform</th><th>Character Limit</th><th>Best Practice</th></tr>
+      <tr><td>Twitter / X Post</td><td>280</td><td>240-260 for better engagement</td></tr>
+      <tr><td>Google Meta Description</td><td>155-160</td><td>150 characters to be safe</td></tr>
+      <tr><td>Google Meta Title</td><td>60</td><td>50-55 characters</td></tr>
+      <tr><td>Instagram Caption</td><td>2,200</td><td>125 characters for preview</td></tr>
+      <tr><td>Facebook Post</td><td>63,206</td><td>40-80 characters for high engagement</td></tr>
+      <tr><td>LinkedIn Post</td><td>3,000</td><td>150 characters for "see more"</td></tr>
+      <tr><td>SMS Text Message</td><td>160</td><td>140 characters if including link</td></tr>
+    </table>
+
+    <h2>How to Use Our Character Counter Tool Step by Step</h2>
+    <p>Using the <b>best character counter for writers and SEO</b> is super easy. Follow these 2 simple steps:</p>
+    <p><b>Step 1:</b> Copy the text from your Word document, Google Docs, website, or social media post.</p>
+    <p><b>Step 2:</b> Paste it into the text box above on this page. Results will update automatically. Check "Characters with Spaces" for platform limits and "Characters without Spaces" for coding and data purposes.</p>
+
+    <h2>Difference: Characters with Spaces vs Without Spaces</h2>
+    <p>Many people get confused between these two. Here is the simple explanation:</p>
+    <p><b>Characters with Spaces:</b> This counts everything including letters, numbers, punctuation, and spaces. This is what Twitter, SMS, and most social platforms use for their limits.</p>
+    <p><b>Characters without Spaces:</b> This only counts letters, numbers, and punctuation. Spaces are removed. This is often used for data analysis, coding, and academic research.</p>
+    <p><b>Example:</b> "Hello World" = 11 Characters with Spaces, 10 Characters without Spaces</p>
+
+    <h2>Who Should Use This Character Counter?</h2>
+    <p><b>For Students:</b> Check word count and character limits for essays, SOPs, and scholarship applications. Ensure you meet the exact requirements.</p>
+    <p><b>For SEO Experts and Bloggers:</b> Write perfect meta titles and descriptions within Google limits. Also check your blog post length. Posts between 1500-2500 words rank best on Google.</p>
+    <p><b>For Social Media Managers:</b> Stay within Twitter 280, LinkedIn, and Instagram character limits. Craft the perfect caption every time.</p>
+    <p><b>For Writers and Authors:</b> Track your writing progress with live word and character statistics. Set daily writing goals and monitor them.</p>
+    <p><b>For Developers:</b> Quickly check string length for coding, database fields, and API limits.</p>
+
+    <h2>Frequently Asked Questions - FAQ</h2>
+    <p><b>Q1: Does this tool count spaces?</b><br>A: Yes. We show both "Characters with Spaces" and "Characters without Spaces" plus total words.</p>
+    <p><b>Q2: Is this character counter tool really free?</b><br>A: Yes. It is 100% free forever. No hidden charges, no premium plan, and no signup required.</p>
+    <p><b>Q3: Do you store my text or data?</b><br>A: No. We respect your privacy. Everything runs in your browser and nothing is saved on our servers.</p>
+    <p><b>Q4: What is the word limit for checking?</b><br>A: There is no limit. But for best performance we recommend checking up to 100,000 words at once.</p>
+    <p><b>Q5: Does it work on mobile phones?</b><br>A: Yes. The tool is fully mobile friendly and responsive on all devices including Android and iPhone.</p>
+    <p><b>Q6: Can it count paragraphs and sentences?</b><br>A: Currently we count words and characters. Sentence and paragraph counter feature is coming soon.</p>
+    <p style="margin-top:40px; text-align:center; font-size:20px; font-weight:700;">Smart Tools Hub - Precision. Speed. Simplicity.</p>
+  </div>
+
+ <div class="sidebar">
+  <h3>Other Tools</h3>
+  <div class="tool-links">
+   <a href="/grammar-checker.html">Grammar Checker</a>
+   <a href="/spell-checker.html">Spell Checker</a>
+   <a href="/case-converter.html">Case Converter</a>
+   <a href="/character-counter.html">Character Counter</a>
+  </div>
+</div>
+</div>
+
+<div class="footer-wrap">
+  <footer class="pro-footer">
+    <div class="footer-container">
+      <div class="footer-col">
+        <h2 class="footer-logo">🔧 SMART TOOLS HUB</h2>
+        <p style="color:#f3e8ff">Best free online tools for Students, SEO Experts, and Writers. 100% Free, No Signup Required.</p>
+        <div class="contact-info">
+          <h4>Contact Us</h4>
+          <a href="mailto:ptacalculatorpk@gmail.com">ptacalculatorpk@gmail.com</a>
+        </div>
+      </div>
+      <div class="footer-col">
+        <h3>Popular Tools</h3>
+        <ul>
+        <li><a href="/grammar-checker.html">Grammar Checker</a></li>
+        <li><a href="/spell-checker.html">Spell Checker</a></li>
+        <li><a href="/case-converter.html">Case Converter</a></li>
+        <li><a href="/character-counter.html">Character Counter</a></li>  
+        </ul>
+      </div>
+      <div class="footer-col">
+        <h3>Quick Links</h3>
+        <ul>
+          <li><a href="/">Home</a></li>
+          <li><a href="/about-us/">About Us</a></li>
+          <li><a href="/contact-us/">Contact Us</a></li>
+          <li><a href="/privacy-policy/">Privacy Policy</a></li>
+          <li><a href="/terms-of-service/">Terms of Service</a></li>
+        </ul>
+      </div>
+    </div>
+    <div class="footer-bottom">
+      <p class="copyright">© 2026 Smart Tools Hub. All Rights Reserved.</p>
+    </div>
+  </footer>
 </div>
 
 <script>
-document.getElementById('text').addEventListener('input', function() {
-  const text = this.value;
-  document.getElementById('charsWithSpaces').innerText = text.length;
-  document.getElementById('charsNoSpaces').innerText = text.replace(/\s/g, '').length;
-  document.getElementById('words').innerText = text.trim() ? text.trim().split(/\s+/).length : 0;
-});
+function toggleTheme(){
+  const body = document.documentElement;
+  const btn = document.querySelector('.theme-btn');
+  if(body.getAttribute('data-theme') === 'dark'){
+    body.removeAttribute('data-theme');
+    btn.innerHTML = '🌙 Dark';
+    localStorage.setItem('theme', 'light');
+  } else {
+    body.setAttribute('data-theme', 'dark');
+    btn.innerHTML = '☀️ Light';
+    localStorage.setItem('theme', 'dark');
+  }
+}
+if(localStorage.getItem('theme') === 'dark'){
+  document.documentElement.setAttribute('data-theme', 'dark');
+  document.querySelector('.theme-btn').innerHTML = '☀️ Light';
+}
+const textEl = document.getElementById('text');
+textEl.oninput = () => {
+  const t = textEl.value;
+  document.getElementById('charsWithSpaces').innerText = t.length;
+  document.getElementById('charsNoSpaces').innerText = t.replace(/\s/g, '').length;
+  document.getElementById('words').innerText = t.trim() ? t.trim().split(/\s+/).length : 0;
+}
+function clearText(){
+  textEl.value = '';
+  document.getElementById('charsWithSpaces').innerText = 0;
+  document.getElementById('charsNoSpaces').innerText = 0;
+  document.getElementById('words').innerText = 0;
+}
 </script>
-
-<div style="margin-top:40px;">
-<h2>How to Use Character Counter</h2>
-<p>1. Paste or type your text in the box above<br>2. See instant results for characters and words<br>3. Use it for Twitter, SMS limits, and SEO meta tags</p>
-
-<h2>Why Use Our Character Counter?</h2>
-<p>- 100% Free and Fast<br>- No login or signup required<br>- Works on mobile and desktop<br>- Real-time counting</p>
-
-<h2>FAQs</h2>
-<p><b>Does it count spaces?</b> Yes, we show both with and without spaces.<br>
-<b>Is there a character limit?</b> No, you can check unlimited text.<br>
-<b>Is my data saved?</b> No, everything runs in your browser.</p>
-</div>
 </body>
 </html>
+
