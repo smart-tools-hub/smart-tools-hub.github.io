@@ -3,13 +3,15 @@
 <head>
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
-<title>Free Online Loan Calculator | Calculate EMI, Interest & Payment</title>
-<meta name="description" content="Best free loan calculator 2026. Calculate EMI, monthly payment, total interest for home loan, car loan, personal loan. 100% free, no signup, mobile friendly.">
+<title>Free Loan Calculator - Calculate EMI, Interest & Total Payment | Smart Tools Hub</title>
+<meta name="description" content="Free Loan Calculator online. Calculate EMI, monthly payment, total interest for personal loan, home loan, car loan. 100% free, no signup, mobile friendly.">
 <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@400;600;700&display=swap" rel="stylesheet">
+<link rel="canonical" href="https://smart-tools-hub.github.io/loan-calculator.html">
 <style>
 :root{
   --purple:#8b5cf6;
   --purple-light:#a78bfa;
+  --black:#1a1a1a;
   --bg:#f7f9fc;
   --card:#ffffff;
   --text:#1a1a1a
@@ -26,37 +28,59 @@ body{font-family:'Poppins',Arial,sans-serif;margin:0;background:var(--bg);color:
 .header{display:flex; justify-content:space-between; align-items:center; padding:12px 20px; color:#fff; flex-wrap:wrap; max-width:1100px; margin:0 auto}
 .header .logo{font-size:22px; font-weight:700; display:flex; align-items:center; gap:8px}
 .header .nav{display:flex; gap:18px; flex-wrap:wrap; align-items:center}
-.header .nav a{color:#fff; text-decoration:none; font-weight:600; font-size:14px}
+.header .nav a{color:#fff; text-decoration:none; font-weight:600; font-size:14px; padding:6px 0; position:relative}
+.header .nav a:hover{color:#fff}
+.header .nav a::after{content:''; position:absolute; width:0; height:2px; bottom:0; left:0; background-color:#fff; transition:width 0.3s ease}
+.header .nav a:hover::after{width:100%}
+
 .theme-btn{background:rgba(255,255,255,0.2); border:1px solid #fff; color:#fff; padding:6px 12px; border-radius:6px; cursor:pointer; font-weight:600; font-size:13px}
+.theme-btn:hover{background:rgba(255,255,255,0.3)}
 
 .container{max-width:1200px;margin:30px auto;display:grid;grid-template-columns:1fr 320px;gap:40px;padding:0 20px}
 .main-card{background:var(--card);padding:40px;border-radius:12px;box-shadow:0 8px 25px rgba(0,0,0,.08)}
 h1{color:var(--text);font-size:32px;margin-top:0;font-weight:700;text-align:center;border-bottom:3px solid var(--purple);padding-bottom:15px;}
-h2{color:var(--text);font-size:24px;margin-top:30px;font-weight:600;}
+h2{color:var(--text);font-size:24px;margin-top:30px;font-weight:600; display:inline-block; position:relative; padding-bottom:5px}
+h2::after{content:''; position:absolute; left:0; bottom:0; width:0; height:3px; background:var(--purple); transition:width .3s}
+h2:hover::after{width:100%}
+p{transition:transform .2s}
+p:hover{transform:translateX(5px)}
 .sidebar{background:var(--card);padding:25px;border-radius:12px;box-shadow:0 8px 25px rgba(0,0,0,.08); border:1px solid #e9ecef; height:fit-content; position:sticky; top:100px; text-align:center}
-.sidebar h3{margin-top:0;color:var(--text);border-bottom:2px solid var(--purple);padding-bottom:10px;}
-.highlight{background:var(--purple-light); color:#fff; padding:20px; border-left:5px solid var(--purple); border-radius:5px; margin:20px 0;}
+.sidebar h3{margin-top:0;color:var(--text);border-bottom:2px solid var(--purple);padding-bottom:10px; text-align:center}
+.highlight{background:var(--purple-light); color:#fff; padding:20px; border-left:5px solid var(--purple); border-radius:5px; margin:20px 0; font-size:18px;}
 
-.tool-box label{display:block;margin-top:12px;font-weight:600;font-size:14px}
-.tool-box input{width:100%; padding:12px; border:2px solid #e9ecef; border-radius:8px; font-size:16px; margin:8px 0; box-sizing:border-box; background:var(--card); color:var(--text)}
-.btn{background:var(--purple); color:#fff; padding:14px 30px; border:none; border-radius:8px; font-size:16px; font-weight:600; cursor:pointer; width:100%; margin-top:15px}
-.result{margin-top:25px; padding:20px; border-radius:8px; background:var(--bg); display:none}
-.result-box{display:flex;justify-content:space-between;margin:10px 0;font-size:18px;font-weight:600}
-.tool-links{display:flex; flex-direction:column; gap:12px; margin-top:15px} 
-.tool-links a{display:block; padding:12px 15px; background:var(--bg); color:var(--text); text-decoration:none; border-radius:8px; border:1px solid #e9ecef; font-weight:500;} 
-.tool-links a:hover{background:var(--purple); color:#fff;}
+.tool-box input{width:100%; padding:12px; border:2px solid #e9ecef; border-radius:8px; font-size:16px; font-family:'Poppins'; margin:10px 0; box-sizing:border-box; background:var(--card); color:var(--text)}
+.tool-box input:focus{outline:none; border-color:var(--purple)}
+.btn{background:var(--purple); color:#fff; padding:12px 30px; border:none; border-radius:8px; font-size:16px; font-weight:600; cursor:pointer; margin:5px 10px 5px 0; width:100%}
+.btn:hover{background:var(--purple-light)}
+#result{margin-top:20px; padding:20px; border:2px dashed #e9ecef; border-radius:8px; min-height:80px; background:var(--bg); text-align:center; font-weight:600; display:none}
+.result-box{display:flex;justify-content:space-between;margin:10px 0;font-size:18px}
+.tool-links{display:flex; flex-direction:column; gap:12px; margin-top:15px; max-height:500px; overflow-y:auto} 
+.tool-links a{display:block; padding:12px 15px; background:var(--bg); color:var(--text); text-decoration:none; border-radius:8px; border:1px solid #e9ecef; font-weight:500; transition:0.2s; font-size:14px} 
+.tool-links a:hover{background:var(--purple); color:#fff; transform:translateX(5px)}
 
-.footer-container{max-width:1100px; margin:0 auto; display:grid; grid-template-columns:repeat(3,1fr); gap:30px; padding:30px 20px}
-.footer-col h3{color:#fff; border-bottom:2px solid #fff; padding-bottom:8px;}
+.pro-footer{padding:30px 20px 15px}
+.footer-container{max-width:1100px; margin:0 auto; display:grid; grid-template-columns:repeat(4,1fr); gap:30px}
+.footer-logo{font-size:22px; font-weight:700; color:#fff}
+.footer-col h3{color:#fff; border-bottom:2px solid #fff; padding-bottom:8px; margin-bottom:12px; font-size:18px}
 .footer-col ul{list-style:none; padding:0}
-.footer-col ul li a{color:#f3e8ff; text-decoration:none; font-size:14px}
-.footer-bottom{text-align:center; padding:15px; border-top:1px solid rgba(255,255,0.3); color:#f3e8ff; background:white; color:black}
+.footer-col ul li{margin-bottom:8px}
+.footer-col ul li a{color:#f3e8ff; text-decoration:none; transition:color .3s; font-size:14px}
+.footer-col ul li a:hover{color:#fff; text-decoration:underline}
+.contact-info h4{color:#fff; margin-bottom:8px}
+.contact-info a{color:#f3e8ff; text-decoration:none; font-size:14px}
+.footer-bottom .copyright {background: white; color: black; padding: 12px 0; margin: 0;}
+.footer-bottom{text-align:center; margin-top:20px; padding-top:15px; border-top:1px solid rgba(255,255,255,0.3); color:#f3e8ff; font-size:14px; max-width:1100px; margin:20px auto 0}
 
 @media(max-width:900px){
   .container{grid-template-columns:1fr} 
   .sidebar{position:static}
-  .footer-container{grid-template-columns:1fr}
+  .footer-container{grid-template-columns:1fr 1fr}
+  .header{flex-direction:column; gap:10px}
+  .header .nav{justify-content:center}
+  .main-card{padding:20px}
 }
+@media(max-width:600px){
+  .footer-container{grid-template-columns:1fr}
 </style>
 </head>
 <body>
@@ -65,9 +89,10 @@ h2{color:var(--text);font-size:24px;margin-top:30px;font-weight:600;}
   <div class="header">
    <div class="logo">🔧 SMART TOOLS HUB</div> 
     <div class="nav">
-      <a href="/percentage-calculator.html">Percentage Calculator</a>
-      <a href="/spell-checker.html">Spell Checker</a>
-      <a href="/bmi-calculator.html">BMI Calculator</a>
+      <a href="bmi-for-kids.html">Kids BMI</a>
+      <a href="percentage-calculator.html">Percentage</a>
+      <a href="mortgage-calculator-usa.html">Mortgage USA</a>
+      <a href="contact-us/">Contact</a>
     </div>
     <button class="theme-btn" onclick="toggleTheme()">🌙 Dark</button>
   </div>
@@ -75,27 +100,22 @@ h2{color:var(--text);font-size:24px;margin-top:30px;font-weight:600;}
 
 <div class="container">
   <div class="main-card">
-    <h1>Free Online Loan Calculator</h1>
+    <h1>Free Loan Calculator</h1>
     
     <div class="tool-box">
-      <p>Calculate EMI, monthly payment and total interest for any loan type in 1 second.</p>
+      <p>Calculate EMI, monthly payment and total interest for any loan type. Enter loan amount, interest rate and tenure to get instant results.</p>
+      
       <label>Loan Amount $</label>
-      <input type="number" id="amount" placeholder="Enter loan amount e.g. 50000">
+      <input type="number" id="amount" placeholder="e.g. 50000" min="1000" max="1000000">
 
       <label>Annual Interest Rate %</label>
-      <input type="number" id="rate" placeholder="Enter interest rate e.g. 8.5" step="0.1">
+      <input type="number" id="rate" placeholder="e.g. 8.5" min="1" max="30" step="0.1">
 
       <label>Loan Tenure Years</label>
-      <input type="number" id="years" placeholder="Enter years e.g. 5">
+      <input type="number" id="years" placeholder="e.g. 5" min="1" max="30">
 
       <button class="btn" onclick="calculateLoan()">Calculate EMI Now</button>
-
-      <div id="result" class="result">
-        <h3 style="text-align:center;margin-top:0">Loan Summary</h3>
-        <div class="result-box"><span>Monthly EMI:</span><span id="emi" style="color:var(--purple)"></span></div>
-        <div class="result-box"><span>Total Interest:</span><span id="interest" style="color:#ff5722"></span></div>
-        <div class="result-box"><span>Total Payment:</span><span id="total" style="color:#4caf50"></span></div>
-      </div>
+      <div id="result"></div>
     </div>
 
     <div class="highlight">
@@ -103,80 +123,99 @@ h2{color:var(--text);font-size:24px;margin-top:30px;font-weight:600;}
     No signup required. All calculations happen in your browser. Your financial data is 100% secure.</p>
     </div>
 
-    <h2>Best Free Online Loan Calculator 2026</h2>
-    <p>Planning to take a loan? Use our <b>free online loan calculator</b> to calculate exact EMI before you apply at bank. Whether it is home loan, car loan, or personal loan, our tool gives you instant and accurate results. Banks use the same EMI formula to calculate your monthly payment. Now you can do it yourself for free.</p>
-    <p>Taking a loan is a big financial decision. A small mistake in calculating EMI can create problems for 5-10 years. That is why using a professional <b>EMI calculator</b> is important. It helps you compare different banks, different interest rates, and different loan tenures.</p>
+    <h2>What is Loan Calculator?</h2>
+    <p>This <b>Loan Calculator</b> is a free online tool that helps you calculate Equated Monthly Installment EMI for any type of loan. Whether you are planning for personal loan, home loan, car loan or business loan, this calculator shows exact monthly payment amount. You just need to enter three things: loan amount, annual interest rate, and loan tenure in years. The calculator uses standard EMI formula used by banks worldwide to give accurate results. No registration required and works instantly on mobile phones and desktop computers.</p>
     
-    <h2>How EMI is Calculated - Formula</h2>
-    <p>All banks use this standard formula to calculate EMI:<br>
-    <b>EMI = P × r × (1 + r)^n / [(1 + r)^n - 1]</b><br>
+    <h2>How to Use It:</h2>
+    <p><b>Step 1:</b> Enter Loan Amount in dollars<br>
+    <b>Step 2:</b> Enter Annual Interest Rate offered by bank<br>
+    <b>Step 3:</b> Enter Loan Tenure in Years<br>
+    <b>Step 4:</b> Click "Calculate EMI Now" button</p>
+
+    <h2>EMI Formula Used by Banks</h2>
+    <p><b>EMI = P × r × (1 + r)^n / [(1 + r)^n - 1]</b><br>
     Where P = Loan Amount, r = Monthly Interest Rate, n = Total Number of Months<br>
-    Don't worry about math. Just enter 3 values and get instant result.</p>
+    Our calculator automatically converts annual rate to monthly and years to months for accurate results.</p>
 
     <h2>Types of Loans You Can Calculate</h2>
-    <p><b>1. Home Loan:</b> Plan your dream house. Check EMI for 15 year or 30 year home loan.<br>
-    <b>2. Car Loan:</b> Calculate monthly payment before buying new or used car.<br>
-    <b>3. Personal Loan:</b> Check EMI for medical, travel, or wedding expenses.<br>
+    <p><b>1. Personal Loan:</b> Check EMI for unsecured personal loans for medical, travel, wedding.<br>
+    <b>2. Home Loan:</b> Plan monthly payment for house purchase. Compare 15 vs 30 year loans.<br>
+    <b>3. Car Loan:</b> Calculate auto loan EMI before buying new or used car. Also check <a href="auto-loan-calculator.html">Auto Loan Calculator</a>.<br>
     <b>4. Business Loan:</b> Estimate repayment for business expansion.<br>
-    <b>5. Education Loan:</b> Plan student loan installments for study abroad.</p>
+    <b>5. Education Loan:</b> Plan student loan monthly installments for study.</p>
 
     <h2>Why Use Our Free Loan EMI Calculator?</h2>
     <p><b>1. 100% Free:</b> No charges, no signup, unlimited calculations.<br>
-    <b>2. Compare Banks:</b> Change interest rate and see how EMI changes. Choose lowest EMI.<br>
-    <b>3. Mobile Friendly:</b> Works perfectly on phone and computer.<br>
+    <b>2. Compare Banks:</b> Change interest rate and see how EMI changes. Choose lowest EMI option.<br>
+    <b>3. Financial Planning:</b> Know exactly how much you will pay every month for next 5-10 years.<br>
     <b>4. Instant Results:</b> Get EMI, Total Interest, Total Payment in 1 second.<br>
-    <b>5. Financial Planning:</b> Know exactly how much you will pay every month.</p>
+    <b>5. Mobile Friendly:</b> Works perfectly on phone and computer.</p>
 
-    <h2>Frequently Asked Questions - FAQ</h2>
-    <p><b>Q1: What is EMI in loan calculator?</b><br>
-    A: EMI is Equated Monthly Installment. Fixed amount you pay to bank every month. It includes both principal and interest.</p>
-    <p><b>Q2: Can I use this for mortgage loan?</b><br>
-    A: Yes. Enter home loan amount, bank interest rate, and tenure like 20 years. It will show monthly mortgage payment.</p>
-    <p><b>Q3: Does interest rate change EMI amount?</b><br>
-    A: Yes. Even 0.5% difference can change EMI by thousands for large loans. Use this tool to compare banks.</p>
-    <p><b>Q4: Is my loan data saved anywhere?</b><br>
-    A: No. Everything runs in your browser. We never store your loan amount or details.</p>
+    <h2>FAQs</h2>
+    <p><b>Q1: What is EMI in loan calculator?</b><br>A: EMI stands for Equated Monthly Installment. Fixed amount you pay to bank every month. EMI includes both principal amount and interest portion.</p>
+    <p><b>Q2: Can I use this calculator for mortgage loan?</b><br>A: Yes, this loan calculator works for mortgage or home loans also. For USA specific mortgage, use <a href="mortgage-calculator-usa.html">Mortgage Calculator USA</a>.</p>
+    <p><b>Q3: Does interest rate change EMI amount?</b><br>A: Yes, interest rate has biggest impact on EMI. Even 0.5% difference in interest rate can change monthly payment by hundreds of dollars for large loans.</p>
+    <p><b>Q4: Is my loan data saved anywhere?</b><br>A: No. Everything runs in your browser. We never store your loan amount or details.</p>
 
     <p style="margin-top:40px; text-align:center; font-size:20px; font-weight:700;">Smart Tools Hub - Precision. Speed. Simplicity.</p>
   </div>
 
  <div class="sidebar">
-  <h3>Other Tools</h3>
+  <h3>All Financial Tools</h3>
   <div class="tool-links">
-   <a href="/percentage-calculator.html">Percentage Calculator</a>
-   <a href="/emi-calculator.html">EMI Calculator</a>
-   <a href="/mortgage-calculator-usa.html">Mortgage Calculator</a>
-   <a href="/auto-loan-calculator.html">Auto Loan Calculator</a>
+   <a href="loan-calculator.html">Loan Calculator</a>
+   <a href="auto-loan-calculator.html">Auto Loan Calculator</a>
+   <a href="mortgage-calculator-usa.html">Mortgage Calculator USA</a>
+   <a href="emi-calculator.html">EMI Calculator</a>
+   <a href="percentage-calculator.html">Percentage Calculator</a>
+   <a href="bmi-calculator.html">BMI Calculator</a>
+   <a href="bmi-for-kids.html">Kids BMI Calculator</a>
   </div>
 </div>
 </div>
 
 <div class="footer-wrap">
-  <footer>
+  <footer class="pro-footer">
     <div class="footer-container">
       <div class="footer-col">
-        <h2 style="color:#fff">🔧 SMART TOOLS HUB</h2>
-        <p style="color:#f3e8ff">Best free online tools. 100% Free, No Signup Required.</p>
+        <h2 class="footer-logo">🔧 SMART TOOLS HUB</h2>
+        <p style="color:#f3e8ff">Best free online tools for Students, SEO Experts, and Writers. 100% Free, No Signup Required.</p>
+        <div class="contact-info">
+          <h4>Contact Us</h4>
+          <a href="mailto:ptacalculatorpk@gmail.com">ptacalculatorpk@gmail.com</a>
+        </div>
       </div>
       <div class="footer-col">
-        <h3>Popular Tools</h3>
+        <h3>Financial Tools</h3>
         <ul>
-        <li><a href="/loan-calculator.html">Loan Calculator</a></li>
-        <li><a href="/percentage-calculator.html">Percentage Calculator</a></li>
-        <li><a href="/spell-checker.html">Spell Checker</a></li>
+        <li><a href="loan-calculator.html">Loan Calculator</a></li>
+        <li><a href="auto-loan-calculator.html">Auto Loan Calculator</a></li>
+        <li><a href="mortgage-calculator-usa.html">Mortgage Calculator USA</a></li>
+        <li><a href="emi-calculator.html">EMI Calculator</a></li>  
+        </ul>
+      </div>
+      <div class="footer-col">
+        <h3>Health Tools</h3>
+        <ul>
+        <li><a href="bmi-calculator.html">BMI Calculator</a></li>
+        <li><a href="bmi-for-kids.html">Kids BMI Calculator</a></li>
+        <li><a href="ideal-weight-calculator.html">Ideal Weight Calculator</a></li>
+        <li><a href="body-fat-calculator.html">Body Fat Calculator</a></li>  
         </ul>
       </div>
       <div class="footer-col">
         <h3>Quick Links</h3>
         <ul>
-          <li><a href="/">Home</a></li>
-          <li><a href="/about-us/">About Us</a></li>
-          <li><a href="/privacy-policy/">Privacy Policy</a></li>
+        <li><a href="index.html">Home</a></li>
+          <li><a href="about-us/">About Us</a></li>
+          <li><a href="contact-us/">Contact Us</a></li>
+          <li><a href="privacy-policy/">Privacy Policy</a></li>
+          <li><a href="terms-of-service/">Terms of Service</a></li>
         </ul>
       </div>
     </div>
     <div class="footer-bottom">
-      <p>© 2026 Smart Tools Hub. All Rights Reserved.</p>
+      <p class="copyright">© 2026 Smart Tools Hub. All Rights Reserved.</p>
     </div>
   </footer>
 </div>
@@ -204,27 +243,29 @@ function calculateLoan(){
 const P = parseFloat(document.getElementById('amount').value);
 const annualRate = parseFloat(document.getElementById('rate').value);
 const years = parseFloat(document.getElementById('years').value);
-const resultDiv = document.getElementById('result');
+const r = document.getElementById('result');
 
-if(!P || !annualRate || !years || P<1000){
-resultDiv.style.display='block';
-resultDiv.style.background='#ffebee';
-resultDiv.innerHTML='<p style="color:red;text-align:center">Please enter valid loan amount, rate and years</p>';
-return;
+if(!P || !annualRate || !years || P<1000){ 
+    r.style.display='block';
+    r.innerHTML='⚠️ Please enter valid loan amount, rate and years';
+    r.style.background='#ffcccc';
+    r.style.color='#b71c1c';
+    return
 }
 
-const r = annualRate / 12 / 100;
+const rate = annualRate / 12 / 100;
 const n = years * 12;
-const emi = P * r * Math.pow(1 + r, n) / (Math.pow(1 + r, n) - 1);
+const emi = P * rate * Math.pow(1 + rate, n) / (Math.pow(1 + rate, n) - 1);
 const total = emi * n;
 const interest = total - P;
 
-document.getElementById('emi').textContent = '$' + emi.toFixed(2);
-document.getElementById('interest').textContent = '$' + interest.toFixed(2);
-document.getElementById('total').textContent = '$' + total.toFixed(2);
-resultDiv.style.display='block';
-resultDiv.style.background='var(--bg)';
+r.style.display='block';
+r.innerHTML=`<h3>Loan Summary</h3>
+<div class="result-box"><span>Monthly EMI:</span><span style="color:var(--purple)">$${emi.toFixed(2)}</span></div>
+<div class="result-box"><span>Total Interest:</span><span style="color:#ff5722">$${interest.toFixed(2)}</span></div>
+<div class="result-box"><span>Total Payment:</span><span style="color:#4caf50">$${total.toFixed(2)}</span></div>`;
+r.style.background='#e1bee7';
+r.style.color='#4a148c';
 }
 </script>
-</body>
-</html>
+</body></html>
