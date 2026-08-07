@@ -3,98 +3,310 @@
 <head>
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
-<title>Percentage Calculator - Smart Tools Hub</title>
-
-<!-- Google tag (gtag.js) -->
-<script async src="https://www.googletagmanager.com/gtag/js?id=G-L18N2SSRT5"></script>
-<script>
-  window.dataLayer = window.dataLayer || [];
-  function gtag(){dataLayer.push(arguments);}
-  gtag('js', new Date());
-  gtag('config', 'G-L18N2SSRT5');
-</script>
-
+<title>Free Online Percentage Calculator | % Increase, Decrease, Discount</title>
+<meta name="description" content="Best free online percentage calculator 2026. Calculate % of number, percent increase, decrease, discount. 100% free, no signup, mobile friendly and 100% accurate.">
+<link href="https://fonts.googleapis.com/css2?family=Poppins:wght@400;600;700&display=swap" rel="stylesheet">
 <style>
-body {
-    font-family: Arial, sans-serif;
-    max-width: 500px;
-    margin: 50px auto;
-    padding: 20px;
-    background: #f5f5f5;
+:root{
+  --purple:#8b5cf6;
+  --purple-light:#a78bfa;
+  --black:#1a1a1a;
+  --bg:#f7f9fc;
+  --card:#ffffff;
+  --text:#1a1a1a
 }
-.container {
-    background: white;
-    padding: 30px;
-    border-radius: 10px;
-    box-shadow: 0 2px 10px rgba(0,0,0,0.1);
+[data-theme="dark"]{
+  --bg:#0f0f0f;
+  --card:#1a1a1a;
+  --text:#e5e5e5;
+  --purple:#7c3aed
 }
-h1 {
-    text-align: center;
-    color: #333;
-}
-input, button {
-    width: 100%;
-    padding: 12px;
-    margin: 10px 0;
-    border: 1px solid #ddd;
-    border-radius: 5px;
-    font-size: 16px;
-    box-sizing: border-box;
-}
-button {
-    background: #4CAF50;
-    color: white;
-    border: none;
-    cursor: pointer;
-}
-button:hover {
-    background: #45a049;
-}
-.result {
-    margin-top: 20px;
-    padding: 15px;
-    background: #e8f5e9;
-    border-radius: 5px;
-    text-align: center;
-    font-size: 18px;
-    font-weight: bold;
+body{font-family:'Poppins',Arial,sans-serif;margin:0;background:var(--bg);color:var(--text);line-height:1.9;font-size:17px; transition:background .3s, color .3s}
+
+.header-wrap, .footer-wrap{background:var(--purple)}
+.header{display:flex; justify-content:space-between; align-items:center; padding:12px 20px; color:#fff; flex-wrap:wrap; max-width:1100px; margin:0 auto}
+.header .logo{font-size:22px; font-weight:700; display:flex; align-items:center; gap:8px}
+.header .nav{display:flex; gap:18px; flex-wrap:wrap; align-items:center}
+.header .nav a{color:#fff; text-decoration:none; font-weight:600; font-size:14px; padding:6px 0; position:relative}
+.header .nav a:hover{color:#fff}
+.header .nav a::after{content:''; position:absolute; width:0; height:2px; bottom:0; left:0; background-color:#fff; transition:width 0.3s ease}
+.header .nav a:hover::after{width:100%}
+
+.theme-btn{background:rgba(255,255,255,0.2); border:1px solid #fff; color:#fff; padding:6px 12px; border-radius:6px; cursor:pointer; font-weight:600; font-size:13px}
+.theme-btn:hover{background:rgba(255,255,255,0.3)}
+
+.container{max-width:1200px;margin:30px auto;display:grid;grid-template-columns:1fr 320px;gap:40px;padding:0 20px}
+.main-card{background:var(--card);padding:40px;border-radius:12px;box-shadow:0 8px 25px rgba(0,0,0,.08)}
+h1{color:var(--text);font-size:32px;margin-top:0;font-weight:700;text-align:center;border-bottom:3px solid var(--purple);padding-bottom:15px;}
+h2{color:var(--text);font-size:24px;margin-top:30px;font-weight:600; display:inline-block; position:relative; padding-bottom:5px}
+h2::after{content:''; position:absolute; left:0; bottom:0; width:0; height:3px; background:var(--purple); transition:width .3s}
+h2:hover::after{width:100%}
+p{transition:transform .2s}
+p:hover{transform:translateX(5px)}
+.sidebar{background:var(--card);padding:25px;border-radius:12px;box-shadow:0 8px 25px rgba(0,0,0,.08); border:1px solid #e9ecef; height:fit-content; position:sticky; top:100px; text-align:center}
+.sidebar h3{margin-top:0;color:var(--text);border-bottom:2px solid var(--purple);padding-bottom:10px; text-align:center}
+.highlight{background:var(--purple-light); color:#fff; padding:20px; border-left:5px solid var(--purple); border-radius:5px; margin:20px 0; font-size:18px;}
+
+.tool-box{margin-bottom:25px}
+.tabs{display:flex;gap:10px;margin-bottom:20px;flex-wrap:wrap;border-bottom:2px solid #e9ecef}
+.tab{padding:12px 18px;cursor:pointer;border-bottom:3px solid transparent;font-weight:600;color:var(--text)}
+.tab.active{color:var(--purple);border-bottom:3px solid var(--purple)}
+.tab-content{display:none}
+.tab-content.active{display:block}
+.tool-box label{display:block;margin-top:12px;font-weight:600;font-size:14px}
+.tool-box input{width:100%; padding:12px; border:2px solid #e9ecef; border-radius:8px; font-size:16px; font-family:'Poppins'; margin:8px 0; box-sizing:border-box; background:var(--card); color:var(--text)}
+.tool-box input:focus{outline:none; border-color:var(--purple)}
+.btn{background:var(--purple); color:#fff; padding:12px 30px; border:none; border-radius:8px; font-size:16px; font-weight:600; cursor:pointer; margin:5px 10px 5px 0; width:100%}
+.btn:hover{background:var(--purple-light)}
+.result{margin-top:20px; padding:20px; border:2px dashed #e9ecef; border-radius:8px; min-height:50px; background:var(--bg); font-size:20px; font-weight:bold; text-align:center; color:var(--purple)}
+.tool-links{display:flex; flex-direction:column; gap:12px; margin-top:15px} 
+.tool-links a{display:block; padding:12px 15px; background:var(--bg); color:var(--text); text-decoration:none; border-radius:8px; border:1px solid #e9ecef; font-weight:500; transition:0.2s} 
+.tool-links a:hover{background:var(--purple); color:#fff; transform:translateX(5px)}
+
+.pro-footer{padding:30px 20px 15px}
+.footer-container{max-width:1100px; margin:0 auto; display:grid; grid-template-columns:repeat(3,1fr); gap:30px}
+.footer-logo{font-size:22px; font-weight:700; color:#fff}
+.footer-col h3{color:#fff; border-bottom:2px solid #fff; padding-bottom:8px; margin-bottom:12px; font-size:18px}
+.footer-col ul{list-style:none; padding:0}
+.footer-col ul li{margin-bottom:8px}
+.footer-col ul li a{color:#f3e8ff; text-decoration:none; transition:color .3s; font-size:14px}
+.footer-col ul li a:hover{color:#fff; text-decoration:underline}
+.contact-info h4{color:#fff; margin-bottom:8px}
+.contact-info a{color:#f3e8ff; text-decoration:none; font-size:14px}
+.footer-bottom .copyright {background: white; color: black; padding: 12px 0; margin: 0;}
+.footer-bottom{text-align:center; margin-top:20px; padding-top:15px; border-top:1px solid rgba(255,255,255,0.3); color:#f3e8ff; font-size:14px; max-width:1100px; margin:20px auto 0}
+
+@media(max-width:900px){
+  .container{grid-template-columns:1fr} 
+  .sidebar{position:static}
+  .footer-container{grid-template-columns:1fr}
+  .header{flex-direction:column; gap:10px}
+  .header .nav{justify-content:center}
+  .main-card{padding:20px}
 }
 </style>
 </head>
 <body>
+
+<div class="header-wrap">
+  <div class="header">
+   <div class="logo">🔧 SMART TOOLS HUB</div> 
+    <div class="nav">
+      <a href="/spell-checker.html">Spell Checker</a>
+      <a href="/word-counter.html">Word Counter</a>
+      <a href="/case-converter.html">Case Converter</a>
+      <a href="/bmi-calculator.html">BMI Calculator</a>
+    </div>
+    <button class="theme-btn" onclick="toggleTheme()">🌙 Dark</button>
+  </div>
+</div>
+
 <div class="container">
-    <h1>Percentage Calculator</h1>
+  <div class="main-card">
+    <h1>Free Online Percentage Calculator</h1>
     
-    <label>What is</label>
-    <input type="number" id="percent" placeholder="Enter percentage">
+    <div class="tool-box">
+      <p>Calculate percentage instantly. Find % of number, % increase, % decrease, and discounts in 1 second.</p>
+      
+      <div class="tabs">
+        <div class="tab active" onclick="showTab(0)">% of Number</div>
+        <div class="tab" onclick="showTab(1)">% Increase/Decrease</div>
+        <div class="tab" onclick="showTab(2)">X is % of Y</div>
+        <div class="tab" onclick="showTab(3)">Add/Subtract %</div>
+      </div>
+
+      <div id="tab0" class="tab-content active">
+        <label>What is</label>
+        <input type="number" id="p1" placeholder="Enter % e.g. 25">
+        <label>% of</label>
+        <input type="number" id="n1" placeholder="Enter number e.g. 400">
+        <button class="btn" onclick="calc1()">Calculate</button>
+        <div id="r1" class="result" style="display:none"></div>
+      </div>
+
+      <div id="tab1" class="tab-content">
+        <label>Old Value</label><input type="number" id="old" placeholder="e.g. 100">
+        <label>New Value</label><input type="number" id="new" placeholder="e.g. 150">
+        <button class="btn" onclick="calc2()">Calculate % Change</button>
+        <div id="r2" class="result" style="display:none"></div>
+      </div>
+
+      <div id="tab2" class="tab-content">
+        <label>Part Value X</label><input type="number" id="x" placeholder="e.g. 50">
+        <label>Total Value Y</label><input type="number" id="y" placeholder="e.g. 200">
+        <button class="btn" onclick="calc3()">Calculate</button>
+        <div id="r3" class="result" style="display:none"></div>
+      </div>
+
+      <div id="tab3" class="tab-content">
+        <label>Base Number</label><input type="number" id="base" placeholder="e.g. 500">
+        <label>Percentage %</label><input type="number" id="addp" placeholder="e.g. 10">
+        <button class="btn" onclick="calc4()">Add %</button>
+        <button class="btn" onclick="calc4sub()" style="background:#6c757d">Subtract %</button>
+        <div id="r4" class="result" style="display:none"></div>
+      </div>
+    </div>
+
+    <div class="highlight">
+    <p><b>100% Free & Accurate</b><br>
+    No signup required. Instant results with 2 decimal accuracy. Works on all devices.</p>
+    </div>
+
+    <h2>Best Free Online Percentage Calculator 2026</h2>
+    <p>Are you searching for the <b>best free online percentage calculator</b> to solve math problems instantly? You are at the right place. Smart Tools Hub provides a lightning fast and 100% free percentage calculator that works directly in your browser. Whether you are a student solving homework, a shopper calculating discounts, or a business owner tracking profits, our tool will give you accurate results every single time.</p>
+    <p>In today’s fast world, no one has time to do manual percentage calculations. One small mistake in % can cost you money in business or marks in exams. That is why using a professional <b>online percentage calculator</b> has become essential for students, teachers, accountants, and marketers.</p>
     
-    <label>% of</label>
-    <input type="number" id="number" placeholder="Enter number">
+    <h2>Why You Need an Online Percentage Calculator?</h2>
+    <p>Manual percentage calculation is confusing and time consuming. Our <b>free percentage calculator online</b> solves this problem in seconds. Here are the top reasons why thousands of people use our tool daily:</p>
+    <p><b>1. Save Time:</b> Calculating 23% of 1897 manually takes time. Our tool does it in 1 second.<br>
+    <b>2. 100% Accuracy:</b> No more human error in exams, business, or finance calculations.<br>
+    <b>3. Multiple Calculations:</b> We offer 4 types of percentage calculations in one tool. % of number, increase, decrease, and discount.<br>
+    <b>4. Better Decision Making:</b> Business owners use % to track sales growth, profit margin, and discount offers.</p>
+
+    <h2>Key Features of Our Free Percentage Calculator</h2>
+    <p>We built this tool with simplicity and power in mind. Unlike other websites that are slow, our <b>percentage calculator no signup</b> works instantly.</p>
+    <p><b>4 in 1 Tool:</b> Calculate % of number, % change, "X is what % of Y", and add/subtract % all in one place.<br>
+    <b>Unlimited Usage:</b> There is no limit. Calculate 1000 times per day, it’s completely free.<br>
+    <b>Mobile Friendly Design:</b> Our tool is 100% responsive. It works perfectly on Android phones, iPhones, iPads and desktops.<br>
+    <b>Instant Results:</b> Just enter values and click calculate. Results appear immediately with 2 decimal precision.<br>
+    <b>No Ads or Popups:</b> Enjoy a clean, distraction-free experience while calculating.</p>
+
+    <h2>How to Use Our Percentage Calculator Step by Step</h2>
+    <p>Using the <b>best percentage calculator for students and business</b> is super easy. Follow these 3 simple steps:</p>
+    <p><b>Step 1:</b> Choose the calculation type from the tabs above.<br>
+    <b>Step 2:</b> Enter the required numbers in the input boxes.<br>
+    <b>Step 3:</b> Click the "Calculate" button. Get instant and accurate results.</p>
+
+    <h2>Important Percentage Formulas You Should Know</h2>
+    <p><b>Formula 1: Finding X% of Y</b> = (X / 100) * Y<br>
+    <b>Example:</b> What is 15% of 800? = (15/100) * 800 = 120</p>
+    <p><b>Formula 2: Percentage Increase or Decrease</b> = ((New - Old) / Old) * 100<br>
+    <b>Example:</b> Price went from $40 to $50. Increase = ((50-40)/40)*100 = 25%</p>
+    <p><b>Formula 3: X is What Percent of Y</b> = (X / Y) * 100<br>
+    <b>Example:</b> 25 is what percent of 100? = (25/100)*100 = 25%</p>
+
+    <h2>Real Life Uses of Percentage Calculator</h2>
+    <p><b>For Students:</b> Calculate exam scores, grade percentages, and solve math homework. Use our <b>percentage calculator for students free online</b>.<br>
+    <b>For Shoppers:</b> Calculate discount during sales. 40% off on $250 = $100 savings.<br>
+    <b>For Business:</b> Track profit margin, sales growth, and GST/Tax calculations.<br>
+    <b>For Finance:</b> Calculate interest rates, loan EMI, and investment returns in %.<br>
+    <b>For Teachers:</b> Quickly grade papers and convert marks into percentages.</p>
     
-    <button onclick="calculate()">Calculate</button>
-    
-    <div class="result" id="result"></div>
+    <h2>Frequently Asked Questions - FAQ</h2>
+    <p><b>Q1: Is this percentage calculator tool really free?</b><br>A: Yes. It is 100% free forever. No hidden charges and no premium plan.</p>
+    <p><b>Q2: How to calculate percentage increase?</b><br>A: Use our "% Increase/Decrease" tab. Enter old and new value. Formula: ((New-Old)/Old)*100</p>
+    <p><b>Q3: Can I calculate discount using this tool?</b><br>A: Yes. Use "Subtract %" tab. Enter original price and discount %. It will show final price.</p>
+    <p><b>Q4: Is the result accurate for GST and tax?</b><br>A: Yes. It gives results up to 2 decimal places which is perfect for GST, tax, and finance.</p>
+    <p><b>Q5: Does it work without internet?</b><br>A: Yes. Once the page loads, it works offline because all calculation happens in your browser.</p>
+    <p style="margin-top:40px; text-align:center; font-size:20px; font-weight:700;">Smart Tools Hub - Precision. Speed. Simplicity.</p>
+  </div>
+
+ <div class="sidebar">
+  <h3>Other Tools</h3>
+  <div class="tool-links">
+   <a href="/spell-checker.html">Spell Checker</a>
+   <a href="/word-counter.html">Word Counter</a>
+   <a href="/bmi-calculator.html">BMI Calculator</a>
+   <a href="/age-in-years-months-days.html">Age Calculator</a>
+  </div>
+</div>
+</div>
+
+<div class="footer-wrap">
+  <footer class="pro-footer">
+    <div class="footer-container">
+      <div class="footer-col">
+        <h2 class="footer-logo">🔧 SMART TOOLS HUB</h2>
+        <p style="color:#f3e8ff">Best free online tools for Students, SEO Experts, and Writers. 100% Free, No Signup Required.</p>
+        <div class="contact-info">
+          <h4>Contact Us</h4>
+          <a href="mailto:ptacalculatorpk@gmail.com">ptacalculatorpk@gmail.com</a>
+        </div>
+      </div>
+      <div class="footer-col">
+        <h3>Popular Tools</h3>
+        <ul>
+        <li><a href="/spell-checker.html">Spell Checker</a></li>
+        <li><a href="/word-counter.html">Word Counter</a></li>
+        <li><a href="/bmi-calculator.html">BMI Calculator</a></li>
+        <li><a href="/age-in-years-months-days.html">Age Calculator</a></li>  
+        </ul>
+      </div>
+      <div class="footer-col">
+        <h3>Quick Links</h3>
+        <ul>
+          <li><a href="/">Home</a></li>
+          <li><a href="/about-us/">About Us</a></li>
+          <li><a href="/contact-us/">Contact Us</a></li>
+          <li><a href="/privacy-policy/">Privacy Policy</a></li>
+          <li><a href="/terms-of-service/">Terms of Service</a></li>
+        </ul>
+      </div>
+    </div>
+    <div class="footer-bottom">
+      <p class="copyright">© 2026 Smart Tools Hub. All Rights Reserved.</p>
+    </div>
+  </footer>
 </div>
 
 <script>
-function calculate() {
-    const percent = parseFloat(document.getElementById('percent').value);
-    const number = parseFloat(document.getElementById('number').value);
-    
-    if (isNaN(percent) || isNaN(number)) {
-        document.getElementById('result').innerHTML = "Please enter valid numbers";
-        return;
-    }
-    
-    const result = (percent / 100) * number;
-    document.getElementById('result').innerHTML = 
-        `${percent}% of ${number} = ${result.toFixed(2)}`;
-    
-    // Track event in GA4
-    gtag('event', 'calculate', {
-        'percent_value': percent,
-        'number_value': number
-    });
+function toggleTheme(){
+  const body = document.documentElement;
+  const btn = document.querySelector('.theme-btn');
+  if(body.getAttribute('data-theme') === 'dark'){
+    body.removeAttribute('data-theme');
+    btn.innerHTML = '🌙 Dark';
+    localStorage.setItem('theme', 'light');
+  } else {
+    body.setAttribute('data-theme', 'dark');
+    btn.innerHTML = '☀️ Light';
+    localStorage.setItem('theme', 'dark');
+  }
+}
+if(localStorage.getItem('theme') === 'dark'){
+  document.documentElement.setAttribute('data-theme', 'dark');
+  document.querySelector('.theme-btn').innerHTML = '☀️ Light';
+}
+
+function showTab(n){
+  document.querySelectorAll('.tab').forEach((t,i)=>t.classList.toggle('active',i==n));
+  document.querySelectorAll('.tab-content').forEach((d,i)=>d.classList.toggle('active',i==n));
+}
+
+function calc1(){
+  let p=+document.getElementById('p1').value, n=+document.getElementById('n1').value;
+  if(!p && p!==0 || !n && n!==0){alert('Please enter both values'); return;}
+  let res=(p/100)*n;
+  document.getElementById('r1').innerText=`${p}% of ${n} = ${res.toFixed(2)}`;
+  document.getElementById('r1').style.display='block';
+}
+function calc2(){
+  let old=+document.getElementById('old').value, nw=+document.getElementById('new').value;
+  if(!old && old!==0 || !nw && nw!==0){alert('Please enter both values'); return;}
+  let res=((nw-old)/old)*100;
+  document.getElementById('r2').innerText=`Change: ${res.toFixed(2)}% ${res>=0?'Increase':'Decrease'}`;
+  document.getElementById('r2').style.display='block';
+}
+function calc3(){
+  let x=+document.getElementById('x').value, y=+document.getElementById('y').value;
+  if(!x && x!==0 || !y && y!==0){alert('Please enter both values'); return;}
+  let res=(x/y)*100;
+  document.getElementById('r3').innerText=`${x} is ${res.toFixed(2)}% of ${y}`;
+  document.getElementById('r3').style.display='block';
+}
+function calc4(){
+  let b=+document.getElementById('base').value, p=+document.getElementById('addp').value;
+  if(!b && b!==0 || !p && p!==0){alert('Please enter both values'); return;}
+  let res=b+(b*p/100);
+  document.getElementById('r4').innerText=`${b} + ${p}% = ${res.toFixed(2)}`;
+  document.getElementById('r4').style.display='block';
+}
+function calc4sub(){
+  let b=+document.getElementById('base').value, p=+document.getElementById('addp').value;
+  if(!b && b!==0 || !p && p!==0){alert('Please enter both values'); return;}
+  let res=b-(b*p/100);
+  document.getElementById('r4').innerText=`${b} - ${p}% = ${res.toFixed(2)}`;
+  document.getElementById('r4').style.display='block';
 }
 </script>
 </body>
