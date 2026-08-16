@@ -3,142 +3,177 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Smart Tools Hub - 60+ Free Online Tools | Text, SEO, Calculator & More</title>
-    <meta name="description" content="Free online tools for Text, SEO, Calculators, QR Codes, Design & Converters. 60+ tools. No signup, 100% free and fast.">
+    <title>Smart Tools Hub - 60+ Free Online Tools | Text, SEO, Calculator, QR & More</title>
+    <meta name="description" content="Smart Tools Hub offers 60+ free online tools for Text, SEO, Calculators, QR Codes, Design & Converters. Fast, Free, No Signup Required.">
+    <meta name="keywords" content="free online tools, text tools, seo tools, calculator, qr generator, color picker">
+    <link rel="canonical" href="https://smart-tools-hub.github.io/">
     <script src="https://cdn.tailwindcss.com"></script>
+    <style>
+        .tool-card:hover { transform: translateY(-2px); }
+    </style>
 </head>
-<body class="bg-gray-50">
+<body class="bg-gray-50 text-gray-800">
 
     <!-- Header -->
     <header class="bg-white shadow-sm sticky top-0 z-50">
         <div class="max-w-7xl mx-auto px-4 py-4 flex justify-between items-center">
-            <h1 class="text-2xl font-bold text-blue-600">Smart Tools Hub</h1>
-            <nav class="hidden md:flex gap-6 text-gray-700">
-                <a href="/">Home</a>
-                <a href="/about-us">About</a>
-                <a href="/contact-us">Contact</a>
+            <a href="/" class="text-2xl font-bold text-blue-600">Smart Tools Hub</a>
+            <nav class="hidden md:flex gap-6 text-sm font-medium">
+                <a href="/" class="hover:text-blue-600">Home</a>
+                <a href="/about-us" class="hover:text-blue-600">About</a>
+                <a href="/contact-us" class="hover:text-blue-600">Contact</a>
+                <a href="/privacy-policy" class="hover:text-blue-600">Privacy</a>
             </nav>
         </div>
     </header>
 
-    <!-- Hero Section -->
-    <section class="bg-gradient-to-r from-blue-600 to-indigo-600 text-white py-16 text-center">
+    <!-- Hero -->
+    <section class="bg-gradient-to-r from-blue-600 to-indigo-600 text-white py-20 text-center">
         <div class="max-w-4xl mx-auto px-4">
-            <h2 class="text-4xl font-bold mb-4">60+ Free Online Tools</h2>
-            <p class="text-lg mb-6">Everything you need in one place. Fast, Free, No Signup Required.</p>
-            <input type="text" placeholder="Search tools..." id="search" class="w-full max-w-lg px-4 py-3 rounded-lg text-gray-900">
+            <h1 class="text-4xl md:text-5xl font-bold mb-4">60+ Free Online Tools</h1>
+            <p class="text-lg mb-8 opacity-90">Everything you need in one place. Fast, Free, No Signup Required.</p>
+            <input type="text" id="searchBox" onkeyup="searchTools()" placeholder="Search tools... e.g. QR, BMI, Word Counter" 
+                class="w-full max-w-2xl px-5 py-4 rounded-lg text-gray-900 focus:outline-none focus:ring-4 focus:ring-blue-300">
         </div>
     </section>
 
-    <!-- Categories Grid -->
+    <!-- Main Content -->
     <main class="max-w-7xl mx-auto px-4 py-12">
 
         <!-- 1. Text Tools -->
-        <div class="mb-12">
-            <h3 class="text-2xl font-bold mb-4 flex items-center">📝 Text Tools</h3>
-            <div class="grid grid-cols-2 md:grid-cols-4 lg:grid-cols-6 gap-4">
-                <a href="/character-counter.html" class="bg-white p-4 rounded-lg shadow hover:shadow-md">Character Counter</a>
-                <a href="/word-counter.html" class="bg-white p-4 rounded-lg shadow hover:shadow-md">Word Counter</a>
-                <a href="/case-converter.html" class="bg-white p-4 rounded-lg shadow hover:shadow-md">Case Converter</a>
-                <a href="/grammar-checker.html" class="bg-white p-4 rounded-lg shadow hover:shadow-md">Grammar Checker</a>
-                <a href="/spell-checker/" class="bg-white p-4 rounded-lg shadow hover:shadow-md">Spell Checker</a>
-                <a href="/text-summarizer.html" class="bg-white p-4 rounded-lg shadow hover:shadow-md">Text Summarizer</a>
-                <a href="/paragraph-rewriter.html" class="bg-white p-4 rounded-lg shadow hover:shadow-md">Paragraph Rewriter</a>
-                <a href="/slug-generator.html" class="bg-white p-4 rounded-lg shadow hover:shadow-md">Slug Generator</a>
-                <a href="/citation-generator.html" class="bg-white p-4 rounded-lg shadow hover:shadow-md">Citation Generator</a>
-                <a href="/plagiarism-checker.html" class="bg-white p-4 rounded-lg shadow hover:shadow-md">Plagiarism Checker</a>
-                <a href="/reverse-text-generator.html" class="bg-white p-4 rounded-lg shadow hover:shadow-md">Reverse Text</a>
-                <a href="/paragraph-reader.html" class="bg-white p-4 rounded-lg shadow hover:shadow-md">Paragraph Reader</a>
+        <section class="mb-14">
+            <h2 class="text-2xl font-bold mb-6 flex items-center gap-2">📝 Text Tools</h2>
+            <div class="grid grid-cols-2 sm:grid-cols-3 md:grid-cols-4 lg:grid-cols-6 gap-4" id="text-tools">
+                <a href="/character-counter.html" class="tool-card bg-white p-4 rounded-xl shadow hover:shadow-lg transition">Character Counter</a>
+                <a href="/word-counter.html" class="tool-card bg-white p-4 rounded-xl shadow hover:shadow-lg transition">Word Counter</a>
+                <a href="/free-word-counter.html" class="tool-card bg-white p-4 rounded-xl shadow hover:shadow-lg transition">Free Word Counter</a>
+                <a href="/text-counter.html" class="tool-card bg-white p-4 rounded-xl shadow hover:shadow-lg transition">Text Counter</a>
+                <a href="/case-converter.html" class="tool-card bg-white p-4 rounded-xl shadow hover:shadow-lg transition">Case Converter</a>
+                <a href="/grammar-checker.html" class="tool-card bg-white p-4 rounded-xl shadow hover:shadow-lg transition">Grammar Checker</a>
+                <a href="/spell-checker/" class="tool-card bg-white p-4 rounded-xl shadow hover:shadow-lg transition">Spell Checker</a>
+                <a href="/sentence-checker.html" class="tool-card bg-white p-4 rounded-xl shadow hover:shadow-lg transition">Sentence Checker</a>
+                <a href="/text-summarizer.html" class="tool-card bg-white p-4 rounded-xl shadow hover:shadow-lg transition">Text Summarizer</a>
+                <a href="/paragraph-rewriter.html" class="tool-card bg-white p-4 rounded-xl shadow hover:shadow-lg transition">Paragraph Rewriter</a>
+                <a href="/paragraph-reader.html" class="tool-card bg-white p-4 rounded-xl shadow hover:shadow-lg transition">Paragraph Reader</a>
+                <a href="/reverse-text-generator.html" class="tool-card bg-white p-4 rounded-xl shadow hover:shadow-lg transition">Reverse Text</a>
+                <a href="/slug-generator.html" class="tool-card bg-white p-4 rounded-xl shadow hover:shadow-lg transition">Slug Generator</a>
+                <a href="/citation-generator.html" class="tool-card bg-white p-4 rounded-xl shadow hover:shadow-lg transition">Citation Generator</a>
+                <a href="/plagiarism-checker.html" class="tool-card bg-white p-4 rounded-xl shadow hover:shadow-lg transition">Plagiarism Checker</a>
             </div>
-        </div>
+        </section>
 
         <!-- 2. SEO Tools -->
-        <div class="mb-12">
-            <h3 class="text-2xl font-bold mb-4 flex items-center">🔍 SEO Tools</h3>
-            <div class="grid grid-cols-2 md:grid-cols-4 lg:grid-cols-6 gap-4">
-                <a href="/keyword-difficulty-checker.html" class="bg-white p-4 rounded-lg shadow hover:shadow-md">KD Checker</a>
-                <a href="/keyword-competition-checker.html" class="bg-white p-4 rounded-lg shadow hover:shadow-md">KC Checker</a>
-                <a href="/keyword-rank-checker.html" class="bg-white p-4 rounded-lg shadow hover:shadow-md">Rank Checker</a>
-                <a href="/keyword-density-checker.html" class="bg-white p-4 rounded-lg shadow hover:shadow-md">Density Checker</a>
-                <a href="/meta-description-generator.html" class="bg-white p-4 rounded-lg shadow hover:shadow-md">Meta Generator</a>
-                <a href="/link-tracker-tool.html" class="bg-white p-4 rounded-lg shadow hover:shadow-md">Link Tracker</a>
+        <section class="mb-14">
+            <h2 class="text-2xl font-bold mb-6 flex items-center gap-2">🔍 SEO Tools</h2>
+            <div class="grid grid-cols-2 sm:grid-cols-3 md:grid-cols-4 lg:grid-cols-6 gap-4">
+                <a href="/keyword-difficulty-checker.html" class="tool-card bg-white p-4 rounded-xl shadow hover:shadow-lg transition">KD Checker</a>
+                <a href="/keyword-competition-checker.html" class="tool-card bg-white p-4 rounded-xl shadow hover:shadow-lg transition">KC Checker</a>
+                <a href="/keyword-rank-checker.html" class="tool-card bg-white p-4 rounded-xl shadow hover:shadow-lg transition">Rank Checker</a>
+                <a href="/keyword-density-checker.html" class="tool-card bg-white p-4 rounded-xl shadow hover:shadow-lg transition">Density Checker</a>
+                <a href="/meta-description-generator.html" class="tool-card bg-white p-4 rounded-xl shadow hover:shadow-lg transition">Meta Generator</a>
+                <a href="/link-tracker-tool.html" class="tool-card bg-white p-4 rounded-xl shadow hover:shadow-lg transition">Link Tracker</a>
             </div>
-        </div>
+        </section>
 
         <!-- 3. Calculators -->
-        <div class="mb-12">
-            <h3 class="text-2xl font-bold mb-4 flex items-center">🧮 Calculators</h3>
-            <div class="grid grid-cols-2 md:grid-cols-4 lg:grid-cols-6 gap-4">
-                <a href="/compound-interest-calculator.html" class="bg-white p-4 rounded-lg shadow hover:shadow-md">Compound Interest</a>
-                <a href="/emi-calculator.html" class="bg-white p-4 rounded-lg shadow hover:shadow-md">EMI Calculator</a>
-                <a href="/loan-calculator.html" class="bg-white p-4 rounded-lg shadow hover:shadow-md">Loan Calculator</a>
-                <a href="/tip-calculator.html" class="bg-white p-4 rounded-lg shadow hover:shadow-md">Tip Calculator</a>
-                <a href="/bmi-calculator.html" class="bg-white p-4 rounded-lg shadow hover:shadow-md">BMI Calculator</a>
-                <a href="/exact-age-calculator.html" class="bg-white p-4 rounded-lg shadow hover:shadow-md">Age Calculator</a>
-                <a href="/gpa-calculator.html" class="bg-white p-4 rounded-lg shadow hover:shadow-md">GPA Calculator</a>
-                <a href="/date-difference-calculator.html" class="bg-white p-4 rounded-lg shadow hover:shadow-md">Date Difference</a>
+        <section class="mb-14">
+            <h2 class="text-2xl font-bold mb-6 flex items-center gap-2">🧮 Calculators</h2>
+            <div class="grid grid-cols-2 sm:grid-cols-3 md:grid-cols-4 lg:grid-cols-6 gap-4">
+                <a href="/compound-interest-calculator.html" class="tool-card bg-white p-4 rounded-xl shadow hover:shadow-lg transition">Compound Interest</a>
+                <a href="/emi-calculator.html" class="tool-card bg-white p-4 rounded-xl shadow hover:shadow-lg transition">EMI Calculator</a>
+                <a href="/loan-calculator.html" class="tool-card bg-white p-4 rounded-xl shadow hover:shadow-lg transition">Loan Calculator</a>
+                <a href="/tip-calculator.html" class="tool-card bg-white p-4 rounded-xl shadow hover:shadow-lg transition">Tip Calculator</a>
+                <a href="/percentage-calculator.html" class="tool-card bg-white p-4 rounded-xl shadow hover:shadow-lg transition">Percentage</a>
+                <a href="/bmi-calculator.html" class="tool-card bg-white p-4 rounded-xl shadow hover:shadow-lg transition">BMI Calculator</a>
+                <a href="/body-fat-calculator.html" class="tool-card bg-white p-4 rounded-xl shadow hover:shadow-lg transition">Body Fat</a>
+                <a href="/ideal-weight-calculator.html" class="tool-card bg-white p-4 rounded-xl shadow hover:shadow-lg transition">Ideal Weight</a>
+                <a href="/gpa-calculator.html" class="tool-card bg-white p-4 rounded-xl shadow hover:shadow-lg transition">GPA Calculator</a>
+                <a href="/exact-age-calculator.html" class="tool-card bg-white p-4 rounded-xl shadow hover:shadow-lg transition">Age Calculator</a>
+                <a href="/date-difference-calculator.html" class="tool-card bg-white p-4 rounded-xl shadow hover:shadow-lg transition">Date Difference</a>
+                <a href="/time-zone-converter.html" class="tool-card bg-white p-4 rounded-xl shadow hover:shadow-lg transition">Timezone</a>
             </div>
-        </div>
+        </section>
 
-        <!-- 4. QR Code Tools -->
-        <div class="mb-12">
-            <h3 class="text-2xl font-bold mb-4 flex items-center">📱 QR Code Tools</h3>
-            <div class="grid grid-cols-2 md:grid-cols-4 lg:grid-cols-6 gap-4">
-                <a href="/qr-code-generator.html" class="bg-white p-4 rounded-lg shadow hover:shadow-md">QR Generator</a>
-                <a href="/contact-qr-generator.html" class="bg-white p-4 rounded-lg shadow hover:shadow-md">Contact QR</a>
-                <a href="/text-qr-generator.html" class="bg-white p-4 rounded-lg shadow hover:shadow-md">Text QR</a>
-                <a href="/wifi-qr-generator.html" class="bg-white p-4 rounded-lg shadow hover:shadow-md">WiFi QR</a>
+        <!-- 4. QR Tools -->
+        <section class="mb-14">
+            <h2 class="text-2xl font-bold mb-6 flex items-center gap-2">📱 QR Code Tools</h2>
+            <div class="grid grid-cols-2 sm:grid-cols-3 md:grid-cols-4 lg:grid-cols-6 gap-4">
+                <a href="/qr-code-generator.html" class="tool-card bg-white p-4 rounded-xl shadow hover:shadow-lg transition">QR Generator</a>
+                <a href="/contact-qr-generator.html" class="tool-card bg-white p-4 rounded-xl shadow hover:shadow-lg transition">Contact QR</a>
+                <a href="/text-qr-generator.html" class="tool-card bg-white p-4 rounded-xl shadow hover:shadow-lg transition">Text QR</a>
+                <a href="/wifi-qr-generator.html" class="tool-card bg-white p-4 rounded-xl shadow hover:shadow-lg transition">WiFi QR</a>
             </div>
-        </div>
+        </section>
 
         <!-- 5. Design Tools -->
-        <div class="mb-12">
-            <h3 class="text-2xl font-bold mb-4 flex items-center">🎨 Design & Color Tools</h3>
-            <div class="grid grid-cols-2 md:grid-cols-4 lg:grid-cols-6 gap-4">
-                <a href="/color-picker.html" class="bg-white p-4 rounded-lg shadow hover:shadow-md">Color Picker</a>
-                <a href="/aesthetic-color-palette-generator.html" class="bg-white p-4 rounded-lg shadow hover:shadow-md">Color Palette</a>
-                <a href="/gradient-generator.html" class="bg-white p-4 rounded-lg shadow hover:shadow-md">Gradient Generator</a>
-                <a href="/hex-to-rgb-converter.html" class="bg-white p-4 rounded-lg shadow hover:shadow-md">Hex to RGB</a>
-                <a href="/image-compressor.html" class="bg-white p-4 rounded-lg shadow hover:shadow-md">Image Compressor</a>
-                <a href="/remove-background.html" class="bg-white p-4 rounded-lg shadow hover:shadow-md">Remove BG</a>
+        <section class="mb-14">
+            <h2 class="text-2xl font-bold mb-6 flex items-center gap-2">🎨 Design & Color Tools</h2>
+            <div class="grid grid-cols-2 sm:grid-cols-3 md:grid-cols-4 lg:grid-cols-6 gap-4">
+                <a href="/color-picker.html" class="tool-card bg-white p-4 rounded-xl shadow hover:shadow-lg transition">Color Picker</a>
+                <a href="/aesthetic-color-palette-generator.html" class="tool-card bg-white p-4 rounded-xl shadow hover:shadow-lg transition">Color Palette</a>
+                <a href="/gradient-generator.html" class="tool-card bg-white p-4 rounded-xl shadow hover:shadow-lg transition">Gradient Generator</a>
+                <a href="/hex-to-rgb-converter.html" class="tool-card bg-white p-4 rounded-xl shadow hover:shadow-lg transition">Hex to RGB</a>
+                <a href="/cmyk-to-rgb.html" class="tool-card bg-white p-4 rounded-xl shadow hover:shadow-lg transition">CMYK to RGB</a>
+                <a href="/box-shadow-generator.html" class="tool-card bg-white p-4 rounded-xl shadow hover:shadow-lg transition">Box Shadow</a>
+                <a href="/image-compressor.html" class="tool-card bg-white p-4 rounded-xl shadow hover:shadow-lg transition">Image Compressor</a>
+                <a href="/remove-background.html" class="tool-card bg-white p-4 rounded-xl shadow hover:shadow-lg transition">Remove BG</a>
+                <a href="/favicon-generator.html" class="tool-card bg-white p-4 rounded-xl shadow hover:shadow-lg transition">Favicon Generator</a>
             </div>
-        </div>
+        </section>
 
         <!-- 6. Developer Tools -->
-        <div class="mb-12">
-            <h3 class="text-2xl font-bold mb-4 flex items-center">🔧 Developer Tools</h3>
-            <div class="grid grid-cols-2 md:grid-cols-4 lg:grid-cols-6 gap-4">
-                <a href="/base64-encoder-decoder.html" class="bg-white p-4 rounded-lg shadow hover:shadow-md">Base64 Encoder</a>
-                <a href="/json-formatter.html" class="bg-white p-4 rounded-lg shadow hover:shadow-md">JSON Formatter</a>
-                <a href="/css-minifier.html" class="bg-white p-4 rounded-lg shadow hover:shadow-md">CSS Minifier</a>
-                <a href="/password-generator.html" class="bg-white p-4 rounded-lg shadow hover:shadow-md">Password Generator</a>
+        <section class="mb-14">
+            <h2 class="text-2xl font-bold mb-6 flex items-center gap-2">🔧 Developer Tools</h2>
+            <div class="grid grid-cols-2 sm:grid-cols-3 md:grid-cols-4 lg:grid-cols-6 gap-4">
+                <a href="/base64-encoder-decoder.html" class="tool-card bg-white p-4 rounded-xl shadow hover:shadow-lg transition">Base64 Encoder</a>
+                <a href="/json-formatter.html" class="tool-card bg-white p-4 rounded-xl shadow hover:shadow-lg transition">JSON Formatter</a>
+                <a href="/css-minifier.html" class="tool-card bg-white p-4 rounded-xl shadow hover:shadow-lg transition">CSS Minifier</a>
+                <a href="/password-generator.html" class="tool-card bg-white p-4 rounded-xl shadow hover:shadow-lg transition">Password Generator</a>
             </div>
-        </div>
+        </section>
 
         <!-- 7. Converters -->
-        <div class="mb-12">
-            <h3 class="text-2xl font-bold mb-4 flex items-center">🔄 Converters</h3>
-            <div class="grid grid-cols-2 md:grid-cols-4 lg:grid-cols-6 gap-4">
-                <a href="/pounds-to-kg-converter.html" class="bg-white p-4 rounded-lg shadow hover:shadow-md">Pounds to KG</a>
-                <a href="/feet-to-meters-converter.html" class="bg-white p-4 rounded-lg shadow hover:shadow-md">Feet to Meters</a>
-                <a href="/fahrenheit-to-celsius-converter.html" class="bg-white p-4 rounded-lg shadow hover:shadow-md">F to C</a>
-                <a href="/time-zone-converter.html" class="bg-white p-4 rounded-lg shadow hover:shadow-md">Timezone Converter</a>
+        <section class="mb-14">
+            <h2 class="text-2xl font-bold mb-6 flex items-center gap-2">🔄 Converters</h2>
+            <div class="grid grid-cols-2 sm:grid-cols-3 md:grid-cols-4 lg:grid-cols-6 gap-4">
+                <a href="/pounds-to-kg-converter.html" class="tool-card bg-white p-4 rounded-xl shadow hover:shadow-lg transition">Pounds to KG</a>
+                <a href="/feet-to-meters-converter.html" class="tool-card bg-white p-4 rounded-xl shadow hover:shadow-lg transition">Feet to Meters</a>
+                <a href="/miles-to-km-converter.html" class="tool-card bg-white p-4 rounded-xl shadow hover:shadow-lg transition">Miles to KM</a>
+                <a href="/fahrenheit-to-celsius-converter.html" class="tool-card bg-white p-4 rounded-xl shadow hover:shadow-lg transition">F to C</a>
+                <a href="/word-to-pdf-converter.html" class="tool-card bg-white p-4 rounded-xl shadow hover:shadow-lg transition">Word to PDF</a>
             </div>
-        </div>
+        </section>
 
     </main>
 
     <!-- Footer -->
-    <footer class="bg-gray-900 text-white py-8 text-center">
-        <div class="max-w-7xl mx-auto px-4">
-            <p>© 2026 Smart Tools Hub. All Rights Reserved.</p>
-            <div class="mt-4 flex justify-center gap-4">
-                <a href="/privacy-policy">Privacy</a>
-                <a href="/terms-of-service">Terms</a>
-                <a href="/disclaimer">Disclaimer</a>
+    <footer class="bg-gray-900 text-gray-300 py-10">
+        <div class="max-w-7xl mx-auto px-4 text-center">
+            <p class="mb-4">© 2026 Smart Tools Hub. All Rights Reserved.</p>
+            <div class="flex justify-center gap-6 text-sm">
+                <a href="/about-us" class="hover:text-white">About</a>
+                <a href="/contact-us" class="hover:text-white">Contact</a>
+                <a href="/privacy-policy" class="hover:text-white">Privacy</a>
+                <a href="/terms-of-service" class="hover:text-white">Terms</a>
+                <a href="/disclaimer" class="hover:text-white">Disclaimer</a>
             </div>
         </div>
     </footer>
+
+    <!-- Simple Search Script -->
+    <script>
+    function searchTools() {
+        let input = document.getElementById('searchBox').value.toLowerCase();
+        let cards = document.querySelectorAll('.tool-card');
+        cards.forEach(card => {
+            if(card.innerText.toLowerCase().includes(input)) {
+                card.style.display = "";
+            } else {
+                card.style.display = "none";
+            }
+        });
+    }
+    </script>
 
 </body>
 </html>
