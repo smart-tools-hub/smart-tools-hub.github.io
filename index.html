@@ -1,111 +1,144 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-  <meta charset="UTF-8">
-  <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>Smart Tools</title>
-  <meta name="google-site-verification" content="jfyCBFFPJRJNAlb-qeQ4MP3jY3JmiBo5yssF1AtiGcs" />
-  <style>
-    :root{--bg:#f5f5f5;--card:#fff;--text:#333;--border:#ddd}
-    body.dark{--bg:#1a1a1a;--card:#2b2b2b;--text:#eee;--border:#444}
-    *{box-sizing:border-box;margin:0;padding:0}
-    body{font-family: Arial, sans-serif; background:var(--bg); color:var(--text); transition:0.3s}
-
-    /* ===== HEADER ===== */
-    header{background:var(--card); border-bottom:1px solid var(--border); position:sticky; top:0; z-index:10}
-    .nav-wrap{max-width:1200px;margin:0 auto;display:flex;align-items:center;justify-content:space-between;padding:0 15px;height:60px}
-    .logo-wrap{text-align:center;line-height:1}
-    .logo{font-size:1.6rem;font-weight:700;color:var(--text);text-decoration:none}
-    .logo span{color:#e74c3c} /* Red SEO */
-    .logo-sub{font-size:0.7rem;letter-spacing:3px;color:#777}
-    nav{display:flex;align-items:center;gap:15px}
-    nav a{color:var(--text);text-decoration:none;font-size:0.9rem}
-    .pricing-btn{background:#f39c12;color:#fff;padding:7px 12px;border-radius:5px;font-weight:700;border:none;cursor:pointer;font-size:0.85rem}
-    .lang-select, .mode-toggle{background:var(--bg);border:1px solid var(--border);color:var(--text);padding:6px 8px;border-radius:5px;cursor:pointer}
-
-    /* ===== LAYOUT ===== */
-    .main-wrap{max-width:1200px;margin:30px auto;padding:0 15px;display:grid;grid-template-columns:1fr 300px;gap:25px}
-    h1{font-size:2rem;margin-bottom:8px}
-    .subtext{color:#777;margin-bottom:25px}
-    .content{background:var(--card);padding:25px;border-radius:8px;border:1px solid var(--border)}
-    
-    /* ===== TOOLS GRID ===== */
-    .tools-grid{display:grid;grid-template-columns:repeat(4, 1fr);gap:15px}
-    .tool-card{background:var(--bg);border:1px solid var(--border);border-radius:8px;padding:20px 10px;text-align:center;cursor:pointer;transition:0.2s}
-    .tool-card:hover{box-shadow:0 4px 12px rgba(0,0,0,0.1)}
-    .tool-icon{width:45px;height:45px;margin:0 auto 10px;background:var(--card);border:1px solid var(--border);border-radius:8px;display:flex;align-items:center;justify-content:center;font-size:20px}
-    .tool-card h3{font-size:0.85rem;font-weight:600}
-
-    /* ===== SIDEBAR ===== */
-    .sidebar{background:var(--card);padding:20px;border-radius:8px;border:1px solid var(--border);height:fit-content}
-    .sidebar h2{display:flex;align-items:center;gap:8px;font-size:1.1rem;margin-bottom:15px;background:#f39c12;color:#fff;padding:8px;border-radius:5px}
-    .sidebar ul{list-style:none}
-    .sidebar li{padding:8px 0;border-bottom:1px solid var(--border)}
-    .sidebar li:last-child{border:0}
-    .sidebar a{color:var(--text);text-decoration:none;font-size:0.9rem}
-    .sidebar a:hover{color:#f39c12}
-
-    @media(max-width:1000px){.main-wrap{grid-template-columns:1fr}.sidebar{display:none}}
-    @media(max-width:700px){.tools-grid{grid-template-columns:repeat(2, 1fr)} nav a{display:none}}
-  </style>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Smart Tools Hub - 60+ Free Online Tools | Text, SEO, Calculator & More</title>
+    <meta name="description" content="Free online tools for Text, SEO, Calculators, QR Codes, Design & Converters. 60+ tools. No signup, 100% free and fast.">
+    <script src="https://cdn.tailwindcss.com"></script>
 </head>
-<body>
+<body class="bg-gray-50">
 
-  <header>
-    <div class="nav-wrap">
-      <a href="/" class="logo-wrap">
-        <div class="logo">Smart<span>SEO</span></div>
-        <div class="logo-sub">TOOLS</div>
-      </a>
-      <nav>
-        <a href="#">Plagiarism Checker</a>
-        <a href="#">Grammar Checker</a>
-        <select class="lang-select">
-          <option>EN</option>
-          <option>UR</option>
-          <option>HI</option>
-        </select>
-        <button class="mode-toggle" id="modeBtn">🌙</button>
-      </nav>
-    </div>
-  </header>
+    <!-- Header -->
+    <header class="bg-white shadow-sm sticky top-0 z-50">
+        <div class="max-w-7xl mx-auto px-4 py-4 flex justify-between items-center">
+            <h1 class="text-2xl font-bold text-blue-600">Smart Tools Hub</h1>
+            <nav class="hidden md:flex gap-6 text-gray-700">
+                <a href="/">Home</a>
+                <a href="/about-us">About</a>
+                <a href="/contact-us">Contact</a>
+            </nav>
+        </div>
+    </header>
 
-  <div class="main-wrap">
-    <div class="content">
-      <h1>Text Analysis Tools</h1>
-      <p class="subtext">A complete set of text tools is now at your fingertips. Check plagiarism, rewrite an article, run a spell checker, count words or change text case.</p>
-      
-      <div class="tools-grid">
-        <div class="tool-card"><div class="tool-icon">🔍</div><h3>Plagiarism Checker</h3></div>
-        <div class="tool-card"><div class="tool-icon">✍️</div><h3>Article Rewriter</h3></div>
-        <div class="tool-card"><div class="tool-icon">Aa</div><h3>Grammar Checker</h3></div>
-        <div class="tool-card"><div class="tool-icon">123</div><h3>Word Counter</h3></div>
-        <div class="tool-card"><div class="tool-icon">✓</div><h3>Spell Checker</h3></div>
-        <div class="tool-card"><div class="tool-icon">#</div><h3>Paraphrasing Tool</h3></div>
-        <div class="tool-card"><div class="tool-icon">Tt</div><h3>Case Converter</h3></div>
-        <div class="tool-card"><div class="tool-icon">⇄</div><h3>Character Counter</h3></div>
-      </div>
-    </div>
+    <!-- Hero Section -->
+    <section class="bg-gradient-to-r from-blue-600 to-indigo-600 text-white py-16 text-center">
+        <div class="max-w-4xl mx-auto px-4">
+            <h2 class="text-4xl font-bold mb-4">60+ Free Online Tools</h2>
+            <p class="text-lg mb-6">Everything you need in one place. Fast, Free, No Signup Required.</p>
+            <input type="text" placeholder="Search tools..." id="search" class="w-full max-w-lg px-4 py-3 rounded-lg text-gray-900">
+        </div>
+    </section>
 
-    <aside class="sidebar">
-      <ul>
-        <li><a href="#">• Plagiarism Checker</a></li>
-        <li><a href="#">• Paraphrasing Tool</a></li>
-        <li><a href="#">• AI Detector</a></li>
-        <li><a href="#">• Grammar Checker</a></li>
-        <li><a href="#">• Reverse Image Search</a></li>
-      </ul>
-    </aside>
-  </div>
+    <!-- Categories Grid -->
+    <main class="max-w-7xl mx-auto px-4 py-12">
 
-<script>
-  // Dark/Light Mode Toggle
-  const btn = document.getElementById('modeBtn');
-  btn.onclick = () => {
-    document.body.classList.toggle('dark');
-    btn.textContent = document.body.classList.contains('dark') ? '☀️' : '🌙';
-  }
-</script>
+        <!-- 1. Text Tools -->
+        <div class="mb-12">
+            <h3 class="text-2xl font-bold mb-4 flex items-center">📝 Text Tools</h3>
+            <div class="grid grid-cols-2 md:grid-cols-4 lg:grid-cols-6 gap-4">
+                <a href="/character-counter.html" class="bg-white p-4 rounded-lg shadow hover:shadow-md">Character Counter</a>
+                <a href="/word-counter.html" class="bg-white p-4 rounded-lg shadow hover:shadow-md">Word Counter</a>
+                <a href="/case-converter.html" class="bg-white p-4 rounded-lg shadow hover:shadow-md">Case Converter</a>
+                <a href="/grammar-checker.html" class="bg-white p-4 rounded-lg shadow hover:shadow-md">Grammar Checker</a>
+                <a href="/spell-checker/" class="bg-white p-4 rounded-lg shadow hover:shadow-md">Spell Checker</a>
+                <a href="/text-summarizer.html" class="bg-white p-4 rounded-lg shadow hover:shadow-md">Text Summarizer</a>
+                <a href="/paragraph-rewriter.html" class="bg-white p-4 rounded-lg shadow hover:shadow-md">Paragraph Rewriter</a>
+                <a href="/slug-generator.html" class="bg-white p-4 rounded-lg shadow hover:shadow-md">Slug Generator</a>
+                <a href="/citation-generator.html" class="bg-white p-4 rounded-lg shadow hover:shadow-md">Citation Generator</a>
+                <a href="/plagiarism-checker.html" class="bg-white p-4 rounded-lg shadow hover:shadow-md">Plagiarism Checker</a>
+                <a href="/reverse-text-generator.html" class="bg-white p-4 rounded-lg shadow hover:shadow-md">Reverse Text</a>
+                <a href="/paragraph-reader.html" class="bg-white p-4 rounded-lg shadow hover:shadow-md">Paragraph Reader</a>
+            </div>
+        </div>
+
+        <!-- 2. SEO Tools -->
+        <div class="mb-12">
+            <h3 class="text-2xl font-bold mb-4 flex items-center">🔍 SEO Tools</h3>
+            <div class="grid grid-cols-2 md:grid-cols-4 lg:grid-cols-6 gap-4">
+                <a href="/keyword-difficulty-checker.html" class="bg-white p-4 rounded-lg shadow hover:shadow-md">KD Checker</a>
+                <a href="/keyword-competition-checker.html" class="bg-white p-4 rounded-lg shadow hover:shadow-md">KC Checker</a>
+                <a href="/keyword-rank-checker.html" class="bg-white p-4 rounded-lg shadow hover:shadow-md">Rank Checker</a>
+                <a href="/keyword-density-checker.html" class="bg-white p-4 rounded-lg shadow hover:shadow-md">Density Checker</a>
+                <a href="/meta-description-generator.html" class="bg-white p-4 rounded-lg shadow hover:shadow-md">Meta Generator</a>
+                <a href="/link-tracker-tool.html" class="bg-white p-4 rounded-lg shadow hover:shadow-md">Link Tracker</a>
+            </div>
+        </div>
+
+        <!-- 3. Calculators -->
+        <div class="mb-12">
+            <h3 class="text-2xl font-bold mb-4 flex items-center">🧮 Calculators</h3>
+            <div class="grid grid-cols-2 md:grid-cols-4 lg:grid-cols-6 gap-4">
+                <a href="/compound-interest-calculator.html" class="bg-white p-4 rounded-lg shadow hover:shadow-md">Compound Interest</a>
+                <a href="/emi-calculator.html" class="bg-white p-4 rounded-lg shadow hover:shadow-md">EMI Calculator</a>
+                <a href="/loan-calculator.html" class="bg-white p-4 rounded-lg shadow hover:shadow-md">Loan Calculator</a>
+                <a href="/tip-calculator.html" class="bg-white p-4 rounded-lg shadow hover:shadow-md">Tip Calculator</a>
+                <a href="/bmi-calculator.html" class="bg-white p-4 rounded-lg shadow hover:shadow-md">BMI Calculator</a>
+                <a href="/exact-age-calculator.html" class="bg-white p-4 rounded-lg shadow hover:shadow-md">Age Calculator</a>
+                <a href="/gpa-calculator.html" class="bg-white p-4 rounded-lg shadow hover:shadow-md">GPA Calculator</a>
+                <a href="/date-difference-calculator.html" class="bg-white p-4 rounded-lg shadow hover:shadow-md">Date Difference</a>
+            </div>
+        </div>
+
+        <!-- 4. QR Code Tools -->
+        <div class="mb-12">
+            <h3 class="text-2xl font-bold mb-4 flex items-center">📱 QR Code Tools</h3>
+            <div class="grid grid-cols-2 md:grid-cols-4 lg:grid-cols-6 gap-4">
+                <a href="/qr-code-generator.html" class="bg-white p-4 rounded-lg shadow hover:shadow-md">QR Generator</a>
+                <a href="/contact-qr-generator.html" class="bg-white p-4 rounded-lg shadow hover:shadow-md">Contact QR</a>
+                <a href="/text-qr-generator.html" class="bg-white p-4 rounded-lg shadow hover:shadow-md">Text QR</a>
+                <a href="/wifi-qr-generator.html" class="bg-white p-4 rounded-lg shadow hover:shadow-md">WiFi QR</a>
+            </div>
+        </div>
+
+        <!-- 5. Design Tools -->
+        <div class="mb-12">
+            <h3 class="text-2xl font-bold mb-4 flex items-center">🎨 Design & Color Tools</h3>
+            <div class="grid grid-cols-2 md:grid-cols-4 lg:grid-cols-6 gap-4">
+                <a href="/color-picker.html" class="bg-white p-4 rounded-lg shadow hover:shadow-md">Color Picker</a>
+                <a href="/aesthetic-color-palette-generator.html" class="bg-white p-4 rounded-lg shadow hover:shadow-md">Color Palette</a>
+                <a href="/gradient-generator.html" class="bg-white p-4 rounded-lg shadow hover:shadow-md">Gradient Generator</a>
+                <a href="/hex-to-rgb-converter.html" class="bg-white p-4 rounded-lg shadow hover:shadow-md">Hex to RGB</a>
+                <a href="/image-compressor.html" class="bg-white p-4 rounded-lg shadow hover:shadow-md">Image Compressor</a>
+                <a href="/remove-background.html" class="bg-white p-4 rounded-lg shadow hover:shadow-md">Remove BG</a>
+            </div>
+        </div>
+
+        <!-- 6. Developer Tools -->
+        <div class="mb-12">
+            <h3 class="text-2xl font-bold mb-4 flex items-center">🔧 Developer Tools</h3>
+            <div class="grid grid-cols-2 md:grid-cols-4 lg:grid-cols-6 gap-4">
+                <a href="/base64-encoder-decoder.html" class="bg-white p-4 rounded-lg shadow hover:shadow-md">Base64 Encoder</a>
+                <a href="/json-formatter.html" class="bg-white p-4 rounded-lg shadow hover:shadow-md">JSON Formatter</a>
+                <a href="/css-minifier.html" class="bg-white p-4 rounded-lg shadow hover:shadow-md">CSS Minifier</a>
+                <a href="/password-generator.html" class="bg-white p-4 rounded-lg shadow hover:shadow-md">Password Generator</a>
+            </div>
+        </div>
+
+        <!-- 7. Converters -->
+        <div class="mb-12">
+            <h3 class="text-2xl font-bold mb-4 flex items-center">🔄 Converters</h3>
+            <div class="grid grid-cols-2 md:grid-cols-4 lg:grid-cols-6 gap-4">
+                <a href="/pounds-to-kg-converter.html" class="bg-white p-4 rounded-lg shadow hover:shadow-md">Pounds to KG</a>
+                <a href="/feet-to-meters-converter.html" class="bg-white p-4 rounded-lg shadow hover:shadow-md">Feet to Meters</a>
+                <a href="/fahrenheit-to-celsius-converter.html" class="bg-white p-4 rounded-lg shadow hover:shadow-md">F to C</a>
+                <a href="/time-zone-converter.html" class="bg-white p-4 rounded-lg shadow hover:shadow-md">Timezone Converter</a>
+            </div>
+        </div>
+
+    </main>
+
+    <!-- Footer -->
+    <footer class="bg-gray-900 text-white py-8 text-center">
+        <div class="max-w-7xl mx-auto px-4">
+            <p>© 2026 Smart Tools Hub. All Rights Reserved.</p>
+            <div class="mt-4 flex justify-center gap-4">
+                <a href="/privacy-policy">Privacy</a>
+                <a href="/terms-of-service">Terms</a>
+                <a href="/disclaimer">Disclaimer</a>
+            </div>
+        </div>
+    </footer>
 
 </body>
 </html>
