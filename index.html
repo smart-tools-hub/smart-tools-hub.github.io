@@ -1,187 +1,37 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-<meta charset="UTF-8">
-<meta name="viewport" content="width=device-width, initial-scale=1.0">
-<title>Free Online Spell Checker Tool | Check Spelling & Grammar Mistakes</title>
-<meta name="description" content="Best free online spell checker tool 2026. Check spelling mistakes, grammar errors and typos instantly. 100% free, no signup, mobile friendly and 100% private.">
-<link href="https://fonts.googleapis.com/css2?family=Poppins:wght@400;600;700&display=swap" rel="stylesheet">
-<style>
-:root{
-  --purple:#8b5cf6;
-  --purple-light:#a78bfa;
-  --black:#1a1a1a;
-  --bg:#f7f9fc;
-  --card:#ffffff;
-  --text:#1a1a1a
-}
-[data-theme="dark"]{
-  --bg:#0f0f0f;
-  --card:#1a1a1a;
-  --text:#e5e5e5;
-  --purple:#7c3aed
-}
-body{font-family:'Poppins',Arial,sans-serif;margin:0;background:var(--bg);color:var(--text);line-height:1.9;font-size:17px; transition:background .3s, color .3s}
-
-.header-wrap, .footer-wrap{background:var(--purple)}
-.header{display:flex; justify-content:space-between; align-items:center; padding:12px 20px; color:#fff; flex-wrap:wrap; max-width:1100px; margin:0 auto}
-.header .logo{font-size:22px; font-weight:700; display:flex; align-items:center; gap:8px}
-.header .nav{display:flex; gap:18px; flex-wrap:wrap; align-items:center}
-.header .nav a{color:#fff; text-decoration:none; font-weight:600; font-size:14px; padding:6px 0; position:relative}
-.header .nav a:hover{color:#fff}
-.header .nav a::after{content:''; position:absolute; width:0; height:2px; bottom:0; left:0; background-color:#fff; transition:width 0.3s ease}
-.header .nav a:hover::after{width:100%}
-
-.theme-btn{background:rgba(255,255,255,0.2); border:1px solid #fff; color:#fff; padding:6px 12px; border-radius:6px; cursor:pointer; font-weight:600; font-size:13px}
-.theme-btn:hover{background:rgba(255,255,255,0.3)}
-
-.container{max-width:1200px;margin:30px auto;display:grid;grid-template-columns:1fr 320px;gap:40px;padding:0 20px}
-.main-card{background:var(--card);padding:40px;border-radius:12px;box-shadow:0 8px 25px rgba(0,0,0,.08)}
-h1{color:var(--text);font-size:32px;margin-top:0;font-weight:700;text-align:center;border-bottom:3px solid var(--purple);padding-bottom:15px;}
-h2{color:var(--text);font-size:24px;margin-top:30px;font-weight:600; display:inline-block; position:relative; padding-bottom:5px}
-h2::after{content:''; position:absolute; left:0; bottom:0; width:0; height:3px; background:var(--purple); transition:width .3s}
-h2:hover::after{width:100%}
-p{transition:transform .2s}
-p:hover{transform:translateX(5px)}
-.sidebar{background:var(--card);padding:25px;border-radius:12px;box-shadow:0 8px 25px rgba(0,0,0,.08); border:1px solid #e9ecef; height:fit-content; position:sticky; top:100px; text-align:center}
-.sidebar h3{margin-top:0;color:var(--text);border-bottom:2px solid var(--purple);padding-bottom:10px; text-align:center}
-.highlight{background:var(--purple-light); color:#fff; padding:20px; border-left:5px solid var(--purple); border-radius:5px; margin:20px 0; font-size:18px;}
-
-.pro-footer{padding:30px 20px 15px}
-.footer-container{max-width:1100px; margin:0 auto; display:grid; grid-template-columns:repeat(3,1fr); gap:30px}
-.footer-logo{font-size:22px; font-weight:700; color:#fff}
-.footer-col h3{color:#fff; border-bottom:2px solid #fff; padding-bottom:8px; margin-bottom:12px; font-size:18px}
-.footer-col ul{list-style:none; padding:0}
-.footer-col ul li{margin-bottom:8px}
-.footer-col ul li a{color:#f3e8ff; text-decoration:none; transition:color .3s; font-size:14px}
-.footer-col ul li a:hover{color:#fff; text-decoration:underline}
-.contact-info h4{color:#fff; margin-bottom:8px}
-.contact-info a{color:#f3e8ff; text-decoration:none; font-size:14px}
-.footer-bottom .copyright {background: white; color: black; padding: 12px 0; margin: 0;}
-.footer-bottom{text-align:center; margin-top:20px; padding-top:15px; border-top:1px solid rgba(255,255,255,0.3); color:#f3e8ff; font-size:14px; max-width:1100px; margin:20px auto 0}
-
-@media(max-width:900px){
-  .container{grid-template-columns:1fr} 
-  .sidebar{position:static}
-  .footer-container{grid-template-columns:1fr}
-  .header{flex-direction:column; gap:10px}
-  .header .nav{justify-content:center}
-  .main-card{padding:20px}
-}
-</style>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Smart Tools Hub - 60+ Free Online Tools</title>
+    <meta name="description" content="Free online tools for Text, SEO, Calculators, QR Codes, Design & Converters.">
+    <script src="https://cdn.tailwindcss.com"></script>
 </head>
-<body>
+<body class="bg-gray-100">
 
-<div class="header-wrap">
-  <div class="header">
-   <div class="logo">🔧 SMART TOOLS HUB</div> 
-    <div class="nav">
-      <a href="/grammar-checker.html">Grammar Checker</a>
-      <a href="/free-word-counter.html">Word Counter</a>
-      <a href="/case-converter.html">Case Converter</a>
-      <a href="/character-counter.html">Character Counter</a>
-    </div>
-    <button class="theme-btn" onclick="toggleTheme()">🌙 Dark</button>
-  </div>
-</div>
+    <!-- HEADER - SmallSEOTools Style -->
+    <header class="bg-white shadow-md sticky top-0 z-50">
+        <div class="max-w-7xl mx-auto px-4 py-3">
+            <div class="flex flex-col md:flex-row justify-between items-center gap-4">
+                
+                <!-- Logo -->
+                <a href="/" class="text-2xl font-bold text-blue-600">Smart Tools Hub</a>
+                
+                <!-- Search Box - Spell Checker Style -->
+                <div class="w-full md:w-1/2">
+                    <input type="text" id="searchBox" onkeyup="searchTools()" 
+                        placeholder="Search for tools... Spell Checker, QR, BMI, etc" 
+                        class="w-full px-4 py-2 border-gray-300 rounded-lg focus:outline-none focus:ring-2 focus:ring-blue-500">
+                </div>
 
-
- <div class="sidebar">
-  <h3>Other Tools</h3>
-  <div class="tool-links">
-   <a href="/grammar-checker.html">Grammar Checker</a>
-   <a href="/free-word-counter.html">Word Counter</a>
-   <a href="/case-converter.html">Case Converter</a>
-   <a href="/character-counter.html">Character Counter</a>
-  </div>
-</div>
-</div>
-
-<div class="footer-wrap">
-  <footer class="pro-footer">
-    <div class="footer-container">
-      <div class="footer-col">
-        <h2 class="footer-logo">🔧 SMART TOOLS HUB</h2>
-        <p style="color:#f3e8ff">Best free online tools for Students, SEO Experts, and Writers. 100% Free, No Signup Required.</p>
-        <div class="contact-info">
-          <h4>Contact Us</h4>
-          <a href="mailto:ptacalculatorpk@gmail.com">ptacalculatorpk@gmail.com</a>
+                <!-- Nav Links -->
+                <nav class="hidden md:flex gap-4 text-sm">
+                    <a href="/about-us" class="hover:text-blue-600">About</a>
+                    <a href="/contact-us" class="hover:text-blue-600">Contact</a>
+                </nav>
+            </div>
         </div>
-      </div>
-      <div class="footer-col">
-        <h3>Popular Tools</h3>
-        <ul>
-        <li><a href="/grammar-checker.html">Grammar Checker</a></li>
-        <li><a href="/free-word-counter.html">Word Counter</a></li>
-        <li><a href="/case-converter.html">Case Converter</a></li>
-        <li><a href="/character-counter.html">Character Counter</a></li>  
-        </ul>
-      </div>
-      <div class="footer-col">
-        <h3>Quick Links</h3>
-        <ul>
-          <li><a href="/">Home</a></li>
-          <li><a href="/about-us/">About Us</a></li>
-          <li><a href="/contact-us/">Contact Us</a></li>
-          <li><a href="/privacy-policy/">Privacy Policy</a></li>
-          <li><a href="/terms-of-service/">Terms of Service</a></li>
-        </ul>
-      </div>
-    </div>
-    <div class="footer-bottom">
-      <p class="copyright">© 2026 Smart Tools Hub. All Rights Reserved.</p>
-    </div>
-  </footer>
-</div>
-
-<script>
-function toggleTheme(){
-  const body = document.documentElement;
-  const btn = document.querySelector('.theme-btn');
-  if(body.getAttribute('data-theme') === 'dark'){
-    body.removeAttribute('data-theme');
-    btn.innerHTML = '🌙 Dark';
-    localStorage.setItem('theme', 'light');
-  } else {
-    body.setAttribute('data-theme', 'dark');
-    btn.innerHTML = '☀️ Light';
-    localStorage.setItem('theme', 'dark');
-  }
-}
-if(localStorage.getItem('theme') === 'dark'){
-  document.documentElement.setAttribute('data-theme', 'dark');
-  document.querySelector('.theme-btn').innerHTML = '☀️ Light';
-}
-
-const textEl = document.getElementById('text');
-textEl.oninput = () => {
-  const t = textEl.value;
-  document.getElementById('wc').innerText = t.trim() ? t.trim().split(/\s+/).length : 0;
-  document.getElementById('cc').innerText = t.length;
-}
-
-const dict = new Set(["the","be","to","of","and","a","in","that","have","i","it","for","not","on","with","he","as","you","do","at","this","but","his","by","from","they","we","say","her","she","or","an","will","my","one","all","would","there","their","what","so","up","out","if","about","who","get","which","go","me","when","make","can","like","time","no","just","him","know","take","people","into","year","your","good","some","could","them","see","other","than","then","now","look","only","come","its","over","think","also","back","after","use","two","how","our","work","first","well","way","even","new","want","because","any","these","give","day","most","us","tool","spell","checker","online","free","mobile","friendly","smart","hub","privacy","secure","browser","server","data","unlimited","professional","student","writer","business","seo","google","ranking","content","writing","grammar","mistake","error","typo"]);
-
-function checkSpell(){
-  const t = textEl.value;
-  if(!t.trim()){alert('Please enter some text first'); return;}
-  let html = t.split(/(\b)/).map(w=>{
-    const c = w.toLowerCase().replace(/[^a-z]/g,'');
-    return c.length > 2 && !dict.has(c) && /^[a-z]+$/.test(c) ? `<span class="miss">${w}</span>` : w;
-  }).join('');
-  document.getElementById('result').innerHTML = html || 'No errors found. Great job!';
-}
-
-function clearText(){
-  textEl.value = '';
-  document.getElementById('wc').innerText = 0;
-  document.getElementById('cc').innerText = 0;
-  document.getElementById('result').innerHTML = 'Your corrected text with errors highlighted will appear here...';
-}
-</script>
-</body>
-</html>
-             
+    </header>
 
     <div class="max-w-7xl mx-auto flex">
         <!-- SIDEBAR -->
@@ -312,5 +162,25 @@ function clearText(){
         </main>
     </div>
 
-  
- 
+    <!-- Footer -->
+    <footer class="bg-gray-800 text-white py-6 text-center">
+        <p>© 2026 Smart Tools Hub. All Rights Reserved.</p>
+    </footer>
+
+    <!-- Search Script -->
+    <script>
+    function searchTools() {
+        let input = document.getElementById('searchBox').value.toLowerCase();
+        let cards = document.querySelectorAll('.tool-card');
+        cards.forEach(card => {
+            if(card.innerText.toLowerCase().includes(input)) {
+                card.style.display = "";
+            } else {
+                card.style.display = "none";
+            }
+        });
+    }
+    </script>
+
+</body>
+</html>
