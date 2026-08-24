@@ -236,14 +236,39 @@ body.dark .box-desc{color:#94a3b8}
   </aside>
 </div>
 
+
+<!-- FOOTER -->
 <footer class="footer">
   <div class="footer-inner">
-    <div><h3>🔧 SMART TOOLS HUB</h3><p style="color:#ddd6fe">Best free online tools for Students, SEO Experts, and Writers. 100% Free.</p></div>
-    <div><h3>Popular Tools</h3><a href="/spell-checker/">Spell Checker</a><a href="/bmi-calculator.html">BMI Calculator</a><a href="/contact-qr-generator.html">Contact QR</a></div>
-    <div><h3>Quick Links</h3><a href="/">Home</a><a href="/about-us/">About Us</a><a href="/privacy-policy/">Privacy</a><a href="/terms-of-service/">Terms</a><a href="/disclaimer/">Disclaimer</a></div>
+    <div class="footer-col"><h3>🔧 SMART TOOLS HUB</h3><p style="color:#ddd6fe">Best free online tools. 100% Free.</p></div>
+    <div class="footer-col"><h3>Popular Tools</h3><a href="/spell-checker/">Spell Checker</a></div>
+    <div class="footer-col"><h3>Quick Links</h3><a href="/">Home</a><a href="/privacy-policy/">Privacy</a></div>
   </div>
   <div class="copyright">© 2026 Smart Tools Hub. All Rights Reserved.</div>
 </footer>
+
+<script>
+// NIGHT MODE SCRIPT
+const btn = document.getElementById('theme-toggle');
+const body = document.body;
+
+// Load saved theme
+if(localStorage.getItem('theme') === 'dark'){
+  body.classList.add('dark');
+  btn.textContent = '☀️';
+}
+
+btn.onclick = () => {
+  body.classList.toggle('dark');
+  if(body.classList.contains('dark')){
+    localStorage.setItem('theme','dark');
+    btn.textContent = '☀️';
+  } else {
+    localStorage.setItem('theme','light');
+    btn.textContent = '🌙';
+  }
+}
+</script>
 
 </body>
 </html>
