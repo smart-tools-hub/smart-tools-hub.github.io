@@ -3,235 +3,181 @@
 <head>
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
-<title>Smart Tools Hub - Free Online Tools & Calculators | No Signup</title>
-<meta name="description" content="Free Online Tools: QR Generator, Calculators, Converters, Text Tools & SEO Tools. 100% Free, No Signup, Mobile Friendly.">
+<title>Smart Tools Hub - 79 Free Online Tools | SEO, Text, QR & Calculators</title>
+<meta name="description" content="79 Free Online Tools: QR Generator, Calculators, Converters, Text Tools, SEO Tools & More. No Signup, 100% Free.">
 <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@400;600;700&display=swap" rel="stylesheet">
 <style>
-:root{
-  --purple:#8b5cf6;
-  --purple-light:#a78bfa;
-  --bg:#f7f9fc;
-  --card:#ffffff;
-  --text:#1a1a1a
-}
-[data-theme="dark"]{
-  --bg:#0f0f0f;
-  --card:#1a1a1a;
-  --text:#e5e5e5;
-  --purple:#7c3aed
-}
-body{font-family:'Poppins',Arial,sans-serif;margin:0;background:var(--bg);color:var(--text);line-height:1.7; transition:background .3s, color .3s}
-
-/* HEADER - TUMHARA WALA */
-.header-wrap, .footer-wrap{background:var(--purple)}
-.header{display:flex; justify-content:space-between; align-items:center; padding:12px 20px; color:#fff; flex-wrap:wrap; max-width:1300px; margin:0 auto}
-.header .logo{font-size:22px; font-weight:700; display:flex; align-items:center; gap:8px}
-.header .nav{display:flex; gap:18px; flex-wrap:wrap; align-items:center}
-.header .nav a{color:#fff; text-decoration:none; font-weight:600; font-size:14px; padding:6px 0; position:relative}
-.header .nav a::after{content:''; position:absolute; width:0; height:2px; bottom:0; left:0; background-color:#fff; transition:width 0.3s ease}
-.header .nav a:hover::after{width:100%}
-.theme-btn{background:rgba(255,255,255,0.2); border:1px solid #fff; color:#fff; padding:6px 12px; border-radius:6px; cursor:pointer; font-weight:600; font-size:13px}
-
-/* HERO */
-.hero{text-align:center; padding:50px 20px; background:var(--card)}
-.hero h1{font-size:36px; margin-bottom:10px}
-.hero p{font-size:18px; color:#666}
-
-/* MAIN - SMALLSEOTOOLS WALA */
-.container{max-width:1300px;margin:30px auto;padding:0 20px;display:grid;grid-template-columns:1fr 320px;gap:30px}
-.main-content{}
-.sidebar{background:var(--card);padding:25px;border-radius:12px;box-shadow:0 8px 25px rgba(0,0,0,.08); height:fit-content; position:sticky; top:80px}
-
-.section{margin-bottom:40px; background:var(--card); padding:25px; border-radius:12px; box-shadow:0 8px 25px rgba(0,0,0,.08)}
-.section-title{font-size:22px;font-weight:700;margin-bottom:20px;border-left:4px solid var(--purple);padding-left:12px}
-.tool-grid{display:grid;grid-template-columns:repeat(auto-fill,minmax(240px,1fr));gap:15px}
-.tool-card{background:var(--bg);padding:14px 16px;border-radius:8px;text-align:left;transition:0.2s;border:1px solid #e9ecef}
-.tool-card:hover{transform:translateX(5px); background:var(--purple)}
-.tool-card:hover a{color:#fff}
-.tool-card a{color:var(--text);text-decoration:none;font-weight:500;font-size:14px}
-
-.sidebar h3{border-bottom:2px solid var(--purple);padding-bottom:10px;margin-top:0}
-.sidebar ul{list-style:none;padding:0}
-.sidebar ul li{margin-bottom:12px}
-.sidebar ul li a{color:var(--text);text-decoration:none;font-size:14px}
-.sidebar ul li a:hover{color:var(--purple);padding-left:5px}
-
-/* FOOTER - TUMHARA WALA */
-.pro-footer{padding:30px 20px 15px}
-.footer-container{max-width:1300px; margin:0 auto; display:grid; grid-template-columns:repeat(3,1fr); gap:30px}
-.footer-logo{font-size:22px; font-weight:700; color:#fff}
-.footer-col h3{color:#fff; border-bottom:2px solid #fff; padding-bottom:8px; margin-bottom:12px; font-size:18px}
-.footer-col ul{list-style:none; padding:0}
-.footer-col ul li{margin-bottom:8px}
-.footer-col ul li a{color:#f3e8ff; text-decoration:none; transition:color .3s; font-size:14px}
-.footer-col ul li a:hover{color:#fff; text-decoration:underline}
-.contact-info h4{color:#fff; margin-bottom:8px}
-.contact-info a{color:#f3e8ff; text-decoration:none; font-size:14px}
-.footer-bottom .copyright {background: white; color: black; padding: 12px 0; margin: 0; text-align:center; font-weight:600}
-.footer-bottom{text-align:center; margin-top:20px; padding-top:15px; border-top:1px solid rgba(255,255,255,0.3); color:#f3e8ff; font-size:14px; max-width:1300px; margin:20px auto 0}
-
-@media(max-width:900px){
-  .container{grid-template-columns:1fr} 
-  .sidebar{position:static; display:none}
-  .footer-container{grid-template-columns:1fr}
-  .header{flex-direction:column; gap:10px}
+:root{--purple:#7c3aed;--bg:#f8fafc;--card:#ffffff}
+body{font-family:'Poppins',sans-serif;background:var(--bg);color:#1e293b;margin:0}
+.header{background:var(--purple);color:#fff;padding:14px 0}
+.header-inner{max-width:1280px;margin:0 auto;padding:0 20px;display:flex;justify-content:space-between;align-items:center}
+.logo{font-size:22px;font-weight:700}
+.nav a{color:#fff;text-decoration:none;margin-left:20px;font-weight:600;font-size:14px}
+.hero{background:var(--card);text-align:center;padding:50px 20px}
+.wrap{max-width:1280px;margin:30px auto;padding:0 20px;display:grid;grid-template-columns:1fr 300px;gap:25px}
+.box{background:var(--card);border-radius:10px;padding:20px;box-shadow:0 4px 6px rgba(0,0,0,.05);margin-bottom:25px}
+.box-title{font-size:20px;font-weight:700;margin-bottom:18px;border-left:4px solid var(--purple);padding-left:12px}
+.tools-grid{display:grid;grid-template-columns:repeat(4,1fr);gap:12px}
+.tool-item{border:1px solid #e2e8f0;border-radius:8px;padding:12px;text-align:left;transition:.2s}
+.tool-item:hover{border-color:var(--purple);background:#faf5ff}
+.tool-item a{color:#334155;text-decoration:none;font-weight:500;font-size:13px}
+.sidebar-box{background:var(--card);border-radius:10px;padding:20px;box-shadow:0 4px 6px rgba(0,0,0,.05)}
+.sidebar-box h3{font-size:18px;font-weight:700;margin-bottom:15px;border-bottom:2px solid var(--purple);padding-bottom:8px}
+.sidebar-box ul{list-style:none;padding:0}
+.sidebar-box li{padding:8px 0;border-bottom:1px dashed #e2e8f0}
+.sidebar-box a{color:#475569;text-decoration:none;font-size:14px}
+.footer{background:var(--purple);color:#fff;padding:40px 0 0;margin-top:50px}
+.footer-inner{max-width:1280px;margin:0 auto;padding:0 20px;display:grid;grid-template-columns:repeat(3,1fr);gap:30px}
+.copyright{background:#fff;color:#000;text-align:center;padding:15px;margin-top:30px;font-weight:600}
+@media(max-width:1024px){.wrap{grid-template-columns:1fr}.tools-grid{grid-template-columns:repeat(3,1fr)}.sidebar{display:none}}
+@media(max-width:640px){.tools-grid{grid-template-columns:repeat(2,1fr)}}
 </style>
 </head>
 <body>
 
-<!-- HEADER TUMHARA WALA -->
-<div class="header-wrap">
-  <div class="header">
-   <div class="logo">🔧 SMART TOOLS HUB</div> 
-    <div class="nav">
-      <a href="/">Home</a>
-      <a href="/about-us/">About</a>
-      <a href="/contact-us/">Contact</a>
-      <a href="/privacy-policy/">Privacy</a>
+<header class="header"><div class="header-inner"><div class="logo">🔧 SMART TOOLS HUB</div><nav class="nav"><a href="/">Home</a><a href="/about-us/">About</a><a href="/contact-us/">Contact</a><a href="/privacy-policy/">Privacy</a></nav></div></header>
+
+<section class="hero"><h1>79 Free Online Tools for Everyone</h1><p>No Signup • No Ads • 100% Free • Mobile Friendly</p></section>
+
+<div class="wrap">
+  <div class="content">
+    
+    <div class="box"><h2 class="box-title">📱 QR Code Tools</h2>
+      <div class="tools-grid">
+        <div class="tool-item"><a href="/contact-qr-generator.html">Contact QR Generator</a></div>
+        <div class="tool-item"><a href="/wifi-qr-generator.html">WiFi QR Generator</a></div>
+        <div class="tool-item"><a href="/qr-code-generator.html">QR Code Generator</a></div>
+        <div class="tool-item"><a href="/text-qr-generator.html">Text QR Generator</a></div>
+      </div>
     </div>
-    <button class="theme-btn" onclick="toggleTheme()">🌙 Dark</button>
+
+    <div class="box"><h2 class="box-title">🧮 Calculators</h2>
+      <div class="tools-grid">
+        <div class="tool-item"><a href="/bmi-calculator.html">BMI Calculator</a></div>
+        <div class="tool-item"><a href="/bmi-for-kids.html">BMI for Kids</a></div>
+        <div class="tool-item"><a href="/tip-calculator.html">Tip Calculator</a></div>
+        <div class="tool-item"><a href="/20-percent-tip-calculator.html">20% Tip Calculator</a></div>
+        <div class="tool-item"><a href="/quick-tip-calculator.html">Quick Tip Calculator</a></div>
+        <div class="tool-item"><a href="/bill-tip-calculator.html">Bill Tip Calculator</a></div>
+        <div class="tool-item"><a href="/loan-calculator.html">Loan Calculator</a></div>
+        <div class="tool-item"><a href="/auto-loan-calculator.html">Auto Loan Calculator</a></div>
+        <div class="tool-item"><a href="/mortgage-calculator-usa.html">Mortgage Calculator</a></div>
+        <div class="tool-item"><a href="/emi-calculator.html">EMI Calculator</a></div>
+        <div class="tool-item"><a href="/compound-interest-calculator.html">Compound Interest</a></div>
+        <div class="tool-item"><a href="/gpa-calculator.html">GPA Calculator</a></div>
+        <div class="tool-item"><a href="/percentage-calculator.html">Percentage Calculator</a></div>
+        <div class="tool-item"><a href="/body-fat-calculator.html">Body Fat Calculator</a></div>
+        <div class="tool-item"><a href="/ideal-weight-calculator.html">Ideal Weight</a></div>
+      </div>
+    </div>
+
+    <div class="box"><h2 class="box-title">📅 Age & Date Tools</h2>
+      <div class="tools-grid">
+        <div class="tool-item"><a href="/age-in-years-months-days.html">Age in Years Months Days</a></div>
+        <div class="tool-item"><a href="/dob-to-age-calculator.html">DOB to Age Calculator</a></div>
+        <div class="tool-item"><a href="/exact-age-calculator.html">Exact Age Calculator</a></div>
+        <div class="tool-item"><a href="/how-old-am-i-calculator.html">How Old Am I</a></div>
+        <div class="tool-item"><a href="/date-difference-calculator.html">Date Difference</a></div>
+        <div class="tool-item"><a href="/time-zone-converter.html">Time Zone Converter</a></div>
+        <div class="tool-item"><a href="/timestamp-to-date-converter.html">Timestamp to Date</a></div>
+      </div>
+    </div>
+
+    <div class="box"><h2 class="box-title">✍️ Text & SEO Tools</h2>
+      <div class="tools-grid">
+        <div class="tool-item"><a href="/spell-checker/">Spell Checker</a></div>
+        <div class="tool-item"><a href="/grammar-checker.html">Grammar Checker</a></div>
+        <div class="tool-item"><a href="/sentence-checker.html">Sentence Checker</a></div>
+        <div class="tool-item"><a href="/word-counter.html">Word Counter</a></div>
+        <div class="tool-item"><a href="/free-word-counter.html">Free Word Counter</a></div>
+        <div class="tool-item"><a href="/text-counter.html">Text Counter</a></div>
+        <div class="tool-item"><a href="/character-counter.html">Character Counter</a></div>
+        <div class="tool-item"><a href="/case-converter.html">Case Converter</a></div>
+        <div class="tool-item"><a href="/paragraph-rewriter.html">Paragraph Rewriter</a></div>
+        <div class="tool-item"><a href="/text-summarizer.html">Text Summarizer</a></div>
+        <div class="tool-item"><a href="/reverse-text-generator.html">Reverse Text</a></div>
+        <div class="tool-item"><a href="/plagiarism-checker.html">Plagiarism Checker</a></div>
+        <div class="tool-item"><a href="/keyword-density-checker.html">Keyword Density</a></div>
+        <div class="tool-item"><a href="/keyword-difficulty-checker.html">Keyword Difficulty</a></div>
+        <div class="tool-item"><a href="/keyword-competition-checker.html">Keyword Competition</a></div>
+        <div class="tool-item"><a href="/keyword-rank-checker.html">Keyword Rank Checker</a></div>
+        <div class="tool-item"><a href="/meta-description-generator.html">Meta Description</a></div>
+        <div class="tool-item"><a href="/slug-generator.html">Slug Generator</a></div>
+        <div class="tool-item"><a href="/citation-generator.html">Citation Generator</a></div>
+      </div>
+    </div>
+
+    <div class="box"><h2 class="box-title">🎨 Design & Color Tools</h2>
+      <div class="tools-grid">
+        <div class="tool-item"><a href="/color-picker.html">Color Picker</a></div>
+        <div class="tool-item"><a href="/aesthetic-color-palette-generator.html">Color Palette</a></div>
+        <div class="tool-item"><a href="/soft-aesthetic-color-palette-generator.html">Soft Color Palette</a></div>
+        <div class="tool-item"><a href="/gradient-generator.html">Gradient Generator</a></div>
+        <div class="tool-item"><a href="/box-shadow-generator.html">Box Shadow</a></div>
+        <div class="tool-item"><a href="/css-minifier.html">CSS Minifier</a></div>
+        <div class="tool-item"><a href="/favicon-generator.html">Favicon Generator</a></div>
+        <div class="tool-item"><a href="/image-compressor.html">Image Compressor</a></div>
+        <div class="tool-item"><a href="/remove-background.html">Remove Background</a></div>
+        <div class="tool-item"><a href="/text-to-image.html">Text to Image</a></div>
+      </div>
+    </div>
+
+    <div class="box"><h2 class="box-title">🔄 Converters & Other Tools</h2>
+      <div class="tools-grid">
+        <div class="tool-item"><a href="/fahrenheit-to-celsius-converter.html">F to C Converter</a></div>
+        <div class="tool-item"><a href="/miles-to-km-converter.html">Miles to KM</a></div>
+        <div class="tool-item"><a href="/feet-to-meters-converter.html">Feet to Meters</a></div>
+        <div class="tool-item"><a href="/pounds-to-kg-converter.html">Pounds to KG</a></div>
+        <div class="tool-item"><a href="/hex-to-rgb-converter.html">Hex to RGB</a></div>
+        <div class="tool-item"><a href="/cmyk-to-rgb.html">CMYK to RGB</a></div>
+        <div class="tool-item"><a href="/base64-encoder-decoder.html">Base64 Encoder</a></div>
+        <div class="tool-item"><a href="/json-formatter.html">JSON Formatter</a></div>
+        <div class="tool-item"><a href="/word-to-pdf-converter.html">Word to PDF</a></div>
+        <div class="tool-item"><a href="/password-generator.html">Password Generator</a></div>
+        <div class="tool-item"><a href="/random-number-generator.html">Random Number</a></div>
+        <div class="tool-item"><a href="/dice-roller.html">Dice Roller</a></div>
+        <div class="tool-item"><a href="/cps-test-online-free.html">CPS Test</a></div>
+        <div class="tool-item"><a href="/tally-counter-tool-online-free.html">Tally Counter</a></div>
+        <div class="tool-item"><a href="/tap-tempo-calculator-online-free.html">Tap Tempo</a></div>
+        <div class="tool-item"><a href="/youtube-thumbnail-downloader.html">YouTube Thumbnail</a></div>
+        <div class="tool-item"><a href="/link-tracker-tool.html">Link Tracker</a></div>
+        <div class="tool-item"><a href="/paragraph-reader.html">Paragraph Reader</a></div>
+      </div>
+    </div>
+
   </div>
-</div>
 
-<!-- HERO -->
-<div class="hero">
-  <h1>79 Free Online Tools for Everyone</h1>
-  <p>No Signup • No Ads • 100% Free • Works on Mobile</p>
-</div>
-
-<!-- MAIN SMALLSEO WALA -->
-<div class="container">
-  <div class="main-content">
-
-    <!-- QR TOOLS -->
-    <div class="section">
-      <h2 class="section-title">📱 QR Code Tools</h2>
-      <div class="tool-grid">
-        <div class="tool-card"><a href="/contact-qr-generator.html">Contact QR Code Generator</a></div>
-        <div class="tool-card"><a href="/wifi-qr-generator.html">WiFi QR Code Generator</a></div>
-        <div class="tool-card"><a href="/qr-code-generator.html">Text QR Code Generator</a></div>
-        <div class="tool-card"><a href="/text-qr-generator.html">Text to QR Generator</a></div>
-      </div>
-    </div>
-
-    <!-- CALCULATORS -->
-    <div class="section">
-      <h2 class="section-title">🧮 Calculators</h2>
-      <div class="tool-grid">
-        <div class="tool-card"><a href="/20-percent-tip-calculator.html">20% Tip Calculator</a></div>
-        <div class="tool-card"><a href="/tip-calculator.html">Tip Calculator</a></div>
-        <div class="tool-card"><a href="/bmi-for-kids.html">BMI Calculator for Kids</a></div>
-        <div class="tool-card"><a href="/bmi-calculator.html">BMI Calculator</a></div>
-        <div class="tool-card"><a href="/loan-calculator.html">Loan Calculator</a></div>
-        <div class="tool-card"><a href="/emi-calculator.html">EMI Calculator</a></div>
-        <div class="tool-card"><a href="/gpa-calculator.html">GPA Calculator</a></div>
-        <div class="tool-card"><a href="/percentage-calculator.html">Percentage Calculator</a></div>
-      </div>
-    </div>
-
-    <!-- TEXT & SEO -->
-    <div class="section">
-      <h2 class="section-title">✍️ Text & SEO Tools</h2>
-      <div class="tool-grid">
-        <div class="tool-card"><a href="/spell-checker/">Spell Checker</a></div>
-        <div class="tool-card"><a href="/grammar-checker.html">Grammar Checker</a></div>
-        <div class="tool-card"><a href="/word-counter.html">Word Counter</a></div>
-        <div class="tool-card"><a href="/character-counter.html">Character Counter</a></div>
-        <div class="tool-card"><a href="/plagiarism-checker.html">Plagiarism Checker</a></div>
-        <div class="tool-card"><a href="/keyword-density-checker.html">Keyword Density</a></div>
-      </div>
-    </div>
-
-    <!-- CONVERTERS -->
-    <div class="section">
-      <h2 class="section-title">🔄 Converters</h2>
-      <div class="tool-grid">
-        <div class="tool-card"><a href="/fahrenheit-to-celsius-converter.html">Fahrenheit to Celsius</a></div>
-        <div class="tool-card"><a href="/miles-to-km-converter.html">Miles to KM</a></div>
-        <div class="tool-card"><a href="/word-to-pdf-converter.html">Word to PDF</a></div>
-        <div class="tool-card"><a href="/base64-encoder-decoder.html">Base64 Encoder</a></div>
-      </div>
-    </div>
-
-  </div>
-
-  <!-- SIDEBAR SMALLSEO WALA -->
   <aside class="sidebar">
-    <h3>Popular Tools</h3>
-    <ul>
-      <li><a href="/contact-qr-generator.html">Contact QR Generator</a></li>
-      <li><a href="/bmi-calculator.html">BMI Calculator</a></li>
-      <li><a href="/spell-checker/">Spell Checker</a></li>
-      <li><a href="/word-counter.html">Word Counter</a></li>
-      <li><a href="/20-percent-tip-calculator.html">20% Tip Calculator</a></li>
-    </ul>
-
-    <h3 style="margin-top:30px">Related Tools</h3>
-    <ul>
-      <li><a href="/grammar-checker.html">Grammar Checker</a></li>
-      <li><a href="/case-converter.html">Case Converter</a></li>
-      <li><a href="/image-compressor.html">Image Compressor</a></li>
-      <li><a href="/free-word-counter.html">Free Word Counter</a></li>
-    </ul>
-  </aside>
-</div>
-
-<!-- FOOTER TUMHARA WALA -->
-<div class="footer-wrap">
-  <footer class="pro-footer">
-    <div class="footer-container">
-      <div class="footer-col">
-        <h2 class="footer-logo">🔧 SMART TOOLS HUB</h2>
-        <p style="color:#f3e8ff">Best free online tools for Students, SEO Experts, and Writers. 100% Free, No Signup Required.</p>
-        <div class="contact-info">
-          <h4>Contact Us</h4>
-          <a href="mailto:ptacalculatorpk@gmail.com">ptacalculatorpk@gmail.com</a>
-        </div>
-      </div>
-      <div class="footer-col">
-        <h3>Popular Tools</h3>
-        <ul>
+    <div class="sidebar-box">
+      <h3>Popular Tools</h3>
+      <ul>
         <li><a href="/contact-qr-generator.html">Contact QR Generator</a></li>
         <li><a href="/bmi-calculator.html">BMI Calculator</a></li>
         <li><a href="/spell-checker/">Spell Checker</a></li>
-        <li><a href="/word-counter.html">Word Counter</a></li>  
-        </ul>
-      </div>
-      <div class="footer-col">
-        <h3>Quick Links</h3>
-        <ul>
-          <li><a href="/">Home</a></li>
-          <li><a href="/about-us/">About Us</a></li>
-          <li><a href="/contact-us/">Contact Us</a></li>
-          <li><a href="/privacy-policy/">Privacy Policy</a></li>
-          <li><a href="/terms-of-service/">Terms of Service</a></li>
-        </ul>
-      </div>
+        <li><a href="/word-counter.html">Word Counter</a></li>
+        <li><a href="/plagiarism-checker.html">Plagiarism Checker</a></li>
+      </ul>
     </div>
-    <div class="footer-bottom">
-      <p class="copyright">© 2026 Smart Tools Hub. All Rights Reserved.</p>
+    <div class="sidebar-box" style="margin-top:25px">
+      <h3>Related Tools</h3>
+      <ul>
+        <li><a href="/grammar-checker.html">Grammar Checker</a></li>
+        <li><a href="/case-converter.html">Case Converter</a></li>
+        <li><a href="/image-compressor.html">Image Compressor</a></li>
+        <li><a href="/color-picker.html">Color Picker</a></li>
+      </ul>
     </div>
-  </footer>
+  </aside>
 </div>
 
-<script>
-function toggleTheme(){
-  const body = document.documentElement;
-  const btn = document.querySelector('.theme-btn');
-  if(body.getAttribute('data-theme') === 'dark'){
-    body.removeAttribute('data-theme');
-    btn.innerHTML = '🌙 Dark';
-    localStorage.setItem('theme', 'light');
-  } else {
-    body.setAttribute('data-theme', 'dark');
-    btn.innerHTML = '☀️ Light';
-    localStorage.setItem('theme', 'dark');
-  }
-}
-if(localStorage.getItem('theme') === 'dark'){
-  document.documentElement.setAttribute('data-theme', 'dark');
-  document.querySelector('.theme-btn').innerHTML = '☀️ Light';
-}
-</script>
+<footer class="footer">
+  <div class="footer-inner">
+    <div><h3>🔧 SMART TOOLS HUB</h3><p style="color:#e9d5ff">Best free online tools for Students, SEO Experts, and Writers.</p></div>
+    <div><h3>Quick Links</h3><a href="/">Home</a><br><a href="/about-us/">About Us</a><br><a href="/contact-us/">Contact</a><br><a href="/privacy-policy/">Privacy</a><br><a href="/terms-of-service/">Terms</a><br><a href="/disclaimer/">Disclaimer</a><br><a href="/faqs.html">FAQs</a></div>
+    <div><h3>Popular Tools</h3><a href="/contact-qr-generator.html" style="color:#e9d5ff">Contact QR</a><br><a href="/bmi-calculator.html" style="color:#e9d5ff">BMI Calculator</a><br><a href="/spell-checker/" style="color:#e9d5ff">Spell Checker</a></div>
+  </div>
+  <div class="copyright">© 2026 Smart Tools Hub. All Rights Reserved.</div>
+</footer>
+
 </body>
 </html>
