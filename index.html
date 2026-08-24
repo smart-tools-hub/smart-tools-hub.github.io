@@ -3,19 +3,68 @@
 <head>
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
-<title>Smart Tools Hub - 79 Free Online SEO, Text, QR & Calculator Tools</title>
-<meta name="description" content="79 Free Online Tools. No Signup, No Ads. QR Generator, Calculators, Converters, Text Tools, SEO Tools & More.">
+<title>Smart Tools Hub - 79 Free Online Tools</title>
 <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@400;600;700&display=swap" rel="stylesheet">
 <style>
-:root{--purple:#7c3aed;--bg:#f8fafc;--card:#ffffff}
+:root{--purple:#7c3aed;--bg:#f8fafc;--card:#ffffff;--text:#1e293b;--border:#e2e8f0}
+body.dark{--bg:#0f172a;--card:#1e293b;--text:#e2e8f0;--border:#334155}
+
 *{margin:0;padding:0;box-sizing:border-box}
-body{font-family:'Poppins',sans-serif;background:var(--bg);color:#1e293b}
+body{font-family:'Poppins',sans-serif;background:var(--bg);color:var(--text);transition:0.3s}
 
 /* HEADER PURPLE */
 .header{background:var(--purple);color:#fff;padding:16px 0;position:sticky;top:0;z-index:99}
 .header-inner{max-width:1280px;margin:0 auto;padding:0 20px;display:flex;justify-content:space-between;align-items:center}
 .logo{font-size:24px;font-weight:700}
-.nav a{color:#fff;text-decoration:none;margin-left:20px;font-weight:600;font-size:15px}
+.logo a{color:#fff;text-decoration:none}
+.nav{display:flex;gap:20px;align-items:center}
+.nav a{color:#fff;text-decoration:none;font-weight:600;font-size:15px}
+
+/* NIGHT MODE BUTTON */
+#theme-toggle{background:#fff;border:none;border-radius:8px;padding:8px 12px;cursor:pointer;font-size:18px}
+
+.hero{background:var(--card);text-align:center;padding:50px 20px;border-bottom:1px solid var(--border)}
+.container{max-width:1280px;margin:30px auto;padding:0 20px;display:grid;grid-template-columns:1fr 320px;gap:30px}
+.box{background:var(--card);border-radius:12px;padding:30px 25px;box-shadow:0 1px 3px rgba(0,0,0,0.1);margin-bottom:30px;border:1px solid var(--border)}
+.box-title{font-size:24px;font-weight:700;text-align:center;margin-bottom:10px}
+.box-desc{text-align:center;color:#64748b;margin-bottom:25px;font-size:14px}
+body.dark .box-desc{color:#94a3b8}
+
+.tools-grid{display:grid;grid-template-columns:repeat(4,1fr);gap:20px}
+.tool-box{border:1px solid var(--border);border-radius:10px;padding:20px 15px;text-align:center;background:var(--card)}
+.tool-box:hover{border-color:var(--purple)}
+.tool-icon{width:60px;height:60px;margin:0 auto 12px auto;background:#f5f3ff;border-radius:12px;display:flex;align-items:center;justify-content:center;font-size:28px;color:var(--purple)}
+.tool-box a{color:var(--text);text-decoration:none;font-weight:600;font-size:14px}
+
+.sidebar-box{background:var(--card);border-radius:12px;padding:20px;border:1px solid var(--border)}
+.sidebar-box h3{font-size:18px;font-weight:700;margin-bottom:15px;border-bottom:3px solid var(--purple);padding-bottom:10px}
+.sidebar-box a{display:block;padding:9px 0;color:var(--text);text-decoration:none;font-size:14px;border-bottom:1px dashed var(--border)}
+
+/* FOOTER PURPLE */
+.footer{background:var(--purple);color:#fff;padding:40px 0 0;margin-top:50px}
+.footer-inner{max-width:1280px;margin:0 auto;padding:0 20px;display:grid;grid-template-columns:repeat(3,1fr);gap:40px}
+.footer-col h3{font-size:18px;margin-bottom:15px;border-bottom:2px solid #fff;padding-bottom:8px}
+.footer-col a{color:#ddd6fe;text-decoration:none;font-size:14px;display:block;margin:8px 0}
+.copyright{background:var(--card);color:var(--text);text-align:center;padding:15px;margin-top:30px;font-weight:600;border-top:1px solid var(--border)}
+
+@media(max-width:1024px){.container{grid-template-columns:1fr}.tools-grid{grid-template-columns:repeat(3,1fr)}.sidebar{display:none}}
+@media(max-width:640px){.tools-grid{grid-template-columns:repeat(2,1fr)}}
+</style>
+</head>
+<body>
+
+<!-- HEADER -->
+<header class="header">
+  <div class="header-inner">
+    <div class="logo"><a href="/">🔧 SMART TOOLS HUB</a></div>
+    <nav class="nav">
+      <a href="/">Home</a>
+      <a href="/about-us/">About</a>
+      <a href="/contact-us/">Contact</a>
+      <button id="theme-toggle">🌙</button>
+    </nav>
+  </div>
+</header>
 
 .hero{background:var(--card);text-align:center;padding:50px 20px;border-bottom:1px solid #e2e8f0}
 .hero h1{font-size:34px;margin-bottom:8px}
