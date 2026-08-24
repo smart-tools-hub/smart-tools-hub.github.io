@@ -5,169 +5,189 @@
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
 <title>Smart Tools Hub - 79 Free Online SEO, Text, QR & Calculator Tools</title>
 <meta name="description" content="79 Free Online Tools. No Signup, No Ads. QR Generator, Calculators, Converters, Text Tools, SEO Tools & More.">
-<link href="https://fonts.googleapis.com/css2?family=Poppins:wght@400;500;600;700&display=swap" rel="stylesheet">
+<link href="https://fonts.googleapis.com/css2?family=Poppins:wght@400;600;700&display=swap" rel="stylesheet">
 <style>
-:root{--purple:#8b5cf6;--bg:#f5f7fa;--card:#ffffff}
-*{box-sizing:border-box}
-body{font-family:'Poppins',sans-serif;background:var(--bg);color:#1e293b;margin:0}
-.header{background:var(--purple);padding:14px 20px;color:#fff}
-.header-inner{max-width:1280px;margin:0 auto;display:flex;justify-content:space-between;align-items:center}
-.logo{font-size:22px;font-weight:700}
-.nav a{color:#fff;text-decoration:none;margin-left:18px;font-weight:600;font-size:14px}
-.hero{text-align:center;padding:45px 20px;background:#fff}
-.hero h1{font-size:32px;margin:0 0 8px 0}
-.wrap{max-width:1280px;margin:30px auto;padding:0 20px;display:grid;grid-template-columns:1fr 300px;gap:25px}
-.section{background:#fff;border-radius:12px;padding:25px 20px;margin-bottom:25px;box-shadow:0 1px 3px rgba(0,0,0,.08)}
-.section h2{text-align:center;font-size:22px;margin:0 0 8px 0}
-.section p{text-align:center;color:#64748b;margin:0 0 20px 0;font-size:14px}
-.grid{display:grid;grid-template-columns:repeat(4,1fr);gap:15px}
-.card{padding:14px;border:1px solid #e2e8f0;border-radius:8px;text-align:center;transition:.2s}
-.card:hover{border-color:var(--purple);box-shadow:0 3px 8px rgba(139,92,246,.1)}
-.card a{color:#334155;text-decoration:none;font-weight:500;font-size:13px}
-.sidebar{background:#fff;border-radius:12px;padding:20px;box-shadow:0 1px 3px rgba(0,0,0,.08)}
-.sidebar h3{border-bottom:2px solid var(--purple);padding-bottom:8px;margin:0 0 12px 0}
-.sidebar a{display:block;padding:7px 0;color:#475569;text-decoration:none;font-size:14px;border-bottom:1px dashed #eee}
-.footer{background:var(--purple);color:#fff;padding:30px 20px;margin-top:30px}
-.footer-inner{max-width:1280px;margin:0 auto;display:grid;grid-template-columns:repeat(3,1fr);gap:30px}
-.footer a{color:#f3e8ff;text-decoration:none;display:block;margin:5px 0}
-.copy{background:#fff;text-align:center;padding:12px;font-weight:600}
-@media(max-width:1024px){.wrap{grid-template-columns:1fr}.grid{grid-template-columns:repeat(3,1fr)}.sidebar{display:none}}
-@media(max-width:640px){.grid{grid-template-columns:repeat(2,1fr)}}
+:root{--purple:#7c3aed;--bg:#f8fafc;--card:#ffffff}
+*{margin:0;padding:0;box-sizing:border-box}
+body{font-family:'Poppins',sans-serif;background:var(--bg);color:#1e293b}
+
+/* HEADER PURPLE */
+.header{background:var(--purple);color:#fff;padding:16px 0;position:sticky;top:0;z-index:99}
+.header-inner{max-width:1280px;margin:0 auto;padding:0 20px;display:flex;justify-content:space-between;align-items:center}
+.logo{font-size:24px;font-weight:700}
+.nav a{color:#fff;text-decoration:none;margin-left:20px;font-weight:600;font-size:15px}
+
+.hero{background:var(--card);text-align:center;padding:50px 20px;border-bottom:1px solid #e2e8f0}
+.hero h1{font-size:34px;margin-bottom:8px}
+.hero p{color:#64748b;font-size:16px}
+
+.container{max-width:1280px;margin:30px auto;padding:0 20px;display:grid;grid-template-columns:1fr 320px;gap:30px}
+.box{background:var(--card);border-radius:12px;padding:30px 25px;box-shadow:0 1px 3px rgba(0,0,0,0.1);margin-bottom:30px}
+.box-title{font-size:24px;font-weight:700;text-align:center;margin-bottom:10px}
+.box-desc{text-align:center;color:#64748b;margin-bottom:25px;font-size:14px}
+
+/* ICON BOX GRID */
+.tools-grid{display:grid;grid-template-columns:repeat(4,1fr);gap:20px}
+.tool-box{border:1px solid #e2e8f0;border-radius:10px;padding:20px 15px;text-align:center;transition:all .3s;background:#fff}
+.tool-box:hover{border-color:var(--purple);box-shadow:0 4px 12px rgba(124,58,237,0.15);transform:translateY(-2px)}
+.tool-icon{width:60px;height:60px;margin:0 auto 12px auto;background:#f5f3ff;border-radius:12px;display:flex;align-items:center;justify-content:center;font-size:28px;color:var(--purple)}
+.tool-box a{color:#334155;text-decoration:none;font-weight:600;font-size:14px}
+
+.sidebar-box{background:var(--card);border-radius:12px;padding:20px;box-shadow:0 1px 3px rgba(0,0,0,0.1);margin-bottom:20px}
+.sidebar-box h3{font-size:18px;font-weight:700;margin-bottom:15px;border-bottom:3px solid var(--purple);padding-bottom:10px}
+.sidebar-box a{display:block;padding:9px 0;color:#475569;text-decoration:none;font-size:14px;border-bottom:1px dashed #e2e8f0}
+
+/* FOOTER PURPLE */
+.footer{background:var(--purple);color:#fff;padding:40px 0 0;margin-top:50px}
+.footer-inner{max-width:1280px;margin:0 auto;padding:0 20px;display:grid;grid-template-columns:repeat(3,1fr);gap:30px}
+.footer h3{font-size:18px;margin-bottom:15px;border-bottom:2px solid #fff;padding-bottom:8px}
+.footer a{color:#ddd6fe;text-decoration:none;font-size:14px;line-height:2}
+.copyright{background:#fff;color:#000;text-align:center;padding:15px;margin-top:30px;font-weight:600}
+
+@media(max-width:1024px){.container{grid-template-columns:1fr}.tools-grid{grid-template-columns:repeat(3,1fr)}.sidebar{display:none}}
+@media(max-width:640px){.tools-grid{grid-template-columns:repeat(2,1fr)}}
 </style>
 </head>
 <body>
 
-<div class="header"><div class="header-inner"><div class="logo">🔧 SMART TOOLS HUB</div><div class="nav"><a href="/">Home</a><a href="/about-us/">About</a><a href="/contact-us/">Contact</a><a href="/privacy-policy/">Privacy</a></div></div></div>
+<header class="header">
+  <div class="header-inner">
+    <div class="logo">🔧 SMART TOOLS HUB</div>
+    <nav class="nav"><a href="/">Home</a><a href="/about-us/">About</a><a href="/contact-us/">Contact</a><a href="/privacy-policy/">Privacy</a></nav>
+  </div>
+</header>
 
-<div class="hero"><h1>79 Free Online Tools for Everyone</h1><p>No Signup • No Ads • 100% Free</p></div>
+<section class="hero"><h1>79 Free Online Tools for Everyone</h1><p>No Signup • No Ads • 100% Free • Mobile Friendly</p></section>
 
-<div class="wrap">
+<div class="container">
   <div class="content">
     
-    <div class="section"><h2>QR Code Tools</h2><p>Generate QR Codes for Contact, WiFi, Text instantly</p>
-    <div class="grid">
-      <div class="card"><a href="/contact-qr-generator.html">Contact QR Generator</a></div>
-      <div class="card"><a href="/wifi-qr-generator.html">WiFi QR Generator</a></div>
-      <div class="card"><a href="/qr-code-generator.html">QR Code Generator</a></div>
-      <div class="card"><a href="/text-qr-generator.html">Text QR Generator</a></div>
+    <div class="box"><h2 class="box-title">QR Code Tools</h2><p class="box-desc">Generate QR Codes instantly for Contact, WiFi, Text, and more. No signup required.</p>
+    <div class="tools-grid">
+      <div class="tool-box"><div class="tool-icon">📱</div><a href="/contact-qr-generator.html">Contact QR Generator</a></div>
+      <div class="tool-box"><div class="tool-icon">📶</div><a href="/wifi-qr-generator.html">WiFi QR Generator</a></div>
+      <div class="tool-box"><div class="tool-icon">🔗</div><a href="/qr-code-generator.html">QR Code Generator</a></div>
+      <div class="tool-box"><div class="tool-icon">📝</div><a href="/text-qr-generator.html">Text QR Generator</a></div>
     </div></div>
 
-    <div class="section"><h2>Calculators</h2><p>BMI, Loan, Tip, GPA and all financial calculators</p>
-    <div class="grid">
-      <div class="card"><a href="/bmi-calculator.html">BMI Calculator</a></div>
-      <div class="card"><a href="/bmi-for-kids.html">BMI for Kids</a></div>
-      <div class="card"><a href="/tip-calculator.html">Tip Calculator</a></div>
-      <div class="card"><a href="/20-percent-tip-calculator.html">20% Tip Calculator</a></div>
-      <div class="card"><a href="/quick-tip-calculator.html">Quick Tip Calculator</a></div>
-      <div class="card"><a href="/bill-tip-calculator.html">Bill Tip Calculator</a></div>
-      <div class="card"><a href="/loan-calculator.html">Loan Calculator</a></div>
-      <div class="card"><a href="/auto-loan-calculator.html">Auto Loan Calculator</a></div>
-      <div class="card"><a href="/mortgage-calculator-usa.html">Mortgage Calculator</a></div>
-      <div class="card"><a href="/emi-calculator.html">EMI Calculator</a></div>
-      <div class="card"><a href="/compound-interest-calculator.html">Interest Calculator</a></div>
-      <div class="card"><a href="/gpa-calculator.html">GPA Calculator</a></div>
-      <div class="card"><a href="/percentage-calculator.html">Percentage Calculator</a></div>
-      <div class="card"><a href="/body-fat-calculator.html">Body Fat Calculator</a></div>
-      <div class="card"><a href="/ideal-weight-calculator.html">Ideal Weight</a></div>
+    <div class="box"><h2 class="box-title">Calculators</h2><p class="box-desc">BMI, Loan, Tip, GPA and all financial & health calculators with 100% accurate results.</p>
+    <div class="tools-grid">
+      <div class="tool-box"><div class="tool-icon">⚖️</div><a href="/bmi-calculator.html">BMI Calculator</a></div>
+      <div class="tool-box"><div class="tool-icon">👶</div><a href="/bmi-for-kids.html">BMI for Kids</a></div>
+      <div class="tool-box"><div class="tool-icon">💰</div><a href="/tip-calculator.html">Tip Calculator</a></div>
+      <div class="tool-box"><div class="tool-icon">%</div><a href="/20-percent-tip-calculator.html">20% Tip Calculator</a></div>
+      <div class="tool-box"><div class="tool-icon">💵</div><a href="/quick-tip-calculator.html">Quick Tip Calculator</a></div>
+      <div class="tool-box"><div class="tool-icon">🧾</div><a href="/bill-tip-calculator.html">Bill Tip Calculator</a></div>
+      <div class="tool-box"><div class="tool-icon">🏦</div><a href="/loan-calculator.html">Loan Calculator</a></div>
+      <div class="tool-box"><div class="tool-icon">🚗</div><a href="/auto-loan-calculator.html">Auto Loan Calculator</a></div>
+      <div class="tool-box"><div class="tool-icon">🏠</div><a href="/mortgage-calculator-usa.html">Mortgage Calculator</a></div>
+      <div class="tool-box"><div class="tool-icon">📊</div><a href="/emi-calculator.html">EMI Calculator</a></div>
+      <div class="tool-box"><div class="tool-icon">🧮</div><a href="/compound-interest-calculator.html">Interest Calculator</a></div>
+      <div class="tool-box"><div class="tool-icon">🎓</div><a href="/gpa-calculator.html">GPA Calculator</a></div>
+      <div class="tool-box"><div class="tool-icon">%</div><a href="/percentage-calculator.html">Percentage Calculator</a></div>
+      <div class="tool-box"><div class="tool-icon">💪</div><a href="/body-fat-calculator.html">Body Fat Calculator</a></div>
+      <div class="tool-box"><div class="tool-icon">⚖️</div><a href="/ideal-weight-calculator.html">Ideal Weight Calculator</a></div>
     </div></div>
 
-    <div class="section"><h2>Age & Date Tools</h2><p>Calculate age, date difference and time zones</p>
-    <div class="grid">
-      <div class="card"><a href="/age-in-years-months-days.html">Age in Y-M-D</a></div>
-      <div class="card"><a href="/dob-to-age-calculator.html">DOB to Age</a></div>
-      <div class="card"><a href="/exact-age-calculator.html">Exact Age</a></div>
-      <div class="card"><a href="/how-old-am-i-calculator.html">How Old Am I</a></div>
-      <div class="card"><a href="/date-difference-calculator.html">Date Difference</a></div>
-      <div class="card"><a href="/time-zone-converter.html">Time Zone</a></div>
-      <div class="card"><a href="/timestamp-to-date-converter.html">Timestamp to Date</a></div>
+    <div class="box"><h2 class="box-title">Text & SEO Tools</h2><p class="box-desc">Check grammar, spelling, count words, plagiarism and all SEO tools for writers and bloggers.</p>
+    <div class="tools-grid">
+      <div class="tool-box"><div class="tool-icon">Aa</div><a href="/spell-checker/">Spell Checker</a></div>
+      <div class="tool-box"><div class="tool-icon">📝</div><a href="/grammar-checker.html">Grammar Checker</a></div>
+      <div class="tool-box"><div class="tool-icon">📄</div><a href="/sentence-checker.html">Sentence Checker</a></div>
+      <div class="tool-box"><div class="tool-icon">🔢</div><a href="/word-counter.html">Word Counter</a></div>
+      <div class="tool-box"><div class="tool-icon">🔢</div><a href="/free-word-counter.html">Free Word Counter</a></div>
+      <div class="tool-box"><div class="tool-icon">#</div><a href="/text-counter.html">Text Counter</a></div>
+      <div class="tool-box"><div class="tool-icon">#</div><a href="/character-counter.html">Character Counter</a></div>
+      <div class="tool-box"><div class="tool-icon">Tt</div><a href="/case-converter.html">Case Converter</a></div>
+      <div class="tool-box"><div class="tool-icon">✍️</div><a href="/paragraph-rewriter.html">Article Rewriter</a></div>
+      <div class="tool-box"><div class="tool-icon">📖</div><a href="/text-summarizer.html">Text Summarizer</a></div>
+      <div class="tool-box"><div class="tool-icon">↩️</div><a href="/reverse-text-generator.html">Reverse Text</a></div>
+      <div class="tool-box"><div class="tool-icon">📄</div><a href="/plagiarism-checker.html">Plagiarism Checker</a></div>
+      <div class="tool-box"><div class="tool-icon">🔍</div><a href="/keyword-density-checker.html">Keyword Density</a></div>
+      <div class="tool-box"><div class="tool-icon">📈</div><a href="/keyword-difficulty-checker.html">Keyword Difficulty</a></div>
+      <div class="tool-box"><div class="tool-icon">📊</div><a href="/keyword-competition-checker.html">Keyword Competition</a></div>
+      <div class="tool-box"><div class="tool-icon">🏆</div><a href="/keyword-rank-checker.html">Keyword Rank</a></div>
+      <div class="tool-box"><div class="tool-icon">📄</div><a href="/meta-description-generator.html">Meta Description</a></div>
+      <div class="tool-box"><div class="tool-icon">🔗</div><a href="/slug-generator.html">Slug Generator</a></div>
+      <div class="tool-box"><div class="tool-icon">📚</div><a href="/citation-generator.html">Citation Generator</a></div>
     </div></div>
 
-    <div class="section"><h2>Text & SEO Tools</h2><p>Check grammar, spelling, count words, keywords</p>
-    <div class="grid">
-      <div class="card"><a href="/spell-checker/">Spell Checker</a></div>
-      <div class="card"><a href="/grammar-checker.html">Grammar Checker</a></div>
-      <div class="card"><a href="/sentence-checker.html">Sentence Checker</a></div>
-      <div class="card"><a href="/word-counter.html">Word Counter</a></div>
-      <div class="card"><a href="/free-word-counter.html">Free Word Counter</a></div>
-      <div class="card"><a href="/text-counter.html">Text Counter</a></div>
-      <div class="card"><a href="/character-counter.html">Character Counter</a></div>
-      <div class="card"><a href="/case-converter.html">Case Converter</a></div>
-      <div class="card"><a href="/paragraph-rewriter.html">Article Rewriter</a></div>
-      <div class="card"><a href="/text-summarizer.html">Text Summarizer</a></div>
-      <div class="card"><a href="/reverse-text-generator.html">Reverse Text</a></div>
-      <div class="card"><a href="/plagiarism-checker.html">Plagiarism Checker</a></div>
-      <div class="card"><a href="/keyword-density-checker.html">Keyword Density</a></div>
-      <div class="card"><a href="/keyword-difficulty-checker.html">Keyword Difficulty</a></div>
-      <div class="card"><a href="/keyword-competition-checker.html">Keyword Competition</a></div>
-      <div class="card"><a href="/keyword-rank-checker.html">Keyword Rank</a></div>
-      <div class="card"><a href="/meta-description-generator.html">Meta Description</a></div>
-      <div class="card"><a href="/slug-generator.html">Slug Generator</a></div>
-      <div class="card"><a href="/citation-generator.html">Citation Generator</a></div>
+    <div class="box"><h2 class="box-title">Design & Color Tools</h2><p class="box-desc">Color picker, gradient, CSS and image tools for designers and developers.</p>
+    <div class="tools-grid">
+      <div class="tool-box"><div class="tool-icon">🎨</div><a href="/color-picker.html">Color Picker</a></div>
+      <div class="tool-box"><div class="tool-icon">🌈</div><a href="/aesthetic-color-palette-generator.html">Color Palette</a></div>
+      <div class="tool-box"><div class="tool-icon">🌈</div><a href="/soft-aesthetic-color-palette-generator.html">Soft Palette</a></div>
+      <div class="tool-box"><div class="tool-icon">✨</div><a href="/gradient-generator.html">Gradient Generator</a></div>
+      <div class="tool-box"><div class="tool-icon">📦</div><a href="/box-shadow-generator.html">Box Shadow</a></div>
+      <div class="tool-box"><div class="tool-icon">{}</div><a href="/css-minifier.html">CSS Minifier</a></div>
+      <div class="tool-box"><div class="tool-icon">🖼️</div><a href="/favicon-generator.html">Favicon Generator</a></div>
+      <div class="tool-box"><div class="tool-icon">🗜️</div><a href="/image-compressor.html">Image Compressor</a></div>
+      <div class="tool-box"><div class="tool-icon">✂️</div><a href="/remove-background.html">Remove Background</a></div>
+      <div class="tool-box"><div class="tool-icon">🖼️</div><a href="/text-to-image.html">Text to Image</a></div>
     </div></div>
 
-    <div class="section"><h2>Design & Color Tools</h2><p>Color picker, gradient, css and image tools</p>
-    <div class="grid">
-      <div class="card"><a href="/color-picker.html">Color Picker</a></div>
-      <div class="card"><a href="/aesthetic-color-palette-generator.html">Color Palette</a></div>
-      <div class="card"><a href="/soft-aesthetic-color-palette-generator.html">Soft Palette</a></div>
-      <div class="card"><a href="/gradient-generator.html">Gradient Generator</a></div>
-      <div class="card"><a href="/box-shadow-generator.html">Box Shadow</a></div>
-      <div class="card"><a href="/css-minifier.html">CSS Minifier</a></div>
-      <div class="card"><a href="/favicon-generator.html">Favicon Generator</a></div>
-      <div class="card"><a href="/image-compressor.html">Image Compressor</a></div>
-      <div class="card"><a href="/remove-background.html">Remove BG</a></div>
-      <div class="card"><a href="/text-to-image.html">Text to Image</a></div>
+    <div class="box"><h2 class="box-title">Converters & Other Tools</h2><p class="box-desc">Unit converters, encoders, date tools and other useful online utilities.</p>
+    <div class="tools-grid">
+      <div class="tool-box"><div class="tool-icon">🌡️</div><a href="/fahrenheit-to-celsius-converter.html">F to C Converter</a></div>
+      <div class="tool-box"><div class="tool-icon">📏</div><a href="/miles-to-km-converter.html">Miles to KM</a></div>
+      <div class="tool-box"><div class="tool-icon">📏</div><a href="/feet-to-meters-converter.html">Feet to Meter</a></div>
+      <div class="tool-box"><div class="tool-icon">⚖️</div><a href="/pounds-to-kg-converter.html">Pounds to KG</a></div>
+      <div class="tool-box"><div class="tool-icon">#</div><a href="/hex-to-rgb-converter.html">Hex to RGB</a></div>
+      <div class="tool-box"><div class="tool-icon">#</div><a href="/cmyk-to-rgb.html">CMYK to RGB</a></div>
+      <div class="tool-box"><div class="tool-icon">{}</div><a href="/base64-encoder-decoder.html">Base64 Encoder</a></div>
+      <div class="tool-box"><div class="tool-icon">{}</div><a href="/json-formatter.html">JSON Formatter</a></div>
+      <div class="tool-box"><div class="tool-icon">📄</div><a href="/word-to-pdf-converter.html">Word to PDF</a></div>
+      <div class="tool-box"><div class="tool-icon">🔑</div><a href="/password-generator.html">Password Generator</a></div>
+      <div class="tool-box"><div class="tool-icon">🎲</div><a href="/random-number-generator.html">Random Number</a></div>
+      <div class="tool-box"><div class="tool-icon">🎲</div><a href="/dice-roller.html">Dice Roller</a></div>
+      <div class="tool-box"><div class="tool-icon">⌨️</div><a href="/cps-test-online-free.html">CPS Test</a></div>
+      <div class="tool-box"><div class="tool-icon">🔢</div><a href="/tally-counter-tool-online-free.html">Tally Counter</a></div>
+      <div class="tool-box"><div class="tool-icon">🎵</div><a href="/tap-tempo-calculator-online-free.html">Tap Tempo</a></div>
+      <div class="tool-box"><div class="tool-icon">▶️</div><a href="/youtube-thumbnail-downloader.html">YT Thumbnail</a></div>
+      <div class="tool-box"><div class="tool-icon">🔗</div><a href="/link-tracker-tool.html">Link Tracker</a></div>
+      <div class="tool-box"><div class="tool-icon">🔊</div><a href="/paragraph-reader.html">Paragraph Reader</a></div>
     </div></div>
 
-    <div class="section"><h2>Converters & Other Tools</h2><p>Unit converters, encoders and utility tools</p>
-    <div class="grid">
-      <div class="card"><a href="/fahrenheit-to-celsius-converter.html">F to C</a></div>
-      <div class="card"><a href="/miles-to-km-converter.html">Miles to KM</a></div>
-      <div class="card"><a href="/feet-to-meters-converter.html">Feet to Meter</a></div>
-      <div class="card"><a href="/pounds-to-kg-converter.html">Pounds to KG</a></div>
-      <div class="card"><a href="/hex-to-rgb-converter.html">Hex to RGB</a></div>
-      <div class="card"><a href="/cmyk-to-rgb.html">CMYK to RGB</a></div>
-      <div class="card"><a href="/base64-encoder-decoder.html">Base64</a></div>
-      <div class="card"><a href="/json-formatter.html">JSON Formatter</a></div>
-      <div class="card"><a href="/word-to-pdf-converter.html">Word to PDF</a></div>
-      <div class="card"><a href="/password-generator.html">Password Generator</a></div>
-      <div class="card"><a href="/random-number-generator.html">Random Number</a></div>
-      <div class="card"><a href="/dice-roller.html">Dice Roller</a></div>
-      <div class="card"><a href="/cps-test-online-free.html">CPS Test</a></div>
-      <div class="card"><a href="/tally-counter-tool-online-free.html">Tally Counter</a></div>
-      <div class="card"><a href="/tap-tempo-calculator-online-free.html">Tap Tempo</a></div>
-      <div class="card"><a href="/youtube-thumbnail-downloader.html">YT Thumbnail</a></div>
-      <div class="card"><a href="/link-tracker-tool.html">Link Tracker</a></div>
-      <div class="card"><a href="/paragraph-reader.html">Paragraph Reader</a></div>
+    <div class="box"><h2 class="box-title">Age & Date Tools</h2><p class="box-desc">Calculate age, date difference and convert time zones easily online.</p>
+    <div class="tools-grid">
+      <div class="tool-box"><div class="tool-icon">📅</div><a href="/age-in-years-months-days.html">Age in Y-M-D</a></div>
+      <div class="tool-box"><div class="tool-icon">🎂</div><a href="/dob-to-age-calculator.html">DOB to Age</a></div>
+      <div class="tool-box"><div class="tool-icon">📅</div><a href="/exact-age-calculator.html">Exact Age</a></div>
+      <div class="tool-box"><div class="tool-icon">❓</div><a href="/how-old-am-i-calculator.html">How Old Am I</a></div>
+      <div class="tool-box"><div class="tool-icon">📅</div><a href="/date-difference-calculator.html">Date Difference</a></div>
+      <div class="tool-box"><div class="tool-icon">🌍</div><a href="/time-zone-converter.html">Time Zone</a></div>
+      <div class="tool-box"><div class="tool-icon">⏰</div><a href="/timestamp-to-date-converter.html">Timestamp to Date</a></div>
     </div></div>
 
   </div>
 
   <aside class="sidebar">
-    <h3>Popular Tools</h3>
-    <a href="/spell-checker/">Spell Checker</a>
-    <a href="/plagiarism-checker.html">Plagiarism Checker</a>
-    <a href="/bmi-calculator.html">BMI Calculator</a>
-    <a href="/contact-qr-generator.html">Contact QR</a>
-    <a href="/word-counter.html">Word Counter</a>
-    <h3 style="margin-top:20px">Quick Links</h3>
-    <a href="/about-us/">About Us</a>
-    <a href="/contact-us/">Contact Us</a>
-    <a href="/privacy-policy/">Privacy Policy</a>
-    <a href="/terms-of-service/">Terms</a>
-    <a href="/disclaimer/">Disclaimer</a>
-    <a href="/faqs.html">FAQs</a>
+    <div class="sidebar-box"><h3>Popular Tools</h3>
+      <a href="/spell-checker/">Spell Checker</a>
+      <a href="/plagiarism-checker.html">Plagiarism Checker</a>
+      <a href="/bmi-calculator.html">BMI Calculator</a>
+      <a href="/contact-qr-generator.html">Contact QR</a>
+      <a href="/word-counter.html">Word Counter</a>
+    </div>
+    <div class="sidebar-box"><h3>Quick Links</h3>
+      <a href="/about-us/">About Us</a>
+      <a href="/contact-us/">Contact Us</a>
+      <a href="/privacy-policy/">Privacy Policy</a>
+      <a href="/terms-of-service/">Terms</a>
+      <a href="/disclaimer/">Disclaimer</a>
+      <a href="/faqs.html">FAQs</a>
+    </div>
   </aside>
 </div>
 
-<div class="footer">
+<footer class="footer">
   <div class="footer-inner">
-    <div><h3>🔧 SMART TOOLS HUB</h3><p style="color:#f3e8ff">Best free online tools for Students, SEO Experts, and Writers.</p></div>
+    <div><h3>🔧 SMART TOOLS HUB</h3><p style="color:#ddd6fe">Best free online tools for Students, SEO Experts, and Writers. 100% Free.</p></div>
     <div><h3>Popular Tools</h3><a href="/spell-checker/">Spell Checker</a><a href="/bmi-calculator.html">BMI Calculator</a><a href="/contact-qr-generator.html">Contact QR</a></div>
     <div><h3>Quick Links</h3><a href="/">Home</a><a href="/about-us/">About Us</a><a href="/privacy-policy/">Privacy</a><a href="/terms-of-service/">Terms</a><a href="/disclaimer/">Disclaimer</a></div>
   </div>
-  <div class="copy">© 2026 Smart Tools Hub. All Rights Reserved.</div>
-</div>
+  <div class="copyright">© 2026 Smart Tools Hub. All Rights Reserved.</div>
+</footer>
 
 </body>
 </html>
